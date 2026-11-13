@@ -1,0 +1,23 @@
+[
+  {
+    "title": "〜です",
+    "jlpt_level": "N5",
+    "structure": "Danh từ ＋ です",
+    "meaning_vi": "là ~ (khẳng định, lịch sự)",
+    "explanation_vi": "「です」 đứng cuối câu, gắn sau danh từ/tính từ để tạo câu khẳng định lịch sự. Thể phủ định là 「ではありません／じゃありません」.",
+    "examples": [
+      { "jp": "わたしは がくせいです。", "vi": "Tôi là học sinh." },
+      { "jp": "これは ほんです。", "vi": "Đây là quyển sách." }
+    ]
+  },
+  {
+    "title": "〜は〜です (trợ từ は)",
+    "jlpt_level": "N5",
+    "structure": "A は B です",
+    "meaning_vi": "A thì/là B",
+    "explanation_vi": "Trợ từ 「は」 (đọc là 'wa') đánh dấu chủ đề của câu. Mẫu 「AはBです」 nghĩa là 'A là B'.",
+    "examples": [
+      { "jp": "田中さんは 先生です。", "vi": "Anh Tanaka là giáo viên." }
+    ]
+  }
+]

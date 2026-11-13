@@ -74,8 +74,15 @@ function toKanji(c: RawChar): KanjiRecord {
   };
 }
 
-/** Parse đoạn XML chứa 1+ <character> của KANJIDIC2 thành KanjiRecord[]. */
+/**
+ * Parse XML KANJIDIC2 thành KanjiRecord[]. Nhận cả file đầy đủ (root
+ * <kanjidic2>) lẫn fragment chỉ gồm các <character> (fixture test).
+ */
 export function parseKanjidicChar(xml: string): KanjiRecord[] {
-  const root = parser.parse(xml) as { character?: RawChar[] };
-  return (root.character ?? []).map(toKanji);
+  const root = parser.parse(xml) as {
+    kanjidic2?: { character?: RawChar[] };
+    character?: RawChar[];
+  };
+  const chars = root.kanjidic2?.character ?? root.character ?? [];
+  return chars.map(toKanji);
 }

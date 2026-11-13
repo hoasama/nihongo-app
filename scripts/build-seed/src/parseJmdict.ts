@@ -37,8 +37,15 @@ function toWord(e: RawEntry): WordRecord {
   return { headword, reading_kana, senses };
 }
 
-/** Parse một đoạn XML chứa 1+ phần tử <entry> của JMdict thành WordRecord[]. */
+/**
+ * Parse XML JMdict thành WordRecord[]. Nhận cả file đầy đủ (root <JMdict>)
+ * lẫn fragment chỉ gồm các <entry> (dùng cho fixture test).
+ */
 export function parseJmdictEntry(xml: string): WordRecord[] {
-  const root = parser.parse(xml) as { entry?: RawEntry[] };
-  return (root.entry ?? []).map(toWord);
+  const root = parser.parse(xml) as {
+    JMdict?: { entry?: RawEntry[] };
+    entry?: RawEntry[];
+  };
+  const entries = root.JMdict?.entry ?? root.entry ?? [];
+  return entries.map(toWord);
 }
