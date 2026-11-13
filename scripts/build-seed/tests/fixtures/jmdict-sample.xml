@@ -1,0 +1,19 @@
+<entry>
+  <ent_seq>1358280</ent_seq>
+  <k_ele><keb>食べる</keb></k_ele>
+  <r_ele><reb>たべる</reb></r_ele>
+  <sense>
+    <pos>v1</pos>
+    <pos>vt</pos>
+    <gloss>to eat</gloss>
+  </sense>
+</entry>
+<entry>
+  <ent_seq>1296400</ent_seq>
+  <r_ele><reb>ある</reb></r_ele>
+  <sense>
+    <pos>v5r-i</pos>
+    <gloss>to exist</gloss>
+    <gloss>to be</gloss>
+  </sense>
+</entry>
