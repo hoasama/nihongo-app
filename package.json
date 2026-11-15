@@ -8,29 +8,21 @@
     "dev:vite": "vite",
     "dev:electron": "wait-on tcp:127.0.0.1:1420 && cross-env VITE_DEV=1 electron electron/main.cjs",
     "dev": "concurrently -k -n vite,electron \"npm:dev:vite\" \"npm:dev:electron\"",
-    "build": "tsc && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "start": "npm run build && electron electron/main.cjs",
     "preview": "vite preview",
     "test": "cross-env NODE_OPTIONS=--experimental-sqlite vitest run",
     "test:watch": "cross-env NODE_OPTIONS=--experimental-sqlite vitest",
     "build:seed": "cross-env NODE_OPTIONS=--experimental-sqlite tsx scripts/build-seed/src/buildSeed.ts"
   },
-  "dependencies": {
-    "@tanstack/react-query": "^5.107.1",
-    "@tanstack/react-router": "^1.170.46",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "zustand": "^5.1.0"
-  },
   "devDependencies": {
     "@electron/rebuild": "^4.2.1",
     "@tailwindcss/vite": "^4.3.5",
     "@testing-library/jest-dom": "^7.0.1",
-    "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^14.6.10",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^6.0.2",
+    "@testing-library/vue": "^8.1.0",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "@vue/test-utils": "^2.6.0",
     "better-sqlite3": "^13.1.1",
     "concurrently": "^10.0.7",
     "cross-env": "^10.1.0",
@@ -42,7 +34,14 @@
     "typescript": "~6.0.3",
     "vite": "^8.0.16",
     "vitest": "^5.1.0",
+    "vue-tsc": "^3.3.14",
     "wait-on": "^9.5.1",
     "wanakana": "^5.3.1"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.107.1",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.45",
+    "vue-router": "^5.5.1"
   }
 }

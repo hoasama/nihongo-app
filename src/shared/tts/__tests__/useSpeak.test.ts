@@ -1,5 +1,6 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { renderHook, act } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import { mount } from "@vue/test-utils";
+import { defineComponent } from "vue";
 import { useSpeak } from "../useSpeak";
 
 class FakeUtterance {
@@ -26,27 +27,36 @@ function mockSynth(voices: { lang: string; voiceURI: string }[]) {
   return spoken;
 }
 
-describe("useSpeak", () => {
-  beforeEach(() => {
-    mockSynth([{ lang: "ja-JP", voiceURI: "ja1" }]);
+function mountSpeak() {
+  let api!: ReturnType<typeof useSpeak>;
+  const Comp = defineComponent({
+    setup() {
+      api = useSpeak();
+      return () => null;
+    },
   });
+  mount(Comp);
+  return api;
+}
 
+describe("useSpeak", () => {
   it("supported=true khi có giọng tiếng Nhật", () => {
-    const { result } = renderHook(() => useSpeak());
-    expect(result.current.supported).toBe(true);
+    mockSynth([{ lang: "ja-JP", voiceURI: "ja1" }]);
+    const api = mountSpeak();
+    expect(api.supported.value).toBe(true);
   });
 
   it("speak tạo utterance lang ja-JP với nội dung đúng", () => {
     const spoken = mockSynth([{ lang: "ja-JP", voiceURI: "ja1" }]);
-    const { result } = renderHook(() => useSpeak());
-    act(() => result.current.speak("こんにちは"));
+    const api = mountSpeak();
+    api.speak("こんにちは");
     expect(spoken[0].lang).toBe("ja-JP");
     expect(spoken[0].text).toBe("こんにちは");
   });
 
   it("supported=false khi không có giọng tiếng Nhật", () => {
     mockSynth([{ lang: "en-US", voiceURI: "en1" }]);
-    const { result } = renderHook(() => useSpeak());
-    expect(result.current.supported).toBe(false);
+    const api = mountSpeak();
+    expect(api.supported.value).toBe(false);
   });
 });

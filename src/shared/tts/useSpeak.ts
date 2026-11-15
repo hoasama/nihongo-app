@@ -1,49 +1,45 @@
-import { useCallback, useEffect, useState } from "react";
-
-export interface SpeakOptions {
-  rate?: number;
-  voiceURI?: string;
-}
+import { onMounted, onUnmounted, ref } from "vue";
 
 /**
  * Phát âm tiếng Nhật qua Web Speech API (giọng ja-JP của hệ điều hành).
- * `supported=false` khi máy không có giọng tiếng Nhật → UI hiện hướng dẫn cài.
+ * `supported=false` khi máy không có giọng tiếng Nhật.
  */
-export function useSpeak(opts: SpeakOptions = {}) {
-  const [supported, setSupported] = useState(false);
+export function useSpeak() {
+  const supported = ref(false);
+  let synth: SpeechSynthesis | undefined;
 
-  useEffect(() => {
-    const synth = typeof window !== "undefined" ? window.speechSynthesis : undefined;
-    if (!synth) {
-      setSupported(false);
-      return;
-    }
-    const check = () =>
-      setSupported(
-        synth.getVoices().some((v) => v.lang?.toLowerCase().startsWith("ja")),
-      );
+  const check = () => {
+    if (synth)
+      supported.value = synth
+        .getVoices()
+        .some((v) => v.lang?.toLowerCase().startsWith("ja"));
+  };
+
+  onMounted(() => {
+    synth = typeof window !== "undefined" ? window.speechSynthesis : undefined;
+    if (!synth) return;
     check();
     synth.addEventListener?.("voiceschanged", check);
-    return () => synth.removeEventListener?.("voiceschanged", check);
-  }, []);
+  });
+  onUnmounted(() => synth?.removeEventListener?.("voiceschanged", check));
 
-  const speak = useCallback(
-    (text: string) => {
-      const synth = window.speechSynthesis;
-      if (!synth || !text) return;
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = "ja-JP";
-      if (opts.rate) u.rate = opts.rate;
-      const voices = synth.getVoices();
-      const voice = opts.voiceURI
-        ? voices.find((v) => v.voiceURI === opts.voiceURI)
-        : voices.find((v) => v.lang?.toLowerCase().startsWith("ja"));
-      if (voice) u.voice = voice;
-      synth.cancel();
-      synth.speak(u);
-    },
-    [opts.rate, opts.voiceURI],
-  );
+  function speak(
+    text: string,
+    opts: { rate?: number; voiceURI?: string } = {},
+  ) {
+    const s = window.speechSynthesis;
+    if (!s || !text) return;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "ja-JP";
+    if (opts.rate) u.rate = opts.rate;
+    const voices = s.getVoices();
+    const voice = opts.voiceURI
+      ? voices.find((v) => v.voiceURI === opts.voiceURI)
+      : voices.find((v) => v.lang?.toLowerCase().startsWith("ja"));
+    if (voice) u.voice = voice;
+    s.cancel();
+    s.speak(u);
+  }
 
   return { speak, supported };
 }

@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { ref, watch, type Ref } from "vue";
 
-/** Trả giá trị trễ `delay` ms sau lần thay đổi cuối. */
-export function useDebounce<T>(value: T, delay = 300): T {
-  const [debounced, setDebounced] = useState(value);
-  useEffect(() => {
-    const id = setTimeout(() => setDebounced(value), delay);
-    return () => clearTimeout(id);
-  }, [value, delay]);
+/** Trả ref trễ `delay` ms sau lần thay đổi cuối của `source`. */
+export function useDebounce<T>(source: Ref<T>, delay = 300): Ref<T> {
+  const debounced = ref(source.value) as Ref<T>;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  watch(source, (v) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      debounced.value = v;
+    }, delay);
+  });
   return debounced;
 }
