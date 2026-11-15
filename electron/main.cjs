@@ -23,11 +23,23 @@ function initDb() {
   const userDir = app.getPath("userData");
   fs.mkdirSync(userDir, { recursive: true });
 
-  // seed.sqlite (reference, read-only) copy sang userData lần đầu — tách khỏi
-  // user.sqlite để update app không ghi đè dữ liệu người dùng.
+  // seed.sqlite (reference, read-only) copy sang userData — tách khỏi
+  // user.sqlite để update app không ghi đè dữ liệu người dùng. Nạp lại khi
+  // bản seed đóng gói mới hơn (vd sau khi chạy build:seed).
+  const seedSrc = resourcePath("seed.sqlite");
   const seedDest = path.join(userDir, "seed.sqlite");
-  if (!fs.existsSync(seedDest)) {
-    fs.copyFileSync(resourcePath("seed.sqlite"), seedDest);
+  const needCopy =
+    !fs.existsSync(seedDest) ||
+    fs.statSync(seedSrc).mtimeMs > fs.statSync(seedDest).mtimeMs;
+  if (needCopy) {
+    for (const suffix of ["", "-wal", "-shm"]) {
+      try {
+        fs.rmSync(seedDest + suffix, { force: true });
+      } catch {
+        /* ignore */
+      }
+    }
+    fs.copyFileSync(seedSrc, seedDest);
   }
 
   db = new Database(path.join(userDir, "user.sqlite"));

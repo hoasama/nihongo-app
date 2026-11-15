@@ -124,10 +124,13 @@ function main() {
   const kanjiIdByLiteral = new Map<string, number>();
   const kanjiXml = readIf(paths.kanjidic);
   if (kanjiXml) {
+    // JLPT cũ của KANJIDIC2 (4..1) → cấp mới gần đúng (4→N5, 3→N4).
+    const oldJlptToNew = (o: number | null): string | null =>
+      o === 4 ? "N5" : o === 3 ? "N4" : null;
     const kanji = parseKanjidicChar(kanjiXml);
     tx(() => {
       for (const k of kanji) {
-        const level = kanjiLevel.get(k.literal) ?? null;
+        const level = kanjiLevel.get(k.literal) ?? oldJlptToNew(k.jlpt_old);
         const info = insKanji.run(
           k.literal,
           k.grade,
