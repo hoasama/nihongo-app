@@ -29,6 +29,13 @@ export function Layout() {
             </Link>
           ))}
         </nav>
+        <Link
+          to="/about"
+          className="mt-6 block px-2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          activeProps={{ className: "mt-6 block px-2 text-xs text-indigo-500" }}
+        >
+          Nguồn dữ liệu
+        </Link>
       </aside>
       <main className="flex-1 overflow-auto bg-white p-6 dark:bg-slate-950">
         <Outlet />

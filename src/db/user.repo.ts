@@ -41,6 +41,29 @@ export async function listBookmarks(db: Queryable): Promise<Bookmark[]> {
   );
 }
 
+export interface BookmarkDetailed {
+  id: number;
+  item_type: ItemType;
+  item_id: number;
+  label: string | null;
+}
+
+/** Bookmark kèm nhãn hiển thị (headword/literal/title) — join sang seed. */
+export async function listBookmarksDetailed(
+  db: Queryable,
+): Promise<BookmarkDetailed[]> {
+  return db.select<BookmarkDetailed>(
+    `SELECT b.id, b.item_type, b.item_id,
+       CASE b.item_type
+         WHEN 'word' THEN (SELECT headword FROM words WHERE id = b.item_id)
+         WHEN 'kanji' THEN (SELECT literal FROM kanji WHERE id = b.item_id)
+         WHEN 'grammar' THEN (SELECT title FROM grammar WHERE id = b.item_id)
+       END AS label
+     FROM bookmarks b
+     ORDER BY b.created_at DESC, b.id DESC`,
+  );
+}
+
 export async function getNote(
   db: Queryable,
   type: ItemType,

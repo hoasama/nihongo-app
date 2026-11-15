@@ -1,4 +1,5 @@
 import { useSpeak } from "./useSpeak";
+import { useSettings } from "../settingsStore";
 
 export function SpeakButton({
   text,
@@ -7,7 +8,12 @@ export function SpeakButton({
   text: string;
   className?: string;
 }) {
-  const { speak, supported } = useSpeak();
+  const ttsRate = useSettings((s) => s.ttsRate);
+  const ttsVoiceURI = useSettings((s) => s.ttsVoiceURI);
+  const { speak, supported } = useSpeak({
+    rate: ttsRate,
+    voiceURI: ttsVoiceURI || undefined,
+  });
   return (
     <button
       type="button"

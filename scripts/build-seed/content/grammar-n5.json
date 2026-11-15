@@ -1,23 +1,164 @@
 [
   {
-    "title": "〜です",
+    "title": "〜は〜です",
     "jlpt_level": "N5",
-    "structure": "Danh từ ＋ です",
-    "meaning_vi": "là ~ (khẳng định, lịch sự)",
-    "explanation_vi": "「です」 đứng cuối câu, gắn sau danh từ/tính từ để tạo câu khẳng định lịch sự. Thể phủ định là 「ではありません／じゃありません」.",
+    "structure": "N1 は N2 です",
+    "meaning_vi": "N1 là N2 (câu khẳng định, lịch sự)",
+    "explanation_vi": "「は」 (đọc là 'wa') đánh dấu chủ đề; 「です」 đứng cuối tạo câu khẳng định lịch sự. Thể phủ định: 「〜じゃありません／ではありません」.",
     "examples": [
       { "jp": "わたしは がくせいです。", "vi": "Tôi là học sinh." },
-      { "jp": "これは ほんです。", "vi": "Đây là quyển sách." }
+      { "jp": "田中さんは 先生です。", "vi": "Anh Tanaka là giáo viên." }
     ]
   },
   {
-    "title": "〜は〜です (trợ từ は)",
+    "title": "〜じゃありません",
     "jlpt_level": "N5",
-    "structure": "A は B です",
-    "meaning_vi": "A thì/là B",
-    "explanation_vi": "Trợ từ 「は」 (đọc là 'wa') đánh dấu chủ đề của câu. Mẫu 「AはBです」 nghĩa là 'A là B'.",
+    "structure": "N は N2 じゃありません／ではありません",
+    "meaning_vi": "không phải là ~ (phủ định của です)",
+    "explanation_vi": "「じゃありません」 (thân mật hơn) hoặc 「ではありません」 (trang trọng hơn) là thể phủ định lịch sự của 「です」.",
     "examples": [
-      { "jp": "田中さんは 先生です。", "vi": "Anh Tanaka là giáo viên." }
+      { "jp": "わたしは 先生じゃありません。", "vi": "Tôi không phải là giáo viên." },
+      { "jp": "これは 本ではありません。", "vi": "Đây không phải là quyển sách." }
+    ]
+  },
+  {
+    "title": "〜か",
+    "jlpt_level": "N5",
+    "structure": "câu + か",
+    "meaning_vi": "trợ từ tạo câu hỏi (…phải không?)",
+    "explanation_vi": "Thêm 「か」 vào cuối câu để biến thành câu hỏi. Khi nói lên giọng ở cuối.",
+    "examples": [
+      { "jp": "あなたは 学生ですか。", "vi": "Bạn là học sinh phải không?" },
+      { "jp": "これは なんですか。", "vi": "Đây là cái gì?" }
+    ]
+  },
+  {
+    "title": "〜の (sở hữu / bổ nghĩa)",
+    "jlpt_level": "N5",
+    "structure": "N1 の N2",
+    "meaning_vi": "của ~ / ~ thuộc về (nối hai danh từ)",
+    "explanation_vi": "「の」 nối hai danh từ: N1 bổ nghĩa cho N2 (sở hữu, thuộc tính, xuất xứ).",
+    "examples": [
+      { "jp": "わたしの かばんです。", "vi": "Là cái cặp của tôi." },
+      { "jp": "日本語の 本です。", "vi": "Là quyển sách tiếng Nhật." }
+    ]
+  },
+  {
+    "title": "〜も",
+    "jlpt_level": "N5",
+    "structure": "N も",
+    "meaning_vi": "cũng ~",
+    "explanation_vi": "「も」 thay cho 「は／が」 để diễn đạt ý 'cũng'.",
+    "examples": [
+      { "jp": "わたしも 学生です。", "vi": "Tôi cũng là học sinh." }
+    ]
+  },
+  {
+    "title": "〜を (tân ngữ)",
+    "jlpt_level": "N5",
+    "structure": "N を V",
+    "meaning_vi": "trợ từ đánh dấu tân ngữ trực tiếp",
+    "explanation_vi": "「を」 (đọc 'o') đứng sau danh từ là đối tượng của hành động.",
+    "examples": [
+      { "jp": "ごはんを 食べます。", "vi": "Ăn cơm." },
+      { "jp": "本を 読みます。", "vi": "Đọc sách." }
+    ]
+  },
+  {
+    "title": "〜ます / 〜ません",
+    "jlpt_level": "N5",
+    "structure": "V-ます（ません）",
+    "meaning_vi": "thể lịch sự hiện tại: làm / không làm",
+    "explanation_vi": "Đuôi 「ます」 là thể lịch sự khẳng định ở hiện tại/tương lai; 「ません」 là phủ định.",
+    "examples": [
+      { "jp": "毎日 日本語を 勉強します。", "vi": "Hằng ngày tôi học tiếng Nhật." },
+      { "jp": "お酒を 飲みません。", "vi": "Tôi không uống rượu." }
+    ]
+  },
+  {
+    "title": "〜ました / 〜ませんでした",
+    "jlpt_level": "N5",
+    "structure": "V-ました（ませんでした）",
+    "meaning_vi": "thể lịch sự quá khứ: đã làm / đã không làm",
+    "explanation_vi": "「ました」 là quá khứ khẳng định của 「ます」; 「ませんでした」 là quá khứ phủ định.",
+    "examples": [
+      { "jp": "昨日 映画を 見ました。", "vi": "Hôm qua tôi đã xem phim." },
+      { "jp": "朝ごはんを 食べませんでした。", "vi": "Tôi đã không ăn sáng." }
+    ]
+  },
+  {
+    "title": "〜へ / 〜に 行きます",
+    "jlpt_level": "N5",
+    "structure": "N へ/に 行きます・来ます・帰ります",
+    "meaning_vi": "đi/đến/về ~ (hướng, đích đến)",
+    "explanation_vi": "「へ」 (đọc 'e') hoặc 「に」 chỉ hướng/đích đến với động từ di chuyển.",
+    "examples": [
+      { "jp": "学校へ 行きます。", "vi": "Tôi đi đến trường." },
+      { "jp": "うちに 帰ります。", "vi": "Tôi về nhà." }
+    ]
+  },
+  {
+    "title": "〜で (nơi chốn / phương tiện)",
+    "jlpt_level": "N5",
+    "structure": "N で V",
+    "meaning_vi": "tại ~ (nơi diễn ra hành động) / bằng ~ (phương tiện)",
+    "explanation_vi": "「で」 chỉ nơi diễn ra hành động, hoặc phương tiện/công cụ thực hiện.",
+    "examples": [
+      { "jp": "図書館で 勉強します。", "vi": "Tôi học ở thư viện." },
+      { "jp": "バスで 行きます。", "vi": "Tôi đi bằng xe buýt." }
+    ]
+  },
+  {
+    "title": "〜から〜まで",
+    "jlpt_level": "N5",
+    "structure": "N1 から N2 まで",
+    "meaning_vi": "từ ~ đến ~ (thời gian / địa điểm)",
+    "explanation_vi": "「から」 chỉ điểm bắt đầu, 「まで」 chỉ điểm kết thúc.",
+    "examples": [
+      { "jp": "9時から 5時まで 働きます。", "vi": "Tôi làm việc từ 9 giờ đến 5 giờ." }
+    ]
+  },
+  {
+    "title": "〜たいです",
+    "jlpt_level": "N5",
+    "structure": "V(ます-bỏ ます) ＋ たいです",
+    "meaning_vi": "muốn làm ~",
+    "explanation_vi": "Bỏ 「ます」 ở thể ます rồi thêm 「たいです」 để diễn đạt mong muốn của người nói.",
+    "examples": [
+      { "jp": "日本へ 行きたいです。", "vi": "Tôi muốn đi Nhật." },
+      { "jp": "水が 飲みたいです。", "vi": "Tôi muốn uống nước." }
+    ]
+  },
+  {
+    "title": "〜てください",
+    "jlpt_level": "N5",
+    "structure": "V-て ＋ ください",
+    "meaning_vi": "xin hãy làm ~ (yêu cầu lịch sự)",
+    "explanation_vi": "Dùng thể 「て」 của động từ + 「ください」 để nhờ/đề nghị ai làm gì một cách lịch sự.",
+    "examples": [
+      { "jp": "ちょっと 待ってください。", "vi": "Xin đợi một chút." },
+      { "jp": "名前を 書いてください。", "vi": "Xin hãy viết tên." }
+    ]
+  },
+  {
+    "title": "〜ましょう",
+    "jlpt_level": "N5",
+    "structure": "V(ます-bỏ ます) ＋ ましょう",
+    "meaning_vi": "cùng làm ~ nào (rủ rê)",
+    "explanation_vi": "「ましょう」 dùng để rủ rê hoặc đề nghị cùng làm gì đó.",
+    "examples": [
+      { "jp": "いっしょに 帰りましょう。", "vi": "Cùng về nào." },
+      { "jp": "少し 休みましょう。", "vi": "Nghỉ một chút nào." }
+    ]
+  },
+  {
+    "title": "〜が (nhưng)",
+    "jlpt_level": "N5",
+    "structure": "câu1 が、câu2",
+    "meaning_vi": "nhưng ~ (nối hai mệnh đề đối lập)",
+    "explanation_vi": "「が」 đặt cuối mệnh đề trước để nối với mệnh đề sau mang ý đối lập hoặc mở đầu lịch sự.",
+    "examples": [
+      { "jp": "この へやは きれいですが、せまいです。", "vi": "Căn phòng này đẹp nhưng chật." }
     ]
   }
 ]

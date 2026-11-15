@@ -6,6 +6,7 @@ import {
   removeBookmark,
   isBookmarked,
   listBookmarks,
+  listBookmarksDetailed,
   getNote,
   saveNote,
   getSetting,
@@ -36,6 +37,16 @@ describe("user.repo", () => {
     expect(await getNote(t.q, "kanji", 5)).toBe("sửa lại");
     await saveNote(t.q, "kanji", 5, "   ");
     expect(await getNote(t.q, "kanji", 5)).toBeNull();
+  });
+
+  it("listBookmarksDetailed trả nhãn từ seed", async () => {
+    t.raw.exec(
+      `INSERT INTO words (id, headword, reading_kana, reading_romaji, is_common) VALUES (1,'水','みず','mizu',1)`,
+    );
+    await addBookmark(t.q, "word", 1);
+    const list = await listBookmarksDetailed(t.q);
+    expect(list[0].label).toBe("水");
+    expect(list[0].item_type).toBe("word");
   });
 
   it("setting: get null → set → get", async () => {
