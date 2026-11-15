@@ -4,6 +4,8 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import { Layout } from "./Layout";
+import { DictionaryPage } from "../features/dictionary/DictionaryPage";
+import { WordDetail } from "../features/dictionary/WordDetail";
 
 const rootRoute = createRootRoute({ component: Layout });
 
@@ -15,7 +17,13 @@ function Placeholder({ title }: { title: string }) {
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: () => <Placeholder title="Tra từ điển" />,
+  component: DictionaryPage,
+});
+
+const wordRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/word/$id",
+  component: WordDetail,
 });
 const kanjiRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -40,6 +48,7 @@ const settingsRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  wordRoute,
   kanjiRoute,
   grammarRoute,
   savedRoute,
