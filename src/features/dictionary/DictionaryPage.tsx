@@ -30,20 +30,22 @@ export function DictionaryPage() {
           placeholder="Nhập kanji, kana, romaji hoặc nghĩa…"
           className={`flex-1 ${inputCls}`}
         />
-        <select
-          value={level}
-          onChange={(e) => setLevel(e.target.value)}
-          className={inputCls}
-        >
-          <option value="">Mọi cấp</option>
-          <option value="N5">N5</option>
-          <option value="N4">N4</option>
-        </select>
+        <div className="relative">
+          <select
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
+            className={`${inputCls} appearance-none pr-9`}
+          >
+            <option value="">Mọi cấp</option>
+            <option value="N5">N5</option>
+            <option value="N4">N4</option>
+          </select>
+          <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400">
+            ▾
+          </span>
+        </div>
       </div>
 
-      {q.length === 0 && (
-        <p className="text-slate-500">Nhập để bắt đầu tra từ.</p>
-      )}
       {q.length > 0 && !isFetching && data?.length === 0 && (
         <p className="text-slate-500">Không tìm thấy từ nào.</p>
       )}
