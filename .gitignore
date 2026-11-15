@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Rust / Tauri build
-src-tauri/target
+# Electron
+out
+release
 
 # ETL raw data + generated SQLite (không commit, có README hướng dẫn tải)
 scripts/build-seed/raw/*
@@ -21,7 +22,10 @@ scripts/build-seed/raw/*
 scripts/build-seed/*.sqlite
 scripts/build-seed/*.sqlite-shm
 scripts/build-seed/*.sqlite-wal
-src-tauri/resources/seed.sqlite
+# seed.sqlite đóng gói là generated (chạy `npm run build:seed`)
+resources/*.sqlite
+resources/*.sqlite-shm
+resources/*.sqlite-wal
 
 # Editor directories and files
 .vscode/*
