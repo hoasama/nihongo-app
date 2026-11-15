@@ -5,28 +5,11 @@ const Database = require("better-sqlite3");
 
 const isDev = !!process.env.VITE_DEV;
 
-// Bảng dữ liệu người dùng (writable) — nằm trong user.sqlite (DB main).
-const USER_DDL = `
-CREATE TABLE IF NOT EXISTS settings (
-  key TEXT PRIMARY KEY,
-  value TEXT
+// DDL bảng người dùng dùng chung với test (src/db/user-schema.sql).
+const USER_DDL = fs.readFileSync(
+  path.join(__dirname, "..", "src", "db", "user-schema.sql"),
+  "utf8",
 );
-CREATE TABLE IF NOT EXISTS bookmarks (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  item_type TEXT NOT NULL,
-  item_id INTEGER NOT NULL,
-  created_at TEXT NOT NULL DEFAULT (datetime('now')),
-  UNIQUE(item_type, item_id)
-);
-CREATE TABLE IF NOT EXISTS notes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  item_type TEXT NOT NULL,
-  item_id INTEGER NOT NULL,
-  body TEXT NOT NULL,
-  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-  UNIQUE(item_type, item_id)
-);
-`;
 
 function resourcePath(file) {
   return app.isPackaged

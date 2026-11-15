@@ -11,9 +11,9 @@
     "build": "tsc && vite build",
     "start": "npm run build && electron electron/main.cjs",
     "preview": "vite preview",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "build:seed": "tsx scripts/build-seed/src/buildSeed.ts"
+    "test": "cross-env NODE_OPTIONS=--experimental-sqlite vitest run",
+    "test:watch": "cross-env NODE_OPTIONS=--experimental-sqlite vitest",
+    "build:seed": "cross-env NODE_OPTIONS=--experimental-sqlite tsx scripts/build-seed/src/buildSeed.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.107.1",
@@ -23,6 +23,7 @@
     "zustand": "^5.1.0"
   },
   "devDependencies": {
+    "@electron/rebuild": "^4.2.1",
     "@tailwindcss/vite": "^4.3.5",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",

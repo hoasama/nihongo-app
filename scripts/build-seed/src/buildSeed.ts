@@ -1,4 +1,4 @@
-import Database from "better-sqlite3";
+import { DatabaseSync } from "node:sqlite";
 import { readFileSync, existsSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -44,8 +44,20 @@ interface GrammarItem {
 
 function main() {
   if (existsSync(paths.out)) rmSync(paths.out);
-  const db = new Database(paths.out);
+  const db = new DatabaseSync(paths.out);
   db.exec(readFileSync(paths.schema, "utf8"));
+
+  // node:sqlite không có db.transaction() — tự bọc BEGIN/COMMIT.
+  const tx = (fn: () => void) => {
+    db.exec("BEGIN");
+    try {
+      fn();
+      db.exec("COMMIT");
+    } catch (e) {
+      db.exec("ROLLBACK");
+      throw e;
+    }
+  };
 
   const jlptRaw = readIf(paths.jlpt);
   const jlpt: JlptData = jlptRaw
@@ -77,7 +89,7 @@ function main() {
   const jmdictXml = readIf(paths.jmdict);
   if (jmdictXml) {
     const words = parseJmdictEntry(jmdictXml);
-    db.transaction(() => {
+    tx(() => {
       for (const w of words) {
         const romaji = toRomaji(w.reading_kana);
         const level = vocabLevel.get(w.headword) ?? null;
@@ -102,7 +114,7 @@ function main() {
           id,
         );
       }
-    })();
+    });
   }
 
   // --- Kanji ---
@@ -113,7 +125,7 @@ function main() {
   const kanjiXml = readIf(paths.kanjidic);
   if (kanjiXml) {
     const kanji = parseKanjidicChar(kanjiXml);
-    db.transaction(() => {
+    tx(() => {
       for (const k of kanji) {
         const level = kanjiLevel.get(k.literal) ?? null;
         const info = insKanji.run(
@@ -132,14 +144,14 @@ function main() {
           stats.kanji++;
         }
       }
-    })();
+    });
   }
 
   // --- kanji_words: liên kết kanji ↔ từ chứa nó ---
   const insLink = db.prepare(
     "INSERT OR IGNORE INTO kanji_words (kanji_id, word_id) VALUES (?,?)",
   );
-  db.transaction(() => {
+  tx(() => {
     for (const [headword, wordId] of wordIdByHeadword) {
       const seen = new Set<string>();
       for (const ch of headword) {
@@ -152,7 +164,7 @@ function main() {
         }
       }
     }
-  })();
+  });
 
   // --- Sentences ---
   const insSentence = db.prepare(
@@ -161,12 +173,12 @@ function main() {
   const tatoeba = readIf(paths.tatoeba);
   if (tatoeba) {
     const sentences = parseTatoeba(tatoeba);
-    db.transaction(() => {
+    tx(() => {
       for (const s of sentences) {
         insSentence.run(s.jp_text, s.translation_en, s.source);
         stats.sentences++;
       }
-    })();
+    });
   }
 
   // --- Grammar (biên soạn) ---
@@ -176,7 +188,7 @@ function main() {
   const grammarRaw = readIf(paths.grammar);
   if (grammarRaw) {
     const items = JSON.parse(grammarRaw) as GrammarItem[];
-    db.transaction(() => {
+    tx(() => {
       for (const g of items) {
         insGrammar.run(
           g.title,
@@ -188,7 +200,7 @@ function main() {
         );
         stats.grammar++;
       }
-    })();
+    });
   }
 
   db.exec("VACUUM");
