@@ -47,4 +47,15 @@ describe("words.repo", () => {
   it("getWordDetail trả null khi không tồn tại", async () => {
     expect(await getWordDetail(t.q, 999)).toBeNull();
   });
+
+  it("searchWords ưu tiên từ thông dụng lên trước", async () => {
+    t.raw.exec(`INSERT INTO words (id, headword, reading_kana, reading_romaji, jlpt_level, is_common) VALUES
+      (10,'先生','せんせい','sensei',NULL,1),
+      (11,'先制','せんせい','sensei',NULL,0)`);
+    t.raw.exec(`INSERT INTO words_fts (headword, reading_kana, reading_romaji, gloss_en, gloss_vi, word_id) VALUES
+      ('先生','せんせい','sensei','teacher',NULL,10),
+      ('先制','せんせい','sensei','preemption',NULL,11)`);
+    const res = await searchWords(t.q, "sensei");
+    expect(res[0].headword).toBe("先生");
+  });
 });

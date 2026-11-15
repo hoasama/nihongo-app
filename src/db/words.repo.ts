@@ -30,7 +30,9 @@ export async function searchWords(
     sql += " AND w.jlpt_level = ?";
     params.push(level);
   }
-  sql += " LIMIT 50";
+  // Ưu tiên: thông dụng → tần suất cao (nf nhỏ, null xuống cuối) → từ ngắn.
+  sql +=
+    " ORDER BY w.is_common DESC, w.freq_rank IS NULL, w.freq_rank ASC, length(w.headword) ASC LIMIT 50";
   return db.select<WordSummary>(sql, params);
 }
 

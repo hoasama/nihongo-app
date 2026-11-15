@@ -77,7 +77,7 @@ function main() {
 
   // --- Words + senses + FTS ---
   const insWord = db.prepare(
-    "INSERT INTO words (headword, reading_kana, reading_romaji, jlpt_level) VALUES (?,?,?,?)",
+    "INSERT INTO words (headword, reading_kana, reading_romaji, jlpt_level, is_common, freq_rank) VALUES (?,?,?,?,?,?)",
   );
   const insSense = db.prepare(
     "INSERT INTO senses (word_id, part_of_speech, gloss_en, order_idx) VALUES (?,?,?,?)",
@@ -94,8 +94,14 @@ function main() {
         const romaji = toRomaji(w.reading_kana);
         const level = vocabLevel.get(w.headword) ?? null;
         const id = Number(
-          insWord.run(w.headword, w.reading_kana, romaji, level)
-            .lastInsertRowid,
+          insWord.run(
+            w.headword,
+            w.reading_kana,
+            romaji,
+            level,
+            w.is_common ? 1 : 0,
+            w.freq_rank,
+          ).lastInsertRowid,
         );
         wordIdByHeadword.set(w.headword, id);
         stats.words++;
