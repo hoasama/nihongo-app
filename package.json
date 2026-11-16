@@ -6,10 +6,11 @@
   "main": "electron/main.cjs",
   "scripts": {
     "dev:vite": "vite",
-    "dev:electron": "wait-on tcp:127.0.0.1:1420 && cross-env VITE_DEV=1 electron electron/main.cjs",
+    "dev:electron": "wait-on tcp:127.0.0.1:1420 && cross-env VITE_DEV=1 ELECTRON_RUN_AS_NODE= electron electron/main.cjs",
     "dev": "concurrently -k -n vite,electron \"npm:dev:vite\" \"npm:dev:electron\"",
     "build": "vue-tsc --noEmit && vite build",
-    "start": "npm run build && electron electron/main.cjs",
+    "start": "cross-env ELECTRON_RUN_AS_NODE= electron electron/main.cjs",
+    "app": "npm run build && npm start",
     "preview": "vite preview",
     "test": "cross-env NODE_OPTIONS=--experimental-sqlite vitest run",
     "test:watch": "cross-env NODE_OPTIONS=--experimental-sqlite vitest",
