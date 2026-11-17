@@ -1,5 +1,6 @@
 import type { Queryable } from "./queryable";
-import type { Deck, DeckCategory, Card, CardDirection } from "../shared/types";
+import type { Deck, DeckCategory, Card, CardDirection, CardContent, Rating } from "../shared/types";
+import { schedule } from "../features/srs/scheduler";
 
 const PRESET_DECKS: Omit<Deck, "id">[] = [
   { name: "N5 Từ vựng", category: "vocab", kind: "jlpt_vocab", level: "N5" },
@@ -156,4 +157,126 @@ export async function getDeckCounts(
     Math.min(poolRemaining, newPerDay - introducedToday),
   );
   return { due: dueRow[0]?.n ?? 0, newRemaining };
+}
+
+export async function getDueCards(
+  db: Queryable,
+  deckId: number,
+  limit: number,
+): Promise<Card[]> {
+  const nowIso = new Date().toISOString();
+  return db.select<Card>(
+    `SELECT id, deck_id, item_type, item_id, direction,
+            ease_factor, interval_days, repetitions, lapses, due
+     FROM cards WHERE deck_id = ? AND due <= ? ORDER BY due LIMIT ?`,
+    [deckId, nowIso, limit],
+  );
+}
+
+export async function getCardContent(
+  db: Queryable,
+  card: Card,
+): Promise<CardContent> {
+  const base: CardContent = {
+    cardId: card.id,
+    itemType: card.item_type,
+    direction: card.direction,
+    japanese: "",
+    reading: null,
+    meaning: null,
+    exampleJp: null,
+    exampleFurigana: null,
+    exampleEn: null,
+    strokeCount: null,
+  };
+
+  if (card.item_type === "word") {
+    const w = (
+      await db.select<{ headword: string; reading_kana: string }>(
+        "SELECT headword, reading_kana FROM words WHERE id = ?",
+        [card.item_id],
+      )
+    )[0];
+    const s = (
+      await db.select<{ m: string | null }>(
+        `SELECT COALESCE(gloss_vi, gloss_en) AS m FROM senses
+         WHERE word_id = ? ORDER BY order_idx LIMIT 1`,
+        [card.item_id],
+      )
+    )[0];
+    const ex = (
+      await db.select<{ jp_text: string; furigana: string | null; translation_en: string | null }>(
+        `SELECT s.jp_text, s.furigana, s.translation_en
+         FROM sentences s JOIN sentence_words sw ON sw.sentence_id = s.id
+         WHERE sw.word_id = ? LIMIT 1`,
+        [card.item_id],
+      )
+    )[0];
+    return {
+      ...base,
+      japanese: w?.headword ?? "",
+      reading: w?.reading_kana ?? null,
+      meaning: s?.m ?? null,
+      exampleJp: ex?.jp_text ?? null,
+      exampleFurigana: ex?.furigana ?? null,
+      exampleEn: ex?.translation_en ?? null,
+    };
+  }
+
+  // kanji
+  const k = (
+    await db.select<{
+      literal: string;
+      on_readings: string | null;
+      kun_readings: string | null;
+      meaning_vi: string | null;
+      meaning_en: string | null;
+      stroke_count: number | null;
+    }>(
+      `SELECT literal, on_readings, kun_readings, meaning_vi, meaning_en, stroke_count
+       FROM kanji WHERE id = ?`,
+      [card.item_id],
+    )
+  )[0];
+  const reading = [k?.on_readings, k?.kun_readings].filter(Boolean).join(" / ") || null;
+  return {
+    ...base,
+    japanese: k?.literal ?? "",
+    reading,
+    meaning: k?.meaning_vi ?? k?.meaning_en ?? null,
+    strokeCount: k?.stroke_count ?? null,
+  };
+}
+
+export async function recordReview(
+  db: Queryable,
+  card: Card,
+  rating: Rating,
+): Promise<void> {
+  const res = schedule(
+    {
+      easeFactor: card.ease_factor,
+      intervalDays: card.interval_days,
+      repetitions: card.repetitions,
+      lapses: card.lapses,
+    },
+    rating,
+    new Date(),
+  );
+  await db.execute(
+    `UPDATE cards SET ease_factor = ?, interval_days = ?, repetitions = ?, lapses = ?, due = ?
+     WHERE id = ?`,
+    [
+      res.state.easeFactor,
+      res.state.intervalDays,
+      res.state.repetitions,
+      res.state.lapses,
+      res.due.toISOString(),
+      card.id,
+    ],
+  );
+  await db.execute(
+    "INSERT INTO reviews (card_id, rating, interval_after) VALUES (?,?,?)",
+    [card.id, rating, res.state.intervalDays],
+  );
 }
