@@ -13,8 +13,8 @@ function seed(t: TestDb) {
   t.raw.exec(`INSERT INTO words_fts (headword, reading_kana, reading_romaji, gloss_en, gloss_vi, word_id) VALUES
     ('食べる','たべる','taberu','to eat','ăn',1),
     ('持つ','もつ','motsu','to hold','cầm',2)`);
-  t.raw.exec(`INSERT INTO sentences (id, jp_text, translation_en, source) VALUES
-    (1,'私はご飯を食べる。','I eat rice.','x')`);
+  t.raw.exec(`INSERT INTO sentences (id, jp_text, furigana, translation_en, source) VALUES
+    (1,'私はご飯を食べる。','{私|わたし}はご{飯|はん}を{食|た}べる。','I eat rice.','tatoeba:1')`);
   t.raw.exec(`INSERT INTO sentence_words (sentence_id, word_id) VALUES (1,1)`);
 }
 
@@ -37,11 +37,13 @@ describe("words.repo", () => {
     expect(n5.some((w) => w.headword === "持つ")).toBe(false);
   });
 
-  it("getWordDetail trả chi tiết kèm senses + câu ví dụ", async () => {
+  it("getWordDetail trả chi tiết kèm senses + câu ví dụ (có furigana + dịch)", async () => {
     const d = await getWordDetail(t.q, 1);
     expect(d?.headword).toBe("食べる");
     expect(d?.senses[0].gloss_vi).toBe("ăn");
     expect(d?.sentences[0].jp_text).toContain("食べる");
+    expect(d?.sentences[0].furigana).toContain("{食|た}");
+    expect(d?.sentences[0].translation_en).toBe("I eat rice.");
   });
 
   it("getWordDetail trả null khi không tồn tại", async () => {

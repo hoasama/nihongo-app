@@ -14,12 +14,17 @@
         Development Group (EDRDG), dùng theo giấy phép <em>CC BY-SA 4.0</em>.
       </li>
       <li>
-        <strong>Tatoeba</strong> (câu ví dụ) — giấy phép <em>CC BY 2.0 FR</em>.
+        <strong>OpenJLPT</strong> (evanclan/OpenJLPT) — danh sách từ vựng theo
+        cấp JLPT và câu ví dụ, giấy phép <em>CC BY-SA 4.0</em>.
       </li>
       <li>
-        Phân cấp <strong>JLPT N5/N4</strong> dựa trên dữ liệu KANJIDIC2 và danh
-        sách cộng đồng. JLPT không công bố danh sách chính thức nên có thể có sai
-        số nhỏ.
+        <strong>Tatoeba</strong> (câu ví dụ gốc, qua OpenJLPT) — giấy phép
+        <em>CC BY 2.0 FR</em>.
+      </li>
+      <li>
+        Phân cấp <strong>JLPT N5/N4</strong> (cả từ vựng và kanji) theo
+        <strong>OpenJLPT</strong>. JLPT không công bố danh sách chính thức nên có
+        thể có sai số nhỏ.
       </li>
       <li>
         Ngữ pháp N5/N4 được biên soạn tham khảo giáo trình Minna no Nihongo &amp;

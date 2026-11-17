@@ -53,7 +53,7 @@ export async function getWordDetail(
     [id],
   );
   const sentences = await db.select<Sentence>(
-    `SELECT s.id, s.jp_text, s.translation_en
+    `SELECT s.id, s.jp_text, s.furigana, s.translation_en
      FROM sentences s JOIN sentence_words sw ON sw.sentence_id = s.id
      WHERE sw.word_id = ? LIMIT 5`,
     [id],

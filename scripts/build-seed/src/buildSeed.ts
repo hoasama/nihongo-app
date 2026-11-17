@@ -5,8 +5,12 @@ import { fileURLToPath } from "node:url";
 import { toRomaji } from "wanakana";
 import { parseJmdictEntry } from "./parseJmdict";
 import { parseKanjidicChar } from "./parseKanjidic";
-import { parseTatoeba } from "./parseTatoeba";
-import { buildLevelIndex, type JlptLists } from "./jlptLevels";
+import {
+  parseOpenJlpt,
+  parseOpenJlptKanji,
+  type OpenJlptEntry,
+} from "./parseOpenJlpt";
+import { type JlptLevel } from "./jlptLevels";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const base = join(here, ".."); // scripts/build-seed
@@ -21,18 +25,20 @@ const paths = {
   grammar: join(base, "content/grammar-n5.json"),
   jmdict: SAMPLE ? fx("jmdict-sample.xml") : raw("JMdict_e.xml"),
   kanjidic: SAMPLE ? fx("kanjidic-sample.xml") : raw("kanjidic2.xml"),
-  tatoeba: SAMPLE ? fx("sentences-sample.csv") : raw("sentences.csv"),
-  jlpt: SAMPLE ? fx("jlpt-sample.json") : raw("jlpt-lists.json"),
+  // OpenJLPT: nguồn cấp JLPT + câu ví dụ cho từ vựng (N5/N4).
+  openjlpt: SAMPLE
+    ? [fx("openjlpt-sample.json")]
+    : [raw("openjlpt-n5.json"), raw("openjlpt-n4.json")],
+  // OpenJLPT kanji: nguồn cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt).
+  openjlptKanji: SAMPLE
+    ? [fx("openjlpt-kanji-sample.json")]
+    : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json")],
 };
 
 function readIf(path: string): string | null {
   return existsSync(path) ? readFileSync(path, "utf8") : null;
 }
 
-interface JlptData {
-  vocab: JlptLists;
-  kanji: JlptLists;
-}
 interface GrammarItem {
   title: string;
   jlpt_level: string;
@@ -59,18 +65,34 @@ function main() {
     }
   };
 
-  const jlptRaw = readIf(paths.jlpt);
-  const jlpt: JlptData = jlptRaw
-    ? (JSON.parse(jlptRaw) as JlptData)
-    : { vocab: {}, kanji: {} };
-  const vocabLevel = buildLevelIndex(jlpt.vocab);
-  const kanjiLevel = buildLevelIndex(jlpt.kanji);
+  // OpenJLPT: gộp entry từ các file cấp; map headword → cấp (N5 thắng N4 khi trùng).
+  const openJlptEntries: OpenJlptEntry[] = [];
+  for (const p of paths.openjlpt) {
+    const txt = readIf(p);
+    if (txt) openJlptEntries.push(...parseOpenJlpt(txt));
+  }
+  const vocabLevel = new Map<string, JlptLevel>();
+  for (const e of openJlptEntries) {
+    if (vocabLevel.get(e.word) !== "N5") vocabLevel.set(e.word, e.level);
+  }
+
+  // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt; N5 thắng N4 khi trùng).
+  const kanjiLevel = new Map<string, JlptLevel>();
+  for (const p of paths.openjlptKanji) {
+    const txt = readIf(p);
+    if (!txt) continue;
+    for (const k of parseOpenJlptKanji(txt)) {
+      if (kanjiLevel.get(k.character) !== "N5")
+        kanjiLevel.set(k.character, k.level);
+    }
+  }
 
   const stats = {
     words: 0,
     senses: 0,
     kanji: 0,
     sentences: 0,
+    sentenceLinks: 0,
     grammar: 0,
     links: 0,
   };
@@ -130,13 +152,10 @@ function main() {
   const kanjiIdByLiteral = new Map<string, number>();
   const kanjiXml = readIf(paths.kanjidic);
   if (kanjiXml) {
-    // JLPT cũ của KANJIDIC2 (4..1) → cấp mới gần đúng (4→N5, 3→N4).
-    const oldJlptToNew = (o: number | null): string | null =>
-      o === 4 ? "N5" : o === 3 ? "N4" : null;
     const kanji = parseKanjidicChar(kanjiXml);
     tx(() => {
       for (const k of kanji) {
-        const level = kanjiLevel.get(k.literal) ?? oldJlptToNew(k.jlpt_old);
+        const level = kanjiLevel.get(k.literal) ?? null;
         const info = insKanji.run(
           k.literal,
           k.grade,
@@ -175,20 +194,34 @@ function main() {
     }
   });
 
-  // --- Sentences ---
+  // --- Sentences (ví dụ OpenJLPT) + sentence_words (link theo headword) ---
   const insSentence = db.prepare(
-    "INSERT INTO sentences (jp_text, translation_en, source) VALUES (?,?,?)",
+    "INSERT INTO sentences (jp_text, furigana, translation_en, source) VALUES (?,?,?,?)",
   );
-  const tatoeba = readIf(paths.tatoeba);
-  if (tatoeba) {
-    const sentences = parseTatoeba(tatoeba);
-    tx(() => {
-      for (const s of sentences) {
-        insSentence.run(s.jp_text, s.translation_en, s.source);
-        stats.sentences++;
+  const insSentLink = db.prepare(
+    "INSERT OR IGNORE INTO sentence_words (sentence_id, word_id) VALUES (?,?)",
+  );
+  // Dedup câu theo source (một câu có thể là ví dụ của nhiều từ).
+  const sentenceIdBySource = new Map<string, number>();
+  tx(() => {
+    for (const e of openJlptEntries) {
+      const wordId = wordIdByHeadword.get(e.word);
+      if (!wordId) continue; // không khớp headword JMdict → bỏ (câu sẽ thành mồ côi)
+      for (const ex of e.examples) {
+        const source = ex.tatoeba_id != null ? `tatoeba:${ex.tatoeba_id}` : null;
+        let sentId: number | undefined =
+          source != null ? sentenceIdBySource.get(source) : undefined;
+        if (sentId === undefined) {
+          sentId = Number(
+            insSentence.run(ex.ja, ex.furigana, ex.en, source).lastInsertRowid,
+          );
+          if (source != null) sentenceIdBySource.set(source, sentId);
+          stats.sentences++;
+        }
+        if (insSentLink.run(sentId, wordId).changes > 0) stats.sentenceLinks++;
       }
-    });
-  }
+    }
+  });
 
   // --- Grammar (biên soạn) ---
   const insGrammar = db.prepare(

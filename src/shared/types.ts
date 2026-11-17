@@ -18,6 +18,7 @@ export interface Sense {
 export interface Sentence {
   id: number;
   jp_text: string;
+  furigana: string | null;
   translation_en: string | null;
 }
 

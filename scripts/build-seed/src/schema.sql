@@ -48,20 +48,22 @@ CREATE TABLE kanji_words (
   PRIMARY KEY (kanji_id, word_id)
 );
 
--- Câu ví dụ (Tatoeba)
+-- Câu ví dụ (Tatoeba, qua OpenJLPT)
 CREATE TABLE sentences (
   id            INTEGER PRIMARY KEY,
   jp_text       TEXT NOT NULL,
+  furigana      TEXT,                   -- ký hiệu furigana OpenJLPT, vd "{会|あ}う"
   translation_en TEXT,
-  source        TEXT
+  source        TEXT                    -- "tatoeba:<id>" (duy nhất mỗi câu)
 );
 
--- Câu ví dụ gắn với từ (Pha 1 có thể rỗng)
+-- Câu ví dụ gắn với từ (điền từ examples của OpenJLPT, khớp theo headword)
 CREATE TABLE sentence_words (
   sentence_id   INTEGER NOT NULL REFERENCES sentences(id),
   word_id       INTEGER NOT NULL REFERENCES words(id),
   PRIMARY KEY (sentence_id, word_id)
 );
+CREATE INDEX idx_sentence_words_word ON sentence_words(word_id);
 
 -- Ngữ pháp N5/N4 (biên soạn)
 CREATE TABLE grammar (

@@ -6,6 +6,7 @@ import { getWordDetail } from "../../db/words.repo";
 import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
+import FuriganaText from "../../shared/FuriganaText.vue";
 
 const route = useRoute();
 const wordId = Number(route.params.id);
@@ -62,7 +63,10 @@ const { data, isLoading } = useQuery({
         >
           <SpeakButton :text="s.jp_text" />
           <div>
-            <p>{{ s.jp_text }}</p>
+            <p class="leading-relaxed">
+              <FuriganaText v-if="s.furigana" :text="s.furigana" />
+              <template v-else>{{ s.jp_text }}</template>
+            </p>
             <p v-if="s.translation_en" class="text-sm text-slate-500">
               {{ s.translation_en }}
             </p>

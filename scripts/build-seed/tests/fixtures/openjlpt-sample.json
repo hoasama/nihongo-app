@@ -1,0 +1,19 @@
+[
+  {
+    "word": "食べる",
+    "reading": "たべる",
+    "romaji": "taberu",
+    "meanings": ["to eat"],
+    "level": "N5",
+    "pos": ["v1", "vt"],
+    "jmdict_id": 1358280,
+    "examples": [
+      {
+        "ja": "りんごを食べる。",
+        "furigana": "りんごを{食|た}べる。",
+        "en": "I eat an apple.",
+        "tatoeba_id": 1001
+      }
+    ]
+  }
+]

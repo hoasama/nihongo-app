@@ -20,21 +20,20 @@ Thư mục này chứa các file dữ liệu gốc để sinh `seed.sqlite`. **K
 |-----------------|-------|-----------|
 | `JMdict_e.xml` | JMdict (bản English-only) — http://www.edrdg.org/jmdict/edict_doc.html (giải nén `JMdict_e.gz`) | CC BY-SA 4.0 — © EDRDG |
 | `kanjidic2.xml` | KANJIDIC2 — http://www.edrdg.org/kanjidic/kanjidic2.xml.gz (giải nén) | CC BY-SA 4.0 — © EDRDG |
-| `sentences.csv` | Tatoeba exports — https://tatoeba.org/downloads (`sentences.csv`, tab-separated: id⟶lang⟶text) | CC BY 2.0 FR |
-| `jlpt-lists.json` | List từ vựng/kanji N5–N4 cộng đồng, gộp theo định dạng dưới | Theo repo nguồn |
+| `openjlpt-n5.json`, `openjlpt-n4.json` | OpenJLPT **vocab** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n5.json (và `n4.json`). Cấp JLPT + câu ví dụ (Tatoeba) + furigana cho từ vựng. | CC BY-SA 4.0 (ví dụ: Tatoeba CC BY) |
+| `openjlpt-kanji-n5.json`, `openjlpt-kanji-n4.json` | OpenJLPT **kanji** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json (và `n4.json`). Cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt). | CC BY-SA 4.0 |
 
-### Định dạng `jlpt-lists.json`
-
-```json
-{
-  "vocab": { "N5": ["食べる", "..."], "N4": ["..."] },
-  "kanji": { "N5": ["日", "..."], "N4": ["..."] }
-}
+Tải nhanh OpenJLPT:
+```powershell
+curl -o scripts/build-seed/raw/openjlpt-n5.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n5.json
+curl -o scripts/build-seed/raw/openjlpt-n4.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n4.json
+curl -o scripts/build-seed/raw/openjlpt-kanji-n5.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json
+curl -o scripts/build-seed/raw/openjlpt-kanji-n4.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n4.json
 ```
 
 ## Giấy phép & ghi công
 
 - JMdict / KANJIDIC2 là tài sản của **Electronic Dictionary Research and Development Group (EDRDG)**,
   dùng theo giấy phép **CC BY-SA 4.0**. App phải hiển thị ghi công (xem màn "Nguồn dữ liệu").
-- Câu ví dụ từ **Tatoeba** theo **CC BY 2.0 FR**.
+- **OpenJLPT** (evanclan/OpenJLPT) theo **CC BY-SA 4.0**; câu ví dụ gốc từ **Tatoeba** (**CC BY 2.0 FR**).
 - JLPT **không công bố danh sách chính thức**; list dùng ở đây là của cộng đồng, có thể sai số nhỏ.
