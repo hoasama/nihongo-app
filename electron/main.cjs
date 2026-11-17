@@ -5,6 +5,16 @@ const Database = require("better-sqlite3");
 
 const isDev = !!process.env.VITE_DEV;
 
+// WSL/Linux không có GPU thật và user-namespace sandbox bị hạn chế → Chromium
+// crash (GPU process isn't usable error_code=1002 / zygote). --in-process-gpu gộp
+// GPU vào main process (không có GPU process riêng để fail), --no-sandbox bỏ zygote
+// sandbox. Backup cho trường hợp chạy không qua run-electron.cjs. Chỉ áp cho Linux.
+if (process.platform === "linux") {
+  app.disableHardwareAcceleration();
+  app.commandLine.appendSwitch("no-sandbox");
+  app.commandLine.appendSwitch("in-process-gpu");
+}
+
 // DDL bảng người dùng dùng chung với test (src/db/user-schema.sql).
 const USER_DDL = fs.readFileSync(
   path.join(__dirname, "..", "src", "db", "user-schema.sql"),
