@@ -41,11 +41,21 @@ describe("schedule (SM-2)", () => {
     const easy = schedule(base, "easy", NOW).state.intervalDays;
     expect(hard).toBeLessThan(good);
     expect(good).toBeLessThan(easy);
+    expect(hard).toBe(12);
+    expect(good).toBe(25);
+    expect(easy).toBe(33);
   });
 
   it("ease không xuống dưới 1.3 dù again nhiều lần", () => {
     let s: CardState = { easeFactor: 1.4, intervalDays: 0, repetitions: 0, lapses: 0 };
     for (let i = 0; i < 5; i++) s = schedule(s, "again", NOW).state;
     expect(s.easeFactor).toBeGreaterThanOrEqual(1.3);
+  });
+
+  it("hard hạ ease (~2.36), easy nâng ease (2.6)", () => {
+    const h = schedule(fresh, "hard", NOW);
+    expect(h.state.easeFactor).toBeCloseTo(2.36, 2);
+    const e = schedule(fresh, "easy", NOW);
+    expect(e.state.easeFactor).toBeCloseTo(2.6, 5);
   });
 });

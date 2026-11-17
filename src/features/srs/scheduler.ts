@@ -15,6 +15,8 @@ export interface ScheduleResult {
 const MIN_EF = 1.3;
 const AGAIN_MS = 10 * 60 * 1000; // 10 phút
 const DAY_MS = 24 * 60 * 60 * 1000;
+// q (chất lượng SM-2) cho nhánh "đúng". "again" thoát sớm ở trên với phạt phẳng
+// EF-0.2 (kiểu Anki), KHÔNG chạy công thức EF — entry again:1 ở đây không được dùng.
 const Q: Record<Rating, number> = { again: 1, hard: 3, good: 4, easy: 5 };
 
 /** SM-2 thuần. Không đụng DB/Vue — toàn bộ "bộ não" xếp lịch nằm ở đây. */
@@ -38,7 +40,7 @@ export function schedule(state: CardState, rating: Rating, now: Date): ScheduleR
   else {
     const factor =
       rating === "hard" ? 1.2 : rating === "easy" ? state.easeFactor * 1.3 : state.easeFactor;
-    intervalDays = Math.round(state.intervalDays * factor);
+    intervalDays = Math.max(1, Math.round(state.intervalDays * factor));
   }
 
   const q = Q[rating];
