@@ -4,6 +4,8 @@ import { VueQueryPlugin } from "@tanstack/vue-query";
 import App from "./App.vue";
 import { router } from "./app/router";
 import { useSettings } from "./shared/settingsStore";
+import { getDb } from "./db/client";
+import { ensurePresetDecks } from "./db/srs.repo";
 import "./index.css";
 
 const app = createApp(App);
@@ -12,5 +14,10 @@ app.use(VueQueryPlugin);
 app.use(router);
 app.mount("#root");
 
-// Nạp cài đặt (theme, cỡ chữ, TTS) từ DB rồi áp dụng.
-void useSettings().load();
+// Nạp cài đặt rồi tạo preset deck (idempotent).
+void (async () => {
+  await useSettings().load();
+  if (typeof window !== "undefined" && window.db) {
+    await ensurePresetDecks(getDb());
+  }
+})();
