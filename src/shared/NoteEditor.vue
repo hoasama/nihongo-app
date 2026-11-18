@@ -33,7 +33,7 @@ watch(debounced, (val) => {
       v-model="text"
       rows="3"
       placeholder="Ghi chú cá nhân… (tự lưu)"
-      class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900"
+      class="field w-full text-sm"
     />
   </div>
 </template>

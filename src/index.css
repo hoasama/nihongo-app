@@ -3,8 +3,54 @@
 /* dark mode theo class .dark trên <html> (điều khiển bằng Settings) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Palette lấy từ nihongo-app */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+  --bg: #f4f5fb;
+  --panel: #ffffff;
+  --side: #1f2340;
+  --side-text: #c9cce3;
+  --accent: #e5484d;
+  --accent-soft: #fde8e8;
+  --ink: #1d2030;
+  --muted: #6b7090;
+  --line: #e4e6f0;
+  --hl: #fff3bf;
+  --ok: #2f9e44;
+  --radius: 12px;
+  --jp: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+  --shadow-card: 0 12px 40px rgba(31, 35, 64, 0.08);
+  --n5-bg: #e6fcf5;
+  --n5-fg: #087f5b;
+  --n4-bg: #e7f5ff;
+  --n4-fg: #1864ab;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #12131f;
+  --panel: #1b1d2e;
+  --ink: #e8e9f4;
+  --muted: #9a9fbd;
+  --line: #2b2e46;
+  --accent-soft: #3a2030;
+  --hl: #4a4220;
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --n5-bg: #0f3a31;
+  --n5-fg: #63e6be;
+  --n4-bg: #11324d;
+  --n4-fg: #74c0fc;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-side: var(--side);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
 }
 
 html,
@@ -12,4 +58,119 @@ body,
 #root {
   height: 100%;
   margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--jp);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.jp {
+  font-family: var(--jp);
+}
+
+/* Thẻ / panel */
+.n-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Ô nhập */
+.field {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Chip / pill lọc */
+.chip {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: var(--accent);
+}
+.chip-on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Nút */
+.btn {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--accent);
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Tag cấp JLPT */
+.tag {
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 0 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.tag[data-level="N5"] {
+  background: var(--n5-bg);
+  color: var(--n5-fg);
+}
+.tag[data-level="N4"] {
+  background: var(--n4-bg);
+  color: var(--n4-fg);
+}
+
+/* Flashcard lớn */
+.flash-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  min-height: 20rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.jp-big {
+  font-family: var(--jp);
+  font-size: 3.75rem;
+  line-height: 1.15;
+  font-weight: 700;
 }

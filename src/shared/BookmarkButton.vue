@@ -27,7 +27,7 @@ async function toggle() {
     type="button"
     @click="toggle"
     :title="marked ? 'Bỏ lưu' : 'Lưu'"
-    class="text-xl text-amber-500 hover:scale-110"
+    class="text-xl text-amber-500 cursor-pointer hover:scale-110"
   >
     {{ marked ? "★" : "☆" }}
   </button>

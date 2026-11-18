@@ -39,40 +39,40 @@ const GRADES = [
 </script>
 
 <template>
-  <div class="mx-auto max-w-xl">
-    <p v-if="loading" class="text-slate-500">Đang tải…</p>
+  <div class="mx-auto max-w-[560px]">
+    <p v-if="loading" class="text-muted">Đang tải…</p>
 
     <div v-else-if="done" class="text-center">
       <p class="mb-4 text-lg">Xong! Hôm nay không còn thẻ 🎉</p>
-      <RouterLink to="/review/vocab" class="text-indigo-600">← Về bộ thẻ</RouterLink>
+      <RouterLink to="/review/vocab" class="text-accent">← Về bộ thẻ</RouterLink>
     </div>
 
     <div v-else-if="current" class="text-center">
-      <p class="mb-4 text-sm text-slate-400">Còn lại: {{ remaining }}</p>
+      <p class="mb-4 text-sm text-muted">Còn lại: {{ remaining }}</p>
 
-      <div class="mb-6 rounded-lg border border-slate-200 p-8 dark:border-slate-800">
+      <div class="flash-card mb-6">
         <template v-if="current.content.direction === 'recognition'">
           <div class="flex items-center justify-center gap-3">
-            <span class="text-4xl font-bold">{{ current.content.japanese }}</span>
+            <span class="jp-big">{{ current.content.japanese }}</span>
             <SpeakButton :text="current.content.japanese" />
           </div>
         </template>
         <template v-else>
-          <span class="text-2xl">{{ current.content.meaning }}</span>
+          <span class="jp text-3xl font-semibold">{{ current.content.meaning }}</span>
         </template>
 
-        <div v-if="revealed" class="mt-6 border-t border-slate-200 pt-4 dark:border-slate-800">
+        <div v-if="revealed" class="mt-6 border-t border-line pt-4">
           <div v-if="current.content.direction === 'production'" class="flex items-center justify-center gap-3">
-            <span class="text-4xl font-bold">{{ current.content.japanese }}</span>
+            <span class="jp-big">{{ current.content.japanese }}</span>
             <SpeakButton :text="current.content.japanese" />
           </div>
-          <p v-if="current.content.reading" class="mt-2 text-slate-500">
+          <p v-if="current.content.reading" class="jp mt-2 text-xl text-accent">
             {{ current.content.reading }}
           </p>
           <p v-if="current.content.direction === 'recognition'" class="mt-1 text-lg">
             {{ current.content.meaning }}
           </p>
-          <p v-if="current.content.strokeCount" class="mt-1 text-sm text-slate-400">
+          <p v-if="current.content.strokeCount" class="mt-1 text-sm text-muted">
             {{ current.content.strokeCount }} nét
           </p>
           <div v-if="current.content.exampleJp" class="mt-4 flex items-start justify-center gap-2 text-left">
@@ -85,7 +85,7 @@ const GRADES = [
                 />
                 <template v-else>{{ current.content.exampleJp }}</template>
               </p>
-              <p v-if="current.content.exampleEn" class="text-sm text-slate-500">
+              <p v-if="current.content.exampleEn" class="text-sm text-muted">
                 {{ current.content.exampleEn }}
               </p>
             </div>
@@ -97,7 +97,7 @@ const GRADES = [
         v-if="!revealed"
         type="button"
         @click="reveal"
-        class="rounded bg-indigo-600 px-5 py-2 text-white hover:bg-indigo-700"
+        class="btn btn-primary px-6! py-2.5!"
       >
         Hiện đáp án (Space)
       </button>
@@ -107,7 +107,7 @@ const GRADES = [
           :key="g.rating"
           type="button"
           @click="grade(g.rating)"
-          :class="['rounded px-4 py-2 text-sm text-white', g.cls]"
+          :class="['rounded-[10px] px-5 py-2 text-sm font-medium text-white shadow-sm', g.cls]"
         >
           {{ g.label }}
         </button>

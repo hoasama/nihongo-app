@@ -7,7 +7,7 @@ import { searchWords } from "../../db/words.repo";
 import { useDebounce } from "../../shared/useDebounce";
 
 const inputCls =
-  "rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900";
+  "field";
 
 const query = ref("");
 const level = ref("");
@@ -39,7 +39,7 @@ const { data, isFetching } = useQuery({
           <option value="N4">N4</option>
         </select>
         <span
-          class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400"
+          class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-muted"
           >▾</span
         >
       </div>
@@ -47,22 +47,23 @@ const { data, isFetching } = useQuery({
 
     <p
       v-if="q.length > 0 && !isFetching && data && data.length === 0"
-      class="text-slate-500"
+      class="text-muted"
     >
       Không tìm thấy từ nào.
     </p>
 
-    <ul class="divide-y divide-slate-200 dark:divide-slate-800">
+    <ul class="n-card divide-y divide-line overflow-hidden px-3">
       <li v-for="w in data" :key="w.id">
         <RouterLink
           :to="`/word/${w.id}`"
-          class="flex items-baseline gap-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-900"
+          class="flex items-baseline gap-3 py-2 hover:bg-accent-soft"
         >
-          <span class="text-lg">{{ w.headword }}</span>
-          <span class="text-sm text-slate-500">{{ w.reading_kana }}</span>
+          <span class="jp text-xl font-bold">{{ w.headword }}</span>
+          <span class="jp text-sm text-accent">{{ w.reading_kana }}</span>
           <span
             v-if="w.jlpt_level"
-            class="ml-auto rounded bg-indigo-100 px-1.5 text-xs text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+            class="tag ml-auto"
+            :data-level="w.jlpt_level"
             >{{ w.jlpt_level }}</span
           >
         </RouterLink>

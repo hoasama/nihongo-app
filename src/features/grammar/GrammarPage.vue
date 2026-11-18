@@ -26,17 +26,17 @@ const items = computed(() => {
     <h2 class="mb-3 text-xl font-semibold">Ngữ pháp</h2>
 
     <div class="mb-4 flex items-center gap-2">
-      <div class="flex rounded border border-slate-300 dark:border-slate-700">
+      <div class="flex gap-1.5">
         <button
           v-for="l in LEVELS"
           :key="l"
           type="button"
           @click="level = l"
           :class="[
-            'px-3 py-1.5 text-sm',
+            'chip',
             level === l
-              ? 'bg-indigo-600 text-white'
-              : 'hover:bg-slate-100 dark:hover:bg-slate-800',
+              ? 'chip-on'
+              : '',
           ]"
         >
           {{ l }}
@@ -45,22 +45,22 @@ const items = computed(() => {
       <input
         v-model="query"
         placeholder="Tìm mẫu ngữ pháp…"
-        class="flex-1 rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900"
+        class="flex-1 field"
       />
     </div>
 
-    <p v-if="items && items.length === 0" class="text-slate-500">
+    <p v-if="items && items.length === 0" class="text-muted">
       Chưa có mẫu ngữ pháp {{ level }}{{ query.trim() ? " khớp từ khoá" : "" }}.
     </p>
 
-    <ul class="divide-y divide-slate-200 dark:divide-slate-800">
+    <ul class="divide-y divide-line">
       <li v-for="g in items" :key="g.id">
         <RouterLink
           :to="`/grammar/${g.id}`"
-          class="block py-2 hover:bg-slate-50 dark:hover:bg-slate-900"
+          class="block py-2 hover:bg-accent-soft"
         >
           <span class="text-lg">{{ g.title }}</span>
-          <span v-if="g.structure" class="ml-2 text-sm text-slate-500">{{
+          <span v-if="g.structure" class="ml-2 text-sm text-muted">{{
             g.structure
           }}</span>
         </RouterLink>

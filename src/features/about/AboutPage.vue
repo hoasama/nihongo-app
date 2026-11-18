@@ -3,7 +3,7 @@
 <template>
   <div class="mx-auto max-w-2xl">
     <h2 class="mb-4 text-xl font-semibold">Nguồn dữ liệu & ghi công</h2>
-    <p class="mb-4 text-slate-600 dark:text-slate-300">
+    <p class="mb-4 text-muted">
       Nihongo là app học tiếng Nhật cá nhân, chạy offline. Dữ liệu từ các dự án
       mở sau đây:
     </p>

@@ -43,18 +43,18 @@ function testSpeak() {
     <section class="mb-6">
       <h3 class="mb-2 font-semibold">Giao diện</h3>
       <div class="flex items-center gap-3">
-        <span class="w-28 text-slate-500">Chủ đề</span>
-        <div class="flex rounded border border-slate-300 dark:border-slate-700">
+        <span class="w-28 text-muted">Chủ đề</span>
+        <div class="flex gap-1.5">
           <button
             v-for="t in ['light', 'dark']"
             :key="t"
             type="button"
             @click="settings.update({ theme: t as 'light' | 'dark' })"
             :class="[
-              'px-3 py-1.5 text-sm',
+              'chip',
               settings.theme === t
-                ? 'bg-indigo-600 text-white'
-                : 'hover:bg-slate-100 dark:hover:bg-slate-800',
+                ? 'chip-on'
+                : '',
             ]"
           >
             {{ t === "light" ? "Sáng" : "Tối" }}
@@ -62,18 +62,18 @@ function testSpeak() {
         </div>
       </div>
       <div class="mt-3 flex items-center gap-3">
-        <span class="w-28 text-slate-500">Cỡ chữ</span>
-        <div class="flex rounded border border-slate-300 dark:border-slate-700">
+        <span class="w-28 text-muted">Cỡ chữ</span>
+        <div class="flex gap-1.5">
           <button
             v-for="f in FONT_OPTIONS"
             :key="f.value"
             type="button"
             @click="settings.update({ fontScale: f.value })"
             :class="[
-              'px-3 py-1.5 text-sm',
+              'chip',
               settings.fontScale === f.value
-                ? 'bg-indigo-600 text-white'
-                : 'hover:bg-slate-100 dark:hover:bg-slate-800',
+                ? 'chip-on'
+                : '',
             ]"
           >
             {{ f.label }}
@@ -89,7 +89,7 @@ function testSpeak() {
         language → Speech → thêm giọng tiếng Nhật.
       </p>
       <div class="flex items-center gap-3">
-        <span class="w-28 text-slate-500">Giọng đọc</span>
+        <span class="w-28 text-muted">Giọng đọc</span>
         <select
           :value="settings.ttsVoiceURI"
           @change="
@@ -97,7 +97,7 @@ function testSpeak() {
               ttsVoiceURI: ($event.target as HTMLSelectElement).value,
             })
           "
-          class="flex-1 rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900"
+          class="flex-1 field"
         >
           <option value="">Mặc định (ja-JP)</option>
           <option v-for="v in voices" :key="v.voiceURI" :value="v.voiceURI">
@@ -106,7 +106,7 @@ function testSpeak() {
         </select>
       </div>
       <div class="mt-3 flex items-center gap-3">
-        <span class="w-28 text-slate-500">Tốc độ</span>
+        <span class="w-28 text-muted">Tốc độ</span>
         <input
           type="range"
           min="0.5"
@@ -127,7 +127,7 @@ function testSpeak() {
       <button
         type="button"
         @click="testSpeak"
-        class="mt-3 rounded bg-indigo-600 px-3 py-1.5 text-sm text-white hover:bg-indigo-700"
+        class="mt-3 btn btn-primary"
       >
         🔊 Nghe thử
       </button>
@@ -136,7 +136,7 @@ function testSpeak() {
     <section class="mt-6">
       <h3 class="mb-2 font-semibold">Ôn tập (SRS)</h3>
       <div class="flex items-center gap-3">
-        <span class="w-28 text-slate-500">Thẻ mới/ngày</span>
+        <span class="w-28 text-muted">Thẻ mới/ngày</span>
         <input
           type="number"
           min="0"
@@ -150,7 +150,7 @@ function testSpeak() {
               ),
             })
           "
-          class="w-24 rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900"
+          class="w-24 field"
         />
       </div>
     </section>

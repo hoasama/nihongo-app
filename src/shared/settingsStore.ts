@@ -15,7 +15,7 @@ interface State {
 
 export const useSettings = defineStore("settings", {
   state: (): State => ({
-    theme: "dark",
+    theme: "light",
     fontScale: 1,
     ttsRate: 1,
     ttsVoiceURI: "",
@@ -39,7 +39,7 @@ export const useSettings = defineStore("settings", {
           getSetting(db, "ttsVoiceURI"),
           getSetting(db, "srsNewPerDay"),
         ]);
-      this.theme = (theme as Theme) || "dark";
+      this.theme = (theme as Theme) || "light";
       this.fontScale = fontScale ? Number(fontScale) : 1;
       this.ttsRate = ttsRate ? Number(ttsRate) : 1;
       this.ttsVoiceURI = ttsVoiceURI || "";

@@ -27,17 +27,17 @@ const { data } = useQuery({
     <h2 class="mb-3 text-xl font-semibold">Kanji</h2>
 
     <div class="mb-4 flex items-center gap-2">
-      <div class="flex rounded border border-slate-300 dark:border-slate-700">
+      <div class="flex gap-1.5">
         <button
           v-for="l in LEVELS"
           :key="l"
           type="button"
           @click="level = l"
           :class="[
-            'px-3 py-1.5 text-sm',
+            'chip',
             !searching && level === l
-              ? 'bg-indigo-600 text-white'
-              : 'hover:bg-slate-100 dark:hover:bg-slate-800',
+              ? 'chip-on'
+              : '',
           ]"
         >
           {{ l }}
@@ -46,11 +46,11 @@ const { data } = useQuery({
       <input
         v-model="query"
         placeholder="Tìm kanji hoặc nghĩa (vd: 日, water)…"
-        class="flex-1 rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900"
+        class="flex-1 field"
       />
     </div>
 
-    <p v-if="data && data.length === 0" class="text-slate-500">
+    <p v-if="data && data.length === 0" class="text-muted">
       Không có kanji phù hợp.
     </p>
 
@@ -61,10 +61,10 @@ const { data } = useQuery({
         v-for="k in data"
         :key="k.id"
         :to="`/kanji/${k.id}`"
-        class="flex flex-col items-center rounded border border-slate-200 p-2 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+        class="n-card flex flex-col items-center p-2 hover:border-accent"
       >
-        <span class="text-3xl">{{ k.literal }}</span>
-        <span class="mt-1 line-clamp-1 text-center text-xs text-slate-500">
+        <span class="jp text-3xl font-bold">{{ k.literal }}</span>
+        <span class="mt-1 line-clamp-1 text-center text-xs text-muted">
           {{ k.meaning_en }}
         </span>
       </RouterLink>

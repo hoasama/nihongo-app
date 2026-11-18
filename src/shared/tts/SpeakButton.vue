@@ -23,7 +23,7 @@ function onClick() {
         ? 'Phát âm'
         : 'Máy chưa có giọng tiếng Nhật — cài gói giọng ja-JP trong Windows (Settings → Time & language → Speech)'
     "
-    class="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-base hover:bg-slate-200 dark:hover:bg-slate-700"
+    class="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-base hover:bg-accent-soft"
   >
     🔊
   </button>

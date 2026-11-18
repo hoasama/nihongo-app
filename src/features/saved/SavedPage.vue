@@ -26,20 +26,20 @@ function group(type: ItemType) {
 <template>
   <div class="mx-auto max-w-2xl">
     <h2 class="mb-3 text-xl font-semibold">Đã lưu</h2>
-    <p v-if="isEmpty" class="text-slate-500">
+    <p v-if="isEmpty" class="text-muted">
       Chưa có mục nào. Bấm ★ ở trang từ/kanji/ngữ pháp để lưu.
     </p>
 
     <template v-for="g in GROUPS" :key="g.type">
       <div v-if="group(g.type).length > 0" class="mb-5">
-        <h3 class="mb-1 font-semibold text-slate-600 dark:text-slate-300">
+        <h3 class="mb-1 font-semibold text-muted">
           {{ g.title }}
         </h3>
-        <ul class="divide-y divide-slate-200 dark:divide-slate-800">
+        <ul class="divide-y divide-line">
           <li v-for="b in group(g.type)" :key="b.id">
             <RouterLink
               :to="`${g.base}/${b.item_id}`"
-              class="block py-2 hover:bg-slate-50 dark:hover:bg-slate-900"
+              class="block py-2 hover:bg-accent-soft"
             >
               {{ b.label ?? `#${b.item_id}` }}
             </RouterLink>

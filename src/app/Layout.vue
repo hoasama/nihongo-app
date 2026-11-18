@@ -17,9 +17,9 @@ const nav2 = [
   { to: "/settings", label: "Cài đặt", exact: false },
 ];
 
-const base = "rounded px-2 py-1.5 text-sm";
-const activeCls = "bg-slate-200 font-medium dark:bg-slate-800";
-const idleCls = "hover:bg-slate-200 dark:hover:bg-slate-800";
+const base = "rounded-lg px-3 py-2 text-sm transition-colors";
+const activeCls = "bg-accent font-semibold text-white";
+const idleCls = "text-[var(--side-text)] hover:bg-white/10";
 
 function isActive(item: { to: string; exact: boolean }) {
   return item.exact ? route.path === "/" : route.path.startsWith(item.to);
@@ -27,11 +27,14 @@ function isActive(item: { to: string; exact: boolean }) {
 </script>
 
 <template>
-  <div class="flex h-full text-slate-900 dark:text-slate-100">
+  <div class="flex h-full bg-bg text-ink">
     <aside
-      class="w-48 shrink-0 border-r border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-900"
+      class="w-52 shrink-0 bg-side p-4 text-[var(--side-text)]"
     >
-      <h1 class="mb-4 px-2 text-lg font-bold">日本語</h1>
+      <div class="mb-5 px-2">
+        <h1 class="jp text-2xl font-bold text-white">日本語</h1>
+        <p class="text-xs text-[var(--side-text)]">Nihongo · N5 / N4</p>
+      </div>
       <nav class="flex flex-col gap-1">
         <RouterLink
           v-for="item in nav"
@@ -42,7 +45,7 @@ function isActive(item: { to: string; exact: boolean }) {
           {{ item.label }}
         </RouterLink>
 
-        <p class="mt-3 px-2 text-xs font-semibold uppercase text-slate-400">
+        <p class="mt-3 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--side-text)]/60">
           Ôn tập
         </p>
         <RouterLink
@@ -67,12 +70,12 @@ function isActive(item: { to: string; exact: boolean }) {
       </nav>
       <RouterLink
         to="/about"
-        class="mt-6 block px-2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+        class="mt-6 block px-2 text-xs text-[var(--side-text)]/60 hover:text-white"
       >
         Nguồn dữ liệu
       </RouterLink>
     </aside>
-    <main class="flex-1 overflow-auto bg-white p-6 dark:bg-slate-950">
+    <main class="flex-1 overflow-auto bg-bg p-8">
       <RouterView :key="route.fullPath" />
     </main>
   </div>

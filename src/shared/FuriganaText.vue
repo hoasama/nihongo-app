@@ -27,7 +27,7 @@ function parse(t: string): Seg[] {
   <span
     ><template v-for="(seg, i) in parse(props.text)" :key="i"
       ><ruby v-if="seg.rt"
-        >{{ seg.base }}<rt class="text-[0.6em] text-slate-400">{{
+        >{{ seg.base }}<rt class="text-[0.5em] text-accent">{{
           seg.rt
         }}</rt></ruby
       ><template v-else>{{ seg.base }}</template></template
