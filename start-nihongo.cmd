@@ -1,7 +1,8 @@
 @echo off
 REM ============================================================
-REM  Mo app Nihongo (Electron) chay trong WSL2 Ubuntu qua WSLg.
-REM  Bam dup file nay de mo app. Cua so hien thang tren Windows.
+REM  Mo app Nihongo NATIVE tren Windows (Smart App Control da tat).
+REM  Bam dup de build + mo app. Dong cua so app la xong.
+REM  (Chay qua WSL khong con can nua; xem start.sh neu muon ban WSL.)
 REM ============================================================
-wsl -d Ubuntu-24.04 -- pkill -x electron
-wsl -d Ubuntu-24.04 -- bash ~/japanese-app/start.sh
+cd /d "%~dp0"
+call npm run app
