@@ -7,6 +7,12 @@ const nav = [
   { to: "/", label: "Tra từ", exact: true },
   { to: "/kanji", label: "Kanji", exact: false },
   { to: "/grammar", label: "Ngữ pháp", exact: false },
+];
+const reviewNav = [
+  { to: "/review/vocab", label: "Từ vựng", exact: false },
+  { to: "/review/kanji", label: "Kanji", exact: false },
+];
+const nav2 = [
   { to: "/saved", label: "Đã lưu", exact: false },
   { to: "/settings", label: "Cài đặt", exact: false },
 ];
@@ -35,6 +41,29 @@ function isActive(item: { to: string; exact: boolean }) {
         >
           {{ item.label }}
         </RouterLink>
+
+        <p class="mt-3 px-2 text-xs font-semibold uppercase text-slate-400">
+          Ôn tập
+        </p>
+        <RouterLink
+          v-for="item in reviewNav"
+          :key="item.to"
+          :to="item.to"
+          :class="[base, 'ml-2', isActive(item) ? activeCls : idleCls]"
+        >
+          {{ item.label }}
+        </RouterLink>
+
+        <div class="mt-3 flex flex-col gap-1">
+          <RouterLink
+            v-for="item in nav2"
+            :key="item.to"
+            :to="item.to"
+            :class="[base, isActive(item) ? activeCls : idleCls]"
+          >
+            {{ item.label }}
+          </RouterLink>
+        </div>
       </nav>
       <RouterLink
         to="/about"
