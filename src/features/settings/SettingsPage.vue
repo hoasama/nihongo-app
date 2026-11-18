@@ -132,5 +132,27 @@ function testSpeak() {
         🔊 Nghe thử
       </button>
     </section>
+
+    <section class="mt-6">
+      <h3 class="mb-2 font-semibold">Ôn tập (SRS)</h3>
+      <div class="flex items-center gap-3">
+        <span class="w-28 text-slate-500">Thẻ mới/ngày</span>
+        <input
+          type="number"
+          min="0"
+          max="100"
+          :value="settings.srsNewPerDay"
+          @input="
+            settings.update({
+              srsNewPerDay: Math.max(
+                0,
+                Number(($event.target as HTMLInputElement).value) || 0,
+              ),
+            })
+          "
+          class="w-24 rounded border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900"
+        />
+      </div>
+    </section>
   </div>
 </template>

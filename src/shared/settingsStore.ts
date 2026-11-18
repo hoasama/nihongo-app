@@ -9,6 +9,7 @@ interface State {
   fontScale: number;
   ttsRate: number;
   ttsVoiceURI: string;
+  srsNewPerDay: number;
   loaded: boolean;
 }
 
@@ -18,6 +19,7 @@ export const useSettings = defineStore("settings", {
     fontScale: 1,
     ttsRate: 1,
     ttsVoiceURI: "",
+    srsNewPerDay: 10,
     loaded: false,
   }),
   actions: {
@@ -29,22 +31,28 @@ export const useSettings = defineStore("settings", {
     async load() {
       if (typeof window === "undefined" || !window.db) return;
       const db = getDb();
-      const [theme, fontScale, ttsRate, ttsVoiceURI] = await Promise.all([
-        getSetting(db, "theme"),
-        getSetting(db, "fontScale"),
-        getSetting(db, "ttsRate"),
-        getSetting(db, "ttsVoiceURI"),
-      ]);
+      const [theme, fontScale, ttsRate, ttsVoiceURI, srsNewPerDay] =
+        await Promise.all([
+          getSetting(db, "theme"),
+          getSetting(db, "fontScale"),
+          getSetting(db, "ttsRate"),
+          getSetting(db, "ttsVoiceURI"),
+          getSetting(db, "srsNewPerDay"),
+        ]);
       this.theme = (theme as Theme) || "dark";
       this.fontScale = fontScale ? Number(fontScale) : 1;
       this.ttsRate = ttsRate ? Number(ttsRate) : 1;
       this.ttsVoiceURI = ttsVoiceURI || "";
+      this.srsNewPerDay = srsNewPerDay ? Number(srsNewPerDay) : 10;
       this.applyDom();
       this.loaded = true;
     },
     update(
       patch: Partial<
-        Pick<State, "theme" | "fontScale" | "ttsRate" | "ttsVoiceURI">
+        Pick<
+          State,
+          "theme" | "fontScale" | "ttsRate" | "ttsVoiceURI" | "srsNewPerDay"
+        >
       >,
     ) {
       Object.assign(this, patch);
