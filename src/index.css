@@ -24,6 +24,10 @@
   --n5-fg: #087f5b;
   --n4-bg: #e7f5ff;
   --n4-fg: #1864ab;
+  --badge-bg: #eef0f8;
+  --badge-fg: #4a4f66;
+  /* Font: Segoe UI cho tiếng Việt/Latin, Yu Gothic chỉ cho tiếng Nhật (.jp) */
+  --ui: "Segoe UI", "Inter", "Noto Sans", var(--jp), sans-serif;
 }
 
 .dark {
@@ -40,6 +44,8 @@
   --n5-fg: #63e6be;
   --n4-bg: #11324d;
   --n4-fg: #74c0fc;
+  --badge-bg: rgba(255, 255, 255, 0.08);
+  --badge-fg: #c3c8e0;
 }
 
 @theme inline {
@@ -63,7 +69,8 @@ body,
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--jp);
+  font-family: var(--ui);
+  font-size: 16px;
 }
 
 :focus-visible {
@@ -73,6 +80,22 @@ body {
 
 .jp {
   font-family: var(--jp);
+}
+
+/* Icon kanji trong menu sidebar — antd gắn thêm class .ant-menu-item-icon
+   lên chính span này và ép display:inline-flex, nên phải tự đặt lại
+   align-items/justify-content (place-items chỉ ăn với grid) kèm !important
+   để thắng rule đó, chữ mới nằm giữa ô thay vì dạt lên góc trên-trái. */
+.nav-ico {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  line-height: 1;
 }
 
 /* Thẻ / panel */
@@ -154,6 +177,17 @@ body {
 .tag[data-level="N4"] {
   background: var(--n4-bg);
   color: var(--n4-fg);
+}
+
+/* Badge trung tính (loại từ…) */
+.badge {
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--badge-bg);
+  color: var(--badge-fg);
 }
 
 /* Flashcard lớn */

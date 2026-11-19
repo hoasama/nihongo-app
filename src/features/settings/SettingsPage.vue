@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useSettings } from "../../shared/settingsStore";
 import { useSpeak } from "../../shared/tts/useSpeak";
 
@@ -12,6 +12,15 @@ const FONT_OPTIONS = [
   { label: "Vừa", value: 1.1 },
   { label: "Lớn", value: 1.25 },
 ];
+const THEME_OPTIONS = [
+  { label: "Sáng", value: "light" },
+  { label: "Tối", value: "dark" },
+];
+
+const voiceOptions = computed(() => [
+  { label: "Mặc định (ja-JP)", value: "" },
+  ...voices.value.map((v) => ({ label: `${v.name} (${v.lang})`, value: v.voiceURI })),
+]);
 
 let synth: SpeechSynthesis | undefined;
 const loadVoices = () => {
@@ -38,47 +47,35 @@ function testSpeak() {
 
 <template>
   <div class="mx-auto max-w-xl">
-    <h2 class="mb-4 text-xl font-semibold">Cài đặt</h2>
+    <h2 class="mb-4 text-2xl font-bold">Cài đặt</h2>
 
     <section class="mb-6">
       <h3 class="mb-2 font-semibold">Giao diện</h3>
       <div class="flex items-center gap-3">
         <span class="w-28 text-muted">Chủ đề</span>
-        <div class="flex gap-1.5">
-          <button
-            v-for="t in ['light', 'dark']"
-            :key="t"
-            type="button"
-            @click="settings.update({ theme: t as 'light' | 'dark' })"
-            :class="[
-              'chip',
-              settings.theme === t
-                ? 'chip-on'
-                : '',
-            ]"
-          >
-            {{ t === "light" ? "Sáng" : "Tối" }}
-          </button>
-        </div>
+        <a-segmented
+          :value="settings.theme"
+          :options="THEME_OPTIONS"
+          @change="settings.update({ theme: $event as 'light' | 'dark' })"
+        />
       </div>
       <div class="mt-3 flex items-center gap-3">
         <span class="w-28 text-muted">Cỡ chữ</span>
-        <div class="flex gap-1.5">
-          <button
-            v-for="f in FONT_OPTIONS"
-            :key="f.value"
-            type="button"
-            @click="settings.update({ fontScale: f.value })"
-            :class="[
-              'chip',
-              settings.fontScale === f.value
-                ? 'chip-on'
-                : '',
-            ]"
-          >
-            {{ f.label }}
-          </button>
-        </div>
+        <a-segmented
+          :value="settings.fontScale"
+          :options="FONT_OPTIONS"
+          @change="settings.update({ fontScale: $event as number })"
+        />
+      </div>
+      <div class="mt-3 flex items-center gap-3">
+        <span class="w-28 text-muted">Furigana</span>
+        <a-switch
+          :checked="settings.showFurigana"
+          @change="settings.update({ showFurigana: $event as boolean })"
+        />
+        <span class="text-sm text-muted"
+          >Hiện cách đọc nhỏ trên chữ Hán ở câu ví dụ</span
+        >
       </div>
     </section>
 
@@ -90,67 +87,41 @@ function testSpeak() {
       </p>
       <div class="flex items-center gap-3">
         <span class="w-28 text-muted">Giọng đọc</span>
-        <select
+        <a-select
           :value="settings.ttsVoiceURI"
-          @change="
-            settings.update({
-              ttsVoiceURI: ($event.target as HTMLSelectElement).value,
-            })
-          "
-          class="flex-1 field"
-        >
-          <option value="">Mặc định (ja-JP)</option>
-          <option v-for="v in voices" :key="v.voiceURI" :value="v.voiceURI">
-            {{ v.name }} ({{ v.lang }})
-          </option>
-        </select>
+          :options="voiceOptions"
+          style="flex: 1"
+          @change="settings.update({ ttsVoiceURI: $event as string })"
+        />
       </div>
       <div class="mt-3 flex items-center gap-3">
         <span class="w-28 text-muted">Tốc độ</span>
-        <input
-          type="range"
-          min="0.5"
-          max="1.5"
-          step="0.1"
-          :value="settings.ttsRate"
-          @input="
-            settings.update({
-              ttsRate: Number(($event.target as HTMLInputElement).value),
-            })
-          "
+        <a-slider
           class="flex-1"
+          :min="0.5"
+          :max="1.5"
+          :step="0.1"
+          :value="settings.ttsRate"
+          @change="settings.update({ ttsRate: $event as number })"
         />
         <span class="w-10 text-right text-sm">{{
           settings.ttsRate.toFixed(1)
         }}x</span>
       </div>
-      <button
-        type="button"
-        @click="testSpeak"
-        class="mt-3 btn btn-primary"
-      >
+      <a-button type="primary" class="mt-3" @click="testSpeak">
         🔊 Nghe thử
-      </button>
+      </a-button>
     </section>
 
     <section class="mt-6">
       <h3 class="mb-2 font-semibold">Ôn tập (SRS)</h3>
       <div class="flex items-center gap-3">
         <span class="w-28 text-muted">Thẻ mới/ngày</span>
-        <input
-          type="number"
-          min="0"
-          max="100"
+        <a-input-number
+          :min="0"
+          :max="100"
           :value="settings.srsNewPerDay"
-          @input="
-            settings.update({
-              srsNewPerDay: Math.max(
-                0,
-                Number(($event.target as HTMLInputElement).value) || 0,
-              ),
-            })
-          "
-          class="w-24 field"
+          @change="settings.update({ srsNewPerDay: Math.max(0, Number($event) || 0) })"
         />
       </div>
     </section>

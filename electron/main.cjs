@@ -70,8 +70,11 @@ ipcMain.handle("db:execute", (_e, sql, params = []) => {
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1000,
-    height: 720,
+    width: 1180,
+    height: 800,
+    minWidth: 1000,
+    minHeight: 640,
+    center: true,
     title: "Nihongo — Học tiếng Nhật",
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),

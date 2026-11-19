@@ -1,82 +1,116 @@
 <script setup lang="ts">
-import { RouterLink, RouterView, useRoute } from "vue-router";
+import { computed, h } from "vue";
+import { RouterView, useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
 
-const nav = [
-  { to: "/", label: "Tra từ", exact: true },
-  { to: "/kanji", label: "Kanji", exact: false },
-  { to: "/grammar", label: "Ngữ pháp", exact: false },
-];
-const reviewNav = [
-  { to: "/review/vocab", label: "Từ vựng", exact: false },
-  { to: "/review/kanji", label: "Kanji", exact: false },
-];
-const nav2 = [
-  { to: "/saved", label: "Đã lưu", exact: false },
-  { to: "/settings", label: "Cài đặt", exact: false },
+function ico(char: string) {
+  return () => h("span", { class: "nav-ico jp" }, char);
+}
+
+const items = [
+  { key: "/", label: "Tra từ", icon: ico("辞") },
+  { key: "/kanji", label: "Kanji", icon: ico("漢") },
+  { key: "/grammar", label: "Ngữ pháp", icon: ico("文") },
+  {
+    type: "group",
+    label: "Ôn tập",
+    children: [
+      { key: "/review/vocab", label: "Từ vựng", icon: ico("語") },
+      { key: "/review/kanji", label: "Kanji", icon: ico("字") },
+    ],
+  },
+  { key: "/saved", label: "Đã lưu", icon: ico("保") },
+  { key: "/settings", label: "Cài đặt", icon: ico("設") },
 ];
 
-const base = "rounded-lg px-3 py-2 text-sm transition-colors";
-const activeCls = "bg-accent font-semibold text-white";
-const idleCls = "text-[var(--side-text)] hover:bg-white/10";
+// Khớp menu đang chọn theo path hiện tại.
+const selectedKeys = computed(() => {
+  const p = route.path;
+  if (p === "/" || p.startsWith("/word")) return ["/"];
+  if (p.startsWith("/review/kanji")) return ["/review/kanji"];
+  if (p.startsWith("/review")) return ["/review/vocab"];
+  if (p.startsWith("/kanji")) return ["/kanji"];
+  if (p.startsWith("/grammar")) return ["/grammar"];
+  if (p.startsWith("/saved")) return ["/saved"];
+  if (p.startsWith("/settings")) return ["/settings"];
+  return [];
+});
 
-function isActive(item: { to: string; exact: boolean }) {
-  return item.exact ? route.path === "/" : route.path.startsWith(item.to);
+function onClick({ key }: { key: string }) {
+  if (key !== route.path) router.push(key);
 }
 </script>
 
 <template>
-  <div class="flex h-full bg-bg text-ink">
-    <aside
-      class="w-52 shrink-0 bg-side p-4 text-[var(--side-text)]"
-    >
-      <div class="mb-5 px-2">
-        <h1 class="jp text-2xl font-bold text-white">日本語</h1>
-        <p class="text-xs text-[var(--side-text)]">Nihongo · N5 / N4</p>
+  <a-layout class="app-shell">
+    <a-layout-sider :width="240" theme="dark" class="app-sider">
+      <div class="brand">
+        <div class="jp brand-jp">日本語</div>
+        <div class="brand-sub">Nihongo · N5 / N4</div>
       </div>
-      <nav class="flex flex-col gap-1">
-        <RouterLink
-          v-for="item in nav"
-          :key="item.to"
-          :to="item.to"
-          :class="[base, isActive(item) ? activeCls : idleCls]"
-        >
-          {{ item.label }}
-        </RouterLink>
+      <a-menu
+        theme="dark"
+        mode="inline"
+        :items="items"
+        :selected-keys="selectedKeys"
+        @click="onClick"
+      />
+      <a class="about-link" @click="router.push('/about')">Nguồn dữ liệu</a>
+    </a-layout-sider>
 
-        <p class="mt-3 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--side-text)]/60">
-          Ôn tập
-        </p>
-        <RouterLink
-          v-for="item in reviewNav"
-          :key="item.to"
-          :to="item.to"
-          :class="[base, 'ml-2', isActive(item) ? activeCls : idleCls]"
-        >
-          {{ item.label }}
-        </RouterLink>
-
-        <div class="mt-3 flex flex-col gap-1">
-          <RouterLink
-            v-for="item in nav2"
-            :key="item.to"
-            :to="item.to"
-            :class="[base, isActive(item) ? activeCls : idleCls]"
-          >
-            {{ item.label }}
-          </RouterLink>
-        </div>
-      </nav>
-      <RouterLink
-        to="/about"
-        class="mt-6 block px-2 text-xs text-[var(--side-text)]/60 hover:text-white"
-      >
-        Nguồn dữ liệu
-      </RouterLink>
-    </aside>
-    <main class="flex-1 overflow-auto bg-bg p-8">
+    <a-layout-content class="app-content">
       <RouterView :key="route.fullPath" />
-    </main>
-  </div>
+    </a-layout-content>
+  </a-layout>
 </template>
+
+<style scoped>
+.app-shell {
+  height: 100%;
+}
+.app-sider {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+}
+.app-sider :deep(.ant-layout-sider-children) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.app-sider :deep(.ant-menu) {
+  border-inline-end: 0;
+  background: transparent;
+}
+.brand {
+  padding: 4px 10px 18px;
+}
+.brand-jp {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+.brand-sub {
+  font-size: 12px;
+  color: #c9cce3;
+  opacity: 0.8;
+}
+.about-link {
+  margin-top: auto;
+  padding: 12px 12px 2px;
+  font-size: 12px;
+  color: rgba(201, 204, 227, 0.6);
+  cursor: pointer;
+}
+.about-link:hover {
+  color: #fff;
+}
+.app-content {
+  height: 100%;
+  overflow: auto;
+  padding: 24px 28px;
+}
+</style>

@@ -25,7 +25,7 @@ function group(type: ItemType) {
 
 <template>
   <div class="mx-auto max-w-2xl">
-    <h2 class="mb-3 text-xl font-semibold">Đã lưu</h2>
+    <h2 class="mb-3 text-2xl font-bold">Đã lưu</h2>
     <p v-if="isEmpty" class="text-muted">
       Chưa có mục nào. Bấm ★ ở trang từ/kanji/ngữ pháp để lưu.
     </p>

@@ -7,6 +7,8 @@ export interface WordSummary {
   reading_kana: string;
   jlpt_level: string | null;
   is_common: number;
+  /** Nghĩa ngắn (VI, fallback EN) để hiện ở danh sách chọn. */
+  gloss?: string | null;
 }
 
 export interface Sense {
@@ -50,10 +52,13 @@ export interface GrammarSummary {
   title: string;
   jlpt_level: string;
   structure: string | null;
+  meaning_vi: string | null;
 }
 
 export interface GrammarExample {
   jp: string;
+  /** Ký hiệu furigana kiểu OpenJLPT "{漢字|かな}" — có thể vắng với câu không có kanji. */
+  furigana?: string;
   vi: string;
 }
 

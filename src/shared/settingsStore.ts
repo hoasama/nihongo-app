@@ -10,6 +10,7 @@ interface State {
   ttsRate: number;
   ttsVoiceURI: string;
   srsNewPerDay: number;
+  showFurigana: boolean;
   loaded: boolean;
 }
 
@@ -20,6 +21,7 @@ export const useSettings = defineStore("settings", {
     ttsRate: 1,
     ttsVoiceURI: "",
     srsNewPerDay: 10,
+    showFurigana: true,
     loaded: false,
   }),
   actions: {
@@ -31,19 +33,21 @@ export const useSettings = defineStore("settings", {
     async load() {
       if (typeof window === "undefined" || !window.db) return;
       const db = getDb();
-      const [theme, fontScale, ttsRate, ttsVoiceURI, srsNewPerDay] =
+      const [theme, fontScale, ttsRate, ttsVoiceURI, srsNewPerDay, showFurigana] =
         await Promise.all([
           getSetting(db, "theme"),
           getSetting(db, "fontScale"),
           getSetting(db, "ttsRate"),
           getSetting(db, "ttsVoiceURI"),
           getSetting(db, "srsNewPerDay"),
+          getSetting(db, "showFurigana"),
         ]);
       this.theme = (theme as Theme) || "light";
       this.fontScale = fontScale ? Number(fontScale) : 1;
       this.ttsRate = ttsRate ? Number(ttsRate) : 1;
       this.ttsVoiceURI = ttsVoiceURI || "";
       this.srsNewPerDay = srsNewPerDay ? Number(srsNewPerDay) : 10;
+      this.showFurigana = showFurigana === null ? true : showFurigana === "1";
       this.applyDom();
       this.loaded = true;
     },
@@ -51,7 +55,12 @@ export const useSettings = defineStore("settings", {
       patch: Partial<
         Pick<
           State,
-          "theme" | "fontScale" | "ttsRate" | "ttsVoiceURI" | "srsNewPerDay"
+          | "theme"
+          | "fontScale"
+          | "ttsRate"
+          | "ttsVoiceURI"
+          | "srsNewPerDay"
+          | "showFurigana"
         >
       >,
     ) {
@@ -59,7 +68,7 @@ export const useSettings = defineStore("settings", {
       this.applyDom();
       const db = getDb();
       for (const [k, v] of Object.entries(patch)) {
-        void setSetting(db, k, String(v));
+        void setSetting(db, k, typeof v === "boolean" ? (v ? "1" : "0") : String(v));
       }
     },
   },

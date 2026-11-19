@@ -10,7 +10,7 @@ export async function listGrammar(
   level: string,
 ): Promise<GrammarSummary[]> {
   return db.select<GrammarSummary>(
-    `SELECT id, title, jlpt_level, structure FROM grammar
+    `SELECT id, title, jlpt_level, structure, meaning_vi FROM grammar
      WHERE jlpt_level = ? ORDER BY id`,
     [level],
   );

@@ -50,11 +50,15 @@ const GRADES = [
     <div v-else-if="current" class="text-center">
       <p class="mb-4 text-sm text-muted">Còn lại: {{ remaining }}</p>
 
-      <div class="flash-card mb-6">
+      <div
+        class="flash-card mb-6"
+        :class="{ 'cursor-pointer': !revealed }"
+        @click="!revealed && reveal()"
+      >
         <template v-if="current.content.direction === 'recognition'">
           <div class="flex items-center justify-center gap-3">
             <span class="jp-big">{{ current.content.japanese }}</span>
-            <SpeakButton :text="current.content.japanese" />
+            <SpeakButton :text="current.content.japanese" @click.stop />
           </div>
         </template>
         <template v-else>

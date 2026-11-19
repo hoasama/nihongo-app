@@ -45,7 +45,7 @@ interface GrammarItem {
   structure?: string;
   meaning_vi?: string;
   explanation_vi?: string;
-  examples?: { jp: string; vi: string }[];
+  examples?: { jp: string; furigana?: string; vi: string }[];
 }
 
 function main() {

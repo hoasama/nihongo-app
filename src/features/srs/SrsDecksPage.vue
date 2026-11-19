@@ -31,7 +31,7 @@ const { data: decks } = useQuery({
 
 <template>
   <div class="mx-auto max-w-2xl">
-    <h2 class="mb-4 text-xl font-semibold">{{ title }}</h2>
+    <h2 class="mb-4 text-2xl font-bold">{{ title }}</h2>
     <ul class="space-y-2">
       <li
         v-for="d in decks"

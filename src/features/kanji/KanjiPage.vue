@@ -24,30 +24,16 @@ const { data } = useQuery({
 
 <template>
   <div>
-    <h2 class="mb-3 text-xl font-semibold">Kanji</h2>
+    <h2 class="mb-3 text-2xl font-bold">Kanji</h2>
 
-    <div class="mb-4 flex items-center gap-2">
-      <div class="flex gap-1.5">
-        <button
-          v-for="l in LEVELS"
-          :key="l"
-          type="button"
-          @click="level = l"
-          :class="[
-            'chip',
-            !searching && level === l
-              ? 'chip-on'
-              : '',
-          ]"
-        >
-          {{ l }}
-        </button>
-      </div>
-      <input
-        v-model="query"
+    <div class="mb-4 flex flex-wrap items-center gap-3">
+      <a-input
+        v-model:value="query"
+        allow-clear
         placeholder="Tìm kanji hoặc nghĩa (vd: 日, water)…"
-        class="flex-1 field"
+        style="width: 320px"
       />
+      <a-segmented v-model:value="level" :options="LEVELS" :disabled="searching" />
     </div>
 
     <p v-if="data && data.length === 0" class="text-muted">

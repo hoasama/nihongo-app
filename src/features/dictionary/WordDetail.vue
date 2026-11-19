@@ -7,6 +7,7 @@ import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
+import { formatPos } from "../../shared/pos";
 
 const route = useRoute();
 const wordId = Number(route.params.id);
@@ -43,9 +44,9 @@ const { data, isLoading } = useQuery({
     <ol class="mt-4 list-decimal space-y-1 pl-5">
       <li v-for="(s, i) in data.senses" :key="i">
         <span
-          v-if="s.part_of_speech"
-          class="mr-2 text-xs uppercase text-muted"
-          >{{ s.part_of_speech }}</span
+          v-if="formatPos(s.part_of_speech)"
+          class="mr-2 text-xs text-muted"
+          >{{ formatPos(s.part_of_speech) }}</span
         >
         <span>{{ s.gloss_vi || s.gloss_en }}</span>
         <span v-if="s.gloss_vi && s.gloss_en" class="ml-2 text-muted"

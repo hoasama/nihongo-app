@@ -6,8 +6,8 @@
     "meaning_vi": "N1 là N2 (câu khẳng định, lịch sự)",
     "explanation_vi": "「は」 (đọc là 'wa') đánh dấu chủ đề; 「です」 đứng cuối tạo câu khẳng định lịch sự. Thể phủ định: 「〜じゃありません／ではありません」.",
     "examples": [
-      { "jp": "わたしは がくせいです。", "vi": "Tôi là học sinh." },
-      { "jp": "田中さんは 先生です。", "vi": "Anh Tanaka là giáo viên." }
+      { "jp": "わたしは がくせいです。", "furigana": "わたしは がくせいです。", "vi": "Tôi là học sinh." },
+      { "jp": "田中さんは 先生です。", "furigana": "{田中|たなか}さんは {先生|せんせい}です。", "vi": "Anh Tanaka là giáo viên." }
     ]
   },
   {
@@ -17,8 +17,8 @@
     "meaning_vi": "không phải là ~ (phủ định của です)",
     "explanation_vi": "「じゃありません」 (thân mật hơn) hoặc 「ではありません」 (trang trọng hơn) là thể phủ định lịch sự của 「です」.",
     "examples": [
-      { "jp": "わたしは 先生じゃありません。", "vi": "Tôi không phải là giáo viên." },
-      { "jp": "これは 本ではありません。", "vi": "Đây không phải là quyển sách." }
+      { "jp": "わたしは 先生じゃありません。", "furigana": "わたしは {先生|せんせい}じゃありません。", "vi": "Tôi không phải là giáo viên." },
+      { "jp": "これは 本ではありません。", "furigana": "これは {本|ほん}ではありません。", "vi": "Đây không phải là quyển sách." }
     ]
   },
   {
@@ -28,8 +28,8 @@
     "meaning_vi": "trợ từ tạo câu hỏi (…phải không?)",
     "explanation_vi": "Thêm 「か」 vào cuối câu để biến thành câu hỏi. Khi nói lên giọng ở cuối.",
     "examples": [
-      { "jp": "あなたは 学生ですか。", "vi": "Bạn là học sinh phải không?" },
-      { "jp": "これは なんですか。", "vi": "Đây là cái gì?" }
+      { "jp": "あなたは 学生ですか。", "furigana": "あなたは {学生|がくせい}ですか。", "vi": "Bạn là học sinh phải không?" },
+      { "jp": "これは なんですか。", "furigana": "これは なんですか。", "vi": "Đây là cái gì?" }
     ]
   },
   {
@@ -39,8 +39,8 @@
     "meaning_vi": "của ~ / ~ thuộc về (nối hai danh từ)",
     "explanation_vi": "「の」 nối hai danh từ: N1 bổ nghĩa cho N2 (sở hữu, thuộc tính, xuất xứ).",
     "examples": [
-      { "jp": "わたしの かばんです。", "vi": "Là cái cặp của tôi." },
-      { "jp": "日本語の 本です。", "vi": "Là quyển sách tiếng Nhật." }
+      { "jp": "わたしの かばんです。", "furigana": "わたしの かばんです。", "vi": "Là cái cặp của tôi." },
+      { "jp": "日本語の 本です。", "furigana": "{日本語|にほんご}の {本|ほん}です。", "vi": "Là quyển sách tiếng Nhật." }
     ]
   },
   {
@@ -50,7 +50,7 @@
     "meaning_vi": "cũng ~",
     "explanation_vi": "「も」 thay cho 「は／が」 để diễn đạt ý 'cũng'.",
     "examples": [
-      { "jp": "わたしも 学生です。", "vi": "Tôi cũng là học sinh." }
+      { "jp": "わたしも 学生です。", "furigana": "わたしも {学生|がくせい}です。", "vi": "Tôi cũng là học sinh." }
     ]
   },
   {
@@ -60,8 +60,8 @@
     "meaning_vi": "trợ từ đánh dấu tân ngữ trực tiếp",
     "explanation_vi": "「を」 (đọc 'o') đứng sau danh từ là đối tượng của hành động.",
     "examples": [
-      { "jp": "ごはんを 食べます。", "vi": "Ăn cơm." },
-      { "jp": "本を 読みます。", "vi": "Đọc sách." }
+      { "jp": "ごはんを 食べます。", "furigana": "ごはんを {食|た}べます。", "vi": "Ăn cơm." },
+      { "jp": "本を 読みます。", "furigana": "{本|ほん}を {読|よ}みます。", "vi": "Đọc sách." }
     ]
   },
   {
@@ -71,8 +71,8 @@
     "meaning_vi": "thể lịch sự hiện tại: làm / không làm",
     "explanation_vi": "Đuôi 「ます」 là thể lịch sự khẳng định ở hiện tại/tương lai; 「ません」 là phủ định.",
     "examples": [
-      { "jp": "毎日 日本語を 勉強します。", "vi": "Hằng ngày tôi học tiếng Nhật." },
-      { "jp": "お酒を 飲みません。", "vi": "Tôi không uống rượu." }
+      { "jp": "毎日 日本語を 勉強します。", "furigana": "{毎日|まいにち} {日本語|にほんご}を {勉強|べんきょう}します。", "vi": "Hằng ngày tôi học tiếng Nhật." },
+      { "jp": "お酒を 飲みません。", "furigana": "お{酒|さけ}を {飲|の}みません。", "vi": "Tôi không uống rượu." }
     ]
   },
   {
@@ -82,8 +82,8 @@
     "meaning_vi": "thể lịch sự quá khứ: đã làm / đã không làm",
     "explanation_vi": "「ました」 là quá khứ khẳng định của 「ます」; 「ませんでした」 là quá khứ phủ định.",
     "examples": [
-      { "jp": "昨日 映画を 見ました。", "vi": "Hôm qua tôi đã xem phim." },
-      { "jp": "朝ごはんを 食べませんでした。", "vi": "Tôi đã không ăn sáng." }
+      { "jp": "昨日 映画を 見ました。", "furigana": "{昨日|きのう} {映画|えいが}を {見|み}ました。", "vi": "Hôm qua tôi đã xem phim." },
+      { "jp": "朝ごはんを 食べませんでした。", "furigana": "{朝|あさ}ごはんを {食|た}べませんでした。", "vi": "Tôi đã không ăn sáng." }
     ]
   },
   {
@@ -93,8 +93,8 @@
     "meaning_vi": "đi/đến/về ~ (hướng, đích đến)",
     "explanation_vi": "「へ」 (đọc 'e') hoặc 「に」 chỉ hướng/đích đến với động từ di chuyển.",
     "examples": [
-      { "jp": "学校へ 行きます。", "vi": "Tôi đi đến trường." },
-      { "jp": "うちに 帰ります。", "vi": "Tôi về nhà." }
+      { "jp": "学校へ 行きます。", "furigana": "{学校|がっこう}へ {行|い}きます。", "vi": "Tôi đi đến trường." },
+      { "jp": "うちに 帰ります。", "furigana": "うちに {帰|かえ}ります。", "vi": "Tôi về nhà." }
     ]
   },
   {
@@ -104,8 +104,8 @@
     "meaning_vi": "tại ~ (nơi diễn ra hành động) / bằng ~ (phương tiện)",
     "explanation_vi": "「で」 chỉ nơi diễn ra hành động, hoặc phương tiện/công cụ thực hiện.",
     "examples": [
-      { "jp": "図書館で 勉強します。", "vi": "Tôi học ở thư viện." },
-      { "jp": "バスで 行きます。", "vi": "Tôi đi bằng xe buýt." }
+      { "jp": "図書館で 勉強します。", "furigana": "{図書館|としょかん}で {勉強|べんきょう}します。", "vi": "Tôi học ở thư viện." },
+      { "jp": "バスで 行きます。", "furigana": "バスで {行|い}きます。", "vi": "Tôi đi bằng xe buýt." }
     ]
   },
   {
@@ -115,7 +115,7 @@
     "meaning_vi": "từ ~ đến ~ (thời gian / địa điểm)",
     "explanation_vi": "「から」 chỉ điểm bắt đầu, 「まで」 chỉ điểm kết thúc.",
     "examples": [
-      { "jp": "9時から 5時まで 働きます。", "vi": "Tôi làm việc từ 9 giờ đến 5 giờ." }
+      { "jp": "9時から 5時まで 働きます。", "furigana": "9{時|じ}から 5{時|じ}まで {働|はたら}きます。", "vi": "Tôi làm việc từ 9 giờ đến 5 giờ." }
     ]
   },
   {
@@ -125,8 +125,8 @@
     "meaning_vi": "muốn làm ~",
     "explanation_vi": "Bỏ 「ます」 ở thể ます rồi thêm 「たいです」 để diễn đạt mong muốn của người nói.",
     "examples": [
-      { "jp": "日本へ 行きたいです。", "vi": "Tôi muốn đi Nhật." },
-      { "jp": "水が 飲みたいです。", "vi": "Tôi muốn uống nước." }
+      { "jp": "日本へ 行きたいです。", "furigana": "{日本|にほん}へ {行|い}きたいです。", "vi": "Tôi muốn đi Nhật." },
+      { "jp": "水が 飲みたいです。", "furigana": "{水|みず}が {飲|の}みたいです。", "vi": "Tôi muốn uống nước." }
     ]
   },
   {
@@ -136,8 +136,8 @@
     "meaning_vi": "xin hãy làm ~ (yêu cầu lịch sự)",
     "explanation_vi": "Dùng thể 「て」 của động từ + 「ください」 để nhờ/đề nghị ai làm gì một cách lịch sự.",
     "examples": [
-      { "jp": "ちょっと 待ってください。", "vi": "Xin đợi một chút." },
-      { "jp": "名前を 書いてください。", "vi": "Xin hãy viết tên." }
+      { "jp": "ちょっと 待ってください。", "furigana": "ちょっと {待|ま}ってください。", "vi": "Xin đợi một chút." },
+      { "jp": "名前を 書いてください。", "furigana": "{名前|なまえ}を {書|か}いてください。", "vi": "Xin hãy viết tên." }
     ]
   },
   {
@@ -147,8 +147,8 @@
     "meaning_vi": "cùng làm ~ nào (rủ rê)",
     "explanation_vi": "「ましょう」 dùng để rủ rê hoặc đề nghị cùng làm gì đó.",
     "examples": [
-      { "jp": "いっしょに 帰りましょう。", "vi": "Cùng về nào." },
-      { "jp": "少し 休みましょう。", "vi": "Nghỉ một chút nào." }
+      { "jp": "いっしょに 帰りましょう。", "furigana": "いっしょに {帰|かえ}りましょう。", "vi": "Cùng về nào." },
+      { "jp": "少し 休みましょう。", "furigana": "{少|すこ}し {休|やす}みましょう。", "vi": "Nghỉ một chút nào." }
     ]
   },
   {
@@ -158,7 +158,7 @@
     "meaning_vi": "nhưng ~ (nối hai mệnh đề đối lập)",
     "explanation_vi": "「が」 đặt cuối mệnh đề trước để nối với mệnh đề sau mang ý đối lập hoặc mở đầu lịch sự.",
     "examples": [
-      { "jp": "この へやは きれいですが、せまいです。", "vi": "Căn phòng này đẹp nhưng chật." }
+      { "jp": "この へやは きれいですが、せまいです。", "furigana": "この へやは きれいですが、せまいです。", "vi": "Căn phòng này đẹp nhưng chật." }
     ]
   }
 ]
