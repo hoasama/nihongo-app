@@ -31,10 +31,10 @@ onMounted(() => window.addEventListener("keydown", onKey));
 onUnmounted(() => window.removeEventListener("keydown", onKey));
 
 const GRADES = [
-  { rating: "again", label: "Again (1)", cls: "bg-rose-600 hover:bg-rose-700" },
-  { rating: "hard", label: "Hard (2)", cls: "bg-amber-600 hover:bg-amber-700" },
-  { rating: "good", label: "Good (3)", cls: "bg-emerald-600 hover:bg-emerald-700" },
-  { rating: "easy", label: "Easy (4)", cls: "bg-sky-600 hover:bg-sky-700" },
+  { rating: "again", label: "Lại (1)", cls: "border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100" },
+  { rating: "hard", label: "Khó (2)", cls: "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100" },
+  { rating: "good", label: "Tốt (3)", cls: "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100" },
+  { rating: "easy", label: "Dễ (4)", cls: "border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100" },
 ] as const;
 </script>
 
@@ -111,7 +111,7 @@ const GRADES = [
           :key="g.rating"
           type="button"
           @click="grade(g.rating)"
-          :class="['rounded-[10px] px-5 py-2 text-sm font-medium text-white shadow-sm', g.cls]"
+          :class="['rounded-[10px] border px-5 py-2 text-sm font-medium shadow-sm', g.cls]"
         >
           {{ g.label }}
         </button>

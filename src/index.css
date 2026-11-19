@@ -52,6 +52,7 @@
   --color-bg: var(--bg);
   --color-panel: var(--panel);
   --color-side: var(--side);
+  --color-side-text: var(--side-text);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-ink: var(--ink);
@@ -96,6 +97,39 @@ body {
   background: rgba(255, 255, 255, 0.1);
   font-size: 14px;
   line-height: 1;
+}
+
+/* Khoảng cách giữa các nút lọc Segmented (antd xếp sát nhau) */
+.ant-segmented .ant-segmented-group {
+  gap: 6px;
+}
+
+/* Thanh loading trên cùng khi chuyển màn/menu/tab (đang fetch query) */
+.top-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+  z-index: 10;
+}
+.top-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: var(--accent);
+  border-radius: 3px;
+  animation: top-loading-slide 0.9s ease-in-out infinite;
+}
+@keyframes top-loading-slide {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* Thẻ / panel */
