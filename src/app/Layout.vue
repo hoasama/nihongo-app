@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { computed, h } from "vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
+import { useIsFetching } from "@tanstack/vue-query";
 
 const route = useRoute();
 const router = useRouter();
+
+// Thanh loading hiện khi còn query đang chạy (chuyển màn/menu/tab đều kích hoạt).
+const isFetching = useIsFetching();
 
 function ico(char: string) {
   return () => h("span", { class: "nav-ico jp" }, char);
@@ -44,11 +48,15 @@ function onClick({ key }: { key: string }) {
 </script>
 
 <template>
-  <a-layout class="app-shell">
-    <a-layout-sider :width="240" theme="dark" class="app-sider">
-      <div class="brand">
-        <div class="jp brand-jp">日本語</div>
-        <div class="brand-sub">Nihongo · N5 / N4</div>
+  <a-layout class="h-full">
+    <a-layout-sider
+      :width="240"
+      theme="dark"
+      class="app-sider flex flex-col px-3 py-4"
+    >
+      <div class="px-2.5 pt-1 pb-[18px]">
+        <div class="jp text-[28px] font-bold leading-[1.1] text-white">日本語</div>
+        <div class="text-xs text-side-text opacity-80">Nihongo · N5 / N4</div>
       </div>
       <a-menu
         theme="dark"
@@ -57,24 +65,22 @@ function onClick({ key }: { key: string }) {
         :selected-keys="selectedKeys"
         @click="onClick"
       />
-      <a class="about-link" @click="router.push('/about')">Nguồn dữ liệu</a>
+      <a
+        class="mt-auto cursor-pointer px-3 pt-3 pb-0.5 text-xs text-side-text/60 hover:text-white"
+        @click="router.push('/about')"
+        >Nguồn dữ liệu</a
+      >
     </a-layout-sider>
 
-    <a-layout-content class="app-content">
+    <a-layout-content class="relative h-full overflow-auto px-7 py-6">
+      <div v-if="isFetching" class="top-loading" />
       <RouterView :key="route.fullPath" />
     </a-layout-content>
   </a-layout>
 </template>
 
 <style scoped>
-.app-shell {
-  height: 100%;
-}
-.app-sider {
-  display: flex;
-  flex-direction: column;
-  padding: 16px 12px;
-}
+/* Chỉ giữ CSS cho phần :deep() vào nội bộ antd (utility không nhắm được) */
 .app-sider :deep(.ant-layout-sider-children) {
   display: flex;
   flex-direction: column;
@@ -83,34 +89,5 @@ function onClick({ key }: { key: string }) {
 .app-sider :deep(.ant-menu) {
   border-inline-end: 0;
   background: transparent;
-}
-.brand {
-  padding: 4px 10px 18px;
-}
-.brand-jp {
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
-}
-.brand-sub {
-  font-size: 12px;
-  color: #c9cce3;
-  opacity: 0.8;
-}
-.about-link {
-  margin-top: auto;
-  padding: 12px 12px 2px;
-  font-size: 12px;
-  color: rgba(201, 204, 227, 0.6);
-  cursor: pointer;
-}
-.about-link:hover {
-  color: #fff;
-}
-.app-content {
-  height: 100%;
-  overflow: auto;
-  padding: 24px 28px;
 }
 </style>

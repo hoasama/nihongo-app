@@ -5,10 +5,10 @@ import type { Theme } from "../shared/settingsStore";
 const UI_FONT =
   '"Segoe UI", "Inter", "Noto Sans", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif';
 
-const ACCENT = "#e5484d";
-const NAVY = "#1f2340";
+const ACCENT = "#8b5cf6";
+const NAVY = "#2a2550";
 
-/** Theme Ant Design giữ palette nihongo (navy sidebar + coral accent). */
+/** Theme Ant Design khớp palette lilac trong index.css (sidebar tím + accent lilac). */
 export function antdThemeConfig(mode: Theme) {
   const dark = mode === "dark";
   return {

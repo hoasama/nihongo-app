@@ -38,7 +38,7 @@ const stubs = { SpeakButton: true, FuriganaText: true };
 describe("StudySession", () => {
   beforeEach(() => setActivePinia(createPinia()));
 
-  it("hiện mặt trước → Hiện đáp án lộ nghĩa → Good gọi recordReview", async () => {
+  it("hiện mặt trước → Hiện đáp án lộ nghĩa → Tốt gọi recordReview", async () => {
     const wrapper = mount(StudySession, { global: { stubs } });
     await new Promise((r) => setTimeout(r, 0)); // chờ build() hàng đợi
     await wrapper.vm.$nextTick();
@@ -48,7 +48,7 @@ describe("StudySession", () => {
     await wrapper.get("button").trigger("click"); // Hiện đáp án
     expect(wrapper.text()).toContain("ăn");
 
-    const good = wrapper.findAll("button").find((b) => b.text().includes("Good"));
+    const good = wrapper.findAll("button").find((b) => b.text().includes("Tốt"));
     await good!.trigger("click");
     expect(recordReview).toHaveBeenCalledOnce();
   });
