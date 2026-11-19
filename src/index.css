@@ -8,10 +8,10 @@
   color-scheme: light;
   --bg: #f4f5fb;
   --panel: #ffffff;
-  --side: #1f2340;
-  --side-text: #c9cce3;
-  --accent: #e5484d;
-  --accent-soft: #fde8e8;
+  --side: #2a2550;
+  --side-text: #cfc9ec;
+  --accent: #8b5cf6;
+  --accent-soft: #ede9fe;
   --ink: #1d2030;
   --muted: #6b7090;
   --line: #e4e6f0;
@@ -37,7 +37,7 @@
   --ink: #e8e9f4;
   --muted: #9a9fbd;
   --line: #2b2e46;
-  --accent-soft: #3a2030;
+  --accent-soft: #2e2550;
   --hl: #4a4220;
   --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45);
   --n5-bg: #0f3a31;
