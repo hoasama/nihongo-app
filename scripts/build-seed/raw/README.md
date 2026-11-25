@@ -21,6 +21,7 @@ Thư mục này chứa các file dữ liệu gốc để sinh `seed.sqlite`. **K
 | `JMdict_e.xml` | JMdict (bản English-only) — http://www.edrdg.org/jmdict/edict_doc.html (giải nén `JMdict_e.gz`) | CC BY-SA 4.0 — © EDRDG |
 | `kanjidic2.xml` | KANJIDIC2 — http://www.edrdg.org/kanjidic/kanjidic2.xml.gz (giải nén) | CC BY-SA 4.0 — © EDRDG |
 | `openjlpt-n5.json`, `openjlpt-n4.json` | OpenJLPT **vocab** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n5.json (và `n4.json`). Cấp JLPT + câu ví dụ (Tatoeba) + furigana cho từ vựng. | CC BY-SA 4.0 (ví dụ: Tatoeba CC BY) |
+| `openjlpt-n3.json` | OpenJLPT **vocab** N3 — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n3.json | CC BY-SA 4.0 (ví dụ: Tatoeba CC BY) |
 | `openjlpt-kanji-n5.json`, `openjlpt-kanji-n4.json` | OpenJLPT **kanji** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json (và `n4.json`). Cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt). | CC BY-SA 4.0 |
 
 Tải nhanh OpenJLPT:
@@ -36,4 +37,5 @@ curl -o scripts/build-seed/raw/openjlpt-kanji-n4.json https://cdn.jsdelivr.net/g
 - JMdict / KANJIDIC2 là tài sản của **Electronic Dictionary Research and Development Group (EDRDG)**,
   dùng theo giấy phép **CC BY-SA 4.0**. App phải hiển thị ghi công (xem màn "Nguồn dữ liệu").
 - **OpenJLPT** (evanclan/OpenJLPT) theo **CC BY-SA 4.0**; câu ví dụ gốc từ **Tatoeba** (**CC BY 2.0 FR**).
+- `content/grammar-n4.json`, `content/grammar-n3.json` là bản dịch tiếng Việt có chỉnh sửa từ grammar của OpenJLPT, phát hành theo **CC BY-SA 4.0**.
 - JLPT **không công bố danh sách chính thức**; list dùng ở đây là của cộng đồng, có thể sai số nhỏ.

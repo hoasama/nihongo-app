@@ -1,0 +1,2340 @@
+[
+  {
+    "title": "あげる / くれる / もらう",
+    "jlpt_level": "N4",
+    "structure": "N (người nhận) + に + N + を + あげる / N (người cho) + が + N + を + くれる / N (người cho) + に + N + を + もらう",
+    "meaning_vi": "cho, tặng (người khác); cho, tặng (tôi hoặc người nhà tôi); nhận",
+    "explanation_vi": "「くれる」 chỉ dùng khi người nhận là người nói hoặc người thuộc nhóm của người nói. Với 「もらう」, người cho được đánh dấu bằng 「に」 hoặc 「から」.",
+    "examples": [
+      {
+        "jp": "私は弟に古いゲームをあげた。",
+        "furigana": "{私|わたし}は{弟|おとうと}に{古|ふる}いゲームをあげた。",
+        "vi": "Tôi đã cho em trai trò chơi cũ của mình."
+      },
+      {
+        "jp": "姉が誕生日にかわいいかばんをくれました。",
+        "furigana": "{姉|あね}が{誕生|たんじょう}{日|び}にかわいいかばんをくれました。",
+        "vi": "Chị gái đã tặng tôi một chiếc túi dễ thương vào ngày sinh nhật."
+      },
+      {
+        "jp": "友達から旅行のおみやげをもらった。",
+        "furigana": "{友達|ともだち}から{旅行|りょこう}のおみやげをもらった。",
+        "vi": "Tôi đã nhận quà lưu niệm từ chuyến du lịch của bạn."
+      }
+    ]
+  },
+  {
+    "title": "〜てあげる",
+    "jlpt_level": "N4",
+    "structure": "V-て + あげる",
+    "meaning_vi": "làm gì đó cho ai (như một sự giúp đỡ)",
+    "explanation_vi": "Nói trực tiếp với người trên có thể nghe như kẻ cả; khi đó hãy dùng dạng khiêm nhường 「お〜しましょうか」 (お持ちしましょうか).",
+    "examples": [
+      {
+        "jp": "妹の宿題を手伝ってあげました。",
+        "furigana": "{妹|いもうと}の{宿題|しゅくだい}を{手伝|てつだ}ってあげました。",
+        "vi": "Tôi đã giúp em gái làm bài tập."
+      },
+      {
+        "jp": "道に迷っている人に、駅までの行き方を教えてあげた。",
+        "furigana": "{道|みち}に{迷|まよ}っている{人|ひと}に、{駅|えき}までの{行|い}き{方|かた}を{教|おし}えてあげた。",
+        "vi": "Tôi đã chỉ đường đến nhà ga cho một người bị lạc."
+      },
+      {
+        "jp": "重そうだね。持ってあげようか。",
+        "furigana": "{重|おも}そうだね。{持|も}ってあげようか。",
+        "vi": "Trông nặng nhỉ. Để mình xách giúp nhé?"
+      }
+    ]
+  },
+  {
+    "title": "〜てくれる",
+    "jlpt_level": "N4",
+    "structure": "V-て + くれる",
+    "meaning_vi": "ai đó làm gì cho tôi (hoặc nhóm của tôi)",
+    "explanation_vi": "Chủ ngữ là người làm việc giúp; người được lợi là người nói hoặc người thân cận với người nói.",
+    "examples": [
+      {
+        "jp": "友達が引っ越しを手伝ってくれた。",
+        "furigana": "{友達|ともだち}が{引|ひ}っ{越|こ}しを{手伝|てつだ}ってくれた。",
+        "vi": "Bạn tôi đã giúp tôi chuyển nhà."
+      },
+      {
+        "jp": "父が駅まで車で送ってくれました。",
+        "furigana": "{父|ちち}が{駅|えき}まで{車|くるま}で{送|おく}ってくれました。",
+        "vi": "Bố đã lái xe đưa tôi đến nhà ga."
+      },
+      {
+        "jp": "母が毎朝お弁当を作ってくれます。",
+        "furigana": "{母|はは}が{毎朝|まいあさ}お{弁当|べんとう}を{作|つく}ってくれます。",
+        "vi": "Mẹ làm cơm hộp cho tôi mỗi sáng."
+      }
+    ]
+  },
+  {
+    "title": "〜てもらう",
+    "jlpt_level": "N4",
+    "structure": "V-て + もらう",
+    "meaning_vi": "được ai đó làm gì cho; nhờ ai đó làm gì",
+    "explanation_vi": "Chủ ngữ là người nhận sự giúp đỡ, còn người thực hiện hành động được đánh dấu bằng 「に」.",
+    "examples": [
+      {
+        "jp": "先輩にレポートを見てもらった。",
+        "furigana": "{先輩|せんぱい}にレポートを{見|み}てもらった。",
+        "vi": "Tôi đã nhờ anh chị khóa trên xem giúp bài báo cáo."
+      },
+      {
+        "jp": "友達に写真を撮ってもらった。",
+        "furigana": "{友達|ともだち}に{写真|しゃしん}を{撮|と}ってもらった。",
+        "vi": "Tôi đã nhờ bạn chụp ảnh cho mình."
+      },
+      {
+        "jp": "分からないところを先生に説明してもらいました。",
+        "furigana": "{分|わ}からないところを{先生|せんせい}に{説明|せつめい}してもらいました。",
+        "vi": "Tôi đã được thầy cô giải thích những chỗ không hiểu."
+      }
+    ]
+  },
+  {
+    "title": "〜てくださる / 〜ていただく",
+    "jlpt_level": "N4",
+    "structure": "V-て + くださる / V-て + いただく",
+    "meaning_vi": "(tôn kính) ai đó có lòng làm gì cho tôi; (khiêm nhường) tôi được ai đó làm gì cho",
+    "explanation_vi": "「くださる」 là dạng tôn kính của 「くれる」 (thể ます: くださいます); 「いただく」 là dạng khiêm nhường của 「もらう」.",
+    "examples": [
+      {
+        "jp": "先生が私の作文を直してくださいました。",
+        "furigana": "{先生|せんせい}が{私|わたし}の{作文|さくぶん}を{直|なお}してくださいました。",
+        "vi": "Thầy cô đã sửa bài văn giúp tôi."
+      },
+      {
+        "jp": "ホテルの方に、おいしい店を教えていただきました。",
+        "furigana": "ホテルの{方|かた}に、おいしい{店|みせ}を{教|おし}えていただきました。",
+        "vi": "Tôi đã được nhân viên khách sạn giới thiệu một quán ăn ngon."
+      },
+      {
+        "jp": "今日は来ていただいて、ありがとうございました。",
+        "furigana": "{今日|きょう}は{来|き}ていただいて、ありがとうございました。",
+        "vi": "Cảm ơn anh chị rất nhiều vì hôm nay đã đến."
+      }
+    ]
+  },
+  {
+    "title": "〜ていく",
+    "jlpt_level": "N4",
+    "structure": "V-て + いく",
+    "meaning_vi": "làm gì rồi đi; tiếp tục làm (từ nay về sau)",
+    "explanation_vi": "Diễn tả chuyển động hoặc thay đổi rời xa người nói, hoặc từ hiện tại hướng tới tương lai. So sánh với 「〜てくる」.",
+    "examples": [
+      {
+        "jp": "雨が降りそうだから、傘を持っていきます。",
+        "furigana": "{雨|あめ}が{降|ふ}りそうだから、{傘|かさ}を{持|も}っていきます。",
+        "vi": "Có vẻ sắp mưa nên tôi sẽ mang ô đi."
+      },
+      {
+        "jp": "これからもっと寒くなっていくでしょう。",
+        "furigana": "これからもっと{寒|さむ}くなっていくでしょう。",
+        "vi": "Từ giờ có lẽ trời sẽ ngày càng lạnh hơn."
+      },
+      {
+        "jp": "時間があるなら、お茶を飲んでいきませんか。",
+        "furigana": "{時間|じかん}があるなら、お{茶|ちゃ}を{飲|の}んでいきませんか。",
+        "vi": "Nếu có thời gian, anh uống trà rồi hãy đi nhé?"
+      }
+    ]
+  },
+  {
+    "title": "〜てくる",
+    "jlpt_level": "N4",
+    "structure": "V-て + くる",
+    "meaning_vi": "làm gì rồi quay lại; đến đây (bằng cách nào đó); (thay đổi) cho đến nay; bắt đầu trở nên",
+    "explanation_vi": "Diễn tả chuyển động hoặc thay đổi hướng về phía người nói, hoặc từ quá khứ đến hiện tại. 「行ってきます」 nghĩa đen là 'tôi đi rồi sẽ về'.",
+    "examples": [
+      {
+        "jp": "ちょっとコンビニに行ってきます。",
+        "furigana": "ちょっとコンビニに{行|い}ってきます。",
+        "vi": "Tôi ra cửa hàng tiện lợi một chút rồi về."
+      },
+      {
+        "jp": "日本語が少しずつ分かってきた。",
+        "furigana": "{日本語|にほんご}が{少|すこ}しずつ{分|わ}かってきた。",
+        "vi": "Tôi đã dần dần hiểu được tiếng Nhật."
+      },
+      {
+        "jp": "おなかがすいてきた。",
+        "vi": "Tôi bắt đầu thấy đói rồi."
+      }
+    ]
+  },
+  {
+    "title": "〜てしまう / 〜ちゃう",
+    "jlpt_level": "N4",
+    "structure": "V-て + しまう",
+    "meaning_vi": "làm xong hoàn toàn; lỡ làm; rốt cuộc đã làm (với sự tiếc nuối)",
+    "explanation_vi": "Trong văn nói, 「〜てしまう」 rút gọn thành 「〜ちゃう」, và 「〜でしまう」 thành 「〜じゃう」 (飲んじゃう).",
+    "examples": [
+      {
+        "jp": "電車に傘を忘れてしまいました。",
+        "furigana": "{電車|でんしゃ}に{傘|かさ}を{忘|わす}れてしまいました。",
+        "vi": "Tôi đã để quên ô trên tàu điện."
+      },
+      {
+        "jp": "この本はおもしろくて、一晩で読んでしまった。",
+        "furigana": "この{本|ほん}はおもしろくて、{一晩|ひとばん}で{読|よ}んでしまった。",
+        "vi": "Cuốn sách này hay đến mức tôi đọc hết trong một đêm."
+      },
+      {
+        "jp": "あ、ケーキを全部食べちゃった。",
+        "furigana": "あ、ケーキを{全部|ぜんぶ}{食|た}べちゃった。",
+        "vi": "Ôi, mình lỡ ăn hết cả cái bánh rồi."
+      }
+    ]
+  },
+  {
+    "title": "〜ておく",
+    "jlpt_level": "N4",
+    "structure": "V-て + おく",
+    "meaning_vi": "làm trước (để chuẩn bị); làm rồi để nguyên như vậy",
+    "explanation_vi": "Trong văn nói thân mật, 「〜ておく」 thường thành 「〜とく」 (買っとく), và 「〜でおく」 thành 「〜どく」 (読んどく).",
+    "examples": [
+      {
+        "jp": "旅行の前に、ホテルを予約しておきます。",
+        "furigana": "{旅行|りょこう}の{前|まえ}に、ホテルを{予約|よやく}しておきます。",
+        "vi": "Tôi sẽ đặt khách sạn trước chuyến đi."
+      },
+      {
+        "jp": "パーティーのために、飲み物を冷やしておいた。",
+        "furigana": "パーティーのために、{飲|の}み{物|もの}を{冷|ひ}やしておいた。",
+        "vi": "Tôi đã ướp lạnh đồ uống sẵn cho bữa tiệc."
+      },
+      {
+        "jp": "エアコンはつけておいてください。",
+        "vi": "Hãy cứ để điều hòa bật nhé."
+      }
+    ]
+  },
+  {
+    "title": "〜てみる",
+    "jlpt_level": "N4",
+    "structure": "V-て + みる",
+    "meaning_vi": "thử làm (để xem thế nào)",
+    "explanation_vi": "Nghĩa là làm thử để xem kết quả, không phải cố gắng làm một việc khó.",
+    "examples": [
+      {
+        "jp": "このシャツ、着てみてもいいですか。",
+        "furigana": "このシャツ、{着|き}てみてもいいですか。",
+        "vi": "Tôi mặc thử chiếc áo này được không?"
+      },
+      {
+        "jp": "新しくできたラーメン屋に行ってみた。",
+        "furigana": "{新|あたら}しくできたラーメン{屋|や}に{行|い}ってみた。",
+        "vi": "Tôi đã thử đến quán ramen mới mở."
+      },
+      {
+        "jp": "日本の料理を自分で作ってみたいです。",
+        "furigana": "{日本|にほん}の{料理|りょうり}を{自分|じぶん}で{作|つく}ってみたいです。",
+        "vi": "Tôi muốn tự tay thử nấu món Nhật."
+      }
+    ]
+  },
+  {
+    "title": "〜てある",
+    "jlpt_level": "N4",
+    "structure": "V-て + ある",
+    "meaning_vi": "đã được làm sẵn (và vẫn giữ nguyên); trạng thái là kết quả của hành động có chủ ý",
+    "explanation_vi": "Dùng với tha động từ, tân ngữ thường đi với 「が」. Hàm ý có người cố ý làm, khác với 「〜ている」 đi cùng tự động từ (窓が開いている).",
+    "examples": [
+      {
+        "jp": "入り口に地図がはってあります。",
+        "furigana": "{入|い}り{口|ぐち}に{地図|ちず}がはってあります。",
+        "vi": "Ở lối vào có dán sẵn một tấm bản đồ."
+      },
+      {
+        "jp": "テーブルの上にお皿が並べてあった。",
+        "furigana": "テーブルの{上|うえ}にお{皿|さら}が{並|なら}べてあった。",
+        "vi": "Đĩa đã được xếp sẵn trên bàn."
+      },
+      {
+        "jp": "ビールなら冷蔵庫に入れてあるよ。",
+        "furigana": "ビールなら{冷蔵庫|れいぞうこ}に{入|い}れてあるよ。",
+        "vi": "Nếu muốn uống bia thì tớ để sẵn trong tủ lạnh rồi đấy."
+      }
+    ]
+  },
+  {
+    "title": "〜とき",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な + な / N + の + とき",
+    "meaning_vi": "khi; vào lúc",
+    "explanation_vi": "Thì của động từ cho biết thứ tự: 「行くとき」 là trước khi đi hoặc trên đường đi (chưa đến nơi); 「行ったとき」 là sau khi đã đến nơi. Thường viết bằng kanji 「時」.",
+    "examples": [
+      {
+        "jp": "子どものとき、よく川で泳ぎました。",
+        "furigana": "{子|こ}どものとき、よく{川|かわ}で{泳|およ}ぎました。",
+        "vi": "Hồi nhỏ, tôi hay bơi ở sông."
+      },
+      {
+        "jp": "日本へ行くとき、新しいかばんを買いました。",
+        "furigana": "{日本|にほん}へ{行|い}くとき、{新|あたら}しいかばんを{買|か}いました。",
+        "vi": "Trước khi đi Nhật, tôi đã mua một chiếc túi mới."
+      },
+      {
+        "jp": "日本へ行ったとき、友達にお土産を買いました。",
+        "furigana": "{日本|にほん}へ{行|い}ったとき、{友達|ともだち}にお{土産|みやげ}を{買|か}いました。",
+        "vi": "Khi đến Nhật, tôi đã mua quà lưu niệm cho bạn bè ở đó."
+      }
+    ]
+  },
+  {
+    "title": "〜間 / 〜間に",
+    "jlpt_level": "N4",
+    "structure": "V-て + いる / V-từ điển / N + の + 間（に）",
+    "meaning_vi": "trong khi; trong suốt; vào một lúc nào đó trong khoảng",
+    "explanation_vi": "「間」 nghĩa là hành động kéo dài suốt khoảng thời gian; 「間に」 nghĩa là hành động xảy ra vào một thời điểm trong khoảng đó.",
+    "examples": [
+      {
+        "jp": "夏休みの間、祖父の家にいました。",
+        "furigana": "{夏休|なつやす}みの{間|あいだ}、{祖父|そふ}の{家|いえ}にいました。",
+        "vi": "Trong suốt kỳ nghỉ hè, tôi ở nhà ông."
+      },
+      {
+        "jp": "母が寝ている間に、部屋を掃除した。",
+        "furigana": "{母|はは}が{寝|ね}ている{間|あいだ}に、{部屋|へや}を{掃除|そうじ}した。",
+        "vi": "Trong lúc mẹ ngủ, tôi đã dọn phòng."
+      },
+      {
+        "jp": "電車を待っている間、ずっと本を読んでいた。",
+        "furigana": "{電車|でんしゃ}を{待|ま}っている{間|あいだ}、ずっと{本|ほん}を{読|よ}んでいた。",
+        "vi": "Trong suốt lúc chờ tàu, tôi đọc sách."
+      }
+    ]
+  },
+  {
+    "title": "〜そうだ（appearance）",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) / Adj-い (gốc) / Adj-な + そうだ",
+    "meaning_vi": "trông có vẻ; dường như; trông như sắp",
+    "explanation_vi": "Phán đoán từ những gì nhìn thấy. 「いい → よさそう」, 「ない → なさそう」. Không dùng với tính từ chỉ đặc điểm thấy rõ (赤い, かわいい); 「かわいそう」 nghĩa là 'đáng thương'.",
+    "examples": [
+      {
+        "jp": "そのカレー、辛そうだね。",
+        "furigana": "そのカレー、{辛|から}そうだね。",
+        "vi": "Món cà ri đó trông cay nhỉ."
+      },
+      {
+        "jp": "空が暗いですね。雨が降りそうです。",
+        "furigana": "{空|そら}が{暗|くら}いですね。{雨|あめ}が{降|ふ}りそうです。",
+        "vi": "Trời tối quá. Có vẻ sắp mưa."
+      },
+      {
+        "jp": "久しぶりに会った祖父は元気そうだった。",
+        "furigana": "{久|ひさ}しぶりに{会|あ}った{祖父|そふ}は{元気|げんき}そうだった。",
+        "vi": "Lâu ngày mới gặp, ông tôi trông vẫn khỏe."
+      }
+    ]
+  },
+  {
+    "title": "〜そうだ（hearsay）",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + そうだ / Adj-な + だ + そうだ / N + だ + そうだ",
+    "meaning_vi": "nghe nói; người ta nói rằng",
+    "explanation_vi": "Gắn vào thể thường đầy đủ, khác với 「そうだ」 nghĩa 'trông có vẻ' vốn gắn vào gốc từ. Mẫu này không có dạng quá khứ hay phủ định.",
+    "examples": [
+      {
+        "jp": "天気予報では、明日は雪が降るそうです。",
+        "furigana": "{天気|てんき}{予報|よほう}では、{明日|あした}は{雪|ゆき}が{降|ふ}るそうです。",
+        "vi": "Theo dự báo thời tiết, ngày mai sẽ có tuyết."
+      },
+      {
+        "jp": "駅前の本屋は来月なくなるそうだ。",
+        "furigana": "{駅前|えきまえ}の{本屋|ほんや}は{来月|らいげつ}なくなるそうだ。",
+        "vi": "Nghe nói hiệu sách trước nhà ga sẽ đóng cửa vào tháng sau."
+      },
+      {
+        "jp": "リンさんのお兄さんは医者だそうです。",
+        "furigana": "リンさんのお{兄|にい}さんは{医者|いしゃ}だそうです。",
+        "vi": "Nghe nói anh trai của Lin là bác sĩ."
+      }
+    ]
+  },
+  {
+    "title": "〜らしい（hearsay/conjecture）",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + らしい",
+    "meaning_vi": "hình như; có vẻ; nghe đâu",
+    "explanation_vi": "Dựa trên điều nghe hoặc đọc được nên người nói có phần giữ khoảng cách. 「らしい」 nghĩa 'đúng kiểu, đậm chất' (男らしい) là một điểm ngữ pháp N3 riêng.",
+    "examples": [
+      {
+        "jp": "駅の近くに新しいカフェができたらしい。",
+        "furigana": "{駅|えき}の{近|ちか}くに{新|あたら}しいカフェができたらしい。",
+        "vi": "Hình như có một quán cà phê mới mở gần nhà ga."
+      },
+      {
+        "jp": "部屋の電気が消えている。もう寝たらしい。",
+        "furigana": "{部屋|へや}の{電気|でんき}が{消|き}えている。もう{寝|ね}たらしい。",
+        "vi": "Đèn trong phòng đã tắt. Có vẻ họ đã đi ngủ rồi."
+      },
+      {
+        "jp": "あの店のラーメンはとても有名らしいです。",
+        "furigana": "あの{店|みせ}のラーメンはとても{有名|ゆうめい}らしいです。",
+        "vi": "Nghe nói ramen của quán đó rất nổi tiếng."
+      }
+    ]
+  },
+  {
+    "title": "〜ようだ",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + ようだ / Adj-な + な + ようだ / N + の + ようだ",
+    "meaning_vi": "dường như; có vẻ (phán đoán dựa trên dấu hiệu)",
+    "explanation_vi": "Cách nói hơi trang trọng để nêu phán đoán từ điều quan sát hoặc cảm nhận được; 「みたいだ」 là cách nói thân mật tương đương. Nghĩa 'giống như' được học ở N3.",
+    "examples": [
+      {
+        "jp": "誰もいないようですね。",
+        "furigana": "{誰|だれ}もいないようですね。",
+        "vi": "Có vẻ không có ai ở đây nhỉ."
+      },
+      {
+        "jp": "かぜをひいたようで、朝からのどが痛い。",
+        "furigana": "かぜをひいたようで、{朝|あさ}からのどが{痛|いた}い。",
+        "vi": "Hình như tôi bị cảm, từ sáng đã đau họng."
+      },
+      {
+        "jp": "外は寒いようだ。みんなコートを着ている。",
+        "furigana": "{外|そと}は{寒|さむ}いようだ。みんなコートを{着|き}ている。",
+        "vi": "Có vẻ bên ngoài lạnh. Ai cũng mặc áo khoác."
+      }
+    ]
+  },
+  {
+    "title": "〜みたい",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + みたい",
+    "meaning_vi": "có vẻ như; trông giống; giống như (thân mật)",
+    "explanation_vi": "Cách nói thân mật của 「ようだ」. Gắn trực tiếp vào danh từ và tính từ đuôi な (静かみたい), không cần 「な」 hay 「の」. Đứng trước danh từ thì thành 「みたいな」.",
+    "examples": [
+      {
+        "jp": "隣の部屋に誰か来たみたい。",
+        "furigana": "{隣|となり}の{部屋|へや}に{誰|だれ}か{来|き}たみたい。",
+        "vi": "Hình như có ai đó vừa đến phòng bên."
+      },
+      {
+        "jp": "今日の彼女は元気がないみたいだね。",
+        "furigana": "{今日|きょう}の{彼女|かのじょ}は{元気|げんき}がないみたいだね。",
+        "vi": "Hôm nay cô ấy có vẻ không được vui nhỉ."
+      },
+      {
+        "jp": "このケーキ、お店のケーキみたい！",
+        "furigana": "このケーキ、お{店|みせ}のケーキみたい！",
+        "vi": "Cái bánh này y như bánh mua ở tiệm!"
+      }
+    ]
+  },
+  {
+    "title": "〜すぎる",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) / Adj-い (gốc) / Adj-な + すぎる",
+    "meaning_vi": "quá; quá nhiều; quá mức",
+    "explanation_vi": "Chia như động từ nhóm 2 (すぎた, すぎて). 「いい → よすぎる」, tính từ 「ない → なさすぎる」.",
+    "examples": [
+      {
+        "jp": "ゆうべ飲みすぎて、頭が痛い。",
+        "furigana": "ゆうべ{飲|の}みすぎて、{頭|あたま}が{痛|いた}い。",
+        "vi": "Tối qua tôi uống quá nhiều nên giờ đau đầu."
+      },
+      {
+        "jp": "この靴は私には大きすぎます。",
+        "furigana": "この{靴|くつ}は{私|わたし}には{大|おお}きすぎます。",
+        "vi": "Đôi giày này quá rộng so với tôi."
+      },
+      {
+        "jp": "この問題は簡単すぎて、つまらない。",
+        "furigana": "この{問題|もんだい}は{簡単|かんたん}すぎて、つまらない。",
+        "vi": "Câu hỏi này dễ quá nên chán."
+      }
+    ]
+  },
+  {
+    "title": "〜方",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + 方",
+    "meaning_vi": "cách làm",
+    "explanation_vi": "Kết quả là một danh từ nên tân ngữ dùng 「の」 thay cho 「を」 (日本語の話し方). Với động từ する: 勉強のしかた.",
+    "examples": [
+      {
+        "jp": "この機械の使い方を教えてください。",
+        "furigana": "この{機械|きかい}の{使|つか}い{方|かた}を{教|おし}えてください。",
+        "vi": "Hãy chỉ cho tôi cách dùng chiếc máy này."
+      },
+      {
+        "jp": "この漢字の読み方が分かりません。",
+        "furigana": "この{漢字|かんじ}の{読|よ}み{方|かた}が{分|わ}かりません。",
+        "vi": "Tôi không biết cách đọc chữ kanji này."
+      },
+      {
+        "jp": "祖母においしいみそ汁の作り方を習った。",
+        "furigana": "{祖母|そぼ}においしいみそ{汁|しる}の{作|つく}り{方|かた}を{習|なら}った。",
+        "vi": "Tôi đã học bà cách nấu súp miso ngon."
+      }
+    ]
+  },
+  {
+    "title": "〜中",
+    "jlpt_level": "N4",
+    "structure": "N + 中",
+    "meaning_vi": "đang trong lúc; trong (ちゅう); suốt; khắp (じゅう)",
+    "explanation_vi": "「ちゅう」 chỉ hoạt động đang diễn ra hoặc một khoảng thời gian (会議中, 午前中, 今週中); 「じゅう」 nghĩa là 'suốt' một thời gian hoặc 'khắp' một nơi (一日中, 世界中).",
+    "examples": [
+      {
+        "jp": "父は今、電話中です。",
+        "furigana": "{父|ちち}は{今|いま}、{電話|でんわ}{中|ちゅう}です。",
+        "vi": "Bố tôi hiện đang nghe điện thoại."
+      },
+      {
+        "jp": "昨日は一日中雨が降っていた。",
+        "furigana": "{昨日|きのう}は{一日中|いちにちじゅう}{雨|あめ}が{降|ふ}っていた。",
+        "vi": "Hôm qua trời mưa suốt cả ngày."
+      },
+      {
+        "jp": "この歌は世界中で知られている。",
+        "furigana": "この{歌|うた}は{世界中|せかいじゅう}で{知|し}られている。",
+        "vi": "Bài hát này được biết đến trên khắp thế giới."
+      }
+    ]
+  },
+  {
+    "title": "〜つもり",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + つもり",
+    "meaning_vi": "định; dự định",
+    "explanation_vi": "Nêu ý định cá nhân chắc chắn. 「〜つもりはない」 nghĩa là 'không có ý định'. Hỏi người trên bằng 「〜つもりですか」 có thể nghe khá thẳng thừng.",
+    "examples": [
+      {
+        "jp": "夏休みは北海道を旅行するつもりです。",
+        "furigana": "{夏休|なつやす}みは{北海道|ほっかいどう}を{旅行|りょこう}するつもりです。",
+        "vi": "Tôi định đi du lịch Hokkaido vào kỳ nghỉ hè."
+      },
+      {
+        "jp": "今日はお酒を飲まないつもりです。",
+        "furigana": "{今日|きょう}はお{酒|さけ}を{飲|の}まないつもりです。",
+        "vi": "Hôm nay tôi định không uống rượu."
+      },
+      {
+        "jp": "大学を出たら、どうするつもりですか。",
+        "furigana": "{大学|だいがく}を{出|で}たら、どうするつもりですか。",
+        "vi": "Sau khi tốt nghiệp đại học, bạn định làm gì?"
+      }
+    ]
+  },
+  {
+    "title": "〜予定",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển + 予定 / N + の + 予定",
+    "meaning_vi": "dự định; theo kế hoạch sẽ",
+    "explanation_vi": "Chỉ lịch trình hoặc sắp xếp đã định, thường liên quan đến người khác; khách quan hơn 「つもり」.",
+    "examples": [
+      {
+        "jp": "来月、大阪に引っ越す予定です。",
+        "furigana": "{来月|らいげつ}、{大阪|おおさか}に{引|ひ}っ{越|こ}す{予定|よてい}です。",
+        "vi": "Tôi dự định chuyển đến Osaka vào tháng sau."
+      },
+      {
+        "jp": "会議は三時に終わる予定です。",
+        "furigana": "{会議|かいぎ}は{三|さん}{時|じ}に{終|お}わる{予定|よてい}です。",
+        "vi": "Theo kế hoạch, cuộc họp sẽ kết thúc lúc 3 giờ."
+      },
+      {
+        "jp": "出発は朝八時の予定です。",
+        "furigana": "{出発|しゅっぱつ}は{朝|あさ}{八|はち}{時|じ}の{予定|よてい}です。",
+        "vi": "Giờ khởi hành dự kiến là 8 giờ sáng."
+      }
+    ]
+  },
+  {
+    "title": "〜ことにする",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ことにする",
+    "meaning_vi": "quyết định (làm gì)",
+    "explanation_vi": "Quyết định do chính người nói đưa ra; so sánh với 「〜ことになる」. 「〜ことにしている」 (N3) nghĩa là 'đặt thành thói quen'.",
+    "examples": [
+      {
+        "jp": "健康のために、毎朝歩くことにした。",
+        "furigana": "{健康|けんこう}のために、{毎朝|まいあさ}{歩|ある}くことにした。",
+        "vi": "Vì sức khỏe, tôi đã quyết định đi bộ mỗi sáng."
+      },
+      {
+        "jp": "高かったので、買わないことにしました。",
+        "furigana": "{高|たか}かったので、{買|か}わないことにしました。",
+        "vi": "Vì đắt nên tôi đã quyết định không mua."
+      },
+      {
+        "jp": "もう遅いから、タクシーで帰ることにしよう。",
+        "furigana": "もう{遅|おそ}いから、タクシーで{帰|かえ}ることにしよう。",
+        "vi": "Muộn rồi, mình quyết định đi taxi về nhé."
+      }
+    ]
+  },
+  {
+    "title": "〜ことになる",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ことになる",
+    "meaning_vi": "đã được quyết định là; hóa ra sẽ",
+    "explanation_vi": "Trình bày quyết định như do người khác hoặc hoàn cảnh tạo nên. Người ta cũng dùng cho quyết định của chính mình để bớt khẳng định.",
+    "examples": [
+      {
+        "jp": "来年の春から、名古屋の店で働くことになりました。",
+        "furigana": "{来年|らいねん}の{春|はる}から、{名古屋|なごや}の{店|みせ}で{働|はたら}くことになりました。",
+        "vi": "Từ mùa xuân năm sau, tôi sẽ làm việc ở cửa hàng Nagoya."
+      },
+      {
+        "jp": "今度の日曜日、クラスのみんなでバーベキューをすることになった。",
+        "furigana": "{今度|こんど}の{日曜日|にちようび}、クラスのみんなでバーベキューをすることになった。",
+        "vi": "Chủ nhật này cả lớp đã chốt sẽ đi nướng thịt."
+      },
+      {
+        "jp": "友達の結婚式で、私がスピーチをすることになりました。",
+        "furigana": "{友達|ともだち}の{結婚式|けっこんしき}で、{私|わたし}がスピーチをすることになりました。",
+        "vi": "Tôi được giao phát biểu trong đám cưới của bạn."
+      }
+    ]
+  },
+  {
+    "title": "〜ことができる",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển + ことができる",
+    "meaning_vi": "có thể; có khả năng",
+    "explanation_vi": "Trang trọng hơn thể khả năng một chút. Cũng dùng cho việc có thể hoặc được phép làm (ここでたばこを吸うことはできません).",
+    "examples": [
+      {
+        "jp": "この図書館では、本を二週間借りることができます。",
+        "furigana": "この{図書館|としょかん}では、{本|ほん}を{二|に}{週間|しゅうかん}{借|か}りることができます。",
+        "vi": "Ở thư viện này, bạn có thể mượn sách trong hai tuần."
+      },
+      {
+        "jp": "妹はピアノを弾くことができる。",
+        "furigana": "{妹|いもうと}はピアノを{弾|ひ}くことができる。",
+        "vi": "Em gái tôi biết chơi piano."
+      },
+      {
+        "jp": "ここからは富士山を見ることができません。",
+        "furigana": "ここからは{富士山|ふじさん}を{見|み}ることができません。",
+        "vi": "Từ đây không thể nhìn thấy núi Phú Sĩ."
+      }
+    ]
+  },
+  {
+    "title": "〜える / 〜られる（potential）",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển (Nhóm 1: âm u cuối → e) + る / V-ない (gốc) + られる (Nhóm 2)",
+    "meaning_vi": "có thể; làm được (thể khả năng)",
+    "explanation_vi": "Bất quy tắc: 「する → できる」, 「来る → 来られる」. Tân ngữ thường dùng 「が」 thay cho 「を」. Trong văn nói thân mật, động từ nhóm 2 hay bỏ 「ら」 (見れる).",
+    "examples": [
+      {
+        "jp": "私は漢字が二百ぐらい読めます。",
+        "furigana": "{私|わたし}は{漢字|かんじ}が{二|に}{百|ひゃく}ぐらい{読|よ}めます。",
+        "vi": "Tôi đọc được khoảng 200 chữ kanji."
+      },
+      {
+        "jp": "兄は辛い料理が食べられない。",
+        "furigana": "{兄|あに}は{辛|から}い{料理|りょうり}が{食|た}べられない。",
+        "vi": "Anh trai tôi không ăn được đồ cay."
+      },
+      {
+        "jp": "明日のパーティーに来られますか。",
+        "furigana": "{明日|あした}のパーティーに{来|こ}られますか。",
+        "vi": "Ngày mai bạn đến dự tiệc được không?"
+      }
+    ]
+  },
+  {
+    "title": "〜れる / 〜られる（passive）",
+    "jlpt_level": "N4",
+    "structure": "V-ない (gốc) + れる (Nhóm 1) / V-ない (gốc) + られる (Nhóm 2)",
+    "meaning_vi": "bị, được (ai đó làm gì); thể bị động",
+    "explanation_vi": "Bất quy tắc: 「する → される」, 「来る → 来られる」. Người thực hiện được đánh dấu bằng 「に」. Thường cho thấy chủ ngữ bị phiền vì hành động của người khác (雨に降られた).",
+    "examples": [
+      {
+        "jp": "先生に作文をほめられました。",
+        "furigana": "{先生|せんせい}に{作文|さくぶん}をほめられました。",
+        "vi": "Bài văn của tôi được thầy cô khen."
+      },
+      {
+        "jp": "電車の中で足を踏まれた。",
+        "furigana": "{電車|でんしゃ}の{中|なか}で{足|あし}を{踏|ふ}まれた。",
+        "vi": "Tôi bị giẫm vào chân trên tàu điện."
+      },
+      {
+        "jp": "この寺は六百年前に建てられました。",
+        "furigana": "この{寺|てら}は{六百|ろっぴゃく}{年|ねん}{前|まえ}に{建|た}てられました。",
+        "vi": "Ngôi chùa này được xây cách đây 600 năm."
+      }
+    ]
+  },
+  {
+    "title": "〜せる / 〜させる",
+    "jlpt_level": "N4",
+    "structure": "V-ない (gốc) + せる (Nhóm 1) / V-ない (gốc) + させる (Nhóm 2)",
+    "meaning_vi": "bắt ai làm; cho phép ai làm (thể sai khiến)",
+    "explanation_vi": "Bất quy tắc: 「する → させる」, 「来る → 来させる」. Với tự động từ, người bị sai khiến đi với 「を」; với tha động từ, đi với 「に」. Ngữ cảnh quyết định nghĩa 'bắt' hay 'cho phép'.",
+    "examples": [
+      {
+        "jp": "母は毎日弟に野菜を食べさせる。",
+        "furigana": "{母|はは}は{毎日|まいにち}{弟|おとうと}に{野菜|やさい}を{食|た}べさせる。",
+        "vi": "Ngày nào mẹ cũng bắt em trai tôi ăn rau."
+      },
+      {
+        "jp": "コーチは毎日、選手たちを走らせた。",
+        "furigana": "コーチは{毎日|まいにち}、{選手|せんしゅ}たちを{走|はし}らせた。",
+        "vi": "Huấn luyện viên bắt các cầu thủ chạy mỗi ngày."
+      },
+      {
+        "jp": "息子が行きたいと言ったので、一人で旅行に行かせました。",
+        "furigana": "{息子|むすこ}が{行|い}きたいと{言|い}ったので、{一人|ひとり}で{旅行|りょこう}に{行|い}かせました。",
+        "vi": "Con trai tôi nói muốn đi nên tôi đã cho cháu đi du lịch một mình."
+      }
+    ]
+  },
+  {
+    "title": "〜せられる / 〜させられる",
+    "jlpt_level": "N4",
+    "structure": "V-ない (gốc) + せられる (Nhóm 1; dạng ngắn される) / V-ない (gốc) + させられる (Nhóm 2)",
+    "meaning_vi": "bị bắt phải làm (trái ý muốn)",
+    "explanation_vi": "Bất quy tắc: 「する → させられる」, 「来る → 来させられる」. Dạng ngắn của nhóm 1 (待たされる) phổ biến trong văn nói, nhưng không dùng với động từ tận cùng bằng 「す」 (話させられる).",
+    "examples": [
+      {
+        "jp": "子どものころ、母に毎日ピアノを練習させられた。",
+        "furigana": "{子|こ}どものころ、{母|はは}に{毎日|まいにち}ピアノを{練習|れんしゅう}させられた。",
+        "vi": "Hồi nhỏ, tôi bị mẹ bắt tập piano mỗi ngày."
+      },
+      {
+        "jp": "駅で三十分も待たされました。",
+        "furigana": "{駅|えき}で{三十分|さんじゅっぷん}も{待|ま}たされました。",
+        "vi": "Tôi đã bị bắt đợi ở nhà ga tận 30 phút."
+      },
+      {
+        "jp": "会社の飲み会で歌を歌わされた。",
+        "furigana": "{会社|かいしゃ}の{飲|の}み{会|かい}で{歌|うた}を{歌|うた}わされた。",
+        "vi": "Tôi bị bắt hát ở buổi nhậu của công ty."
+      }
+    ]
+  },
+  {
+    "title": "〜おう / 〜よう",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển (Nhóm 1: âm u cuối → o) + う / V-ます (gốc) + よう (Nhóm 2)",
+    "meaning_vi": "cùng... nào (thân mật); tôi sẽ (thể ý chí)",
+    "explanation_vi": "Bất quy tắc: 「する → しよう」, 「来る → 来よう」. Là dạng thường tương đương với 「〜ましょう」.",
+    "examples": [
+      {
+        "jp": "疲れたね。少し休もう。",
+        "furigana": "{疲|つか}れたね。{少|すこ}し{休|やす}もう。",
+        "vi": "Mệt nhỉ. Nghỉ một chút nào."
+      },
+      {
+        "jp": "週末、一緒に映画を見ようよ。",
+        "furigana": "{週末|しゅうまつ}、{一緒|いっしょ}に{映画|えいが}を{見|み}ようよ。",
+        "vi": "Cuối tuần cùng đi xem phim nhé."
+      },
+      {
+        "jp": "よし、今日から毎日日記を書こう。",
+        "furigana": "よし、{今日|きょう}から{毎日|まいにち}{日記|にっき}を{書|か}こう。",
+        "vi": "Được rồi, từ hôm nay mình sẽ viết nhật ký mỗi ngày."
+      }
+    ]
+  },
+  {
+    "title": "〜(よ)うと思う",
+    "jlpt_level": "N4",
+    "structure": "V-ý chí + と思う",
+    "meaning_vi": "đang nghĩ sẽ làm; định làm",
+    "explanation_vi": "「〜と思う」 thường nói về quyết định vừa đưa ra; 「〜と思っている」 cho thấy dự định đã có từ trước. Nhẹ hơn 「つもり」.",
+    "examples": [
+      {
+        "jp": "今年の夏は海に行こうと思っています。",
+        "furigana": "{今年|ことし}の{夏|なつ}は{海|うみ}に{行|い}こうと{思|おも}っています。",
+        "vi": "Mùa hè năm nay tôi đang định đi biển."
+      },
+      {
+        "jp": "明日は早く起きて、公園を走ろうと思う。",
+        "furigana": "{明日|あした}は{早|はや}く{起|お}きて、{公園|こうえん}を{走|はし}ろうと{思|おも}う。",
+        "vi": "Ngày mai tôi định dậy sớm rồi chạy bộ ở công viên."
+      },
+      {
+        "jp": "新しいパソコンを買おうと思ったけど、やめました。",
+        "furigana": "{新|あたら}しいパソコンを{買|か}おうと{思|おも}ったけど、やめました。",
+        "vi": "Tôi đã định mua máy tính mới nhưng lại thôi."
+      }
+    ]
+  },
+  {
+    "title": "〜え / 〜ろ",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển (Nhóm 1: âm u cuối → e) / V-ます (gốc) + ろ (Nhóm 2)",
+    "meaning_vi": "làm đi! (thể mệnh lệnh; ra lệnh thẳng thừng)",
+    "explanation_vi": "Bất quy tắc: 「する → しろ」, 「来る → 来い」, 「くれる → くれ」. Rất thẳng thừng; chủ yếu nghe từ nam giới, trên biển báo, lúc khẩn cấp và khi cổ vũ (がんばれ).",
+    "examples": [
+      {
+        "jp": "早く起きろ！遅刻するぞ。",
+        "furigana": "{早|はや}く{起|お}きろ！{遅刻|ちこく}するぞ。",
+        "vi": "Dậy mau! Muộn bây giờ."
+      },
+      {
+        "jp": "危ない！止まれ！",
+        "furigana": "{危|あぶ}ない！{止|と}まれ！",
+        "vi": "Nguy hiểm! Dừng lại!"
+      },
+      {
+        "jp": "がんばれ！あと少しだ！",
+        "furigana": "がんばれ！あと{少|すこ}しだ！",
+        "vi": "Cố lên! Còn một chút nữa thôi!"
+      }
+    ]
+  },
+  {
+    "title": "〜な（prohibition）",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển + な",
+    "meaning_vi": "cấm! đừng! (cấm đoán mạnh)",
+    "explanation_vi": "Rất mạnh và thẳng thừng. Đừng nhầm với 「な」 cuối câu biểu lộ cảm xúc (いいな).",
+    "examples": [
+      {
+        "jp": "危ないから、この川では泳ぐな。",
+        "furigana": "{危|あぶ}ないから、この{川|かわ}では{泳|およ}ぐな。",
+        "vi": "Nguy hiểm đấy, đừng bơi ở con sông này."
+      },
+      {
+        "jp": "もう泣くな。大丈夫だよ。",
+        "furigana": "もう{泣|な}くな。{大丈夫|だいじょうぶ}だよ。",
+        "vi": "Đừng khóc nữa. Không sao đâu."
+      },
+      {
+        "jp": "壁に「ここにごみを捨てるな」と書いてある。",
+        "furigana": "{壁|かべ}に「ここにごみを{捨|す}てるな」と{書|か}いてある。",
+        "vi": "Trên tường có ghi 「Cấm đổ rác ở đây」."
+      }
+    ]
+  },
+  {
+    "title": "〜なさい",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + なさい",
+    "meaning_vi": "hãy làm (chỉ thị từ cha mẹ, thầy cô...)",
+    "explanation_vi": "Nhẹ hơn thể mệnh lệnh nhưng vẫn là chỉ thị dứt khoát; dùng bởi cha mẹ, thầy cô và trong đề thi, không bao giờ dùng với người trên.",
+    "examples": [
+      {
+        "jp": "もう九時よ。早く寝なさい。",
+        "furigana": "もう{九|く}{時|じ}よ。{早|はや}く{寝|ね}なさい。",
+        "vi": "Chín giờ rồi đấy. Đi ngủ mau."
+      },
+      {
+        "jp": "次の文を読んで、質問に答えなさい。",
+        "furigana": "{次|つぎ}の{文|ぶん}を{読|よ}んで、{質問|しつもん}に{答|こた}えなさい。",
+        "vi": "Hãy đọc đoạn văn sau và trả lời câu hỏi."
+      },
+      {
+        "jp": "ご飯の前に手を洗いなさい。",
+        "furigana": "ご{飯|はん}の{前|まえ}に{手|て}を{洗|あら}いなさい。",
+        "vi": "Hãy rửa tay trước khi ăn cơm."
+      }
+    ]
+  },
+  {
+    "title": "〜ば",
+    "jlpt_level": "N4",
+    "structure": "V-ば / Adj-い (gốc) + ければ / Adj-な + なら / N + なら",
+    "meaning_vi": "nếu",
+    "explanation_vi": "Nhấn vào điều kiện cần để có kết quả. Khi vế sau là yêu cầu hoặc lời mời, 「たら」 thường tự nhiên hơn, trừ khi vế 「ば」 chỉ trạng thái (ある, いる, tính từ).",
+    "examples": [
+      {
+        "jp": "この道をまっすぐ行けば、駅に着きます。",
+        "furigana": "この{道|みち}をまっすぐ{行|い}けば、{駅|えき}に{着|つ}きます。",
+        "vi": "Nếu đi thẳng con đường này, bạn sẽ đến nhà ga."
+      },
+      {
+        "jp": "安ければ、買いたいです。",
+        "furigana": "{安|やす}ければ、{買|か}いたいです。",
+        "vi": "Nếu rẻ thì tôi muốn mua."
+      },
+      {
+        "jp": "分からないことがあれば、いつでも聞いてください。",
+        "furigana": "{分|わ}からないことがあれば、いつでも{聞|き}いてください。",
+        "vi": "Nếu có gì không hiểu, cứ hỏi bất cứ lúc nào."
+      }
+    ]
+  },
+  {
+    "title": "〜たら",
+    "jlpt_level": "N4",
+    "structure": "V-た + ら / Adj-い (gốc) + かったら / Adj-な + だったら / N + だったら",
+    "meaning_vi": "nếu; khi; sau khi",
+    "explanation_vi": "Mẫu điều kiện linh hoạt nhất, rất phổ biến trong văn nói. Với sự việc chắc chắn xảy ra thì nghĩa là 'khi, sau khi'.",
+    "examples": [
+      {
+        "jp": "駅に着いたら、電話してください。",
+        "furigana": "{駅|えき}に{着|つ}いたら、{電話|でんわ}してください。",
+        "vi": "Khi đến nhà ga, hãy gọi điện cho tôi."
+      },
+      {
+        "jp": "もし明日雨だったら、家で映画を見よう。",
+        "furigana": "もし{明日|あした}{雨|あめ}だったら、{家|いえ}で{映画|えいが}を{見|み}よう。",
+        "vi": "Nếu ngày mai trời mưa, mình xem phim ở nhà nhé."
+      },
+      {
+        "jp": "暑かったら、窓を開けてもいいですよ。",
+        "furigana": "{暑|あつ}かったら、{窓|まど}を{開|あ}けてもいいですよ。",
+        "vi": "Nếu nóng thì bạn cứ mở cửa sổ."
+      }
+    ]
+  },
+  {
+    "title": "〜なら",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + なら",
+    "meaning_vi": "nếu (đúng là như vậy); nếu nói về",
+    "explanation_vi": "Tiếp nhận điều người nghe vừa nói hoặc tình huống được giả định là đúng, rồi đưa ra lời khuyên hay ý kiến. Khác với 「たら」, hành động ở vế chính có thể xảy ra trước vế 「なら」.",
+    "examples": [
+      {
+        "jp": "京都へ行くなら、秋がいいですよ。",
+        "furigana": "{京都|きょうと}へ{行|い}くなら、{秋|あき}がいいですよ。",
+        "vi": "Nếu đi Kyoto thì mùa thu là đẹp đấy."
+      },
+      {
+        "jp": "パソコンのことなら、兄に聞くといいよ。",
+        "furigana": "パソコンのことなら、{兄|あに}に{聞|き}くといいよ。",
+        "vi": "Nếu là chuyện máy tính thì nên hỏi anh trai tôi."
+      },
+      {
+        "jp": "そんなに眠いなら、今日は早く寝たら？",
+        "furigana": "そんなに{眠|ねむ}いなら、{今日|きょう}は{早|はや}く{寝|ね}たら？",
+        "vi": "Nếu buồn ngủ thế thì hôm nay đi ngủ sớm đi?"
+      }
+    ]
+  },
+  {
+    "title": "〜と（conditional）",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない / Adj-い + と / Adj-な + だ + と / N + だ + と",
+    "meaning_vi": "khi; nếu; hễ (kết quả tự nhiên, tất yếu)",
+    "explanation_vi": "Dùng cho kết quả tự nhiên, cách máy móc hoạt động, chỉ đường và thói quen. Vế chính không được là yêu cầu, mong muốn hay lời mời.",
+    "examples": [
+      {
+        "jp": "このボタンを押すと、お茶が出ます。",
+        "furigana": "このボタンを{押|お}すと、お{茶|ちゃ}が{出|で}ます。",
+        "vi": "Hễ bấm nút này là trà chảy ra."
+      },
+      {
+        "jp": "春になると、桜が咲きます。",
+        "furigana": "{春|はる}になると、{桜|さくら}が{咲|さ}きます。",
+        "vi": "Cứ đến mùa xuân là hoa anh đào nở."
+      },
+      {
+        "jp": "この道を右に曲がると、左に郵便局があります。",
+        "furigana": "この{道|みち}を{右|みぎ}に{曲|ま}がると、{左|ひだり}に{郵便|ゆうびん}{局|きょく}があります。",
+        "vi": "Rẽ phải ở con đường này thì bưu điện ở bên trái."
+      }
+    ]
+  },
+  {
+    "title": "〜ても / 〜でも",
+    "jlpt_level": "N4",
+    "structure": "V-て + も / Adj-く + ても / Adj-な + でも / N + でも",
+    "meaning_vi": "dù; cho dù",
+    "explanation_vi": "Đi với từ để hỏi hoặc 「いくら」 thì nghĩa là 'dù... thế nào đi nữa' (何を食べても, いくら待っても).",
+    "examples": [
+      {
+        "jp": "雨が降っても、試合はあります。",
+        "furigana": "{雨|あめ}が{降|ふ}っても、{試合|しあい}はあります。",
+        "vi": "Dù trời mưa, trận đấu vẫn diễn ra."
+      },
+      {
+        "jp": "いくら練習しても、なかなか上手になりません。",
+        "furigana": "いくら{練習|れんしゅう}しても、なかなか{上手|じょうず}になりません。",
+        "vi": "Dù luyện tập bao nhiêu, tôi vẫn mãi không giỏi lên."
+      },
+      {
+        "jp": "日曜日でも、この店は開いています。",
+        "furigana": "{日曜日|にちようび}でも、この{店|みせ}は{開|あ}いています。",
+        "vi": "Dù là Chủ nhật, cửa hàng này vẫn mở."
+      }
+    ]
+  },
+  {
+    "title": "〜のに（although）",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + のに / Adj-な + な + のに / N + な + のに",
+    "meaning_vi": "mặc dù; thế mà (kèm ngạc nhiên hoặc bất mãn)",
+    "explanation_vi": "Mang sắc thái ngạc nhiên, thất vọng hoặc phàn nàn. Vế chính không được là yêu cầu hay ý định; khi đó hãy dùng 「けど」 hoặc 「ても」.",
+    "examples": [
+      {
+        "jp": "一生懸命勉強したのに、試験に落ちてしまった。",
+        "furigana": "{一生懸命|いっしょうけんめい}{勉強|べんきょう}したのに、{試験|しけん}に{落|お}ちてしまった。",
+        "vi": "Đã học hết sức thế mà tôi vẫn trượt."
+      },
+      {
+        "jp": "日曜日なのに、会社に行かなければならない。",
+        "furigana": "{日曜日|にちようび}なのに、{会社|かいしゃ}に{行|い}かなければならない。",
+        "vi": "Là Chủ nhật thế mà tôi vẫn phải đi làm."
+      },
+      {
+        "jp": "約束したのに、彼は来なかった。",
+        "furigana": "{約束|やくそく}したのに、{彼|かれ}は{来|こ}なかった。",
+        "vi": "Đã hứa rồi thế mà anh ấy không đến."
+      }
+    ]
+  },
+  {
+    "title": "〜のに（purpose）",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển + のに / N + に",
+    "meaning_vi": "để; cho việc (nói về công dụng, thời gian, chi phí)",
+    "explanation_vi": "Thường theo sau là các từ như 「使う」, 「いい」, 「便利」, 「必要」, 「かかる」. Với danh từ chỉ cần dùng 「に」 (旅行に便利).",
+    "examples": [
+      {
+        "jp": "このかばんは旅行に行くのに便利です。",
+        "furigana": "このかばんは{旅行|りょこう}に{行|い}くのに{便利|べんり}です。",
+        "vi": "Chiếc túi này tiện để đi du lịch."
+      },
+      {
+        "jp": "家から駅まで歩くのに二十分かかります。",
+        "furigana": "{家|いえ}から{駅|えき}まで{歩|ある}くのに{二十分|にじゅっぷん}かかります。",
+        "vi": "Đi bộ từ nhà đến nhà ga mất 20 phút."
+      },
+      {
+        "jp": "引っ越しするのに十万円ぐらいかかった。",
+        "furigana": "{引|ひ}っ{越|こ}しするのに{十|じゅう}{万|まん}{円|えん}ぐらいかかった。",
+        "vi": "Chuyển nhà tốn khoảng 100.000 yên."
+      }
+    ]
+  },
+  {
+    "title": "〜ので",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + ので / Adj-な + な + ので / N + な + ので",
+    "meaning_vi": "vì; do",
+    "explanation_vi": "Nghe nhẹ nhàng và khách quan hơn 「から」, nên được ưu tiên khi nêu lý do lịch sự hoặc xin lỗi.",
+    "examples": [
+      {
+        "jp": "頭が痛いので、今日は早く帰ります。",
+        "furigana": "{頭|あたま}が{痛|いた}いので、{今日|きょう}は{早|はや}く{帰|かえ}ります。",
+        "vi": "Vì đau đầu nên hôm nay tôi về sớm."
+      },
+      {
+        "jp": "明日はテストなので、今夜は勉強します。",
+        "furigana": "{明日|あした}はテストなので、{今夜|こんや}は{勉強|べんきょう}します。",
+        "vi": "Vì ngày mai có bài kiểm tra nên tối nay tôi học."
+      },
+      {
+        "jp": "道がこんでいたので、少し遅れました。",
+        "furigana": "{道|みち}がこんでいたので、{少|すこ}し{遅|おく}れました。",
+        "vi": "Vì đường đông nên tôi đến muộn một chút."
+      }
+    ]
+  },
+  {
+    "title": "〜て（reason）",
+    "jlpt_level": "N4",
+    "structure": "V-て / Adj-い (gốc) + くて / Adj-な + で / N + で",
+    "meaning_vi": "vì; nên (nguyên nhân của cảm xúc hoặc trạng thái)",
+    "explanation_vi": "Vế sau thường là cảm xúc, thể khả năng hoặc kết quả, không phải yêu cầu hay ý định (khi đó dùng 「から」 hoặc 「ので」). Phủ định: 「〜なくて」 (会えなくて寂しい).",
+    "examples": [
+      {
+        "jp": "ニュースを聞いて、びっくりしました。",
+        "furigana": "ニュースを{聞|き}いて、びっくりしました。",
+        "vi": "Nghe tin đó, tôi đã rất ngạc nhiên."
+      },
+      {
+        "jp": "このスープは熱くて、飲めません。",
+        "furigana": "このスープは{熱|あつ}くて、{飲|の}めません。",
+        "vi": "Súp này nóng quá nên không uống được."
+      },
+      {
+        "jp": "かぜで学校を休みました。",
+        "furigana": "かぜで{学校|がっこう}を{休|やす}みました。",
+        "vi": "Tôi nghỉ học vì bị cảm."
+      }
+    ]
+  },
+  {
+    "title": "〜し",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + し / Adj-な + だ + し / N + だ + し",
+    "meaning_vi": "vừa... lại vừa; hơn nữa (liệt kê lý do)",
+    "explanation_vi": "Liệt kê nhiều lý do hoặc ý. Chỉ dùng một 「し」 cũng ngụ ý còn có lý do khác.",
+    "examples": [
+      {
+        "jp": "この部屋は広いし、駅から近いし、とても気に入っています。",
+        "furigana": "この{部屋|へや}は{広|ひろ}いし、{駅|えき}から{近|ちか}いし、とても{気|き}に{入|い}っています。",
+        "vi": "Căn phòng này vừa rộng vừa gần nhà ga nên tôi rất thích."
+      },
+      {
+        "jp": "今日は雨だし、疲れているし、どこにも行きたくない。",
+        "furigana": "{今日|きょう}は{雨|あめ}だし、{疲|つか}れているし、どこにも{行|い}きたくない。",
+        "vi": "Hôm nay trời mưa, tôi lại mệt nên chẳng muốn đi đâu."
+      },
+      {
+        "jp": "もう遅いし、そろそろ帰ろうか。",
+        "furigana": "もう{遅|おそ}いし、そろそろ{帰|かえ}ろうか。",
+        "vi": "Cũng muộn rồi, mình về thôi nhỉ?"
+      }
+    ]
+  },
+  {
+    "title": "〜けど / 〜けれども",
+    "jlpt_level": "N4",
+    "structure": "Câu + けど / けれども",
+    "meaning_vi": "nhưng; tuy; (mở lời nhẹ nhàng)",
+    "explanation_vi": "Mang tính hội thoại hơn 「が」; 「けれども」 trang trọng hơn 「けど」 một chút. Thường dùng để mở lời nhẹ nhàng trước câu hỏi hoặc yêu cầu.",
+    "examples": [
+      {
+        "jp": "この店は高いけど、おいしい。",
+        "furigana": "この{店|みせ}は{高|たか}いけど、おいしい。",
+        "vi": "Quán này đắt nhưng ngon."
+      },
+      {
+        "jp": "すみません、駅に行きたいんですけど、どう行けばいいですか。",
+        "furigana": "すみません、{駅|えき}に{行|い}きたいんですけど、どう{行|い}けばいいですか。",
+        "vi": "Xin lỗi, tôi muốn đến nhà ga, phải đi thế nào ạ?"
+      },
+      {
+        "jp": "何度も電話したけれども、誰も出なかった。",
+        "furigana": "{何|なん}{度|ど}も{電話|でんわ}したけれども、{誰|だれ}も{出|で}なかった。",
+        "vi": "Tôi đã gọi mấy lần nhưng không ai nghe máy."
+      }
+    ]
+  },
+  {
+    "title": "〜ために",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-た / N + の + ために",
+    "meaning_vi": "để; vì (lợi ích của); do",
+    "explanation_vi": "Khi chỉ mục đích, động từ phải là việc chủ ngữ kiểm soát được (so sánh với 「〜ように」). Nghĩa 'do' nghe khá trang trọng.",
+    "examples": [
+      {
+        "jp": "日本の大学に入るために、毎日勉強しています。",
+        "furigana": "{日本|にほん}の{大学|だいがく}に{入|はい}るために、{毎日|まいにち}{勉強|べんきょう}しています。",
+        "vi": "Tôi học mỗi ngày để vào đại học ở Nhật."
+      },
+      {
+        "jp": "家族のために、一生懸命働いている。",
+        "furigana": "{家族|かぞく}のために、{一生懸命|いっしょうけんめい}{働|はたら}いている。",
+        "vi": "Tôi làm việc chăm chỉ vì gia đình."
+      },
+      {
+        "jp": "大雪のために、電車が止まりました。",
+        "furigana": "{大雪|おおゆき}のために、{電車|でんしゃ}が{止|と}まりました。",
+        "vi": "Do tuyết rơi dày nên tàu điện đã dừng."
+      }
+    ]
+  },
+  {
+    "title": "〜ように（purpose）",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ように",
+    "meaning_vi": "để; sao cho",
+    "explanation_vi": "Dùng với động từ chủ ngữ không trực tiếp kiểm soát được: thể khả năng, 「分かる」, 「見える」, thể phủ định. Với hành động có chủ ý thì dùng 「ために」.",
+    "examples": [
+      {
+        "jp": "後ろの人にも聞こえるように、大きな声で話してください。",
+        "furigana": "{後|うし}ろの{人|ひと}にも{聞|き}こえるように、{大|おお}きな{声|こえ}で{話|はな}してください。",
+        "vi": "Hãy nói to để người phía sau cũng nghe được."
+      },
+      {
+        "jp": "忘れないように、手にメモを書いた。",
+        "furigana": "{忘|わす}れないように、{手|て}にメモを{書|か}いた。",
+        "vi": "Tôi ghi chú lên tay để khỏi quên."
+      },
+      {
+        "jp": "かぜをひかないように、暖かくして寝てください。",
+        "furigana": "かぜをひかないように、{暖|あたた}かくして{寝|ね}てください。",
+        "vi": "Hãy giữ ấm khi ngủ để không bị cảm."
+      }
+    ]
+  },
+  {
+    "title": "〜ようにする",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ようにする",
+    "meaning_vi": "cố gắng; đảm bảo; tạo thói quen",
+    "explanation_vi": "「〜ようにしている」 diễn tả thói quen đang duy trì. So sánh với 「〜ようになる」, chỉ sự thay đổi xảy ra.",
+    "examples": [
+      {
+        "jp": "毎日野菜を食べるようにしています。",
+        "furigana": "{毎日|まいにち}{野菜|やさい}を{食|た}べるようにしています。",
+        "vi": "Tôi cố gắng ăn rau mỗi ngày."
+      },
+      {
+        "jp": "これからは遅刻しないようにします。",
+        "furigana": "これからは{遅刻|ちこく}しないようにします。",
+        "vi": "Từ nay tôi sẽ cố không đi muộn."
+      },
+      {
+        "jp": "寝る前にスマホを見ないようにしている。",
+        "furigana": "{寝|ね}る{前|まえ}にスマホを{見|み}ないようにしている。",
+        "vi": "Tôi cố không xem điện thoại trước khi ngủ."
+      }
+    ]
+  },
+  {
+    "title": "〜ようになる",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ようになる",
+    "meaning_vi": "trở nên; đã có thể (thay đổi về khả năng hoặc thói quen)",
+    "explanation_vi": "Thường dùng với động từ thể khả năng. Để nói 'không còn... nữa', 「〜なくなる」 thường tự nhiên hơn 「〜ないようになる」.",
+    "examples": [
+      {
+        "jp": "練習して、自転車に乗れるようになりました。",
+        "furigana": "{練習|れんしゅう}して、{自転車|じてんしゃ}に{乗|の}れるようになりました。",
+        "vi": "Nhờ luyện tập, tôi đã biết đi xe đạp."
+      },
+      {
+        "jp": "日本に来てから、朝ご飯を食べるようになった。",
+        "furigana": "{日本|にほん}に{来|き}てから、{朝|あさ}ご{飯|はん}を{食|た}べるようになった。",
+        "vi": "Từ khi đến Nhật, tôi đã bắt đầu ăn sáng."
+      },
+      {
+        "jp": "赤ちゃんが少しずつ話せるようになってきた。",
+        "furigana": "{赤|あか}ちゃんが{少|すこ}しずつ{話|はな}せるようになってきた。",
+        "vi": "Em bé nhà tôi đang dần biết nói."
+      }
+    ]
+  },
+  {
+    "title": "〜てほしい",
+    "jlpt_level": "N4",
+    "structure": "V-て + ほしい / V-ない + で + ほしい",
+    "meaning_vi": "muốn ai đó làm gì",
+    "explanation_vi": "Người mà mình muốn họ làm được đánh dấu bằng 「に」. Nói với người trên có thể nghe như đòi hỏi; 「〜ていただきたいです」 lịch sự hơn.",
+    "examples": [
+      {
+        "jp": "もう少しゆっくり話してほしいです。",
+        "furigana": "もう{少|すこ}しゆっくり{話|はな}してほしいです。",
+        "vi": "Tôi muốn bạn nói chậm hơn một chút."
+      },
+      {
+        "jp": "この話は誰にも言わないでほしい。",
+        "furigana": "この{話|はなし}は{誰|だれ}にも{言|い}わないでほしい。",
+        "vi": "Tôi không muốn bạn kể chuyện này với ai."
+      },
+      {
+        "jp": "早く春が来てほしいなあ。",
+        "furigana": "{早|はや}く{春|はる}が{来|き}てほしいなあ。",
+        "vi": "Mong mùa xuân mau đến quá."
+      }
+    ]
+  },
+  {
+    "title": "〜たがる",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + たがる",
+    "meaning_vi": "(người khác) muốn",
+    "explanation_vi": "Dùng cho người khác, vì mình không thể trực tiếp biết mong muốn của họ. Mong muốn hiện tại thường diễn đạt bằng 「〜たがっている」.",
+    "examples": [
+      {
+        "jp": "子どもたちは外で遊びたがっている。",
+        "furigana": "{子|こ}どもたちは{外|そと}で{遊|あそ}びたがっている。",
+        "vi": "Bọn trẻ muốn chơi ở ngoài."
+      },
+      {
+        "jp": "弟はいつも私のゲームをやりたがる。",
+        "furigana": "{弟|おとうと}はいつも{私|わたし}のゲームをやりたがる。",
+        "vi": "Em trai lúc nào cũng muốn chơi game của tôi."
+      },
+      {
+        "jp": "犬が散歩に行きたがっています。",
+        "furigana": "{犬|いぬ}が{散歩|さんぽ}に{行|い}きたがっています。",
+        "vi": "Con chó đang muốn đi dạo."
+      }
+    ]
+  },
+  {
+    "title": "〜がる",
+    "jlpt_level": "N4",
+    "structure": "Adj-い (gốc) / Adj-な + がる",
+    "meaning_vi": "(người khác) cảm thấy; tỏ ra",
+    "explanation_vi": "Biến tính từ cảm xúc (怖い, 寂しい, ほしい) thành động từ mô tả cảm xúc của người khác. Đối tượng của cảm xúc đi với 「を」.",
+    "examples": [
+      {
+        "jp": "妹は暗い所を怖がる。",
+        "furigana": "{妹|いもうと}は{暗|くら}い{所|ところ}を{怖|こわ}がる。",
+        "vi": "Em gái tôi sợ chỗ tối."
+      },
+      {
+        "jp": "祖母は孫に会えなくて寂しがっている。",
+        "furigana": "{祖母|そぼ}は{孫|まご}に{会|あ}えなくて{寂|さび}しがっている。",
+        "vi": "Bà tôi buồn vì không được gặp các cháu."
+      },
+      {
+        "jp": "息子は新しい自転車をほしがっている。",
+        "furigana": "{息子|むすこ}は{新|あたら}しい{自転車|じてんしゃ}をほしがっている。",
+        "vi": "Con trai tôi muốn có xe đạp mới."
+      }
+    ]
+  },
+  {
+    "title": "〜かもしれない",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + かもしれない",
+    "meaning_vi": "có lẽ; có thể",
+    "explanation_vi": "Mức chắc chắn khoảng 50% hoặc thấp hơn. Trong văn nói thân mật thường rút gọn thành 「かも」.",
+    "examples": [
+      {
+        "jp": "午後から雨が降るかもしれません。",
+        "furigana": "{午後|ごご}から{雨|あめ}が{降|ふ}るかもしれません。",
+        "vi": "Chiều nay có thể trời sẽ mưa."
+      },
+      {
+        "jp": "かぎがない。電車の中で落としたかもしれない。",
+        "furigana": "かぎがない。{電車|でんしゃ}の{中|なか}で{落|お}としたかもしれない。",
+        "vi": "Không thấy chìa khóa. Có lẽ tôi đánh rơi trên tàu."
+      },
+      {
+        "jp": "その話は本当かもしれない。",
+        "furigana": "その{話|はなし}は{本当|ほんとう}かもしれない。",
+        "vi": "Chuyện đó có thể là thật."
+      }
+    ]
+  },
+  {
+    "title": "〜だろう",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + だろう",
+    "meaning_vi": "có lẽ; chắc là (thể thường của でしょう)",
+    "explanation_vi": "Phổ biến trong văn viết và văn nói thân mật của nam giới; 「でしょう」 là dạng lịch sự. Thường đi với 「たぶん」, 「きっと」 hoặc dạng 「〜だろうと思う」.",
+    "examples": [
+      {
+        "jp": "明日はたぶん晴れるだろう。",
+        "furigana": "{明日|あした}はたぶん{晴|は}れるだろう。",
+        "vi": "Ngày mai có lẽ trời sẽ nắng."
+      },
+      {
+        "jp": "彼女はもう家に着いただろう。",
+        "furigana": "{彼女|かのじょ}はもう{家|いえ}に{着|つ}いただろう。",
+        "vi": "Chắc giờ cô ấy đã về đến nhà rồi."
+      },
+      {
+        "jp": "この問題は子どもには難しいだろうと思います。",
+        "furigana": "この{問題|もんだい}は{子|こ}どもには{難|むずか}しいだろうと{思|おも}います。",
+        "vi": "Tôi nghĩ bài này có lẽ khó đối với trẻ em."
+      }
+    ]
+  },
+  {
+    "title": "〜はずだ",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + はずだ / Adj-な + な + はずだ / N + の + はずだ",
+    "meaning_vi": "chắc chắn là; đáng lẽ là (dựa trên suy luận)",
+    "explanation_vi": "Kỳ vọng chắc chắn dựa trên sự thật hoặc logic, không phải đoán mò. Không mang nghĩa 'phải' như một nghĩa vụ.",
+    "examples": [
+      {
+        "jp": "荷物は明日届くはずです。",
+        "furigana": "{荷物|にもつ}は{明日|あした}{届|とど}くはずです。",
+        "vi": "Bưu kiện chắc chắn sẽ đến vào ngày mai."
+      },
+      {
+        "jp": "彼は十年もアメリカに住んでいたから、英語が上手なはずだ。",
+        "furigana": "{彼|かれ}は{十|じゅう}{年|ねん}もアメリカに{住|す}んでいたから、{英語|えいご}が{上手|じょうず}なはずだ。",
+        "vi": "Anh ấy đã sống ở Mỹ tới 10 năm nên chắc chắn giỏi tiếng Anh."
+      },
+      {
+        "jp": "おかしいな。かぎはここに置いたはずなのに。",
+        "furigana": "おかしいな。かぎはここに{置|お}いたはずなのに。",
+        "vi": "Lạ nhỉ. Rõ ràng tôi đã để chìa khóa ở đây mà."
+      }
+    ]
+  },
+  {
+    "title": "〜はずがない",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + はずがない / Adj-な + な + はずがない / N + の + はずがない",
+    "meaning_vi": "không thể nào",
+    "explanation_vi": "Phủ định mạnh dựa trên suy luận. 「〜ないはずだ」 ('chắc là không') là kỳ vọng nhẹ hơn.",
+    "examples": [
+      {
+        "jp": "あんなにまじめな人がうそをつくはずがない。",
+        "furigana": "あんなにまじめな{人|ひと}がうそをつくはずがない。",
+        "vi": "Người nghiêm túc như vậy không thể nào nói dối."
+      },
+      {
+        "jp": "今日は日曜日だから、銀行が開いているはずがない。",
+        "furigana": "{今日|きょう}は{日曜日|にちようび}だから、{銀行|ぎんこう}が{開|あ}いているはずがない。",
+        "vi": "Hôm nay là Chủ nhật nên ngân hàng không thể nào mở cửa."
+      },
+      {
+        "jp": "かぎはちゃんとかけたから、ドアが開いているはずがない。",
+        "furigana": "かぎはちゃんとかけたから、ドアが{開|あ}いているはずがない。",
+        "vi": "Tôi đã khóa cẩn thận nên cửa không thể nào mở được."
+      }
+    ]
+  },
+  {
+    "title": "〜んです / 〜のです",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + んです / Adj-な + な + んです / N + な + んです",
+    "meaning_vi": "là vì...; (giải thích hoặc hỏi lý do)",
+    "explanation_vi": "Thêm sắc thái giải thích tình huống hoặc hỏi về bối cảnh. Dạng thân mật là 「〜んだ」 và 「〜の」. Dùng quá nhiều có thể nghe gượng ép.",
+    "examples": [
+      {
+        "jp": "どうしたんですか。顔色が悪いですよ。",
+        "furigana": "どうしたんですか。{顔色|かおいろ}が{悪|わる}いですよ。",
+        "vi": "Có chuyện gì vậy? Sắc mặt bạn kém quá."
+      },
+      {
+        "jp": "すみません、遅れました。電車が止まっていたんです。",
+        "furigana": "すみません、{遅|おく}れました。{電車|でんしゃ}が{止|と}まっていたんです。",
+        "vi": "Xin lỗi tôi đến muộn. Là do tàu điện bị dừng."
+      },
+      {
+        "jp": "日本語で手紙を書きたいんですが、手伝ってくれませんか。",
+        "furigana": "{日本語|にほんご}で{手紙|てがみ}を{書|か}きたいんですが、{手伝|てつだ}ってくれませんか。",
+        "vi": "Tôi muốn viết thư bằng tiếng Nhật, bạn giúp tôi được không?"
+      }
+    ]
+  },
+  {
+    "title": "〜かどうか",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + かどうか",
+    "meaning_vi": "có... hay không",
+    "explanation_vi": "Lồng câu hỏi có/không vào trong câu. Với câu hỏi có từ để hỏi, chỉ dùng 「〜か」 (何時に来るか).",
+    "examples": [
+      {
+        "jp": "明日行けるかどうか、まだ分かりません。",
+        "furigana": "{明日|あした}{行|い}けるかどうか、まだ{分|わ}かりません。",
+        "vi": "Tôi vẫn chưa biết ngày mai có đi được hay không."
+      },
+      {
+        "jp": "この服が似合うかどうか、ちょっと着てみます。",
+        "furigana": "この{服|ふく}が{似合|にあ}うかどうか、ちょっと{着|き}てみます。",
+        "vi": "Tôi sẽ mặc thử xem bộ này có hợp hay không."
+      },
+      {
+        "jp": "そのレストランがおいしいかどうか、友達に聞いてみよう。",
+        "furigana": "そのレストランがおいしいかどうか、{友達|ともだち}に{聞|き}いてみよう。",
+        "vi": "Để tôi hỏi bạn xem nhà hàng đó có ngon không."
+      }
+    ]
+  },
+  {
+    "title": "〜か（embedded question）",
+    "jlpt_level": "N4",
+    "structure": "Từ để hỏi + ... + V-thể thường / Adj-い / Adj-な / N + か",
+    "meaning_vi": "câu hỏi lồng (cái gì, ở đâu, ai...)",
+    "explanation_vi": "Sau danh từ hoặc tính từ đuôi な thì bỏ 「だ」 (誰の傘か知らない).",
+    "examples": [
+      {
+        "jp": "会議が何時に始まるか、教えてください。",
+        "furigana": "{会議|かいぎ}が{何|なん}{時|じ}に{始|はじ}まるか、{教|おし}えてください。",
+        "vi": "Hãy cho tôi biết mấy giờ cuộc họp bắt đầu."
+      },
+      {
+        "jp": "どこで財布をなくしたか、覚えていません。",
+        "furigana": "どこで{財布|さいふ}をなくしたか、{覚|おぼ}えていません。",
+        "vi": "Tôi không nhớ đã làm mất ví ở đâu."
+      },
+      {
+        "jp": "誰が窓を割ったか、知っていますか。",
+        "furigana": "{誰|だれ}が{窓|まど}を{割|わ}ったか、{知|し}っていますか。",
+        "vi": "Bạn có biết ai đã làm vỡ cửa sổ không?"
+      }
+    ]
+  },
+  {
+    "title": "〜と思う",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い + と思う / Adj-な + だ + と思う / N + だ + と思う",
+    "meaning_vi": "tôi nghĩ rằng",
+    "explanation_vi": "Tiếng Nhật thường phủ định ở mệnh đề được trích (来ないと思う) thay vì phủ định 「思う」. Với ý kiến của người khác, dùng 「〜と思っている」.",
+    "examples": [
+      {
+        "jp": "この映画はきっと人気が出ると思う。",
+        "furigana": "この{映画|えいが}はきっと{人気|にんき}が{出|で}ると{思|おも}う。",
+        "vi": "Tôi tin bộ phim này chắc chắn sẽ nổi tiếng."
+      },
+      {
+        "jp": "彼女は今日は来ないと思います。",
+        "furigana": "{彼女|かのじょ}は{今日|きょう}は{来|こ}ないと{思|おも}います。",
+        "vi": "Tôi nghĩ hôm nay cô ấy sẽ không đến."
+      },
+      {
+        "jp": "日本の電車はとても便利だと思います。",
+        "furigana": "{日本|にほん}の{電車|でんしゃ}はとても{便利|べんり}だと{思|おも}います。",
+        "vi": "Tôi nghĩ tàu điện ở Nhật rất tiện lợi."
+      }
+    ]
+  },
+  {
+    "title": "〜と言う",
+    "jlpt_level": "N4",
+    "structure": "「Câu」 + と言う / Câu (thể thường) + と言う",
+    "meaning_vi": "nói rằng; bảo (trích dẫn)",
+    "explanation_vi": "Trích dẫn trực tiếp đặt trong 「」; trích dẫn gián tiếp dùng thể thường. 「〜と言っていた」 thường dùng khi thuật lại lời người khác.",
+    "examples": [
+      {
+        "jp": "先生は「明日はテストがあります」と言いました。",
+        "furigana": "{先生|せんせい}は「{明日|あした}はテストがあります」と{言|い}いました。",
+        "vi": "Thầy giáo nói: 「Ngày mai có bài kiểm tra」."
+      },
+      {
+        "jp": "兄は今晩、帰りが遅くなると言っていた。",
+        "furigana": "{兄|あに}は{今晩|こんばん}、{帰|かえ}りが{遅|おそ}くなると{言|い}っていた。",
+        "vi": "Anh trai nói tối nay sẽ về muộn."
+      },
+      {
+        "jp": "日本では食べる前に「いただきます」と言います。",
+        "furigana": "{日本|にほん}では{食|た}べる{前|まえ}に「いただきます」と{言|い}います。",
+        "vi": "Ở Nhật, trước khi ăn người ta nói 「itadakimasu」."
+      }
+    ]
+  },
+  {
+    "title": "〜しか〜ない",
+    "jlpt_level": "N4",
+    "structure": "N + しか + V-ない",
+    "meaning_vi": "chỉ; không gì ngoài",
+    "explanation_vi": "Luôn đi với động từ phủ định. So với 「だけ」, mẫu này nhấn mạnh số lượng ít hoặc không đủ.",
+    "examples": [
+      {
+        "jp": "財布に五百円しかない。",
+        "furigana": "{財布|さいふ}に{五|ご}{百|ひゃく}{円|えん}しかない。",
+        "vi": "Trong ví tôi chỉ có 500 yên."
+      },
+      {
+        "jp": "このことは、あなたにしか話していません。",
+        "furigana": "このことは、あなたにしか{話|はな}していません。",
+        "vi": "Chuyện này tôi chỉ kể với bạn thôi."
+      },
+      {
+        "jp": "朝はコーヒーしか飲みません。",
+        "furigana": "{朝|あさ}はコーヒーしか{飲|の}みません。",
+        "vi": "Buổi sáng tôi chỉ uống cà phê."
+      }
+    ]
+  },
+  {
+    "title": "〜ばかり",
+    "jlpt_level": "N4",
+    "structure": "N + ばかり",
+    "meaning_vi": "toàn; chỉ toàn",
+    "explanation_vi": "Thường ngụ ý có quá nhiều một thứ. 「〜てばかりいる」 (N3) và 「〜たばかり」 ('vừa mới') là các điểm ngữ pháp riêng.",
+    "examples": [
+      {
+        "jp": "弟は肉ばかり食べて、野菜を食べない。",
+        "furigana": "{弟|おとうと}は{肉|にく}ばかり{食|た}べて、{野菜|やさい}を{食|た}べない。",
+        "vi": "Em trai tôi chỉ toàn ăn thịt, không chịu ăn rau."
+      },
+      {
+        "jp": "このクラスは女の子ばかりだ。",
+        "furigana": "このクラスは{女|おんな}の{子|こ}ばかりだ。",
+        "vi": "Lớp này toàn con gái."
+      },
+      {
+        "jp": "最近は雨の日ばかりで、洗濯ができない。",
+        "furigana": "{最近|さいきん}は{雨|あめ}の{日|ひ}ばかりで、{洗濯|せんたく}ができない。",
+        "vi": "Dạo này toàn ngày mưa nên không giặt đồ được."
+      }
+    ]
+  },
+  {
+    "title": "〜たばかり",
+    "jlpt_level": "N4",
+    "structure": "V-た + ばかり",
+    "meaning_vi": "vừa mới làm",
+    "explanation_vi": "Cho thấy người nói cảm thấy chưa bao lâu, dù có thể đã vài tuần. 「〜たところ」 chỉ việc vừa xảy ra ngay trước đó.",
+    "examples": [
+      {
+        "jp": "日本に来たばかりなので、まだ日本語がよく分かりません。",
+        "furigana": "{日本|にほん}に{来|き}たばかりなので、まだ{日本語|にほんご}がよく{分|わ}かりません。",
+        "vi": "Tôi mới đến Nhật nên chưa hiểu rõ tiếng Nhật."
+      },
+      {
+        "jp": "さっき昼ご飯を食べたばかりだから、おなかがいっぱいだ。",
+        "furigana": "さっき{昼|ひる}ご{飯|はん}を{食|た}べたばかりだから、おなかがいっぱいだ。",
+        "vi": "Tôi vừa ăn trưa xong nên no rồi."
+      },
+      {
+        "jp": "買ったばかりの傘をなくしてしまった。",
+        "furigana": "{買|か}ったばかりの{傘|かさ}をなくしてしまった。",
+        "vi": "Tôi đã làm mất chiếc ô vừa mới mua."
+      }
+    ]
+  },
+  {
+    "title": "〜ところだ",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-て + いる / V-た + ところだ",
+    "meaning_vi": "sắp làm; đang làm; vừa làm xong",
+    "explanation_vi": "Thể từ điển: sắp làm. 「〜ているところ」: đang làm. 「〜たところ」: vừa làm xong. Mẫu này chỉ rõ giai đoạn của hành động.",
+    "examples": [
+      {
+        "jp": "今から出かけるところです。",
+        "furigana": "{今|いま}から{出|で}かけるところです。",
+        "vi": "Bây giờ tôi chuẩn bị ra ngoài."
+      },
+      {
+        "jp": "今、晩ご飯を作っているところだから、後で電話するね。",
+        "furigana": "{今|いま}、{晩|ばん}ご{飯|はん}を{作|つく}っているところだから、{後|あと}で{電話|でんわ}するね。",
+        "vi": "Giờ mình đang nấu bữa tối nên lát nữa gọi lại nhé."
+      },
+      {
+        "jp": "ちょうど今、駅に着いたところです。",
+        "furigana": "ちょうど{今|いま}、{駅|えき}に{着|つ}いたところです。",
+        "vi": "Tôi vừa mới đến nhà ga."
+      }
+    ]
+  },
+  {
+    "title": "〜やすい / 〜にくい",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + やすい / V-ます (gốc) + にくい",
+    "meaning_vi": "dễ làm; khó làm",
+    "explanation_vi": "Cả hai chia như tính từ đuôi い. 「やすい」 còn có nghĩa 'dễ bị, hay' (この服は汚れやすい).",
+    "examples": [
+      {
+        "jp": "このペンは書きやすいです。",
+        "furigana": "このペンは{書|か}きやすいです。",
+        "vi": "Cây bút này dễ viết."
+      },
+      {
+        "jp": "先生の説明は分かりやすい。",
+        "furigana": "{先生|せんせい}の{説明|せつめい}は{分|わ}かりやすい。",
+        "vi": "Lời giải thích của thầy cô dễ hiểu."
+      },
+      {
+        "jp": "この魚は骨が多くて食べにくい。",
+        "furigana": "この{魚|さかな}は{骨|ほね}が{多|おお}くて{食|た}べにくい。",
+        "vi": "Loại cá này nhiều xương nên khó ăn."
+      }
+    ]
+  },
+  {
+    "title": "〜始める / 〜終わる / 〜続ける",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + 始める / V-ます (gốc) + 終わる / V-ます (gốc) + 続ける",
+    "meaning_vi": "bắt đầu làm; làm xong; tiếp tục làm",
+    "explanation_vi": "「〜終わる」 dùng với hành động có điểm kết thúc rõ (読む, 食べる, 書く). 「〜終える」 là cách nói trang trọng hơn.",
+    "examples": [
+      {
+        "jp": "去年からギターを習い始めました。",
+        "furigana": "{去年|きょねん}からギターを{習|なら}い{始|はじ}めました。",
+        "vi": "Tôi bắt đầu học guitar từ năm ngoái."
+      },
+      {
+        "jp": "その本、読み終わったら貸してくれない？",
+        "furigana": "その{本|ほん}、{読|よ}み{終|お}わったら{貸|か}してくれない？",
+        "vi": "Đọc xong cuốn sách đó thì cho mình mượn nhé?"
+      },
+      {
+        "jp": "三時間も歩き続けて、足が痛くなった。",
+        "furigana": "{三|さん}{時間|じかん}も{歩|ある}き{続|つづ}けて、{足|あし}が{痛|いた}くなった。",
+        "vi": "Đi bộ liền ba tiếng khiến chân tôi đau."
+      }
+    ]
+  },
+  {
+    "title": "〜出す",
+    "jlpt_level": "N4",
+    "structure": "V-ます (gốc) + 出す",
+    "meaning_vi": "đột nhiên bắt đầu; bật lên",
+    "explanation_vi": "Ngụ ý sự bắt đầu đột ngột, thường không kiểm soát được. Khác với 「〜始める」, không dùng cho hành động có kế hoạch hay trong lời yêu cầu.",
+    "examples": [
+      {
+        "jp": "赤ちゃんが急に泣き出した。",
+        "furigana": "{赤|あか}ちゃんが{急|きゅう}に{泣|な}き{出|だ}した。",
+        "vi": "Em bé đột nhiên òa khóc."
+      },
+      {
+        "jp": "さっきまで晴れていたのに、急に雨が降り出した。",
+        "furigana": "さっきまで{晴|は}れていたのに、{急|きゅう}に{雨|あめ}が{降|ふ}り{出|だ}した。",
+        "vi": "Vừa nãy còn nắng mà đột nhiên trời đổ mưa."
+      }
+    ]
+  },
+  {
+    "title": "〜ほど〜ない",
+    "jlpt_level": "N4",
+    "structure": "N / V-thể thường + ほど + Adj-く + ない / Adj-な + ではない",
+    "meaning_vi": "không... bằng",
+    "explanation_vi": "Từ đứng trước 「ほど」 là chuẩn so sánh. Luôn theo sau là dạng phủ định.",
+    "examples": [
+      {
+        "jp": "今年の夏は去年ほど暑くない。",
+        "furigana": "{今年|ことし}の{夏|なつ}は{去年|きょねん}ほど{暑|あつ}くない。",
+        "vi": "Mùa hè năm nay không nóng bằng năm ngoái."
+      },
+      {
+        "jp": "私の町は東京ほどにぎやかではありません。",
+        "furigana": "{私|わたし}の{町|まち}は{東京|とうきょう}ほどにぎやかではありません。",
+        "vi": "Thị trấn của tôi không nhộn nhịp bằng Tokyo."
+      },
+      {
+        "jp": "テストは思ったほど難しくなかった。",
+        "furigana": "テストは{思|おも}ったほど{難|むずか}しくなかった。",
+        "vi": "Bài kiểm tra không khó như tôi nghĩ."
+      }
+    ]
+  },
+  {
+    "title": "なかなか〜ない",
+    "jlpt_level": "N4",
+    "structure": "なかなか + V-ない",
+    "meaning_vi": "mãi không; không dễ gì",
+    "explanation_vi": "Cho thấy việc gì đó không diễn ra nhanh hoặc dễ như mong đợi. Với dạng khẳng định, 「なかなか」 nghĩa là 'khá' (なかなかおいしい).",
+    "examples": [
+      {
+        "jp": "バスがなかなか来ない。",
+        "furigana": "バスがなかなか{来|こ}ない。",
+        "vi": "Xe buýt mãi không đến."
+      },
+      {
+        "jp": "漢字がなかなか覚えられません。",
+        "furigana": "{漢字|かんじ}がなかなか{覚|おぼ}えられません。",
+        "vi": "Tôi mãi không nhớ được kanji."
+      },
+      {
+        "jp": "子どもがなかなか寝てくれない。",
+        "furigana": "{子|こ}どもがなかなか{寝|ね}てくれない。",
+        "vi": "Bọn trẻ mãi không chịu ngủ."
+      }
+    ]
+  },
+  {
+    "title": "〜ずつ",
+    "jlpt_level": "N4",
+    "structure": "N (số lượng) + ずつ",
+    "meaning_vi": "mỗi; từng; từng chút một",
+    "examples": [
+      {
+        "jp": "りんごを一人に二つずつ配った。",
+        "furigana": "りんごを{一人|ひとり}に{二|ふた}つずつ{配|くば}った。",
+        "vi": "Tôi phát cho mỗi người hai quả táo."
+      },
+      {
+        "jp": "毎日少しずつ漢字を覚えています。",
+        "furigana": "{毎日|まいにち}{少|すこ}しずつ{漢字|かんじ}を{覚|おぼ}えています。",
+        "vi": "Mỗi ngày tôi nhớ từng chút kanji."
+      },
+      {
+        "jp": "一人ずつ部屋に入ってください。",
+        "furigana": "{一人|ひとり}ずつ{部屋|へや}に{入|はい}ってください。",
+        "vi": "Hãy vào phòng từng người một."
+      }
+    ]
+  },
+  {
+    "title": "〜も（emphasis）",
+    "jlpt_level": "N4",
+    "structure": "N (số + lượng từ) + も",
+    "meaning_vi": "tới, những (nhấn mạnh số lượng); (với phủ định) không một",
+    "explanation_vi": "Cho thấy người nói cảm thấy số lượng lớn. Với 「一 + lượng từ」 và động từ phủ định, nghĩa là 'không một...'.",
+    "examples": [
+      {
+        "jp": "昨日は十時間も寝てしまった。",
+        "furigana": "{昨日|きのう}は{十|じゅう}{時間|じかん}も{寝|ね}てしまった。",
+        "vi": "Hôm qua tôi đã ngủ tới 10 tiếng."
+      },
+      {
+        "jp": "このかばんは五万円もするんですか。",
+        "furigana": "このかばんは{五|ご}{万|まん}{円|えん}もするんですか。",
+        "vi": "Cái túi này giá tới 50.000 yên sao?"
+      },
+      {
+        "jp": "財布の中に一円もない。",
+        "furigana": "{財布|さいふ}の{中|なか}に{一|いち}{円|えん}もない。",
+        "vi": "Trong ví tôi không có lấy một yên."
+      }
+    ]
+  },
+  {
+    "title": "〜までに",
+    "jlpt_level": "N4",
+    "structure": "N / V-từ điển + までに",
+    "meaning_vi": "trước (hạn chót); muộn nhất là",
+    "explanation_vi": "「までに」 chỉ hạn chót cho hành động xảy ra một lần; 「まで」 chỉ việc kéo dài đến khi nào (六時まで働く).",
+    "examples": [
+      {
+        "jp": "レポートは金曜日までに出してください。",
+        "furigana": "レポートは{金曜日|きんようび}までに{出|だ}してください。",
+        "vi": "Hãy nộp báo cáo trước thứ Sáu."
+      },
+      {
+        "jp": "六時までに家に帰らなければならない。",
+        "furigana": "{六|ろく}{時|じ}までに{家|いえ}に{帰|かえ}らなければならない。",
+        "vi": "Tôi phải về nhà trước 6 giờ."
+      },
+      {
+        "jp": "暗くなるまでに山を下りよう。",
+        "furigana": "{暗|くら}くなるまでに{山|やま}を{下|お}りよう。",
+        "vi": "Hãy xuống núi trước khi trời tối."
+      }
+    ]
+  },
+  {
+    "title": "〜ことがある",
+    "jlpt_level": "N4",
+    "structure": "V-từ điển / V-ない + ことがある",
+    "meaning_vi": "thỉnh thoảng; có lúc",
+    "explanation_vi": "Đi với thể từ điển hoặc thể ない. Với thể quá khứ (〜たことがある) thì nghĩa là 'đã từng'.",
+    "examples": [
+      {
+        "jp": "忙しいときは、朝ご飯を食べないことがあります。",
+        "furigana": "{忙|いそが}しいときは、{朝|あさ}ご{飯|はん}を{食|た}べないことがあります。",
+        "vi": "Khi bận, có lúc tôi không ăn sáng."
+      },
+      {
+        "jp": "この道は冬になると、雪で通れなくなることがある。",
+        "furigana": "この{道|みち}は{冬|ふゆ}になると、{雪|ゆき}で{通|とお}れなくなることがある。",
+        "vi": "Vào mùa đông, con đường này có lúc không đi được vì tuyết."
+      },
+      {
+        "jp": "週末は家族で料理をすることがある。",
+        "furigana": "{週末|しゅうまつ}は{家族|かぞく}で{料理|りょうり}をすることがある。",
+        "vi": "Cuối tuần, thỉnh thoảng cả nhà tôi cùng nấu ăn."
+      }
+    ]
+  },
+  {
+    "title": "〜ないといけない / 〜なくちゃ",
+    "jlpt_level": "N4",
+    "structure": "V-ない + といけない / V-ない (gốc) + なくちゃ",
+    "meaning_vi": "phải (văn nói)",
+    "explanation_vi": "Cách nói thường ngày thay cho 「なければならない」. 「なくちゃ」 đến từ 「なくては」; 「なきゃ」 (từ 「なければ」) cũng rất phổ biến.",
+    "examples": [
+      {
+        "jp": "明日は早いから、もう寝ないといけない。",
+        "furigana": "{明日|あした}は{早|はや}いから、もう{寝|ね}ないといけない。",
+        "vi": "Ngày mai phải dậy sớm nên giờ tôi phải đi ngủ."
+      },
+      {
+        "jp": "あ、もうこんな時間！帰らなくちゃ。",
+        "furigana": "あ、もうこんな{時間|じかん}！{帰|かえ}らなくちゃ。",
+        "vi": "Ôi, muộn thế này rồi! Phải về thôi."
+      },
+      {
+        "jp": "この薬は毎日飲まないといけません。",
+        "furigana": "この{薬|くすり}は{毎日|まいにち}{飲|の}まないといけません。",
+        "vi": "Bạn phải uống thuốc này mỗi ngày."
+      }
+    ]
+  },
+  {
+    "title": "〜させてください",
+    "jlpt_level": "N4",
+    "structure": "V-ない (gốc) + せてください (Nhóm 1) / V-ない (gốc) + させてください (Nhóm 2)",
+    "meaning_vi": "xin hãy cho phép tôi (làm)",
+    "explanation_vi": "Tạo từ thể て của thể sai khiến (する → させて). 「〜させていただけませんか」 lịch sự hơn.",
+    "examples": [
+      {
+        "jp": "少し考えさせてください。",
+        "furigana": "{少|すこ}し{考|かんが}えさせてください。",
+        "vi": "Xin cho tôi suy nghĩ một chút."
+      },
+      {
+        "jp": "今日は私に払わせてください。",
+        "furigana": "{今日|きょう}は{私|わたし}に{払|はら}わせてください。",
+        "vi": "Hôm nay hãy để tôi trả tiền."
+      },
+      {
+        "jp": "体の調子が悪いので、今日は早く帰らせてください。",
+        "furigana": "{体|からだ}の{調子|ちょうし}が{悪|わる}いので、{今日|きょう}は{早|はや}く{帰|かえ}らせてください。",
+        "vi": "Tôi không khỏe nên xin cho tôi về sớm hôm nay."
+      }
+    ]
+  },
+  {
+    "title": "尊敬語",
+    "jlpt_level": "N4",
+    "structure": "いらっしゃる（行く・来る・いる） / 召し上がる（食べる・飲む） / おっしゃる（言う） / なさる（する） / ご覧になる（見る） / くださる（くれる）",
+    "meaning_vi": "động từ tôn kính; cách nói kính trọng về hành động của người khác",
+    "explanation_vi": "Nâng cao hành động của người mình kính trọng như khách hàng, thầy cô, cấp trên. Không bao giờ dùng cho hành động của chính mình.",
+    "examples": [
+      {
+        "jp": "社長は何時ごろいらっしゃいますか。",
+        "furigana": "{社長|しゃちょう}は{何|なん}{時|じ}ごろいらっしゃいますか。",
+        "vi": "Giám đốc khoảng mấy giờ sẽ đến ạ?"
+      },
+      {
+        "jp": "先生、どうぞ召し上がってください。",
+        "furigana": "{先生|せんせい}、どうぞ{召|め}し{上|あ}がってください。",
+        "vi": "Thưa thầy, xin mời thầy dùng bữa."
+      },
+      {
+        "jp": "部長は会議でそうおっしゃいました。",
+        "furigana": "{部長|ぶちょう}は{会議|かいぎ}でそうおっしゃいました。",
+        "vi": "Trưởng phòng đã nói như vậy trong cuộc họp."
+      }
+    ]
+  },
+  {
+    "title": "謙譲語",
+    "jlpt_level": "N4",
+    "structure": "参る（行く・来る） / おる（いる） / いただく（食べる・飲む・もらう） / 申す（言う） / いたす（する） / 拝見する（見る） / 伺う（聞く・訪ねる）",
+    "meaning_vi": "động từ khiêm nhường; cách nói khiêm tốn về hành động của mình",
+    "explanation_vi": "Hạ thấp hành động của mình hoặc nhóm mình trước người mình kính trọng. 「参る」, 「おる」, 「申す」, 「いたす」 cũng làm lời nói trang trọng hơn nói chung.",
+    "examples": [
+      {
+        "jp": "明日の午後、そちらに伺います。",
+        "furigana": "{明日|あした}の{午後|ごご}、そちらに{伺|うかが}います。",
+        "vi": "Chiều mai tôi xin phép đến chỗ anh chị."
+      },
+      {
+        "jp": "初めまして。リンと申します。",
+        "furigana": "{初|はじ}めまして。リンと{申|もう}します。",
+        "vi": "Rất hân hạnh được gặp. Tôi tên là Lin."
+      },
+      {
+        "jp": "お手紙、拝見しました。",
+        "furigana": "お{手紙|てがみ}、{拝見|はいけん}しました。",
+        "vi": "Tôi đã đọc thư của ngài."
+      }
+    ]
+  },
+  {
+    "title": "お〜になる",
+    "jlpt_level": "N4",
+    "structure": "お + V-ます (gốc) + になる",
+    "meaning_vi": "(tôn kính) người được kính trọng làm gì",
+    "explanation_vi": "Không dùng với gốc một âm tiết (見る, 寝る) hoặc động từ có dạng đặc biệt (行く → いらっしゃる). Danh từ する dùng 「ご + danh từ + になる」 (ご利用になる).",
+    "examples": [
+      {
+        "jp": "先生はもうお帰りになりました。",
+        "furigana": "{先生|せんせい}はもうお{帰|かえ}りになりました。",
+        "vi": "Thầy giáo đã về rồi ạ."
+      },
+      {
+        "jp": "この本をお読みになりましたか。",
+        "furigana": "この{本|ほん}をお{読|よ}みになりましたか。",
+        "vi": "Anh chị đã đọc cuốn sách này chưa ạ?"
+      },
+      {
+        "jp": "社長はいつもこのホテルにお泊まりになります。",
+        "furigana": "{社長|しゃちょう}はいつもこのホテルにお{泊|と}まりになります。",
+        "vi": "Giám đốc lúc nào cũng nghỉ tại khách sạn này."
+      }
+    ]
+  },
+  {
+    "title": "お〜する",
+    "jlpt_level": "N4",
+    "structure": "お + V-ます (gốc) + する / ご + N + する",
+    "meaning_vi": "(khiêm nhường) tôi làm (cho người được kính trọng)",
+    "explanation_vi": "Chỉ dùng cho hành động ảnh hưởng hoặc mang lợi cho đối phương. 「お〜いたします」 còn trang trọng hơn.",
+    "examples": [
+      {
+        "jp": "重そうですね。お持ちしましょうか。",
+        "furigana": "{重|おも}そうですね。お{持|も}ちしましょうか。",
+        "vi": "Trông nặng quá. Để tôi xách giúp ạ?"
+      },
+      {
+        "jp": "後で詳しくご説明します。",
+        "furigana": "{後|あと}で{詳|くわ}しくご{説明|せつめい}します。",
+        "vi": "Lát nữa tôi xin giải thích chi tiết."
+      },
+      {
+        "jp": "駅までお送りします。",
+        "furigana": "{駅|えき}までお{送|おく}りします。",
+        "vi": "Tôi xin đưa anh chị đến nhà ga."
+      }
+    ]
+  },
+  {
+    "title": "〜でございます",
+    "jlpt_level": "N4",
+    "structure": "N / Adj-な + でございます",
+    "meaning_vi": "là (cách nói rất lịch sự)",
+    "explanation_vi": "Dạng rất lịch sự của 「です」, điển hình ở nhân viên cửa hàng, khách sạn khi nói với khách. Riêng 「ございます」 là dạng lịch sự của 「あります」.",
+    "examples": [
+      {
+        "jp": "お手洗いはあちらでございます。",
+        "furigana": "お{手洗|てあら}いはあちらでございます。",
+        "vi": "Nhà vệ sinh ở đằng kia ạ."
+      },
+      {
+        "jp": "こちらが、お部屋のかぎでございます。",
+        "furigana": "こちらが、お{部屋|へや}のかぎでございます。",
+        "vi": "Đây là chìa khóa phòng của quý khách."
+      },
+      {
+        "jp": "はい、山田商店でございます。",
+        "furigana": "はい、{山田|やまだ}{商店|しょうてん}でございます。",
+        "vi": "Vâng, cửa hàng Yamada xin nghe."
+      }
+    ]
+  },
+  {
+    "title": "〜ても構わない",
+    "jlpt_level": "N4",
+    "structure": "V-て + も構わない / Adj-く + ても構わない / Adj-な + でも構わない / N + でも構わない",
+    "meaning_vi": "không sao nếu; làm... cũng được",
+    "explanation_vi": "Trang trọng hơn 「〜てもいい」 một chút. 「〜なくても構わない」 nghĩa là 'không làm cũng được'.",
+    "examples": [
+      {
+        "jp": "ここに荷物を置いても構いませんか。",
+        "furigana": "ここに{荷物|にもつ}を{置|お}いても{構|かま}いませんか。",
+        "vi": "Tôi để hành lý ở đây có được không?"
+      },
+      {
+        "jp": "少しぐらい高くても構わないから、いい辞書を買いたい。",
+        "furigana": "{少|すこ}しぐらい{高|たか}くても{構|かま}わないから、いい{辞書|じしょ}を{買|か}いたい。",
+        "vi": "Đắt một chút cũng không sao, tôi muốn mua một cuốn từ điển tốt."
+      },
+      {
+        "jp": "返事は明日でも構いませんよ。",
+        "furigana": "{返事|へんじ}は{明日|あした}でも{構|かま}いませんよ。",
+        "vi": "Ngày mai trả lời cũng được nhé."
+      }
+    ]
+  },
+  {
+    "title": "〜の / 〜こと（nominalizer）",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường + の / V-thể thường + こと",
+    "meaning_vi": "việc (biến cụm động từ thành danh từ)",
+    "explanation_vi": "「の」 được ưu tiên với động từ tri giác (見る, 聞こえる) và trong văn nói thân mật; 「こと」 bắt buộc trước 「です/だ」 và trong mẫu cố định như 「〜ことができる」.",
+    "examples": [
+      {
+        "jp": "私は写真を撮るのが好きです。",
+        "furigana": "{私|わたし}は{写真|しゃしん}を{撮|と}るのが{好|す}きです。",
+        "vi": "Tôi thích chụp ảnh."
+      },
+      {
+        "jp": "趣味は古い映画を見ることです。",
+        "furigana": "{趣味|しゅみ}は{古|ふる}い{映画|えいが}を{見|み}ることです。",
+        "vi": "Sở thích của tôi là xem phim cũ."
+      },
+      {
+        "jp": "かぎをかけるのを忘れました。",
+        "furigana": "かぎをかけるのを{忘|わす}れました。",
+        "vi": "Tôi đã quên khóa cửa."
+      }
+    ]
+  },
+  {
+    "title": "〜ばよかった",
+    "jlpt_level": "N4",
+    "structure": "V-ば + よかった / V-ない (gốc) + なければよかった",
+    "meaning_vi": "đáng lẽ nên; giá mà đã",
+    "explanation_vi": "Bày tỏ sự hối tiếc về quá khứ. 「〜たらよかった」 là cách nói thường gặp trong hội thoại.",
+    "examples": [
+      {
+        "jp": "もっと早く家を出ればよかった。",
+        "furigana": "もっと{早|はや}く{家|いえ}を{出|で}ればよかった。",
+        "vi": "Đáng lẽ tôi nên ra khỏi nhà sớm hơn."
+      },
+      {
+        "jp": "あんなこと、言わなければよかった。",
+        "furigana": "あんなこと、{言|い}わなければよかった。",
+        "vi": "Giá mà tôi đã không nói điều đó."
+      },
+      {
+        "jp": "傘を持ってくればよかったなあ。",
+        "furigana": "{傘|かさ}を{持|も}ってくればよかったなあ。",
+        "vi": "Giá mà mình mang theo ô."
+      }
+    ]
+  },
+  {
+    "title": "〜たらどう",
+    "jlpt_level": "N4",
+    "structure": "V-た + らどう",
+    "meaning_vi": "sao không...?; thử... xem sao?",
+    "explanation_vi": "Thường rút gọn thành 「〜たら？」. Có thể nghe gượng ép với người trên; 「〜たらいかがですか」 là dạng lịch sự.",
+    "examples": [
+      {
+        "jp": "疲れているなら、少し休んだらどう？",
+        "furigana": "{疲|つか}れているなら、{少|すこ}し{休|やす}んだらどう？",
+        "vi": "Nếu mệt thì nghỉ một chút đi?"
+      },
+      {
+        "jp": "分からなければ、先生に聞いてみたらどうですか。",
+        "furigana": "{分|わ}からなければ、{先生|せんせい}に{聞|き}いてみたらどうですか。",
+        "vi": "Nếu không hiểu, sao bạn không thử hỏi thầy cô?"
+      }
+    ]
+  },
+  {
+    "title": "〜ほうがいい",
+    "jlpt_level": "N4",
+    "structure": "V-た / V-ない + ほうがいい",
+    "meaning_vi": "nên; tốt hơn là",
+    "explanation_vi": "Khi khuyên, thể quá khứ (行ったほうがいい) là lựa chọn thường dùng và nghe mạnh hơn. Dạng phủ định dùng thể ない, không dùng quá khứ.",
+    "examples": [
+      {
+        "jp": "熱があるなら、病院に行ったほうがいいですよ。",
+        "furigana": "{熱|ねつ}があるなら、{病院|びょういん}に{行|い}ったほうがいいですよ。",
+        "vi": "Nếu bị sốt thì bạn nên đi bệnh viện."
+      },
+      {
+        "jp": "夜遅くに一人で歩かないほうがいい。",
+        "furigana": "{夜|よる}{遅|おそ}くに{一人|ひとり}で{歩|ある}かないほうがいい。",
+        "vi": "Không nên đi bộ một mình vào đêm khuya."
+      },
+      {
+        "jp": "大事な書類は、コピーしておいたほうがいいですよ。",
+        "furigana": "{大事|だいじ}な{書類|しょるい}は、コピーしておいたほうがいいですよ。",
+        "vi": "Tài liệu quan trọng thì nên sao lưu sẵn."
+      }
+    ]
+  },
+  {
+    "title": "〜とか〜とか",
+    "jlpt_level": "N4",
+    "structure": "N + とか + N + とか / V-từ điển + とか + V-từ điển + とか",
+    "meaning_vi": "nào là A, nào là B; A, B chẳng hạn (thân mật)",
+    "explanation_vi": "Thân mật hơn 「〜や〜など」, và cũng có thể liệt kê động từ hoặc cả cụm từ.",
+    "examples": [
+      {
+        "jp": "冷蔵庫に卵とか牛乳とかが入っています。",
+        "furigana": "{冷蔵庫|れいぞうこ}に{卵|たまご}とか{牛乳|ぎゅうにゅう}とかが{入|はい}っています。",
+        "vi": "Trong tủ lạnh có nào là trứng, nào là sữa."
+      },
+      {
+        "jp": "休みの日は、映画とか買い物とかに行きます。",
+        "furigana": "{休|やす}みの{日|ひ}は、{映画|えいが}とか{買|か}い{物|もの}とかに{行|い}きます。",
+        "vi": "Ngày nghỉ tôi đi xem phim, đi mua sắm các kiểu."
+      },
+      {
+        "jp": "健康のために、野菜を食べるとか運動するとか、何かしたほうがいい。",
+        "furigana": "{健康|けんこう}のために、{野菜|やさい}を{食|た}べるとか{運動|うんどう}するとか、{何|なに}かしたほうがいい。",
+        "vi": "Vì sức khỏe, bạn nên làm gì đó, như ăn rau hay tập thể dục."
+      }
+    ]
+  },
+  {
+    "title": "〜など",
+    "jlpt_level": "N4",
+    "structure": "N + など",
+    "meaning_vi": "v.v.; chẳng hạn như",
+    "explanation_vi": "Thường đi cùng 「や」 (AやBなど). Sau một danh từ thì làm lời đề nghị nhẹ nhàng hơn.",
+    "examples": [
+      {
+        "jp": "机の上に本やノートなどがあります。",
+        "furigana": "{机|つくえ}の{上|うえ}に{本|ほん}やノートなどがあります。",
+        "vi": "Trên bàn có sách, vở, v.v."
+      },
+      {
+        "jp": "夏休みに京都や奈良などに行きました。",
+        "furigana": "{夏休|なつやす}みに{京都|きょうと}や{奈良|なら}などに{行|い}きました。",
+        "vi": "Kỳ nghỉ hè tôi đã đi những nơi như Kyoto và Nara."
+      },
+      {
+        "jp": "お茶など、いかがですか。",
+        "furigana": "お{茶|ちゃ}など、いかがですか。",
+        "vi": "Anh dùng chút trà nhé?"
+      }
+    ]
+  },
+  {
+    "title": "〜でも（suggestion）",
+    "jlpt_level": "N4",
+    "structure": "N + でも",
+    "meaning_vi": "... hay gì đó (làm lời đề nghị nhẹ nhàng)",
+    "explanation_vi": "Đưa ra một ví dụ nhưng vẫn để ngỏ lựa chọn khác, giúp lời mời và lời khuyên bớt gượng ép.",
+    "examples": [
+      {
+        "jp": "ちょっと休んで、コーヒーでも飲みませんか。",
+        "furigana": "ちょっと{休|やす}んで、コーヒーでも{飲|の}みませんか。",
+        "vi": "Nghỉ một chút rồi uống cà phê hay gì đó nhé?"
+      },
+      {
+        "jp": "雨だから、家でゲームでもしよう。",
+        "furigana": "{雨|あめ}だから、{家|いえ}でゲームでもしよう。",
+        "vi": "Trời mưa nên ở nhà chơi game hay gì đó đi."
+      },
+      {
+        "jp": "暇なら、本でも読んだら？",
+        "furigana": "{暇|ひま}なら、{本|ほん}でも{読|よ}んだら？",
+        "vi": "Nếu rảnh thì đọc sách hay gì đó đi?"
+      }
+    ]
+  },
+  {
+    "title": "〜さ",
+    "jlpt_level": "N4",
+    "structure": "Adj-い (gốc) + さ / Adj-な + さ",
+    "meaning_vi": "độ, sự (biến tính từ thành danh từ chỉ mức độ)",
+    "explanation_vi": "「いい」 thành 「よさ」. Thường dùng cho số đo (高さ, 重さ, 大きさ, 長さ).",
+    "examples": [
+      {
+        "jp": "この橋の長さはどのくらいですか。",
+        "furigana": "この{橋|はし}の{長|なが}さはどのくらいですか。",
+        "vi": "Cây cầu này dài bao nhiêu?"
+      },
+      {
+        "jp": "山の上の寒さにびっくりした。",
+        "furigana": "{山|やま}の{上|うえ}の{寒|さむ}さにびっくりした。",
+        "vi": "Tôi đã ngạc nhiên vì độ lạnh trên đỉnh núi."
+      },
+      {
+        "jp": "この仕事の大変さは、やってみないと分からない。",
+        "furigana": "この{仕事|しごと}の{大変|たいへん}さは、やってみないと{分|わ}からない。",
+        "vi": "Chưa làm thử thì không hiểu được sự vất vả của công việc này."
+      }
+    ]
+  },
+  {
+    "title": "〜目",
+    "jlpt_level": "N4",
+    "structure": "N (số + lượng từ) + 目",
+    "meaning_vi": "thứ (số thứ tự: thứ nhất, thứ hai, thứ ba...)",
+    "examples": [
+      {
+        "jp": "右から三つ目の建物が図書館です。",
+        "furigana": "{右|みぎ}から{三|みっ}つ{目|め}の{建物|たてもの}が{図書館|としょかん}です。",
+        "vi": "Tòa nhà thứ ba tính từ bên phải là thư viện."
+      },
+      {
+        "jp": "日本に来るのは今回で二回目です。",
+        "furigana": "{日本|にほん}に{来|く}るのは{今回|こんかい}で{二|に}{回|かい}{目|め}です。",
+        "vi": "Đây là lần thứ hai tôi đến Nhật."
+      },
+      {
+        "jp": "二つ目の角を左に曲がってください。",
+        "furigana": "{二|ふた}つ{目|め}の{角|かど}を{左|ひだり}に{曲|ま}がってください。",
+        "vi": "Hãy rẽ trái ở góc đường thứ hai."
+      }
+    ]
+  },
+  {
+    "title": "〜おきに",
+    "jlpt_level": "N4",
+    "structure": "N (số + lượng từ) + おきに",
+    "meaning_vi": "cách; cứ mỗi",
+    "explanation_vi": "Với ngày (一日おき) là bỏ qua một đơn vị, nghĩa là 'cách một ngày'. Với phút hoặc khoảng cách thường chỉ nghĩa là 'cứ mỗi X'.",
+    "examples": [
+      {
+        "jp": "このバスは十五分おきに来ます。",
+        "furigana": "このバスは{十|じゅう}{五|ご}{分|ふん}おきに{来|き}ます。",
+        "vi": "Xe buýt này cứ 15 phút có một chuyến."
+      },
+      {
+        "jp": "一日おきにジョギングをしています。",
+        "furigana": "{一|いち}{日|にち}おきにジョギングをしています。",
+        "vi": "Tôi chạy bộ cách ngày."
+      },
+      {
+        "jp": "道の両側に、木が五メートルおきに植えてある。",
+        "furigana": "{道|みち}の{両側|りょうがわ}に、{木|き}が{五|ご}メートルおきに{植|う}えてある。",
+        "vi": "Hai bên đường cứ 5 mét trồng một cây."
+      }
+    ]
+  },
+  {
+    "title": "〜くする / 〜にする（make）",
+    "jlpt_level": "N4",
+    "structure": "Adj-く + する / Adj-な + に + する / N + に + する",
+    "meaning_vi": "làm cho (cái gì) trở nên...; chuyển sang trạng thái",
+    "explanation_vi": "Có người cố ý thay đổi điều gì đó. So sánh với 「〜くなる / 〜になる」, khi thay đổi tự xảy ra.",
+    "examples": [
+      {
+        "jp": "テレビの音を小さくしてください。",
+        "furigana": "テレビの{音|おと}を{小|ちい}さくしてください。",
+        "vi": "Hãy vặn nhỏ tiếng tivi."
+      },
+      {
+        "jp": "お客さんが来るから、部屋をきれいにしよう。",
+        "furigana": "お{客|きゃく}さんが{来|く}るから、{部屋|へや}をきれいにしよう。",
+        "vi": "Sắp có khách nên mình dọn phòng sạch sẽ nhé."
+      },
+      {
+        "jp": "暑いので、髪を短くしました。",
+        "furigana": "{暑|あつ}いので、{髪|かみ}を{短|みじか}くしました。",
+        "vi": "Trời nóng nên tôi đã cắt tóc ngắn."
+      }
+    ]
+  },
+  {
+    "title": "〜がする",
+    "jlpt_level": "N4",
+    "structure": "N + がする",
+    "meaning_vi": "cảm nhận thấy (mùi, âm thanh, vị, cảm giác)",
+    "explanation_vi": "Dùng với 「におい」, 「音」, 「声」, 「味」 và 「気」 (〜気がする: 'có cảm giác rằng').",
+    "examples": [
+      {
+        "jp": "台所からいいにおいがする。",
+        "furigana": "{台所|だいどころ}からいいにおいがする。",
+        "vi": "Từ bếp tỏa ra mùi thơm."
+      },
+      {
+        "jp": "外で変な音がしました。",
+        "furigana": "{外|そと}で{変|へん}な{音|おと}がしました。",
+        "vi": "Tôi nghe thấy tiếng động lạ bên ngoài."
+      },
+      {
+        "jp": "このお茶は少し甘い味がする。",
+        "furigana": "このお{茶|ちゃ}は{少|すこ}し{甘|あま}い{味|あじ}がする。",
+        "vi": "Trà này có vị hơi ngọt."
+      }
+    ]
+  },
+  {
+    "title": "〜かな / 〜かしら",
+    "jlpt_level": "N4",
+    "structure": "V-thể thường / Adj-い / Adj-な / N + かな / かしら",
+    "meaning_vi": "không biết... nhỉ",
+    "explanation_vi": "Câu hỏi nhẹ nhàng, thường tự hỏi mình. 「かしら」 nghe nữ tính và hơi xưa. 「〜ないかな」 có thể diễn tả mong muốn (早く来ないかな).",
+    "examples": [
+      {
+        "jp": "明日は晴れるかな。",
+        "furigana": "{明日|あした}は{晴|は}れるかな。",
+        "vi": "Không biết ngày mai có nắng không nhỉ."
+      },
+      {
+        "jp": "このお菓子、誰が買ってきたのかな。",
+        "furigana": "このお{菓子|かし}、{誰|だれ}が{買|か}ってきたのかな。",
+        "vi": "Không biết ai đã mua bánh kẹo này nhỉ."
+      },
+      {
+        "jp": "この服、私に似合うかしら。",
+        "furigana": "この{服|ふく}、{私|わたし}に{似合|にあ}うかしら。",
+        "vi": "Không biết bộ đồ này có hợp với mình không nhỉ."
+      }
+    ]
+  },
+  {
+    "title": "〜てくれませんか / 〜ていただけませんか",
+    "jlpt_level": "N4",
+    "structure": "V-て + くれませんか / V-て + いただけませんか",
+    "meaning_vi": "làm ơn... được không? (yêu cầu lịch sự)",
+    "explanation_vi": "Nhẹ nhàng hơn 「〜てください」. Mức lịch sự tăng dần: 「〜てくれませんか」, 「〜てもらえませんか」, 「〜ていただけませんか」.",
+    "examples": [
+      {
+        "jp": "すみません、写真を撮ってくれませんか。",
+        "furigana": "すみません、{写真|しゃしん}を{撮|と}ってくれませんか。",
+        "vi": "Xin lỗi, bạn chụp ảnh giúp tôi được không?"
+      },
+      {
+        "jp": "この書類の書き方を教えていただけませんか。",
+        "furigana": "この{書類|しょるい}の{書|か}き{方|かた}を{教|おし}えていただけませんか。",
+        "vi": "Anh chị có thể chỉ giúp tôi cách điền tờ đơn này không ạ?"
+      },
+      {
+        "jp": "もう少し大きい声で話していただけませんか。",
+        "furigana": "もう{少|すこ}し{大|おお}きい{声|こえ}で{話|はな}していただけませんか。",
+        "vi": "Anh chị có thể nói to hơn một chút được không ạ?"
+      }
+    ]
+  },
+  {
+    "title": "〜ないで",
+    "jlpt_level": "N4",
+    "structure": "V-ない + で",
+    "meaning_vi": "mà không; thay vì",
+    "explanation_vi": "「〜ずに」 (N3) cùng nghĩa nhưng trang trọng hơn. Khác với 「〜なくて」, vốn nêu lý do.",
+    "examples": [
+      {
+        "jp": "今朝は朝ご飯を食べないで学校に行った。",
+        "furigana": "{今朝|けさ}は{朝|あさ}ご{飯|はん}を{食|た}べないで{学校|がっこう}に{行|い}った。",
+        "vi": "Sáng nay tôi đi học mà không ăn sáng."
+      },
+      {
+        "jp": "傘を持たないで出かけて、雨にぬれてしまった。",
+        "furigana": "{傘|かさ}を{持|も}たないで{出|で}かけて、{雨|あめ}にぬれてしまった。",
+        "vi": "Tôi ra ngoài không mang ô nên bị ướt."
+      },
+      {
+        "jp": "エレベーターを使わないで、階段で上がりましょう。",
+        "furigana": "エレベーターを{使|つか}わないで、{階段|かいだん}で{上|あ}がりましょう。",
+        "vi": "Không đi thang máy, mình đi thang bộ lên nhé."
+      }
+    ]
+  }
+]

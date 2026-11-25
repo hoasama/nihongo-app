@@ -22,13 +22,14 @@ const raw = (f: string) => join(base, "raw", f);
 const paths = {
   schema: join(here, "schema.sql"),
   out: join(base, "seed.sqlite"),
-  grammar: join(base, "content/grammar-n5.json"),
+  // Giữ N5 đầu tiên để id ngữ pháp cũ (bookmark, ghi chú) không đổi.
+  grammar: ["n5", "n4", "n3"].map((l) => join(base, `content/grammar-${l}.json`)),
   jmdict: SAMPLE ? fx("jmdict-sample.xml") : raw("JMdict_e.xml"),
   kanjidic: SAMPLE ? fx("kanjidic-sample.xml") : raw("kanjidic2.xml"),
-  // OpenJLPT: nguồn cấp JLPT + câu ví dụ cho từ vựng (N5/N4).
+  // OpenJLPT: nguồn cấp JLPT + câu ví dụ cho từ vựng. Giữ thứ tự N5 → N3 (cấp thấp thắng khi trùng).
   openjlpt: SAMPLE
     ? [fx("openjlpt-sample.json")]
-    : [raw("openjlpt-n5.json"), raw("openjlpt-n4.json")],
+    : [raw("openjlpt-n5.json"), raw("openjlpt-n4.json"), raw("openjlpt-n3.json")],
   // OpenJLPT kanji: nguồn cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt).
   openjlptKanji: SAMPLE
     ? [fx("openjlpt-kanji-sample.json")]
@@ -65,7 +66,7 @@ function main() {
     }
   };
 
-  // OpenJLPT: gộp entry từ các file cấp; map headword → cấp (N5 thắng N4 khi trùng).
+  // OpenJLPT: gộp entry từ các file cấp; map headword → cấp thấp nhất khi trùng.
   const openJlptEntries: OpenJlptEntry[] = [];
   for (const p of paths.openjlpt) {
     const txt = readIf(p);
@@ -73,7 +74,7 @@ function main() {
   }
   const vocabLevel = new Map<string, JlptLevel>();
   for (const e of openJlptEntries) {
-    if (vocabLevel.get(e.word) !== "N5") vocabLevel.set(e.word, e.level);
+    if (!vocabLevel.has(e.word)) vocabLevel.set(e.word, e.level);
   }
 
   // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt; N5 thắng N4 khi trùng).
@@ -227,8 +228,9 @@ function main() {
   const insGrammar = db.prepare(
     "INSERT INTO grammar (title, jlpt_level, structure, meaning_vi, explanation_vi, examples_json) VALUES (?,?,?,?,?,?)",
   );
-  const grammarRaw = readIf(paths.grammar);
-  if (grammarRaw) {
+  for (const path of paths.grammar) {
+    const grammarRaw = readIf(path);
+    if (!grammarRaw) continue;
     const items = JSON.parse(grammarRaw) as GrammarItem[];
     tx(() => {
       for (const g of items) {
