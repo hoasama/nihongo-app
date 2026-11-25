@@ -8,8 +8,9 @@ import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
+import LevelTag from "../../shared/LevelTag.vue";
 
-const LEVELS = ["N5", "N4"];
+const LEVELS = ["N5", "N4", "N3"].map((v) => ({ value: v, label: v }));
 const level = ref("N5");
 const query = ref("");
 const selectedId = ref<number | null>(null);
@@ -58,7 +59,7 @@ const { data: detail } = useQuery({
           placeholder="Tìm mẫu ngữ pháp…"
           style="width: 260px"
         />
-        <a-segmented v-model:value="level" :options="LEVELS" />
+        <a-select v-model:value="level" :options="LEVELS" class="w-24" />
         <span class="text-sm text-muted">{{ items.length }} mẫu</span>
       </div>
     </header>
@@ -98,12 +99,7 @@ const { data: detail } = useQuery({
           <div class="flex items-center gap-3">
             <h2 class="jp text-3xl font-bold">{{ detail.title }}</h2>
             <BookmarkButton item-type="grammar" :item-id="detail.id" />
-            <a-tag
-              :bordered="false"
-              :color="detail.jlpt_level === 'N5' ? 'green' : 'blue'"
-              class="ml-auto"
-              >{{ detail.jlpt_level }}</a-tag
-            >
+            <LevelTag :level="detail.jlpt_level" class="ml-auto" />
           </div>
 
           <p

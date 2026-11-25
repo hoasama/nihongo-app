@@ -14,11 +14,11 @@ export interface OpenJlptEntry {
   examples: OpenJlptExample[];
 }
 
-const KEPT_LEVELS = new Set<string>(["N5", "N4"]);
+const KEPT_LEVELS = new Set<string>(["N5", "N4", "N3"]);
 
 /**
  * Parse file vocab OpenJLPT (mảng JSON theo cấp, vd data/json/vocab/n5.json).
- * Giữ entry có word+reading và cấp N5/N4; chuẩn hoá examples (field thiếu → null).
+ * Giữ entry có word+reading và cấp N5/N4/N3; chuẩn hoá examples (field thiếu → null).
  * Nguồn: evanclan/OpenJLPT (CC BY-SA 4.0) — ví dụ gốc từ Tatoeba (CC BY).
  */
 export function parseOpenJlpt(json: string): OpenJlptEntry[] {

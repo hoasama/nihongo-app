@@ -1,51 +1,48 @@
 @import "tailwindcss";
+/* Đưa reset antd vào layer base: nếu unlayered nó sẽ đè utility như mb-*, text-* */
+@import "antdv-next/dist/reset.css" layer(base);
 
 /* dark mode theo class .dark trên <html> (điều khiển bằng Settings) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Palette lấy từ nihongo-app */
+/* Palette pastel: Tiffany #81D8D0 · Lilac #CDB4DB · Pink #FFC8DD · Cream #FFF1E6 · Slate #4A4E69
+   Tiffany là accent duy nhất; pink/lilac chỉ dùng cho tag cấp JLPT. */
 :root {
   color-scheme: light;
-  --bg: #f4f5fb;
+  --bg: #fff1e6; /* Cream */
   --panel: #ffffff;
-  --side: #2a2550;
-  --side-text: #cfc9ec;
-  --accent: #8b5cf6;
-  --accent-soft: #ede9fe;
-  --ink: #1d2030;
-  --muted: #6b7090;
-  --line: #e4e6f0;
+  --side: #4a4e69; /* Slate */
+  --side-text: #e4e5ef;
+  --accent: #81d8d0; /* Tiffany — màu nền (nút, mục chọn, ô icon) */
+  --accent-ink: #2e3147; /* chữ nằm TRÊN nền accent */
+  --accent-text: #0c6170; /* chữ màu accent (Tiffany quá nhạt để làm chữ trên nền sáng) */
+  --accent-soft: #e0f5f3;
+  --ink: #2e3147; /* Slate đậm */
+  --muted: #63667d;
+  --line: #efe0d4;
   --hl: #fff3bf;
   --ok: #2f9e44;
-  --radius: 12px;
+  --radius: 16px;
   --jp: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
-  --shadow-card: 0 12px 40px rgba(31, 35, 64, 0.08);
-  --n5-bg: #e6fcf5;
-  --n5-fg: #087f5b;
-  --n4-bg: #e7f5ff;
-  --n4-fg: #1864ab;
-  --badge-bg: #eef0f8;
-  --badge-fg: #4a4f66;
+  --shadow-card: 0 12px 40px rgba(74, 78, 105, 0.08);
   /* Font: Segoe UI cho tiếng Việt/Latin, Yu Gothic chỉ cho tiếng Nhật (.jp) */
   --ui: "Segoe UI", "Inter", "Noto Sans", var(--jp), sans-serif;
 }
 
 .dark {
   color-scheme: dark;
-  --bg: #12131f;
-  --panel: #1b1d2e;
-  --ink: #e8e9f4;
-  --muted: #9a9fbd;
-  --line: #2b2e46;
-  --accent-soft: #2e2550;
+  /* Dark: nền Slate làm tối, pastel làm điểm nhấn */
+  --bg: #232536;
+  --panel: #2c2f44;
+  --side: #1b1d2b;
+  --ink: #f3eef0;
+  --muted: #a9abc0;
+  --line: #3b3f58;
+  --accent-ink: #1b1d2b;
+  --accent-text: #81d8d0; /* trên nền tối Tiffany đọc rõ */
+  --accent-soft: #2d4552;
   --hl: #4a4220;
   --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45);
-  --n5-bg: #0f3a31;
-  --n5-fg: #63e6be;
-  --n4-bg: #11324d;
-  --n4-fg: #74c0fc;
-  --badge-bg: rgba(255, 255, 255, 0.08);
-  --badge-fg: #c3c8e0;
 }
 
 @theme inline {
@@ -53,7 +50,8 @@
   --color-panel: var(--panel);
   --color-side: var(--side);
   --color-side-text: var(--side-text);
-  --color-accent: var(--accent);
+  /* text-accent / border-accent dùng bản đọc được; nền đặc dùng var(--accent) trong CSS */
+  --color-accent: var(--accent-text);
   --color-accent-soft: var(--accent-soft);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
@@ -75,7 +73,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-text);
   outline-offset: 2px;
 }
 
@@ -97,6 +95,11 @@ body {
   background: rgba(255, 255, 255, 0.1);
   font-size: 14px;
   line-height: 1;
+}
+/* Mục menu đang chọn: ô icon kanji đổi sang nền accent + chữ tối (như mockup) */
+.ant-menu-item-selected .nav-ico {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* Khoảng cách giữa các nút lọc Segmented (antd xếp sát nhau) */
@@ -132,6 +135,22 @@ body {
   }
 }
 
+/* Tôn trọng prefers-reduced-motion: tắt chuyển động trang trí */
+@media (prefers-reduced-motion: reduce) {
+  .top-loading::before {
+    animation: none;
+    width: 100%;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Thẻ / panel */
 .n-card {
   background: var(--panel);
@@ -139,90 +158,8 @@ body {
   border-radius: var(--radius);
 }
 
-/* Ô nhập */
-.field {
-  background: var(--panel);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.5rem 0.75rem;
-}
-.field:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-/* Chip / pill lọc */
-.chip {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--ink);
-  border-radius: 9999px;
-  padding: 0.3rem 0.9rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-.chip:hover {
-  border-color: var(--accent);
-}
-.chip-on {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-/* Nút */
-.btn {
-  background: var(--panel);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-.btn:hover {
-  border-color: var(--accent);
-}
-.btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.btn-primary:hover {
-  filter: brightness(1.08);
-}
-
-/* Tag cấp JLPT */
-.tag {
-  display: inline-block;
-  border-radius: 9999px;
-  padding: 0 0.55rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-.tag[data-level="N5"] {
-  background: var(--n5-bg);
-  color: var(--n5-fg);
-}
-.tag[data-level="N4"] {
-  background: var(--n4-bg);
-  color: var(--n4-fg);
-}
-
-/* Badge trung tính (loại từ…) */
-.badge {
-  display: inline-block;
-  border-radius: 9999px;
-  padding: 0.1rem 0.6rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  background: var(--badge-bg);
-  color: var(--badge-fg);
-}
+/* Nút, ô nhập, bộ lọc, tag cấp JLPT: dùng component antd (a-button, a-input,
+   a-segmented, shared/LevelTag.vue) theo theme. */
 
 /* Flashcard lớn */
 .flash-card {

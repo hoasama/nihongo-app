@@ -6,7 +6,12 @@ import { getDb } from "../../db/client";
 import { listByLevel, searchKanji } from "../../db/kanji.repo";
 import { useDebounce } from "../../shared/useDebounce";
 
-const LEVELS = ["N5", "N4"];
+// Seed chưa có kanji N3 nên khoá lựa chọn này thay vì hiện danh sách rỗng.
+const LEVELS = [
+  { value: "N5", label: "N5" },
+  { value: "N4", label: "N4" },
+  { value: "N3", label: "N3", disabled: true, title: "Chưa có dữ liệu kanji N3" },
+];
 const level = ref("N5");
 const query = ref("");
 const q = useDebounce(

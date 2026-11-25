@@ -65,7 +65,7 @@ CREATE TABLE sentence_words (
 );
 CREATE INDEX idx_sentence_words_word ON sentence_words(word_id);
 
--- Ngữ pháp N5/N4 (biên soạn)
+-- Ngữ pháp N5/N4/N3 (N5 biên soạn; N4, N3 dịch từ OpenJLPT)
 CREATE TABLE grammar (
   id            INTEGER PRIMARY KEY,
   title         TEXT NOT NULL,

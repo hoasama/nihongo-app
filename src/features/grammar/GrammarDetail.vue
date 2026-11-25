@@ -6,6 +6,7 @@ import { getGrammarDetail } from "../../db/grammar.repo";
 import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
+import LevelTag from "../../shared/LevelTag.vue";
 
 const route = useRoute();
 const gId = Number(route.params.id);
@@ -28,11 +29,7 @@ const { data, isLoading } = useQuery({
     <div class="mt-2 flex items-center gap-3">
       <h2 class="jp text-2xl font-bold">{{ data.title }}</h2>
       <BookmarkButton item-type="grammar" :item-id="data.id" />
-      <span
-        class="tag ml-auto"
-        :data-level="data.jlpt_level"
-        >{{ data.jlpt_level }}</span
-      >
+      <LevelTag :level="data.jlpt_level" class="ml-auto" />
     </div>
 
     <p

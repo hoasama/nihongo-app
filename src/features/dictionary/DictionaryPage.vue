@@ -15,12 +15,14 @@ import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
+import LevelTag from "../../shared/LevelTag.vue";
 
-type Filter = "all" | "N5" | "N4" | "fav";
+type Filter = "all" | "N5" | "N4" | "N3" | "fav";
 const FILTERS: { value: Filter; label: string }[] = [
   { value: "all", label: "Tất cả" },
   { value: "N5", label: "N5" },
   { value: "N4", label: "N4" },
+  { value: "N3", label: "N3" },
   { value: "fav", label: "★ Yêu thích" },
 ];
 const typeOptions = WORD_TYPES.map((t) => ({ label: t.label, value: t.v }));
@@ -40,9 +42,9 @@ const { data: list } = useQuery({
   queryFn: async () => {
     const db = getDb();
     const level =
-      filter.value === "N5" || filter.value === "N4"
-        ? filter.value
-        : undefined;
+      filter.value === "all" || filter.value === "fav"
+        ? undefined
+        : filter.value;
     const t = wordType.value;
     if (filter.value === "fav") {
       const favs = await listBookmarkedWords(db, t);
@@ -82,9 +84,6 @@ const KANJI_RE = /[一-龯]/;
 function kanjiChars(s: string): string[] {
   return [...new Set([...s].filter((c) => KANJI_RE.test(c)))];
 }
-function levelColor(lv: string | null): string {
-  return lv === "N5" ? "green" : "blue";
-}
 </script>
 
 <template>
@@ -98,7 +97,7 @@ function levelColor(lv: string | null): string {
           placeholder="Nhập kanji, kana, romaji (taberu) hoặc tiếng Việt (ăn)…"
           style="width: 320px"
         />
-        <a-segmented v-model:value="filter" :options="FILTERS" />
+        <a-select v-model:value="filter" :options="FILTERS" class="w-36" />
         <a-select
           v-model:value="wordType"
           :options="typeOptions"
@@ -140,14 +139,11 @@ function levelColor(lv: string | null): string {
               class="ml-auto max-w-[45%] truncate text-right text-sm text-muted"
               >{{ w.gloss }}</span
             >
-            <a-tag
-              v-if="w.jlpt_level"
-              :bordered="false"
-              :color="levelColor(w.jlpt_level)"
+            <LevelTag
+              :level="w.jlpt_level"
               :class="{ 'ml-auto': !w.gloss }"
               class="shrink-0"
-              >{{ w.jlpt_level }}</a-tag
-            >
+            />
           </button>
         </li>
       </ul>
@@ -156,12 +152,7 @@ function levelColor(lv: string | null): string {
       <div class="n-card overflow-y-auto p-7">
         <template v-if="detail">
           <div class="flex flex-wrap items-center gap-2">
-            <a-tag
-              v-if="detail.jlpt_level"
-              :bordered="false"
-              :color="levelColor(detail.jlpt_level)"
-              >{{ detail.jlpt_level }}</a-tag
-            >
+            <LevelTag :level="detail.jlpt_level" />
             <a-tag v-if="primaryPos(detail.senses[0]?.part_of_speech)" :bordered="false">{{
               primaryPos(detail.senses[0]?.part_of_speech)
             }}</a-tag>
@@ -199,6 +190,7 @@ function levelColor(lv: string | null): string {
               <a-button
                 v-for="c in kanjiChars(detail.headword)"
                 :key="c"
+                type="primary"
                 size="small"
                 class="jp"
                 title="Tìm từ chứa chữ này"
