@@ -7,7 +7,6 @@ import { router } from "./app/router";
 import { useSettings } from "./shared/settingsStore";
 import { getDb } from "./db/client";
 import { ensurePresetDecks } from "./db/srs.repo";
-import "antdv-next/dist/reset.css";
 import "./index.css";
 
 const app = createApp(App);

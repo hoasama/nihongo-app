@@ -34,12 +34,16 @@ vi.mock("vue-router", () => ({
 import StudySession from "../StudySession.vue";
 
 const stubs = { SpeakButton: true, FuriganaText: true };
+// antd không đăng ký trong test: thay a-button bằng <button> thường.
+const components = {
+  AButton: { emits: ["click"], template: `<button @click="$emit('click')"><slot/></button>` },
+};
 
 describe("StudySession", () => {
   beforeEach(() => setActivePinia(createPinia()));
 
   it("hiện mặt trước → Hiện đáp án lộ nghĩa → Tốt gọi recordReview", async () => {
-    const wrapper = mount(StudySession, { global: { stubs } });
+    const wrapper = mount(StudySession, { global: { stubs, components } });
     await new Promise((r) => setTimeout(r, 0)); // chờ build() hàng đợi
     await wrapper.vm.$nextTick();
     expect(wrapper.text()).toContain("食べる");

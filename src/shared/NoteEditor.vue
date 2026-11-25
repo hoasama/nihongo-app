@@ -29,11 +29,11 @@ watch(debounced, (val) => {
 <template>
   <div class="mt-6">
     <h3 class="mb-1 font-semibold">Ghi chú</h3>
-    <textarea
-      v-model="text"
-      rows="3"
-      placeholder="Ghi chú cá nhân… (tự lưu)"
-      class="field w-full text-sm"
+    <a-textarea
+      v-model:value="text"
+      :rows="3"
+      aria-label="Ghi chú"
+      placeholder="Ghi chú cá nhân, tự lưu…"
     />
   </div>
 </template>

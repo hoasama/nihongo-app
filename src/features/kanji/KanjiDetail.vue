@@ -6,6 +6,7 @@ import { getKanjiDetail } from "../../db/kanji.repo";
 import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
+import LevelTag from "../../shared/LevelTag.vue";
 
 const route = useRoute();
 const kanjiId = Number(route.params.id);
@@ -29,12 +30,7 @@ const { data, isLoading } = useQuery({
         <div class="flex items-center gap-2">
           <SpeakButton :text="data.literal" />
           <BookmarkButton item-type="kanji" :item-id="data.id" />
-          <span
-            v-if="data.jlpt_level"
-            class="tag ml-auto"
-            :data-level="data.jlpt_level"
-            >{{ data.jlpt_level }}</span
-          >
+          <LevelTag :level="data.jlpt_level" class="ml-auto" />
         </div>
         <span class="text-lg">{{ data.meaning_vi || data.meaning_en }}</span>
       </div>

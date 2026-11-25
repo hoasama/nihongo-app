@@ -27,8 +27,10 @@ async function toggle() {
     type="button"
     @click="toggle"
     :title="marked ? 'Bỏ lưu' : 'Lưu'"
-    class="text-xl text-amber-500 cursor-pointer hover:scale-110"
+    :aria-label="marked ? 'Bỏ lưu từ này' : 'Lưu từ này'"
+    :aria-pressed="marked"
+    class="text-xl text-amber-500 cursor-pointer motion-safe:hover:scale-110"
   >
-    {{ marked ? "★" : "☆" }}
+    <span aria-hidden="true">{{ marked ? "★" : "☆" }}</span>
   </button>
 </template>

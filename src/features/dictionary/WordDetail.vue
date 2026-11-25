@@ -7,6 +7,7 @@ import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
+import LevelTag from "../../shared/LevelTag.vue";
 import { formatPos } from "../../shared/pos";
 
 const route = useRoute();
@@ -34,12 +35,7 @@ const { data, isLoading } = useQuery({
       {{ data.reading_kana
       }}{{ data.reading_romaji ? ` · ${data.reading_romaji}` : "" }}
     </p>
-    <span
-      v-if="data.jlpt_level"
-      class="tag ml-auto"
-      :data-level="data.jlpt_level"
-      >{{ data.jlpt_level }}</span
-    >
+    <LevelTag :level="data.jlpt_level" class="ml-auto" />
 
     <ol class="mt-4 list-decimal space-y-1 pl-5">
       <li v-for="(s, i) in data.senses" :key="i">

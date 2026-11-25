@@ -22,13 +22,18 @@
         <em>CC BY 2.0 FR</em>.
       </li>
       <li>
-        Phân cấp <strong>JLPT N5/N4</strong> (cả từ vựng và kanji) theo
+        Phân cấp <strong>JLPT</strong> từ vựng N5–N3 và kanji N5/N4 theo
         <strong>OpenJLPT</strong>. JLPT không công bố danh sách chính thức nên có
         thể có sai số nhỏ.
       </li>
       <li>
-        Ngữ pháp N5/N4 được biên soạn tham khảo giáo trình Minna no Nihongo &amp;
+        Ngữ pháp N5 được biên soạn tham khảo giáo trình Minna no Nihongo &amp;
         Marugoto.
+      </li>
+      <li>
+        Ngữ pháp N4/N3 dịch sang tiếng Việt và chỉnh sửa từ
+        <strong>OpenJLPT</strong>; bản dịch phát hành theo giấy phép
+        <em>CC BY-SA 4.0</em>.
       </li>
     </ul>
   </div>

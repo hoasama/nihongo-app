@@ -1,14 +1,28 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, watch } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 import { useStudyQueue } from "./useStudyQueue";
 import SpeakButton from "../../shared/tts/SpeakButton.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
+import { useSpeak } from "../../shared/tts/useSpeak";
+import { useSettings } from "../../shared/settingsStore";
 
 const route = useRoute();
 const deckId = Number(route.params.deckId);
 const { current, done, loading, remaining, revealed, reveal, grade } =
   useStudyQueue(deckId);
+
+const { speak } = useSpeak();
+const settings = useSettings();
+
+// Khi lật thẻ, đọc từ tiếng Nhật luôn
+watch(revealed, (on) => {
+  if (on && current.value?.content.japanese)
+    speak(current.value.content.japanese, {
+      rate: settings.ttsRate,
+      voiceURI: settings.ttsVoiceURI || undefined,
+    });
+});
 
 function onKey(e: KeyboardEvent) {
   if (done.value || loading.value) return;
@@ -30,11 +44,12 @@ function onKey(e: KeyboardEvent) {
 onMounted(() => window.addEventListener("keydown", onKey));
 onUnmounted(() => window.removeEventListener("keydown", onKey));
 
+// Pastel của palette, chữ đậm; giống nhau ở light và dark (như badge cấp JLPT).
 const GRADES = [
-  { rating: "again", label: "Lại (1)", cls: "border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100" },
-  { rating: "hard", label: "Khó (2)", cls: "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100" },
-  { rating: "good", label: "Tốt (3)", cls: "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100" },
-  { rating: "easy", label: "Dễ (4)", cls: "border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100" },
+  { rating: "again", label: "Lại (1)", cls: "bg-[#ffc8dd] text-[#6b1f3d] hover:bg-[#ffb3cf]" },
+  { rating: "hard", label: "Khó (2)", cls: "bg-[#ffd9b8] text-[#6b3a12] hover:bg-[#ffcb9e]" },
+  { rating: "good", label: "Tốt (3)", cls: "bg-[#c6edea] text-[#0c6170] hover:bg-[#b4e6e2]" },
+  { rating: "easy", label: "Dễ (4)", cls: "bg-[#cdb4db] text-[#3f2a52] hover:bg-[#c1a3d2]" },
 ] as const;
 </script>
 
@@ -44,11 +59,11 @@ const GRADES = [
 
     <div v-else-if="done" class="text-center">
       <p class="mb-4 text-lg">Xong! Hôm nay không còn thẻ 🎉</p>
-      <RouterLink to="/review/vocab" class="text-accent">← Về bộ thẻ</RouterLink>
+      <RouterLink to="/review" class="text-accent">← Về bộ thẻ</RouterLink>
     </div>
 
     <div v-else-if="current" class="text-center">
-      <p class="mb-4 text-sm text-muted">Còn lại: {{ remaining }}</p>
+      <p class="mb-4 text-sm text-muted tabular-nums">Còn lại: {{ remaining }}</p>
 
       <div
         class="flash-card mb-6"
@@ -97,21 +112,16 @@ const GRADES = [
         </div>
       </div>
 
-      <button
-        v-if="!revealed"
-        type="button"
-        @click="reveal"
-        class="btn btn-primary px-6! py-2.5!"
-      >
+      <a-button v-if="!revealed" type="primary" size="large" @click="reveal">
         Hiện đáp án (Space)
-      </button>
+      </a-button>
       <div v-else class="flex justify-center gap-2">
         <button
           v-for="g in GRADES"
           :key="g.rating"
           type="button"
           @click="grade(g.rating)"
-          :class="['rounded-[10px] border px-5 py-2 text-sm font-medium shadow-sm', g.cls]"
+          :class="['rounded-xl px-5 py-2 text-sm font-medium transition-colors', g.cls]"
         >
           {{ g.label }}
         </button>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, h } from "vue";
-import { RouterView, useRoute, useRouter } from "vue-router";
+import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { useIsFetching } from "@tanstack/vue-query";
 
 const route = useRoute();
@@ -17,14 +17,8 @@ const items = [
   { key: "/", label: "Tra từ", icon: ico("辞") },
   { key: "/kanji", label: "Kanji", icon: ico("漢") },
   { key: "/grammar", label: "Ngữ pháp", icon: ico("文") },
-  {
-    type: "group",
-    label: "Ôn tập",
-    children: [
-      { key: "/review/vocab", label: "Từ vựng", icon: ico("語") },
-      { key: "/review/kanji", label: "Kanji", icon: ico("字") },
-    ],
-  },
+  { key: "/read", label: "Luyện đọc", icon: ico("読") },
+  { key: "/review", label: "Flashcard", icon: ico("覚") },
   { key: "/saved", label: "Đã lưu", icon: ico("保") },
   { key: "/settings", label: "Cài đặt", icon: ico("設") },
 ];
@@ -33,8 +27,8 @@ const items = [
 const selectedKeys = computed(() => {
   const p = route.path;
   if (p === "/" || p.startsWith("/word")) return ["/"];
-  if (p.startsWith("/review/kanji")) return ["/review/kanji"];
-  if (p.startsWith("/review")) return ["/review/vocab"];
+  if (p.startsWith("/review")) return ["/review"];
+  if (p.startsWith("/read")) return ["/read"];
   if (p.startsWith("/kanji")) return ["/kanji"];
   if (p.startsWith("/grammar")) return ["/grammar"];
   if (p.startsWith("/saved")) return ["/saved"];
@@ -65,10 +59,10 @@ function onClick({ key }: { key: string }) {
         :selected-keys="selectedKeys"
         @click="onClick"
       />
-      <a
-        class="mt-auto cursor-pointer px-3 pt-3 pb-0.5 text-xs text-side-text/60 hover:text-white"
-        @click="router.push('/about')"
-        >Nguồn dữ liệu</a
+      <RouterLink
+        to="/about"
+        class="mt-auto px-3 pt-3 pb-0.5 text-xs text-side-text/60 hover:text-white"
+        >Nguồn dữ liệu</RouterLink
       >
     </a-layout-sider>
 
