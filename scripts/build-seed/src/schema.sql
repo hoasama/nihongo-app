@@ -37,6 +37,7 @@ CREATE TABLE kanji (
   kun_readings  TEXT,
   meaning_en    TEXT,
   meaning_vi    TEXT,
+  han_viet      TEXT,                   -- âm Hán-Việt, vd "Học" (KANJIDIC2)
   freq_rank     INTEGER
 );
 CREATE INDEX idx_kanji_level ON kanji(jlpt_level);

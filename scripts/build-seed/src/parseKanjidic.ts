@@ -8,6 +8,7 @@ export interface KanjiRecord {
   on_readings: string; // phân tách bằng '、'
   kun_readings: string;
   meaning_en: string; // phân tách bằng '; '
+  han_viet: string; // âm Hán-Việt (reading r_type="vietnam"), phân tách bằng ', '
   freq_rank: number | null;
   jlpt_old: number | null; // JLPT cũ (1-4) từ KANJIDIC2; map N5/N4 ở bước sau
 }
@@ -54,6 +55,9 @@ function toKanji(c: RawChar): KanjiRecord {
   const kun = readings
     .filter((r) => r["@_r_type"] === "ja_kun")
     .map((r) => String(r["#text"]));
+  const hanViet = readings
+    .filter((r) => r["@_r_type"] === "vietnam")
+    .map((r) => String(r["#text"]));
   // Nghĩa không có thuộc tính m_lang = tiếng Anh (parser trả string khi không có attr).
   const meaningsEn = (rm?.meaning ?? [])
     .filter((m) => typeof m === "string")
@@ -69,6 +73,7 @@ function toKanji(c: RawChar): KanjiRecord {
     on_readings: on.join("、"),
     kun_readings: kun.join("、"),
     meaning_en: meaningsEn.join("; "),
+    han_viet: hanViet.join(", "),
     freq_rank: c.misc?.freq ?? null,
     jlpt_old: c.misc?.jlpt ?? null,
   };

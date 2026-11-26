@@ -236,9 +236,10 @@ export async function getCardContent(
       kun_readings: string | null;
       meaning_vi: string | null;
       meaning_en: string | null;
+      han_viet: string | null;
       stroke_count: number | null;
     }>(
-      `SELECT literal, on_readings, kun_readings, meaning_vi, meaning_en, stroke_count
+      `SELECT literal, on_readings, kun_readings, meaning_vi, meaning_en, han_viet, stroke_count
        FROM kanji WHERE id = ?`,
       [card.item_id],
     )
@@ -248,7 +249,9 @@ export async function getCardContent(
     ...base,
     japanese: k?.literal ?? "",
     reading,
-    meaning: k?.meaning_vi ?? k?.meaning_en ?? null,
+    // "HỌC — học, nghiên cứu": âm Hán-Việt giúp người Việt nhớ kanji
+    meaning:
+      [k?.han_viet?.toLocaleUpperCase("vi"), k?.meaning_vi ?? k?.meaning_en].filter(Boolean).join(" — ") || null,
     strokeCount: k?.stroke_count ?? null,
   };
 }
