@@ -49,9 +49,7 @@ function onClick({ key }: { key: string }) {
       class="app-sider flex flex-col px-3 py-4"
     >
       <div class="px-2.5 pt-1 pb-[18px]">
-        <div class="jp text-[28px] font-bold leading-[1.1] text-white">日本語</div>
-        <div class="text-xs text-side-text opacity-80">Nihongo · N5 / N4</div>
-      </div>
+        <div class="jp text-[28px] font-bold leading-[1.1] text-white">日本語</div>      </div>
       <a-menu
         theme="dark"
         mode="inline"
