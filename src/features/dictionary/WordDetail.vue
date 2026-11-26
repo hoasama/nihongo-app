@@ -9,8 +9,7 @@ import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
 import LevelTag from "../../shared/LevelTag.vue";
 import { formatPos } from "../../shared/pos";
-import { conjugate } from "./conjugate";
-import { computed } from "vue";
+import ConjugationTable from "./ConjugationTable.vue";
 
 const route = useRoute();
 const wordId = Number(route.params.id);
@@ -18,11 +17,6 @@ const { data, isLoading } = useQuery({
   queryKey: ["word", wordId],
   queryFn: () => getWordDetail(getDb(), wordId),
 });
-const conj = computed(() =>
-  data.value
-    ? conjugate(data.value.headword, data.value.reading_kana, data.value.senses.map((s) => s.part_of_speech))
-    : null,
-);
 </script>
 
 <template>
@@ -58,22 +52,7 @@ const conj = computed(() =>
       </li>
     </ol>
 
-    <details v-if="conj" open class="mt-6">
-      <summary class="cursor-pointer font-semibold">
-        {{ conj.title }}
-        <span v-if="conj.group" class="ml-2 text-sm font-normal text-muted">{{ conj.group }}</span>
-      </summary>
-      <table class="mt-2 w-full text-sm">
-        <tbody>
-          <tr v-for="f in conj.forms" :key="f.id" class="border-b border-line">
-            <td class="w-44 py-1.5 pr-3 text-muted">{{ f.name }}</td>
-            <td class="jp py-1.5 text-base">{{ f.w }}</td>
-            <td class="jp py-1.5 text-muted">{{ f.w !== f.k ? f.k : "" }}</td>
-            <td class="w-8 py-1"><SpeakButton :text="f.k" /></td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+    <ConjugationTable :word="data" />
 
     <div v-if="data.sentences.length > 0" class="mt-6">
       <h3 class="mb-2 font-semibold">Câu ví dụ</h3>

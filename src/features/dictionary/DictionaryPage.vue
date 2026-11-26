@@ -16,6 +16,7 @@ import BookmarkButton from "../../shared/BookmarkButton.vue";
 import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
 import LevelTag from "../../shared/LevelTag.vue";
+import ConjugationTable from "./ConjugationTable.vue";
 
 type Filter = "all" | "N5" | "N4" | "N3" | "fav";
 const FILTERS: { value: Filter; label: string }[] = [
@@ -179,6 +180,8 @@ function kanjiChars(s: string): string[] {
               >
             </li>
           </ol>
+
+          <ConjugationTable :word="detail" />
 
           <template v-if="kanjiChars(detail.headword).length">
             <h3
