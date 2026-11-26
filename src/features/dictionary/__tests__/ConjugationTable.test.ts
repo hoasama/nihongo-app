@@ -7,7 +7,7 @@ const SpeakButton = { props: ["text"], template: "<button />" };
 const mountWith = (headword: string, reading_kana: string, pos: string) =>
   mount(ConjugationTable, {
     props: { word: { headword, reading_kana, senses: [{ part_of_speech: pos, gloss_en: "", gloss_vi: null }] } },
-    global: { stubs: { SpeakButton } },
+    global: { stubs: { SpeakButton, LevelTag: true, RouterLink: { template: "<a><slot /></a>" } } },
   });
 
 describe("ConjugationTable", () => {
@@ -16,7 +16,7 @@ describe("ConjugationTable", () => {
     expect(w.text()).toContain("Chia động từ");
     expect(w.text()).toContain("Nhóm II");
     expect(w.text()).toContain("食べて");
-    expect(w.findAll("tr")).toHaveLength(16);
+    expect(w.findAll("tr")).toHaveLength(18);
   });
 
   it("không render gì với danh từ", () => {

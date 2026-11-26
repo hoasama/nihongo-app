@@ -1,9 +1,13 @@
 // Bảng chia động từ / tính từ. Nhóm lấy từ mã loại từ JMdict (senses.part_of_speech),
 // nên không cần đoán theo đuôi (帰る là v5r, 食べる là v1...). Port từ conjugate.js của app cũ.
 
+export type ConjLevel = "N5" | "N4" | "N3";
+export type ConjKind = "verb" | "adj";
+
 export interface ConjForm {
   id: string;
   name: string;
+  level: ConjLevel;
   /** dạng viết (kanji nếu có) */
   w: string;
   /** dạng kana */
@@ -12,6 +16,7 @@ export interface ConjForm {
 
 export interface ConjTable {
   title: string;
+  kind: ConjKind;
   group?: string;
   forms: ConjForm[];
 }
@@ -31,27 +36,45 @@ const GODAN: Record<string, [string, string, string, string, string, string]> = 
 const A = 0, I = 1, E = 2, O = 3, TE = 4, TA = 5, U = -1;
 type Row = typeof A | typeof I | typeof E | typeof O | typeof TE | typeof TA | typeof U;
 
-// [id, tên, nhóm I: [hàng, đuôi], nhóm II: đuôi, する: dạng, 来る: [kana thay cho く, đuôi]]
-const VERB_FORMS: [string, string, [Row, string], string, string, [string, string]][] = [
-  ["dict", "Từ điển (辞書形)", [U, ""], "る", "する", ["く", "る"]],
-  ["masu", "Lịch sự (ます形)", [I, "ます"], "ます", "します", ["き", "ます"]],
-  ["masen", "Phủ định lịch sự", [I, "ません"], "ません", "しません", ["き", "ません"]],
-  ["mashita", "Quá khứ lịch sự", [I, "ました"], "ました", "しました", ["き", "ました"]],
-  ["te", "Thể て", [TE, ""], "て", "して", ["き", "て"]],
-  ["ta", "Thể た (quá khứ)", [TA, ""], "た", "した", ["き", "た"]],
-  ["nai", "Thể ない (phủ định)", [A, "ない"], "ない", "しない", ["こ", "ない"]],
-  ["nakatta", "Phủ định quá khứ", [A, "なかった"], "なかった", "しなかった", ["こ", "なかった"]],
-  ["pot", "Khả năng (可能形)", [E, "る"], "られる", "できる", ["こ", "られる"]],
-  ["vol", "Ý chí (意向形)", [O, "う"], "よう", "しよう", ["こ", "よう"]],
-  ["ba", "Điều kiện ば", [E, "ば"], "れば", "すれば", ["く", "れば"]],
-  ["tara", "Điều kiện たら", [TA, "ら"], "たら", "したら", ["き", "たら"]],
-  ["pass", "Bị động (受身形)", [A, "れる"], "られる", "される", ["こ", "られる"]],
-  ["caus", "Sai khiến (使役形)", [A, "せる"], "させる", "させる", ["こ", "させる"]],
-  ["imp", "Mệnh lệnh (命令形)", [E, ""], "ろ", "しろ", ["こ", "い"]],
-  ["proh", "Cấm chỉ (禁止形)", [U, "な"], "るな", "するな", ["く", "るな"]],
+// [id, tên, cấp, nhóm I: [hàng, đuôi], nhóm II: đuôi, する: dạng, 来る: [kana thay cho く, đuôi]]
+// Cấp theo dữ liệu ngữ pháp của app (vd sai khiến bị động là N4, 〜ず là N3).
+export const VERB_FORMS: [string, string, ConjLevel, [Row, string], string, string, [string, string]][] = [
+  ["dict", "Từ điển (辞書形)", "N5", [U, ""], "る", "する", ["く", "る"]],
+  ["masu", "Lịch sự (ます形)", "N5", [I, "ます"], "ます", "します", ["き", "ます"]],
+  ["masen", "Phủ định lịch sự", "N5", [I, "ません"], "ません", "しません", ["き", "ません"]],
+  ["mashita", "Quá khứ lịch sự", "N5", [I, "ました"], "ました", "しました", ["き", "ました"]],
+  ["te", "Thể て", "N5", [TE, ""], "て", "して", ["き", "て"]],
+  ["ta", "Thể た (quá khứ)", "N5", [TA, ""], "た", "した", ["き", "た"]],
+  ["nai", "Thể ない (phủ định)", "N5", [A, "ない"], "ない", "しない", ["こ", "ない"]],
+  ["nakatta", "Phủ định quá khứ", "N5", [A, "なかった"], "なかった", "しなかった", ["こ", "なかった"]],
+  ["pot", "Khả năng (可能形)", "N4", [E, "る"], "られる", "できる", ["こ", "られる"]],
+  ["vol", "Ý chí (意向形)", "N4", [O, "う"], "よう", "しよう", ["こ", "よう"]],
+  ["ba", "Điều kiện ば", "N4", [E, "ば"], "れば", "すれば", ["く", "れば"]],
+  ["tara", "Điều kiện たら", "N4", [TA, "ら"], "たら", "したら", ["き", "たら"]],
+  ["pass", "Bị động (受身形)", "N4", [A, "れる"], "られる", "される", ["こ", "られる"]],
+  ["caus", "Sai khiến (使役形)", "N4", [A, "せる"], "させる", "させる", ["こ", "させる"]],
+  ["causpass", "Sai khiến bị động", "N4", [A, "される"], "させられる", "させられる", ["こ", "させられる"]],
+  ["imp", "Mệnh lệnh (命令形)", "N4", [E, ""], "ろ", "しろ", ["こ", "い"]],
+  ["proh", "Cấm chỉ (禁止形)", "N4", [U, "な"], "るな", "するな", ["く", "るな"]],
+  ["zu", "Phủ định văn viết (〜ず)", "N3", [A, "ず"], "ず", "せず", ["こ", "ず"]],
 ];
 // ある không dùng các dạng này
-const ARU_SKIP = new Set(["pot", "vol", "pass", "caus", "imp", "proh"]);
+const ARU_SKIP = new Set(["pot", "vol", "pass", "caus", "causpass", "imp", "proh"]);
+
+export const ADJ_FORMS: [string, string, ConjLevel][] = [
+  ["plain", "Thể thường", "N5"],
+  ["polite", "Lịch sự", "N5"],
+  ["neg", "Phủ định", "N5"],
+  ["past", "Quá khứ", "N5"],
+  ["pastneg", "Phủ định quá khứ", "N5"],
+  ["attr", "Bổ nghĩa danh từ", "N5"],
+  ["te", "Nối câu (て / で)", "N5"],
+  ["adv", "Phó từ (く / に)", "N5"],
+  ["ba", "Điều kiện ば / なら", "N4"],
+  ["tara", "Điều kiện たら", "N4"],
+  ["sou", "Trông có vẻ (そう)", "N4"],
+  ["sugi", "Quá … (すぎる)", "N4"],
+];
 
 type Kind = "godan" | "ichidan" | "suru" | "kuru";
 interface Flags {
@@ -74,12 +97,14 @@ function godan(s: string, row: Row, suffix: string, f: Flags): string {
 
 function verbForms(w: string, k: string, kind: Kind, f: Flags): ConjForm[] {
   return VERB_FORMS.filter(([id]) => !(f.aru && ARU_SKIP.has(id))).map(
-    ([id, name, g1, g2, suru, ku]) => {
+    ([id, name, level, g1, g2, suru, ku]) => {
       let fw: string, fk: string;
       if (f.aru && (id === "nai" || id === "nakatta")) fw = fk = id === "nai" ? "ない" : "なかった";
       else if (kind === "godan") {
-        fw = godan(w, g1[0], g1[1], f);
-        fk = godan(k, g1[0], g1[1], f);
+        // sai khiến bị động: dạng ngắn 〜される, riêng đuôi す dùng 〜させられる (話させられる)
+        const suf = id === "causpass" && k.endsWith("す") ? "せられる" : g1[1];
+        fw = godan(w, g1[0], suf, f);
+        fk = godan(k, g1[0], suf, f);
       } else if (kind === "ichidan") {
         const end = f.kure && id === "imp" ? "" : g2;
         fw = w.slice(0, -1) + end;
@@ -91,55 +116,30 @@ function verbForms(w: string, k: string, kind: Kind, f: Flags): ConjForm[] {
         fw = w.slice(0, -2) + suru;
         fk = k.slice(0, -2) + suru;
       }
-      return { id, name, w: fw, k: fk };
+      return { id, name, level, w: fw, k: fk };
     },
   );
 }
 
 function adjForms(w: string, k: string, na: boolean): ConjForm[] {
-  if (na) {
-    return (
-      [
-        ["plain", "Thể thường", "だ"],
-        ["polite", "Lịch sự", "です"],
-        ["neg", "Phủ định", "じゃない"],
-        ["past", "Quá khứ", "だった"],
-        ["pastneg", "Phủ định quá khứ", "じゃなかった"],
-        ["attr", "Bổ nghĩa danh từ", "な"],
-        ["te", "Nối câu (で)", "で"],
-        ["adv", "Phó từ (に)", "に"],
-        ["nara", "Điều kiện なら", "なら"],
-        ["tara", "Điều kiện たら", "だったら"],
-        ["sou", "Trông có vẻ (そう)", "そう"],
-        ["sugi", "Quá … (すぎる)", "すぎる"],
-      ] as const
-    ).map(([id, name, suf]) => ({ id, name, w: w + suf, k: k + suf }));
-  }
+  const NA: Record<string, string> = {
+    plain: "だ", polite: "です", neg: "じゃない", past: "だった", pastneg: "じゃなかった",
+    attr: "な", te: "で", adv: "に", ba: "なら", tara: "だったら", sou: "そう", sugi: "すぎる",
+  };
   // いい/良い chia theo よい
   const ii = k === "いい" || k === "よい";
   const bw = ii && w === k ? "よ" : w.slice(0, -1);
   const bk = ii ? "よ" : k.slice(0, -1);
-  return (
-    [
-      ["plain", "Thể thường", null],
-      ["polite", "Lịch sự", null],
-      ["neg", "Phủ định", "くない"],
-      ["past", "Quá khứ", "かった"],
-      ["pastneg", "Phủ định quá khứ", "くなかった"],
-      ["te", "Nối câu (くて)", "くて"],
-      ["adv", "Phó từ (く)", "く"],
-      ["ba", "Điều kiện ば", "ければ"],
-      ["tara", "Điều kiện たら", "かったら"],
-      ["sou", "Trông có vẻ (そう)", ii ? "さそう" : "そう"],
-      ["sugi", "Quá … (すぎる)", "すぎる"],
-    ] as const
-  ).map(([id, name, suf]) =>
-    id === "plain"
-      ? { id, name, w, k }
-      : id === "polite"
-        ? { id, name, w: w + "です", k: k + "です" }
-        : { id, name, w: bw + suf, k: bk + suf },
-  );
+  const I_SUF: Record<string, string> = {
+    neg: "くない", past: "かった", pastneg: "くなかった", te: "くて", adv: "く",
+    ba: "ければ", tara: "かったら", sou: ii ? "さそう" : "そう", sugi: "すぎる",
+  };
+  return ADJ_FORMS.map(([id, name, level]) => {
+    if (na) return { id, name, level, w: w + NA[id], k: k + NA[id] };
+    if (id === "plain" || id === "attr") return { id, name, level, w, k };
+    if (id === "polite") return { id, name, level, w: w + "です", k: k + "です" };
+    return { id, name, level, w: bw + I_SUF[id], k: bk + I_SUF[id] };
+  });
 }
 
 /** Mã loại từ của một sense, vd "&v5r;,&vi;" → ["v5r", "vi"]. */
@@ -150,20 +150,18 @@ const codes = (pos: string | null) => (pos ?? "").split(",").map((c) => c.replac
  * Lấy mã chia được đầu tiên; null nếu không phải động từ / tính từ.
  */
 export function conjugate(w: string, k: string, posList: (string | null)[]): ConjTable | null {
+  const verb = (group: string, forms: ConjForm[], title = "Chia động từ"): ConjTable => ({ title, kind: "verb", group, forms });
   for (const c of posList.flatMap(codes)) {
-    if (c === "adj-i" || c === "adj-ix") return { title: "Chia tính từ い", forms: adjForms(w, k, false) };
-    if (c === "adj-na") return { title: "Chia tính từ な", forms: adjForms(w, k, true) };
-    if (c === "v1" || c === "v1-s")
-      return { title: "Chia động từ", group: "Nhóm II", forms: verbForms(w, k, "ichidan", { kure: c === "v1-s" }) };
-    if (c === "vk") return { title: "Chia động từ", group: "Nhóm III", forms: verbForms(w, k, "kuru", {}) };
+    if (c === "adj-i" || c === "adj-ix") return { title: "Chia tính từ い", kind: "adj", forms: adjForms(w, k, false) };
+    if (c === "adj-na") return { title: "Chia tính từ な", kind: "adj", forms: adjForms(w, k, true) };
+    if (c === "v1" || c === "v1-s") return verb("Nhóm II", verbForms(w, k, "ichidan", { kure: c === "v1-s" }));
+    if (c === "vk") return verb("Nhóm III", verbForms(w, k, "kuru", {}));
     // shortcut: vs-s (愛する) chia như する, nên phủ định ra 愛しない thay vì 愛さない; thêm nhánh riêng nếu cần.
-    if (c === "vs-i" || c === "vs-s")
-      return { title: "Chia động từ", group: "Nhóm III", forms: verbForms(w, k, "suru", {}) };
-    if (c === "vs")
-      return { title: "Chia động từ (+ する)", group: "Nhóm III", forms: verbForms(w + "する", k + "する", "suru", {}) };
+    if (c === "vs-i" || c === "vs-s") return verb("Nhóm III", verbForms(w, k, "suru", {}));
+    if (c === "vs") return verb("Nhóm III", verbForms(w + "する", k + "する", "suru", {}), "Chia động từ (+ する)");
     if (c.startsWith("v5")) {
       const f: Flags = { iku: c === "v5k-s", uS: c === "v5u-s", honor: c === "v5aru", aru: c === "v5r-i" };
-      return { title: "Chia động từ", group: "Nhóm I", forms: verbForms(w, k, "godan", f) };
+      return verb("Nhóm I", verbForms(w, k, "godan", f));
     }
   }
   return null;

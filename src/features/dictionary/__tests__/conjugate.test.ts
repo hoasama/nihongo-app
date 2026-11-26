@@ -27,11 +27,21 @@ describe("conjugate", () => {
   it("nhóm II, くれる, 来る, する, danh từ + する", () => {
     expect(f("食べる", "たべる", "&v1;,&vt;", "pass")?.w).toBe("食べられる");
     expect(f("呉れる", "くれる", "&v1-s;", "imp")?.k).toBe("くれ");
-    expect(f("来る", "くる", "&vk;", "nai")).toEqual({ id: "nai", name: "Thể ない (phủ định)", w: "来ない", k: "こない" });
+    expect(f("来る", "くる", "&vk;", "nai")).toEqual({ id: "nai", name: "Thể ない (phủ định)", level: "N5", w: "来ない", k: "こない" });
     expect(f("為る", "する", "&vs-i;", "pot")?.k).toBe("できる");
     const t = conjugate("勉強", "べんきょう", ["&n;,&vs;,&vt;"]);
     expect(t?.title).toBe("Chia động từ (+ する)");
     expect(t?.forms.find((x) => x.id === "te")?.w).toBe("勉強して");
+  });
+
+  it("sai khiến bị động (N4) và 〜ず (N3)", () => {
+    expect(f("書く", "かく", "&v5k;", "causpass")?.w).toBe("書かされる");
+    expect(f("話す", "はなす", "&v5s;", "causpass")?.w).toBe("話させられる");
+    expect(f("食べる", "たべる", "&v1;", "causpass")?.w).toBe("食べさせられる");
+    expect(f("来る", "くる", "&vk;", "causpass")?.k).toBe("こさせられる");
+    expect(f("書く", "かく", "&v5k;", "zu")).toMatchObject({ w: "書かず", level: "N3" });
+    expect(f("為る", "する", "&vs-i;", "zu")?.k).toBe("せず");
+    expect(f("来る", "くる", "&vk;", "zu")?.k).toBe("こず");
   });
 
   it("tính từ い (kể cả いい → よ) và な", () => {

@@ -84,6 +84,37 @@ export async function listWords(
   return db.select<WordSummary>(sql, params);
 }
 
+export interface ConjugatableWord {
+  id: number;
+  headword: string;
+  reading_kana: string;
+  gloss: string | null;
+  /** part_of_speech của các nghĩa, nối bằng "|" (theo thứ tự nghĩa) */
+  pos: string;
+}
+
+/**
+ * Động từ (kind "verb") hoặc tính từ い/な ("adj") thông dụng của một cấp JLPT,
+ * làm vốn từ cho phần luyện chia thể.
+ */
+export async function listConjugatableWords(
+  db: Queryable,
+  level: string,
+  kind: "verb" | "adj",
+): Promise<ConjugatableWord[]> {
+  const pats = kind === "verb" ? POS_LIKE.v : [...POS_LIKE["adj-i"], ...POS_LIKE["adj-na"]];
+  return db.select<ConjugatableWord>(
+    `SELECT w.id, w.headword, w.reading_kana,
+       (SELECT COALESCE(gloss_vi, gloss_en) FROM senses WHERE word_id = w.id ORDER BY order_idx LIMIT 1) AS gloss,
+       (SELECT group_concat(part_of_speech, '|') FROM (SELECT part_of_speech FROM senses WHERE word_id = w.id ORDER BY order_idx)) AS pos
+     FROM words w
+     WHERE w.jlpt_level = ? AND w.is_common = 1
+       AND EXISTS (SELECT 1 FROM senses s WHERE s.word_id = w.id AND (${pats.map(() => "s.part_of_speech LIKE ?").join(" OR ")}))
+     ORDER BY w.freq_rank IS NULL, w.freq_rank, w.id`,
+    [level, ...pats],
+  );
+}
+
 /** Các từ đã đánh dấu yêu thích (bookmark), mới nhất trước. */
 export async function listBookmarkedWords(
   db: Queryable,
