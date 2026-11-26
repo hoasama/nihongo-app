@@ -1,25 +1,62 @@
-// Sinh bài đọc bằng Claude theo chủ đề + level. Gọi trực tiếp Anthropic API từ
-// renderer (Electron không set CSP). Bài sinh ra khớp interface Reading sẵn có.
+// Sinh bài đọc bằng LLM người dùng tự chọn (Gemini / OpenAI-compatible / Claude)
+// theo chủ đề + level. Gọi trực tiếp API từ renderer (Electron không set CSP).
+// Bài sinh ra khớp interface Reading sẵn có.
+import Anthropic from "@anthropic-ai/sdk";
 import type { Reading, ReadingLevel } from "./readings";
 import { getDb } from "../../db/client";
 import type { Queryable } from "../../db/queryable";
 import { listWords } from "../../db/words.repo";
 import { listGrammar } from "../../db/grammar.repo";
 
-const LS_KEY = "reading.geminiKey";
-const LS_MODEL = "reading.geminiModel";
-const LS_GENERATED = "reading.generated";
-const DEFAULT_MODEL = "gemini-3.8-flash";
-const RETIRED_MODEL = "gemini-2.0-flash"; // có thể còn lưu trong localStorage, API trả 404
+export type Provider = "gemini" | "openai" | "anthropic";
 
-export const getKey = () => localStorage.getItem(LS_KEY) ?? "";
-export const setKey = (v: string) => localStorage.setItem(LS_KEY, v.trim());
-export const getModel = () => {
-  const saved = localStorage.getItem(LS_MODEL);
-  return !saved || saved === RETIRED_MODEL ? DEFAULT_MODEL : saved;
+export interface LlmConfig {
+  provider: Provider;
+  key: string;
+  model: string;
+  baseUrl: string; // chỉ dùng cho openai-compatible
+}
+
+export const PROVIDERS: { value: Provider; label: string }[] = [
+  { value: "gemini", label: "Google Gemini" },
+  { value: "openai", label: "OpenAI-compatible (OpenAI, OpenRouter, Ollama…)" },
+  { value: "anthropic", label: "Claude (Anthropic)" },
+];
+
+export const DEFAULT_MODEL: Record<Provider, string> = {
+  gemini: "gemini-3.8-flash",
+  openai: "", // tên model tuỳ dịch vụ (OpenAI, OpenRouter, Ollama…) nên bắt người dùng nhập
+  anthropic: "claude-opus-5-5",
 };
-export const setModel = (v: string) =>
-  localStorage.setItem(LS_MODEL, v.trim() || DEFAULT_MODEL);
+export const DEFAULT_BASE_URL = "https://api.openai.com/v1";
+const RETIRED_GEMINI = "gemini-2.0-flash"; // có thể còn lưu trong localStorage, API trả 404
+const TIMEOUT_MS = 90_000; // fetch không tự timeout, tránh kẹt "Đang tạo" mãi
+
+// Key Gemini giữ tên cũ (reading.geminiKey/geminiModel) để người dùng không phải nhập lại.
+const ls = (p: Provider, f: "Key" | "Model" | "BaseUrl") => `reading.${p}${f}`;
+const LS_PROVIDER = "reading.provider";
+const LS_GENERATED = "reading.generated";
+
+/** Cấu hình của một provider (mặc định provider đang chọn). */
+export function getLlmConfig(provider?: Provider): LlmConfig {
+  const p = provider ?? ((localStorage.getItem(LS_PROVIDER) as Provider | null) ?? "gemini");
+  let model = localStorage.getItem(ls(p, "Model")) || DEFAULT_MODEL[p];
+  if (model === RETIRED_GEMINI) model = DEFAULT_MODEL.gemini;
+  return {
+    provider: p,
+    key: localStorage.getItem(ls(p, "Key")) ?? "",
+    model,
+    baseUrl: localStorage.getItem(ls(p, "BaseUrl")) || DEFAULT_BASE_URL,
+  };
+}
+
+export function setLlmConfig(c: LlmConfig) {
+  localStorage.setItem(LS_PROVIDER, c.provider);
+  localStorage.setItem(ls(c.provider, "Key"), c.key.trim());
+  localStorage.setItem(ls(c.provider, "Model"), c.model.trim() || DEFAULT_MODEL[c.provider]);
+  if (c.provider === "openai")
+    localStorage.setItem(ls("openai", "BaseUrl"), c.baseUrl.trim() || DEFAULT_BASE_URL);
+}
 
 export function loadGenerated(): Reading[] {
   try {
@@ -114,38 +151,136 @@ function parseReading(text: string, level: ReadingLevel): Reading {
   };
 }
 
-export async function generateReading(
-  level: ReadingLevel,
-  topic: string,
-): Promise<Reading> {
-  const key = getKey();
-  if (!key) throw new Error("Chưa nhập API key của Gemini.");
-  if (!topic.trim()) throw new Error("Hãy nhập chủ đề.");
-
-  const lists = await loadControlledLists(getDb(), level);
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${getModel()}:generateContent`;
+async function postJson(url: string, headers: Record<string, string>, body: unknown) {
   const res = await fetch(url, {
     method: "POST",
-    headers: { "content-type": "application/json", "x-goog-api-key": key },
-    signal: AbortSignal.timeout(90_000), // fetch không tự timeout, tránh kẹt "Đang tạo" mãi
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: buildPrompt(level, topic.trim(), lists) }] }],
-      generationConfig: { maxOutputTokens: 8192, responseMimeType: "application/json" },
-    }),
+    headers: { "content-type": "application/json", ...headers },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`Lỗi API ${res.status}: ${body.slice(0, 300)}`);
+    const text = await res.text().catch(() => "");
+    throw new Error(`Lỗi API ${res.status}: ${text.slice(0, 300)}`);
   }
-  const data = await res.json();
+  return res.json();
+}
+
+const TOO_LONG = "Bài bị cắt vì quá dài. Hãy thử tạo lại.";
+
+async function callGemini(c: LlmConfig, prompt: string): Promise<string> {
+  const data = await postJson(
+    `https://generativelanguage.googleapis.com/v1beta/models/${c.model}:generateContent`,
+    { "x-goog-api-key": c.key },
+    {
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { maxOutputTokens: 8192, responseMimeType: "application/json" },
+    },
+  );
   const candidate = data?.candidates?.[0];
   const parts: { text?: string }[] = candidate?.content?.parts ?? [];
   const text = parts.map((p) => p.text ?? "").join("");
-  if (candidate?.finishReason === "MAX_TOKENS")
-    throw new Error("Bài bị cắt vì quá dài. Hãy thử tạo lại.");
+  if (candidate?.finishReason === "MAX_TOKENS") throw new Error(TOO_LONG);
   if (!text) {
     const reason = data?.promptFeedback?.blockReason ?? candidate?.finishReason ?? "không rõ";
     throw new Error(`Gemini không trả nội dung (lý do: ${reason}).`);
   }
+  return text;
+}
+
+async function callOpenAI(c: LlmConfig, prompt: string): Promise<string> {
+  // Không gửi response_format/max_tokens: nhiều server "OpenAI-compatible" không hỗ trợ; prompt đã ép JSON.
+  const data = await postJson(
+    `${c.baseUrl.replace(/\/+$/, "")}/chat/completions`,
+    c.key ? { authorization: `Bearer ${c.key}` } : {}, // Ollama/LM Studio không cần key
+    { model: c.model, messages: [{ role: "user", content: prompt }] },
+  );
+  const choice = data?.choices?.[0];
+  if (choice?.finish_reason === "length") throw new Error(TOO_LONG);
+  const text: string = choice?.message?.content ?? "";
+  if (!text) throw new Error(`Model không trả nội dung (lý do: ${choice?.finish_reason ?? "không rõ"}).`);
+  return text;
+}
+
+// Model nhận server-side fallback khi bị từ chối (refusal); model khác gửi tham số này sẽ lỗi 400.
+const CLAUDE_FALLBACK_MODELS = ["claude-opus-5-5", "claude-opus-5", "claude-fable-5-2", "claude-fable-5-1", "claude-sonnet-5-5"];
+
+async function callClaude(c: LlmConfig, prompt: string): Promise<string> {
+  // Key do chính người dùng nhập và chỉ lưu trên máy họ, nên gọi thẳng từ renderer là chấp nhận được.
+  const client = new Anthropic({ apiKey: c.key, dangerouslyAllowBrowser: true, timeout: TIMEOUT_MS, maxRetries: 1 });
+  const fallback = CLAUDE_FALLBACK_MODELS.includes(c.model);
+  let msg: Anthropic.Beta.BetaMessage;
+  try {
+    msg = await client.beta.messages.create({
+      model: c.model,
+      max_tokens: 16000,
+      messages: [{ role: "user", content: prompt }],
+      ...(fallback ? { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" as const } : {}),
+    });
+  } catch (e) {
+    if (e instanceof Anthropic.APIConnectionTimeoutError) throw new DOMException("timeout", "TimeoutError");
+    if (e instanceof Anthropic.AuthenticationError) throw new Error("API key của Claude không hợp lệ.");
+    if (e instanceof Anthropic.NotFoundError) throw new Error(`Không tìm thấy model "${c.model}".`);
+    if (e instanceof Anthropic.RateLimitError) throw new Error("Claude đang giới hạn tốc độ, hãy thử lại sau ít phút.");
+    if (e instanceof Anthropic.APIError) throw new Error(`Lỗi API ${e.status ?? ""}: ${e.message.slice(0, 300)}`);
+    throw e;
+  }
+  if (msg.stop_reason === "refusal") throw new Error("Claude từ chối tạo bài với chủ đề này. Hãy thử chủ đề khác.");
+  if (msg.stop_reason === "max_tokens") throw new Error(TOO_LONG);
+  const text = msg.content.map((b) => (b.type === "text" ? b.text : "")).join("");
+  if (!text) throw new Error("Claude không trả nội dung.");
+  return text;
+}
+
+const CALL: Record<Provider, (c: LlmConfig, prompt: string) => Promise<string>> = {
+  gemini: callGemini,
+  openai: callOpenAI,
+  anthropic: callClaude,
+};
+
+// Gợi ý khi chưa có key / không lấy được danh sách từ API.
+export const SUGGESTED_MODELS: Record<Provider, string[]> = {
+  gemini: [DEFAULT_MODEL.gemini],
+  openai: [],
+  anthropic: ["claude-opus-5-5", "claude-sonnet-5-5", "claude-haiku-5-5", "claude-fable-5-2"],
+};
+
+async function getJson(url: string, headers: Record<string, string>) {
+  const res = await fetch(url, { headers, signal: AbortSignal.timeout(15_000) });
+  if (!res.ok) throw new Error(`Lỗi API ${res.status}`);
+  return res.json();
+}
+
+/** Danh sách model mà key/endpoint hiện tại dùng được, lấy từ API của nhà cung cấp. */
+export async function listModels(c: LlmConfig): Promise<string[]> {
+  if (c.provider === "gemini") {
+    const data = await getJson("https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000", {
+      "x-goog-api-key": c.key,
+    });
+    return (data?.models ?? [])
+      .filter((m: { supportedGenerationMethods?: string[] }) => m.supportedGenerationMethods?.includes("generateContent"))
+      .map((m: { name: string }) => m.name.replace(/^models\//, ""));
+  }
+  if (c.provider === "openai") {
+    const data = await getJson(`${c.baseUrl.replace(/\/+$/, "")}/models`, c.key ? { authorization: `Bearer ${c.key}` } : {});
+    return (data?.data ?? []).map((m: { id: string }) => m.id).sort();
+  }
+  const client = new Anthropic({ apiKey: c.key, dangerouslyAllowBrowser: true, maxRetries: 0 });
+  const ids: string[] = [];
+  for await (const m of client.models.list({ limit: 100 })) ids.push(m.id);
+  return ids;
+}
+
+export async function generateReading(
+  level: ReadingLevel,
+  topic: string,
+): Promise<Reading> {
+  const c = getLlmConfig();
+  const name = PROVIDERS.find((p) => p.value === c.provider)!.label;
+  if (!c.key && c.provider !== "openai") throw new Error(`Chưa nhập API key cho ${name}.`);
+  if (!c.model) throw new Error("Hãy nhập tên model.");
+  if (!topic.trim()) throw new Error("Hãy nhập chủ đề.");
+
+  const lists = await loadControlledLists(getDb(), level);
+  const text = await CALL[c.provider](c, buildPrompt(level, topic.trim(), lists));
   return parseReading(text, level);
 }

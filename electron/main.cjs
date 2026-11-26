@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const path = require("node:path");
 const fs = require("node:fs");
 const Database = require("better-sqlite3");
@@ -81,6 +81,11 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
     },
+  });
+  // Link target=_blank (vd. trang lấy API key) mở bằng trình duyệt mặc định, không mở cửa sổ Electron mới.
+  win.webContents.setWindowOpenHandler(({ url }) => {
+    if (url.startsWith("https://")) shell.openExternal(url);
+    return { action: "deny" };
   });
   if (isDev) {
     win.loadURL("http://localhost:1420");

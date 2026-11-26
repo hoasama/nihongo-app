@@ -22,8 +22,8 @@ const raw = (f: string) => join(base, "raw", f);
 const paths = {
   schema: join(here, "schema.sql"),
   out: join(base, "seed.sqlite"),
-  // Giữ N5 đầu tiên để id ngữ pháp cũ (bookmark, ghi chú) không đổi.
-  grammar: ["n5", "n4", "n3"].map((l) => join(base, `content/grammar-${l}.json`)),
+  // Thứ tự nạp quyết định id ngữ pháp (bookmark, ghi chú lưu theo id): chỉ thêm file mới vào CUỐI.
+  grammar: ["n5", "n4", "n3", "n5-openjlpt"].map((l) => join(base, `content/grammar-${l}.json`)),
   jmdict: SAMPLE ? fx("jmdict-sample.xml") : raw("JMdict_e.xml"),
   kanjidic: SAMPLE ? fx("kanjidic-sample.xml") : raw("kanjidic2.xml"),
   // OpenJLPT: nguồn cấp JLPT + câu ví dụ cho từ vựng. Giữ thứ tự N5 → N3 (cấp thấp thắng khi trùng).

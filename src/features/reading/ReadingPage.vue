@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useSpeak } from '../../shared/tts/useSpeak';
 import { useSettings } from '../../shared/settingsStore';
 import FuriganaText from '../../shared/FuriganaText.vue';
@@ -7,10 +7,12 @@ import LevelTag from '../../shared/LevelTag.vue';
 import { READINGS, type ReadingLevel } from './readings';
 import {
   generateReading,
-  getKey,
-  setKey,
-  getModel,
-  setModel,
+  getLlmConfig,
+  setLlmConfig,
+  PROVIDERS,
+  DEFAULT_BASE_URL,
+  SUGGESTED_MODELS,
+  listModels,
   loadGenerated,
   saveGenerated,
 } from './generate';
@@ -82,8 +84,95 @@ function sayFree() {
 }
 
 // --- Tạo bài mới bằng LLM ---
-const apiKey = ref(getKey());
-const model = ref(getModel());
+const llm = ref(getLlmConfig());
+// Đổi provider: lưu cấu hình đang nhập rồi nạp cấu hình đã lưu của provider mới.
+watch(
+  () => llm.value.provider,
+  (p, prev) => {
+    setLlmConfig({ ...llm.value, provider: prev });
+    llm.value = getLlmConfig(p);
+    setLlmConfig(llm.value); // nhớ provider vừa chọn kể cả khi chưa bấm Tạo bài
+  },
+);
+// Danh sách model lấy từ API khi mở dropdown; lỗi/chưa có key thì dùng gợi ý sẵn.
+const apiModels = ref<string[]>([]);
+const modelsLoading = ref(false);
+const modelsError = ref('');
+const modelSearch = ref('');
+let loadedFor = '';
+async function loadModels(open: boolean) {
+  const c = llm.value;
+  const sig = `${c.provider}|${c.key}|${c.baseUrl}`;
+  if (!open || sig === loadedFor || (!c.key && c.provider !== 'openai')) return;
+  loadedFor = sig;
+  modelsLoading.value = true;
+  modelsError.value = '';
+  try {
+    apiModels.value = await listModels(c);
+  } catch (e) {
+    apiModels.value = [];
+    modelsError.value = `Không lấy được danh sách model (${e instanceof Error ? e.message : e}). Có thể gõ tên model vào ô.`;
+    loadedFor = ''; // cho thử lại lần mở sau
+  } finally {
+    modelsLoading.value = false;
+  }
+}
+watch(
+  () => llm.value.provider,
+  () => {
+    apiModels.value = [];
+    modelsError.value = '';
+    loadedFor = '';
+  },
+);
+// Base URL hay dùng; vẫn gõ được địa chỉ khác (giống ô Model).
+const BASE_URLS = [
+  ['OpenAI', DEFAULT_BASE_URL],
+  ['OpenRouter', 'https://openrouter.ai/api/v1'],
+  ['DeepSeek', 'https://api.deepseek.com/v1'],
+  ['Groq', 'https://api.groq.com/openai/v1'],
+  ['Ollama (trên máy)', 'http://localhost:11434/v1'],
+  ['LM Studio (trên máy)', 'http://localhost:1234/v1'],
+];
+const baseUrlSearch = ref('');
+const baseUrlOptions = computed(() => {
+  const known = new Map(BASE_URLS.map(([name, url]) => [url, `${name} — ${url}`]));
+  return [...new Set([baseUrlSearch.value.trim(), llm.value.baseUrl, ...known.keys()])]
+    .filter(Boolean)
+    .map((url) => ({ value: url, label: known.get(url) ?? url }));
+});
+// Luôn giữ model đang chọn và chữ đang gõ trong danh sách để vẫn dùng được model ngoài danh sách.
+const modelOptions = computed(() =>
+  [
+    ...new Set([
+      modelSearch.value.trim(),
+      llm.value.model,
+      ...(apiModels.value.length ? apiModels.value : SUGGESTED_MODELS[llm.value.provider]),
+    ]),
+  ]
+    .filter(Boolean)
+    .map((m) => ({ value: m, label: m })),
+);
+const KEY_HINT: Record<string, { placeholder: string; help: string }> = {
+  gemini: { placeholder: 'AIza…', help: 'Gemini có gói miễn phí.' },
+  openai: {
+    placeholder: 'sk-… (để trống nếu dùng Ollama / LM Studio)',
+    help: 'Ollama cần bật CORS: đặt biến môi trường OLLAMA_ORIGINS=* rồi khởi động lại Ollama.',
+  },
+  anthropic: { placeholder: 'sk-ant-…', help: '' },
+};
+// Trang tạo API key: theo provider, riêng OpenAI-compatible thì theo Base URL đang chọn.
+const KEY_PAGES: Record<string, string> = {
+  gemini: 'https://aistudio.google.com/apikey',
+  anthropic: 'https://platform.claude.com/settings/keys',
+  [DEFAULT_BASE_URL]: 'https://platform.openai.com/api-keys',
+  'https://openrouter.ai/api/v1': 'https://openrouter.ai/keys',
+  'https://api.deepseek.com/v1': 'https://platform.deepseek.com/api_keys',
+  'https://api.groq.com/openai/v1': 'https://console.groq.com/keys',
+};
+const keyPage = computed(() =>
+  KEY_PAGES[llm.value.provider === 'openai' ? llm.value.baseUrl.replace(/\/+$/, '') : llm.value.provider],
+);
 const genLevel = ref<ReadingLevel>('N5');
 const topic = ref('');
 const genLoading = ref(false);
@@ -94,8 +183,7 @@ const freeOpen = ref(false);
 async function generate() {
   if (genLoading.value) return; // Enter vẫn gọi được khi nút đã disabled
   genError.value = '';
-  setKey(apiKey.value);
-  setModel(model.value);
+  setLlmConfig(llm.value);
   genLoading.value = true;
   try {
     const r = await generateReading(genLevel.value, topic.value);
@@ -108,7 +196,7 @@ async function generate() {
     genOpen.value = true; // người dùng có thể đã đóng modal khi đang chờ, vẫn phải thấy lỗi
     genError.value =
       e instanceof DOMException && e.name === "TimeoutError"
-        ? "Gemini không phản hồi sau 90 giây. Hãy thử lại hoặc đổi model."
+        ? "LLM không phản hồi sau 90 giây. Hãy thử lại hoặc đổi model."
         : e instanceof Error
           ? e.message
           : String(e);
@@ -244,26 +332,58 @@ function deleteCurrent() {
       </p>
 
       <details class="mt-4 text-sm">
-        <summary class="cursor-pointer text-muted">Nihongo API Key</summary>
-        <label class="mb-1 mt-2 block text-muted">Gemini API key</label>
+        <summary class="cursor-pointer text-muted">Cài đặt LLM</summary>
+        <label class="mb-1 mt-2 block text-muted">Nhà cung cấp</label>
+        <a-select
+          v-model:value="llm.provider"
+          :options="PROVIDERS"
+          aria-label="Nhà cung cấp LLM"
+          class="w-full"
+        />
+        <template v-if="llm.provider === 'openai'">
+          <label class="mb-1 mt-2 block text-muted">Base URL</label>
+          <a-select
+            v-model:value="llm.baseUrl"
+            show-search
+            option-filter-prop="label"
+            :options="baseUrlOptions"
+            aria-label="Base URL"
+            class="w-full"
+            placeholder="Chọn dịch vụ hoặc gõ địa chỉ"
+            @search="(v: string) => (baseUrlSearch = v)"
+            @select="baseUrlSearch = ''"
+          />
+        </template>
+        <div class="mb-1 mt-2 flex items-baseline justify-between">
+          <label class="text-muted">API key</label>
+          <a v-if="keyPage" :href="keyPage" target="_blank" rel="noopener noreferrer" class="text-xs">
+            Lấy key ở đây ↗
+          </a>
+        </div>
         <a-input-password
-          v-model:value="apiKey"
-          aria-label="Gemini API key"
+          v-model:value="llm.key"
+          aria-label="API key"
           autocomplete="off"
           :spellcheck="false"
-          placeholder="AIza…"
+          :placeholder="KEY_HINT[llm.provider].placeholder"
         />
         <label class="mb-1 mt-2 block text-muted">Model</label>
-        <a-input
-          v-model:value="model"
+        <a-select
+          v-model:value="llm.model"
+          @search="(v: string) => (modelSearch = v)"
+          show-search
+          :options="modelOptions"
+          :loading="modelsLoading"
           aria-label="Model"
-          autocomplete="off"
-          :spellcheck="false"
-          placeholder="gemini-3.8-flash"
+          class="w-full"
+          placeholder="Chọn hoặc gõ tên model"
+          @open-change="loadModels"
+          @select="modelSearch = ''"
         />
+        <p v-if="modelsError" class="mt-1 text-xs text-red-500">{{ modelsError }}</p>
         <p class="mt-1 text-xs text-muted">
-          Lấy key free ở aistudio.google.com/apikey. Key lưu cục bộ trong máy
-          (localStorage), không gửi đi đâu ngoài Google.
+          {{ KEY_HINT[llm.provider].help }} Key lưu cục bộ trong máy (localStorage),
+          chỉ gửi tới nhà cung cấp đã chọn.
         </p>
       </details>
     </a-modal>
