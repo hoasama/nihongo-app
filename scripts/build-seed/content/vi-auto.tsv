@@ -1,0 +1,1106 @@
+# Nghĩa tiếng Việt cho từ JLPT không có trong curated.tsv.
+# Dịch tự động (Claude) từ nghĩa tiếng Anh của JMdict, ưu tiên nghĩa thường gặp ở trình độ N5/N4 — cần người kiểm tra lại.
+# kanji|kana|nghĩa
+ああ|ああ|như thế, như vậy; à, ồ
+青|あお|màu xanh (lam, lục)
+青い|あおい|xanh (lam, lục)
+赤|あか|màu đỏ
+明るい|あかるい|sáng sủa; tươi tắn, vui vẻ
+秋|あき|mùa thu
+開く|あく|(cửa…) mở; (cửa hàng) mở cửa
+上げる|あげる|nâng lên, giơ lên; cho, tặng
+明後日|あさって|ngày kia
+あそこ|あそこ|chỗ kia, đằng kia
+遊ぶ|あそぶ|chơi, đi chơi
+暖かい|あたたかい|ấm áp
+頭|あたま|đầu; đầu óc
+あちら|あちら|phía kia, đằng kia (lịch sự)
+熱い|あつい|nóng (khi chạm vào)
+厚い|あつい|dày; nồng hậu
+後|あと|sau, phía sau; sau đó
+アパート|アパート|căn hộ, nhà chung cư
+あの|あの|… kia, … đó (đứng trước danh từ)
+浴びる|あびる|tắm (vòi sen); phơi (nắng); hứng chịu
+危ない|あぶない|nguy hiểm
+甘い|あまい|ngọt; nuông chiều, dễ dãi
+余り|あまり|phần dư; (không) … lắm
+飴|あめ|kẹo
+洗う|あらう|rửa, giặt
+歩く|あるく|đi bộ
+あれ|あれ|cái kia, cái đó
+いい|いい|tốt, được
+いいえ|いいえ|không; không có gì (đáp lời cảm ơn)
+言う|いう|nói; gọi là
+いかが|いかが|thế nào (lịch sự)
+いくつ|いくつ|bao nhiêu cái; bao nhiêu tuổi
+いくら|いくら|bao nhiêu (tiền)
+池|いけ|cái ao, hồ nhỏ
+椅子|いす|cái ghế
+痛い|いたい|đau
+一日|いちにち|một ngày; cả ngày
+一番|いちばん|số một, thứ nhất; nhất
+いつ|いつ|khi nào, bao giờ
+五日|いつか|ngày mùng 5; năm ngày
+一緒|いっしょ|cùng nhau
+五つ|いつつ|năm cái; năm tuổi
+意味|いみ|ý nghĩa
+嫌|いや|không thích, ghét; khó chịu
+入口|いりぐち|lối vào, cửa vào
+居る|いる|có, ở (người, động vật)
+入れる|いれる|cho vào, bỏ vào; pha (trà)
+色|いろ|màu sắc
+色々|いろいろ|nhiều loại, đủ thứ
+上|うえ|trên, phía trên
+後ろ|うしろ|phía sau, đằng sau
+薄い|うすい|mỏng; nhạt
+歌|うた|bài hát
+歌う|うたう|hát
+うち|うち|nhà (của mình); gia đình
+生まれる|うまれる|được sinh ra
+売る|うる|bán
+うるさい|うるさい|ồn ào; phiền phức
+上着|うわぎ|áo khoác
+絵|え|bức tranh, hình vẽ
+映画館|えいがかん|rạp chiếu phim
+英語|えいご|tiếng Anh
+ええ|ええ|vâng, ừ; à, ờ…
+エレベーター|エレベーター|thang máy
+～円|～えん|… yên (tiền Nhật)
+鉛筆|えんぴつ|bút chì
+お～|お～|(tiền tố kính ngữ/lịch sự)
+多い|おおい|nhiều
+大きな|おおきな|to, lớn (đứng trước danh từ)
+大勢|おおぜい|đông người
+お母さん|おかあさん|mẹ (người khác; gọi mẹ)
+お菓子|おかし|bánh kẹo
+置く|おく|đặt, để
+奥さん|おくさん|vợ (người khác)
+お酒|おさけ|rượu, rượu sake
+お皿|おさら|cái đĩa
+伯父|おじさん|chú, bác (trai); ông chú
+おじいさん|おじいさん|ông; ông cụ
+押す|おす|đẩy; ấn, bấm
+遅い|おそい|chậm; muộn
+お手洗い|おてあらい|nhà vệ sinh
+お父さん|おとうさん|bố (người khác; gọi bố)
+男の子|おとこのこ|bé trai, cậu bé
+一昨日|おととい|hôm kia
+おととし|おととし|năm kia
+大人|おとな|người lớn
+お腹|おなか|bụng
+同じ|おなじ|giống nhau, cùng
+お兄さん|おにいさん|anh trai (người khác; gọi anh)
+お姉さん|おねえさん|chị gái (người khác; gọi chị)
+伯母さん|おばさん|cô, dì, bác (gái); bà cô
+おばあさん|おばあさん|bà; bà cụ
+お風呂|おふろ|bồn tắm; việc tắm
+お弁当|おべんとう|cơm hộp
+おまわりさん|おまわりさん|chú cảnh sát
+重い|おもい|nặng
+面白い|おもしろい|thú vị, hay; buồn cười
+泳ぐ|およぐ|bơi
+降りる|おりる|xuống (xe, tàu); đi xuống
+女の子|おんなのこ|bé gái, cô bé
+～回|～かい|… lần
+～階|～かい|tầng thứ …
+外国|がいこく|nước ngoài
+外国人|がいこくじん|người nước ngoài
+階段|かいだん|cầu thang
+買い物|かいもの|việc mua sắm
+返す|かえす|trả lại
+顔|かお|khuôn mặt; vẻ mặt
+かかる|かかる|mất, tốn (thời gian, tiền); được treo
+鍵|かぎ|chìa khóa; ổ khóa
+～か月|～かげつ|… tháng (khoảng thời gian)
+掛ける|かける|treo; đeo (kính); gọi (điện thoại); ngồi
+貸す|かす|cho mượn, cho thuê
+風|かぜ|gió
+風邪|かぜ|cảm cúm
+方|かた|vị, người (lịch sự); cách (làm)
+片仮名|かたかな|chữ katakana
+～月|～がつ|tháng … (trong năm)
+カップ|カップ|cái cốc, tách
+家庭|かてい|gia đình, tổ ấm
+角|かど|góc (phố, cạnh)
+花瓶|かびん|bình hoa
+かぶる|かぶる|đội (mũ)
+紙|かみ|giấy
+カメラ|カメラ|máy ảnh
+火曜日|かようび|thứ Ba
+辛い|からい|cay; mặn
+体|からだ|cơ thể
+借りる|かりる|mượn, thuê
+～がる|～がる|(người khác) tỏ ra, cảm thấy …
+軽い|かるい|nhẹ
+カレー|カレー|cà ri; cơm cà ri
+カレンダー|カレンダー|lịch
+～側|～がわ|phía …, bên …
+可愛い|かわいい|dễ thương, đáng yêu
+漢字|かんじ|chữ Hán
+木|き|cây; gỗ
+黄色|きいろ|màu vàng
+黄色い|きいろい|vàng
+消える|きえる|tắt (đèn, lửa); biến mất
+北|きた|phía bắc
+ギター|ギター|đàn ghi-ta
+汚い|きたない|bẩn
+喫茶店|きっさてん|quán cà phê
+切手|きって|tem thư
+切符|きっぷ|vé
+牛肉|ぎゅうにく|thịt bò
+牛乳|ぎゅうにゅう|sữa bò
+兄弟|きょうだい|anh chị em
+去年|きょねん|năm ngoái
+切る|きる|cắt
+着る|きる|mặc (áo)
+キロ|キロ|ki-lô (gam, mét)
+金曜日|きんようび|thứ Sáu
+下さい|ください|xin hãy (cho tôi); xin hãy (làm giúp)
+靴下|くつした|tất, vớ
+曇り|くもり|trời nhiều mây, âm u
+曇る|くもる|trời trở nên nhiều mây; mờ (kính)
+暗い|くらい|tối; u ám
+クラス|クラス|lớp học
+グラム|グラム|gam
+黒|くろ|màu đen
+警官|けいかん|cảnh sát
+今朝|けさ|sáng nay
+消す|けす|tắt (đèn, TV); xóa
+結構|けっこう|tốt, được; đủ rồi (từ chối lịch sự); khá
+結婚|けっこん|kết hôn
+月曜日|げつようび|thứ Hai
+玄関|げんかん|lối vào nhà, sảnh cửa
+～個|～こ|… cái (đồ vật nhỏ)
+～語|～ご|tiếng … (ngôn ngữ)
+交差点|こうさてん|ngã tư
+紅茶|こうちゃ|trà đen (hồng trà)
+交番|こうばん|đồn cảnh sát nhỏ
+声|こえ|giọng nói, tiếng
+コート|コート|áo khoác dài
+コーヒー|コーヒー|cà phê
+ここ|ここ|chỗ này, đây
+午後|ごご|buổi chiều; p.m.
+九日|ここのか|ngày mùng 9; chín ngày
+九つ|ここのつ|chín cái; chín tuổi
+午前|ごぜん|buổi sáng; a.m.
+答える|こたえる|trả lời
+こちら|こちら|phía này, đây (lịch sự)
+コップ|コップ|cái cốc
+今年|ことし|năm nay
+言葉|ことば|từ ngữ, lời nói; ngôn ngữ
+この|この|… này (đứng trước danh từ)
+コピーする|コピーする|sao chép, photo
+困る|こまる|khó khăn, bối rối
+これ|これ|cái này
+～ころ|～ころ|khoảng (thời điểm)
+今月|こんげつ|tháng này
+今週|こんしゅう|tuần này
+こんな|こんな|như thế này
+今晩|こんばん|tối nay
+さあ|さあ|nào; ừm (không rõ)
+～歳|～さい|… tuổi
+財布|さいふ|cái ví
+先|さき|phía trước; đầu (mũi); trước
+咲く|さく|(hoa) nở
+作文|さくぶん|bài văn, tập làm văn
+差す|さす|che (ô); (nắng) chiếu
+～冊|～さつ|… quyển
+雑誌|ざっし|tạp chí
+砂糖|さとう|đường
+さ来年|さらいねん|năm sau nữa
+～さん|～さん|anh, chị, ông, bà … (gọi lịch sự)
+散歩|さんぽ|đi dạo
+～時|～じ|… giờ
+塩|しお|muối
+しかし|しかし|tuy nhiên, nhưng
+下|した|dưới, phía dưới
+質問|しつもん|câu hỏi
+自動車|じどうしゃ|ô tô
+死ぬ|しぬ|chết
+字引|じびき|từ điển
+自分|じぶん|bản thân, tự mình
+閉まる|しまる|(cửa) đóng
+締める|しめる|thắt (cà vạt, dây an toàn)
+じゃ|じゃ|vậy thì, thế thì
+シャツ|シャツ|áo sơ mi
+シャワー|シャワー|vòi sen; tắm vòi sen
+～中|～じゅう|suốt …, khắp …
+～週間|～しゅうかん|… tuần
+授業|じゅぎょう|giờ học, tiết học
+丈夫|じょうぶ|khỏe mạnh; chắc chắn, bền
+醤油|しょうゆ|nước tương
+食堂|しょくどう|nhà ăn, căng tin
+知る|しる|biết
+白|しろ|màu trắng
+～人|～じん|người (nước) …
+水曜日|すいようび|thứ Tư
+吸う|すう|hút (thuốc); hít vào
+スカート|スカート|váy
+～すぎ|～すぎ|quá (giờ…); quá …
+少ない|すくない|ít
+すぐに|すぐに|ngay lập tức
+涼しい|すずしい|mát mẻ
+～ずつ|～ずつ|mỗi …, từng …
+ストーブ|ストーブ|lò sưởi
+スプーン|スプーン|cái thìa
+スポーツ|スポーツ|thể thao
+ズボン|ズボン|quần dài
+住む|すむ|sống, cư trú
+背|せい|chiều cao
+生徒|せいと|học sinh
+セーター|セーター|áo len
+石鹸|せっけん|xà phòng
+背広|せびろ|bộ com-lê
+狭い|せまい|chật, hẹp
+ゼロ|ゼロ|số không
+先月|せんげつ|tháng trước
+先週|せんしゅう|tuần trước
+洗濯|せんたく|giặt giũ
+全部|ぜんぶ|toàn bộ, tất cả
+そう|そう|như vậy, đúng thế
+掃除|そうじ|dọn dẹp, quét dọn
+そうして|そうして|và rồi, như thế
+そこ|そこ|chỗ đó
+そちら|そちら|phía đó, đó (lịch sự)
+外|そと|bên ngoài
+その|その|… đó (đứng trước danh từ)
+そば|そば|bên cạnh; mì soba
+空|そら|bầu trời
+それ|それ|cái đó
+それから|それから|sau đó, rồi thì
+それでは|それでは|vậy thì, thế thì
+～台|～だい|… chiếc (máy móc, xe)
+大使館|たいしかん|đại sứ quán
+大丈夫|だいじょうぶ|không sao, ổn
+大好き|だいすき|rất thích
+台所|だいどころ|nhà bếp
+大変|たいへん|rất; vất vả, gay go
+～だけ|～だけ|chỉ …
+沢山|たくさん|nhiều
+タクシー|タクシー|taxi
+出す|だす|lấy ra; gửi (thư); nộp
+～たち|～たち|các …, những … (số nhiều)
+たて|たて|chiều dọc
+建物|たてもの|tòa nhà
+頼む|たのむ|nhờ, yêu cầu; gọi (món)
+たばこ|たばこ|thuốc lá
+食べ物|たべもの|đồ ăn
+誰|だれ|ai
+誰か|だれか|ai đó
+誕生日|たんじょうび|sinh nhật
+段々|だんだん|dần dần
+小さな|ちいさな|nhỏ, bé (đứng trước danh từ)
+近い|ちかい|gần
+違う|ちがう|khác; sai
+近く|ちかく|gần đây, vùng lân cận
+地下鉄|ちかてつ|tàu điện ngầm
+茶色|ちゃいろ|màu nâu
+茶碗|ちゃわん|bát cơm; chén trà
+～中|～ちゅう|đang … (trong lúc)
+丁度|ちょうど|vừa đúng, vừa vặn
+ちょっと|ちょっと|một chút; hơi …
+一日|ついたち|ngày mùng 1
+疲れる|つかれる|mệt
+次|つぎ|tiếp theo
+着く|つく|đến nơi
+つける|つける|bật (đèn, máy); gắn vào
+勤める|つとめる|làm việc (cho công ty…)
+つまらない|つまらない|chán, nhạt nhẽo
+冷たい|つめたい|lạnh (khi chạm vào); lạnh lùng
+強い|つよい|mạnh
+テープ|テープ|băng (băng dính, băng ghi âm)
+テープレコーダー|テープレコーダー|máy ghi âm băng
+テーブル|テーブル|cái bàn
+出かける|でかける|ra ngoài, đi ra ngoài
+できる|できる|có thể; làm được; được làm xong
+出口|でぐち|lối ra
+テスト|テスト|bài kiểm tra
+では|では|vậy thì
+デパート|デパート|trung tâm thương mại, bách hóa
+でも|でも|nhưng; ngay cả
+テレビ|テレビ|ti vi
+電気|でんき|điện; đèn điện
+戸|と|cửa (kiểu Nhật)
+～度|～ど|… độ; … lần
+ドア|ドア|cửa
+トイレ|トイレ|nhà vệ sinh
+どう|どう|thế nào
+どうして|どうして|tại sao
+どうぞ|どうぞ|xin mời
+動物|どうぶつ|động vật
+どうも|どうも|cảm ơn; rất (cảm ơn, xin lỗi)
+遠い|とおい|xa
+十日|とおか|ngày mùng 10; mười ngày
+～時|～とき|khi …, lúc …
+どこ|どこ|ở đâu
+所|ところ|nơi, chỗ
+年|とし|năm; tuổi
+どちら|どちら|phía nào, ở đâu (lịch sự); cái nào (trong hai)
+どなた|どなた|vị nào, ai (lịch sự)
+隣|となり|bên cạnh, nhà bên
+どの|どの|… nào (đứng trước danh từ)
+飛ぶ|とぶ|bay; nhảy
+止まる|とまる|dừng lại
+土曜日|どようび|thứ Bảy
+鳥|とり|con chim; thịt gà
+鶏肉|とりにく|thịt gà
+取る|とる|lấy, cầm; đưa
+撮る|とる|chụp (ảnh), quay (phim)
+どれ|どれ|cái nào (trong nhiều cái)
+どんな|どんな|như thế nào, loại gì
+ない|ない|không có
+ナイフ|ナイフ|con dao
+中|なか|bên trong; trong số
+長い|ながい|dài
+鳴く|なく|(chim, thú) kêu, hót
+無くす|なくす|làm mất
+なぜ|なぜ|tại sao
+夏|なつ|mùa hè
+夏休み|なつやすみ|kỳ nghỉ hè
+～など|～など|… vân vân
+七つ|ななつ|bảy cái; bảy tuổi
+何|なん|cái gì; mấy
+七日|なのか|ngày mùng 7; bảy ngày
+習う|ならう|học (từ ai đó)
+並ぶ|ならぶ|xếp hàng
+並べる|ならべる|xếp, bày ra
+なる|なる|trở thành, trở nên
+何～|なん～|mấy …, … gì
+にぎやか|にぎやか|náo nhiệt, nhộn nhịp
+西|にし|phía tây
+～日|～にち|ngày …
+日曜日|にちようび|Chủ nhật
+荷物|にもつ|hành lý, đồ đạc
+ニュース|ニュース|tin tức
+庭|にわ|vườn, sân
+～人|～にん|… người
+脱ぐ|ぬぐ|cởi (quần áo, giày)
+温い|ぬるい|âm ấm, nguội
+ネクタイ|ネクタイ|cà vạt
+～年|～ねん|năm …; … năm
+ノート|ノート|vở; ghi chép
+登る|のぼる|leo, trèo
+飲み物|のみもの|đồ uống
+乗る|のる|lên (xe, tàu), đi (xe)
+歯|は|răng
+パーティー|パーティー|bữa tiệc
+はい|はい|vâng, dạ
+～杯|～はい|… cốc, … bát
+灰皿|はいざら|gạt tàn
+葉書|はがき|bưu thiếp
+はく|はく|mặc (quần, váy), đi (giày)
+箱|はこ|cái hộp
+橋|はし|cây cầu
+箸|はし|đôi đũa
+始まる|はじまる|bắt đầu
+初め|はじめ|lúc đầu, ban đầu
+初めて|はじめて|lần đầu tiên
+走る|はしる|chạy
+バス|バス|xe buýt
+バター|バター|bơ
+二十歳|はたち|hai mươi tuổi
+二十日|はつか|ngày 20; hai mươi ngày
+鼻|はな|mũi
+話|はなし|câu chuyện; bài nói
+早い|はやい|sớm; nhanh
+春|はる|mùa xuân
+貼る|はる|dán
+晴れ|はれ|trời nắng, trời quang
+晴れる|はれる|(trời) nắng, quang đãng
+半|はん|một nửa; rưỡi
+～番|～ばん|số …; lượt
+パン|パン|bánh mì
+ハンカチ|ハンカチ|khăn tay
+番号|ばんごう|số (điện thoại, thứ tự)
+晩御飯|ばんごはん|bữa tối
+半分|はんぶん|một nửa
+東|ひがし|phía đông
+～匹|～ひき|… con (động vật nhỏ)
+引く|ひく|kéo; tra (từ điển); bị (cảm)
+弾く|ひく|chơi (đàn)
+低い|ひくい|thấp
+飛行機|ひこうき|máy bay
+左|ひだり|bên trái
+一つ|ひとつ|một cái
+一月|ひとつき|một tháng
+一人|ひとり|một người; một mình
+平仮名|ひらがな|chữ hiragana
+昼御飯|ひるごはん|bữa trưa
+広い|ひろい|rộng
+フィルム|フィルム|phim (cuộn phim)
+封筒|ふうとう|phong bì
+プール|プール|bể bơi
+フォーク|フォーク|cái nĩa
+吹く|ふく|(gió) thổi; thổi
+服|ふく|quần áo
+二つ|ふたつ|hai cái
+豚肉|ぶたにく|thịt lợn
+二人|ふたり|hai người
+二日|ふつか|ngày mùng 2; hai ngày
+太い|ふとい|to, mập, dày
+冬|ふゆ|mùa đông
+降る|ふる|(mưa, tuyết) rơi
+～分|～ふん|… phút
+文章|ぶんしょう|đoạn văn, bài văn
+ページ|ページ|trang
+ベッド|ベッド|giường
+ペット|ペット|thú cưng
+辺|へん|vùng, quanh đây
+ペン|ペン|bút
+帽子|ぼうし|cái mũ
+ボールペン|ボールペン|bút bi
+外|ほか|khác, ngoài ra
+ポケット|ポケット|túi (áo, quần)
+欲しい|ほしい|muốn (có)
+ポスト|ポスト|hòm thư
+細い|ほそい|mảnh, thon, nhỏ
+ボタン|ボタン|cúc áo; nút bấm
+ホテル|ホテル|khách sạn
+本棚|ほんだな|giá sách
+本当|ほんとう|thật, sự thật
+～枚|～まい|… tờ, … tấm (vật mỏng)
+毎月|まいげつ|hằng tháng
+毎週|まいしゅう|hằng tuần
+毎年|まいねん|hằng năm
+毎晩|まいばん|mỗi tối
+前|まえ|phía trước; trước (đây)
+曲る|まがる|rẽ; cong
+まずい|まずい|dở, không ngon; không ổn
+また|また|lại, nữa; cũng
+町|まち|thị trấn, phố
+まっすぐ|まっすぐ|thẳng; ngay thẳng
+マッチ|マッチ|que diêm
+丸い|まるい|tròn
+万年筆|まんねんひつ|bút máy
+磨く|みがく|đánh (răng); đánh bóng
+右|みぎ|bên phải
+短い|みじかい|ngắn
+見せる|みせる|cho xem
+道|みち|con đường
+三日|みっか|ngày mùng 3; ba ngày
+三つ|みっつ|ba cái; ba tuổi
+緑|みどり|màu xanh lá
+皆さん|みなさん|mọi người, các bạn
+南|みなみ|phía nam
+みんな|みんな|mọi người; tất cả
+六日|むいか|ngày mùng 6; sáu ngày
+向こう|むこう|phía bên kia
+六つ|むっつ|sáu cái; sáu tuổi
+村|むら|làng
+メートル|メートル|mét
+眼鏡|めがね|kính đeo mắt
+木曜日|もくようび|thứ Năm
+もしもし|もしもし|a lô
+持つ|もつ|cầm, mang; có
+もっと|もっと|hơn nữa
+物|もの|đồ vật
+門|もん|cổng
+問題|もんだい|vấn đề; câu hỏi (bài thi)
+～屋|～や|cửa hàng …; người bán …
+八百屋|やおや|cửa hàng rau quả
+休み|やすみ|nghỉ; ngày nghỉ
+八つ|やっつ|tám cái; tám tuổi
+やる|やる|làm; cho (người dưới)
+夕方|ゆうがた|chiều tối
+夕飯|ゆうはん|bữa tối
+郵便局|ゆうびんきょく|bưu điện
+昨夜|ゆうべ|tối qua
+ゆっくりと|ゆっくりと|chậm rãi, thong thả
+八日|ようか|ngày mùng 8; tám ngày
+洋服|ようふく|quần áo kiểu Âu
+横|よこ|bên cạnh; chiều ngang
+四日|よっか|ngày mùng 4; bốn ngày
+四つ|よっつ|bốn cái; bốn tuổi
+呼ぶ|よぶ|gọi
+弱い|よわい|yếu
+来月|らいげつ|tháng sau
+来週|らいしゅう|tuần sau
+来年|らいねん|năm sau
+ラジオ|ラジオ|đài, radio
+ラジオカセ|ラジオカセ|đài cát-xét
+りっぱ|りっぱ|tuyệt vời, đáng nể
+留学生|りゅうがくせい|du học sinh
+零|れい|số không
+冷蔵庫|れいぞうこ|tủ lạnh
+レコード|レコード|đĩa hát; kỷ lục
+レストラン|レストラン|nhà hàng
+練習|れんしゅう|luyện tập
+廊下|ろうか|hành lang
+ワイシャツ|ワイシャツ|áo sơ mi (trắng)
+若い|わかい|trẻ
+私|わたくし|tôi (trang trọng)
+渡す|わたす|đưa, trao
+渡る|わたる|băng qua, đi qua
+悪い|わるい|xấu, tệ
+踏む|ふむ|giẫm, đạp
+～区|～く|quận …
+すっと|すっと|nhanh gọn; nhẹ nhõm
+盗む|ぬすむ|ăn trộm
+大抵|たいてい|thường thì, hầu hết
+とうとう|とうとう|cuối cùng thì
+ガソリン|ガソリン|xăng
+鳴る|なる|kêu, reo (chuông)
+しっかり|しっかり|chắc chắn, vững vàng; cẩn thận
+生きる|いきる|sống
+苦い|にがい|đắng
+沸く|わく|(nước) sôi
+やはり|やはり|quả nhiên; rốt cuộc vẫn
+漫画|まんが|truyện tranh
+ステレオ|ステレオ|dàn âm thanh
+医学|いがく|y học
+テキスト|テキスト|sách giáo khoa; văn bản
+～月|～つき|tháng; mặt trăng
+折る|おる|bẻ gãy; gấp
+～会|～かい|cuộc họp, buổi tiệc; hội
+うかがう|うかがう|đến thăm; hỏi (khiêm nhường)
+聞こえる|きこえる|nghe thấy
+僕|ぼく|tôi (nam giới, thân mật)
+壊す|こわす|làm hỏng, phá
+床屋|とこや|tiệm cắt tóc
+オートバイ|オートバイ|xe máy
+止む|やむ|tạnh, ngừng
+もし|もし|nếu
+表|おもて|mặt trước, bề mặt; bên ngoài
+大学生|だいがくせい|sinh viên đại học
+運転手|うんてんしゅ|tài xế
+予習|よしゅう|chuẩn bị bài trước
+別|べつ|khác, riêng
+非常に|ひじょうに|cực kỳ, rất
+お宅|おたく|nhà (của người khác, lịch sự)
+柔らかい|やわらかい|mềm
+拾う|ひろう|nhặt
+～ございます|～ございます|có, là (cách nói rất lịch sự)
+気|き|tinh thần, tâm trạng; khí
+つもり|つもり|dự định, ý định
+郊外|こうがい|ngoại ô
+だめ|だめ|không được, vô ích
+売り場|うりば|quầy bán hàng
+正月|しょうがつ|Tết (năm mới)
+規則|きそく|quy tắc
+うん|うん|ừ
+発音|はつおん|phát âm
+焼く|やく|nướng; đốt
+屋上|おくじょう|sân thượng
+失礼|しつれい|thất lễ, bất lịch sự; xin phép
+ごみ|ごみ|rác
+アフリカ|アフリカ|châu Phi
+点|てん|điểm; dấu chấm
+一生懸命|いっしょうけんめい|chăm chỉ hết sức
+今度|こんど|lần này; lần tới
+機会|きかい|cơ hội
+建てる|たてる|xây (nhà)
+いらっしゃる|いらっしゃる|đi, đến, ở (tôn kính ngữ)
+布団|ふとん|chăn đệm futon
+大事|だいじ|quan trọng, quý giá
+泥棒|どろぼう|kẻ trộm
+～製|～せい|sản xuất tại …, làm bằng …
+注意|ちゅうい|chú ý, cẩn thận
+日|ひ|ngày; mặt trời
+～軒|～けん|… căn nhà
+通る|とおる|đi qua
+過ぎる|すぎる|vượt quá; (thời gian) trôi qua
+レポート|レポート|bài báo cáo
+葉|は|lá cây
+課長|かちょう|trưởng phòng (ban nhỏ)
+すると|すると|thế rồi, khi đó
+止める|やめる|bỏ, thôi (không làm nữa)
+ガラス|ガラス|kính, thủy tinh
+～学部|～がくぶ|khoa … (đại học)
+エスカレーター|エスカレーター|thang cuốn
+人口|じんこう|dân số
+絹|きぬ|lụa
+ちっとも|ちっとも|(không) một chút nào
+深い|ふかい|sâu
+揺れる|ゆれる|rung, lắc
+落る|おちる|rơi; trượt (thi)
+できるだけ|できるだけ|càng … càng tốt, hết mức có thể
+悲しい|かなしい|buồn
+中学校|ちゅうがっこう|trường trung học cơ sở
+ガス|ガス|ga, khí đốt
+祈る|いのる|cầu nguyện
+盛ん|さかん|thịnh vượng, phổ biến
+アルバイト|アルバイト|việc làm thêm
+起こす|おこす|đánh thức; gây ra
+致す|いたす|làm (khiêm nhường ngữ)
+噛む|かむ|cắn, nhai
+赤ちゃん|あかちゃん|em bé
+浅い|あさい|nông, cạn
+嘘|うそ|lời nói dối
+小説|しょうせつ|tiểu thuyết
+親|おや|bố mẹ
+それに|それに|hơn nữa
+西洋|せいよう|phương Tây
+思う|おもう|nghĩ
+パート|パート|việc bán thời gian; phần
+時代|じだい|thời đại
+申し上げる|もうしあげる|nói (khiêm nhường ngữ)
+～式|～しき|kiểu …; lễ …
+出席する|しゅっせきする|tham dự, có mặt
+～家|～か|nhà … (chuyên gia, vd 画家)
+触る|さわる|sờ, chạm
+建て|～だて|(nhà) … tầng
+社長|しゃちょう|giám đốc
+動物園|どうぶつえん|sở thú
+捕まえる|つかまえる|bắt
+寄る|よる|ghé qua; đến gần
+決まる|きまる|được quyết định
+開く|ひらく|mở (ra)
+逃げる|にげる|chạy trốn
+だから|だから|vì thế, cho nên
+畳|たたみ|chiếu tatami
+地理|ちり|địa lý
+さっき|さっき|lúc nãy
+怖い|こわい|đáng sợ, sợ
+包む|つつむ|gói, bọc
+なるべく|なるべく|cố gắng hết mức, càng … càng tốt
+無理|むり|quá sức, vô lý, không thể
+サンドイッチ|サンドイッチ|bánh sandwich
+会議室|かいぎしつ|phòng họp
+品物|しなもの|hàng hóa, đồ vật
+人形|にんぎょう|búp bê
+利用|りよう|sử dụng, tận dụng
+飾る|かざる|trang trí
+止める|とめる|dừng, đỗ (xe); tắt
+いくら～ても|いくら～ても|dù … bao nhiêu đi nữa
+用事|ようじ|việc bận
+ビル|ビル|tòa nhà cao tầng
+けんかする|けんかする|cãi nhau, đánh nhau
+頑張る|がんばる|cố gắng
+投げる|なげる|ném
+故障する|こしょうする|bị hỏng (máy móc)
+力|ちから|sức lực; năng lực
+受ける|うける|nhận; dự (thi)
+間違える|まちがえる|nhầm, làm sai
+そんな|そんな|như thế đó
+星|ほし|ngôi sao
+場合|ばあい|trường hợp
+やっと|やっと|cuối cùng cũng
+足りる|たりる|đủ
+行う|おこなう|tiến hành, thực hiện
+ぶどう|ぶどう|nho
+無くなる|なくなる|mất; hết
+住所|じゅうしょ|địa chỉ
+再来月|さらいげつ|tháng sau nữa
+林|はやし|rừng thưa
+倍|ばい|gấp đôi; … lần
+痩せる|やせる|gầy đi
+線|せん|đường kẻ; tuyến (tàu)
+戦争|せんそう|chiến tranh
+寝坊|ねぼう|ngủ dậy muộn
+パパ|パパ|bố
+光る|ひかる|chiếu sáng, lấp lánh
+夫|おっと|chồng (mình)
+雲|くも|mây
+坂|さか|con dốc
+～ しまう|～ しまう|(lỡ) … mất, … xong
+飛行場|ひこうじょう|sân bay
+柔道|じゅうどう|judo
+決して|けっして|tuyệt đối (không)
+事務所|じむしょ|văn phòng
+小学校|しょうがっこう|trường tiểu học
+客|きゃく|khách
+昔|むかし|ngày xưa
+美しい|うつくしい|đẹp
+捨てる|すてる|vứt bỏ
+なさる|なさる|làm (tôn kính ngữ)
+事|こと|việc, sự việc
+どんどん|どんどん|liên tục, nhanh chóng
+試合|しあい|trận đấu
+適当|てきとう|thích hợp; qua loa
+素晴らしい|すばらしい|tuyệt vời
+美術館|びじゅつかん|bảo tàng mỹ thuật
+文法|ぶんぽう|ngữ pháp
+終わり|おわり|kết thúc, cuối
+壁|かべ|bức tường
+一度|いちど|một lần
+お礼|おれい|lời cảm ơn; quà cảm ơn
+知らせる|しらせる|thông báo
+歯医者|はいしゃ|nha sĩ
+熱心|ねっしん|nhiệt tình, chăm chỉ
+もらう|もらう|nhận
+治る|なおる|khỏi bệnh
+熱|ねつ|sốt; nhiệt
+お祭り|おまつり|lễ hội
+水道|すいどう|nước máy
+匂い|におい|mùi
+ベル|ベル|chuông
+赤ん坊|あかんぼう|em bé, trẻ sơ sinh
+おかしい|おかしい|buồn cười; kỳ lạ
+事故|じこ|tai nạn, sự cố
+変|へん|lạ, kỳ quặc
+辞典|じてん|từ điển
+残る|のこる|còn lại
+立てる|たてる|dựng lên; lập (kế hoạch)
+くれる|くれる|(người khác) cho mình
+～員|～いん|thành viên, nhân viên …
+原因|げんいん|nguyên nhân
+頂く|いただく|nhận; ăn, uống (khiêm nhường ngữ)
+祖母|そぼ|bà (của mình)
+場所|ばしょ|địa điểm
+答|こたえ|câu trả lời
+もちろん|もちろん|tất nhiên
+漬ける|つける|ngâm, muối (dưa)
+受付|うけつけ|quầy lễ tân
+内|うち|trong, bên trong; trong lúc
+スクリーン|スクリーン|màn hình, màn chiếu
+増える|ふえる|tăng lên
+または|または|hoặc
+けがする|けがする|bị thương
+以下|いか|dưới …, … trở xuống
+～ばかり|～ばかり|toàn là …, chỉ …; khoảng
+心|こころ|trái tim, tâm hồn
+サラダ|サラダ|xa lát
+挨拶する|あいさつする|chào hỏi
+確か|たしか|chắc chắn; hình như
+ステーキ|ステーキ|bít tết
+食料品|しょくりょうひん|thực phẩm
+森|もり|rừng
+以内|いない|trong vòng
+オーバー|オーバー|áo khoác ngoài; vượt quá
+乾く|かわく|khô
+石|いし|hòn đá
+思い出す|おもいだす|nhớ ra
+踊る|おどる|nhảy múa
+塗る|ぬる|sơn, bôi, phết
+ご主人|ごしゅじん|chồng (người khác)
+用|よう|việc
+公務員|こうむいん|công chức
+お嬢さん|おじょうさん|con gái (người khác); cô gái trẻ
+用意|ようい|chuẩn bị
+探す|さがす|tìm kiếm
+形|かたち|hình dạng
+運転する|うんてんする|lái (xe)
+すっかり|すっかり|hoàn toàn
+アナウンサー|アナウンサー|phát thanh viên
+消しゴム|けしゴム|cục tẩy
+旅館|りょかん|nhà trọ kiểu Nhật
+海岸|かいがん|bờ biển
+寂しい|さびしい|cô đơn, buồn
+火|ひ|lửa
+育てる|そだてる|nuôi dưỡng
+味噌|みそ|tương miso
+お祝い|おいわい|chúc mừng; quà mừng
+乗り物|のりもの|phương tiện giao thông
+案内する|あんないする|hướng dẫn, dẫn đường
+通う|かよう|đi đi về về (đi học, đi làm)
+連れる|つれる|dẫn theo
+技術|ぎじゅつ|kỹ thuật
+小鳥|ことり|chim nhỏ
+下宿|げしゅく|nhà trọ
+ジャム|ジャム|mứt
+招待する|しょうたいする|mời
+鏡|かがみ|gương
+はず|はず|chắc chắn là, lẽ ra
+法律|ほうりつ|pháp luật
+進む|すすむ|tiến lên
+楽む|たのしむ|vui thích, tận hưởng
+貿易|ぼうえき|thương mại, mậu dịch
+反対|はんたい|phản đối; ngược lại
+おる|おる|ở, có (khiêm nhường ngữ của いる)
+申す|もうす|nói, tên là (khiêm nhường ngữ)
+真面目|まじめ|nghiêm túc, chăm chỉ
+ごらんになる|ごらんになる|xem (tôn kính ngữ)
+店員|てんいん|nhân viên cửa hàng
+泊まる|とまる|trọ lại, nghỉ qua đêm
+よろしい|よろしい|được, tốt (lịch sự)
+今夜|こんや|tối nay
+おつり|おつり|tiền thừa (trả lại)
+チェックする|チェックする|kiểm tra
+会話|かいわ|hội thoại
+空気|くうき|không khí
+交通|こうつう|giao thông
+ワープロ|ワープロ|máy đánh chữ
+急行|きゅうこう|tàu tốc hành
+味|あじ|vị
+手袋|てぶくろ|găng tay
+校長|こうちょう|hiệu trưởng
+ごちそう|ごちそう|bữa ăn thịnh soạn; chiêu đãi
+踊り|おどり|điệu nhảy
+興味|きょうみ|hứng thú
+冷房|れいぼう|máy lạnh, điều hòa
+都合|つごう|sự thuận tiện; hoàn cảnh
+遠慮する|えんりょする|ngại, giữ ý; từ chối khéo
+亡くなる|なくなる|qua đời
+科学|かがく|khoa học
+差し上げる|さしあげる|biếu, tặng (khiêm nhường ngữ)
+気持ち|きもち|cảm giác, tâm trạng
+祖父|そふ|ông (của mình)
+予約|よやく|đặt trước
+凄い|すごい|tuyệt vời, ghê gớm
+入学する|にゅうがくする|nhập học
+写す|うつす|chép lại; chụp
+パソコン|パソコン|máy tính cá nhân
+部長|ぶちょう|trưởng phòng (bộ phận lớn)
+火事|かじ|hỏa hoạn
+足す|たす|cộng thêm
+教会|きょうかい|nhà thờ
+彼ら|かれら|họ
+一杯|いっぱい|một cốc; đầy
+アメリカ|アメリカ|nước Mỹ
+男性|だんせい|nam giới
+生産する|せいさんする|sản xuất
+着物|きもの|kimono
+おもちゃ|おもちゃ|đồ chơi
+暮れる|くれる|(trời) tối; (năm) hết
+釣る|つる|câu (cá)
+～ちゃん|～ちゃん|bé …, … (gọi thân mật)
+打つ|うつ|đánh, gõ
+あんな|あんな|như thế kia
+謝る|あやまる|xin lỗi
+昼間|ひるま|ban ngày
+教育|きょういく|giáo dục
+女性|じょせい|phụ nữ, nữ giới
+米|こめ|gạo
+邪魔|じゃま|cản trở, làm phiền
+国際|こくさい|quốc tế
+隅|すみ|góc
+再来週|さらいしゅう|tuần sau nữa
+夢|ゆめ|giấc mơ; ước mơ
+喉|のど|cổ họng
+最近|さいきん|gần đây, dạo này
+周り|まわり|xung quanh
+不便|ふべん|bất tiện
+血|ち|máu
+毛|け|lông, tóc
+ひどい|ひどい|tệ hại, quá đáng
+例えば|たとえば|ví dụ
+押し入れ|おしいれ|tủ âm tường (kiểu Nhật)
+電灯|でんとう|đèn điện
+サンダル|サンダル|dép xăng-đan
+びっくりする|びっくりする|giật mình, ngạc nhiên
+うまい|うまい|giỏi; ngon
+変える|かえる|thay đổi (cái gì)
+講堂|こうどう|giảng đường, hội trường
+子|こ|đứa trẻ, con
+沸かす|わかす|đun sôi
+レジ|レジ|quầy thu ngân
+しばらく|しばらく|một lúc; lâu rồi
+計画する|けいかくする|lên kế hoạch
+通り|とおり|đường phố
+下着|したぎ|đồ lót
+こう|こう|như thế này
+是非|ぜひ|nhất định
+裏|うら|mặt sau, phía sau
+為|ため|vì, để
+おいでになる|おいでになる|đi, đến, ở (tôn kính ngữ)
+変わる|かわる|thay đổi, biến đổi
+以外|いがい|ngoài …, trừ …
+済む|すむ|xong, kết thúc
+ハンバーグ|ハンバーグ|thịt băm viên (hamburg)
+市|し|thành phố
+引き出し|ひきだし|ngăn kéo; rút tiền
+遊び|あそび|trò chơi, cuộc vui
+支度する|したくする|chuẩn bị
+見える|みえる|nhìn thấy được; trông có vẻ
+十分|じゅうぶん|đủ, đầy đủ
+音|おと|âm thanh, tiếng động
+まず|まず|trước hết
+遠く|とおく|nơi xa
+大体|だいたい|đại khái, hầu hết
+折れる|おれる|bị gãy
+輸入|ゆにゅう|nhập khẩu
+返事|へんじ|trả lời, hồi âm
+都|と|thủ đô (Tokyo)
+産業|さんぎょう|công nghiệp, ngành nghề
+伝える|つたえる|truyền đạt, nhắn lại
+お金持ち|かねもち|người giàu
+島|しま|hòn đảo
+道具|どうぐ|dụng cụ
+滑る|すべる|trượt
+それほど|それほど|đến mức đó
+以上|いじょう|trên …, … trở lên
+～まま|～まま|giữ nguyên …, cứ để …
+特急|とっきゅう|tàu tốc hành đặc biệt
+プレゼント|プレゼント|quà tặng
+～ よると|～ よると|theo …
+妻|つま|vợ (mình)
+帰り|かえり|lúc về, đường về
+具合|ぐあい|tình trạng (sức khỏe, máy móc)
+堅|かたい|cứng
+駐車場|ちゅうしゃじょう|bãi đỗ xe
+スーツ|スーツ|bộ vest
+髪|かみ|tóc
+天気予報|てんきよほう|dự báo thời tiết
+間|あいだ|giữa; trong khoảng
+卒業|そつぎょう|tốt nghiệp
+それで|それで|vì vậy, thế nên
+枝|えだ|cành cây
+専門|せんもん|chuyên môn
+そろそろ|そろそろ|sắp sửa, đã đến lúc
+騒ぐ|さわぐ|làm ồn
+尋ねる|たずねる|hỏi
+放送する|ほうそうする|phát sóng
+政治|せいじ|chính trị
+市民|しみん|công dân, thị dân
+ファックス|ファックス|máy fax
+負ける|まける|thua
+指輪|ゆびわ|nhẫn
+田舎|いなか|nông thôn; quê
+見つける|みつける|tìm thấy
+高校生|こうこうせい|học sinh cấp 3
+講義|こうぎ|bài giảng
+そんなに|そんなに|đến thế, như thế
+昼休み|ひるやすみ|nghỉ trưa
+忘れ物|わすれもの|đồ để quên
+腕|うで|cánh tay; tay nghề
+訳|わけ|lý do; ý nghĩa
+承知する|しょうちする|biết, hiểu; đồng ý
+日記|にっき|nhật ký
+高校|こうこう|trường cấp 3
+似る|にる|giống
+暖房|だんぼう|máy sưởi
+留守|るす|vắng nhà
+割合|わりあい|tỷ lệ; tương đối
+寺|てら|chùa
+慣れる|なれる|quen
+普通|ふつう|bình thường, thông thường
+なるほど|なるほど|ra là vậy, quả thật
+くださる|くださる|cho, làm cho (tôn kính ngữ)
+お子さん|おこさん|con (của người khác)
+会場|かいじょう|hội trường, địa điểm tổ chức
+文学|ぶんがく|văn học
+光|ひかり|ánh sáng
+お見舞い|おみまい|thăm người ốm
+席|せき|chỗ ngồi
+～様|～さま|ông, bà, ngài … (rất lịch sự)
+ご存じ|ごぞんじ|biết (tôn kính ngữ)
+下る|さがる|hạ xuống, giảm
+字|じ|chữ
+アジア|アジア|châu Á
+空く|すく|vắng; (bụng) đói
+あ|あ|à, ồ, a
+最も|もっとも|nhất
+合う|あう|hợp, vừa
+～代|～だい|tiền …; thế hệ, độ tuổi …
+最後|さいご|cuối cùng
+値段|ねだん|giá cả
+退院する|たいいんする|ra viện
+展覧会|てんらんかい|triển lãm
+久しぶり|ひさしぶり|lâu rồi mới …
+カーテン|カーテン|rèm cửa
+汽車|きしゃ|tàu hỏa (chạy hơi nước)
+見つかる|みつかる|được tìm thấy
+召し上がる|めしあがる|ăn, uống (tôn kính ngữ)
+太る|ふとる|béo lên
+注射|ちゅうしゃ|tiêm
+様|よう|có vẻ như; cách …
+～おき|～おき|cách … (mỗi … một lần)
+最初|さいしょ|đầu tiên, ban đầu
+御～|ご～|(tiền tố kính ngữ/lịch sự)
+直る|なおる|được sửa xong
+続く|つづく|tiếp tục, kéo dài
+先輩|せんぱい|đàn anh, đàn chị, tiền bối
+世話する|せわする|chăm sóc
+近所|きんじょ|hàng xóm, khu lân cận
+将来|しょうらい|tương lai
+億|おく|trăm triệu
+数学|すうがく|toán học
+払う|はらう|trả (tiền)
+習慣|しゅうかん|thói quen; phong tục
+焼ける|やける|bị cháy; được nướng chín
+君|きみ|cậu, em (ngôi thứ hai, thân mật)
+冷える|ひえる|lạnh đi
+点く|つく|(đèn) sáng, được bật
+この間|このあいだ|hôm trước, mới đây
+格好|かっこう|dáng vẻ, bề ngoài
+かまう|かまう|để ý, bận tâm
+落す|おとす|làm rơi, đánh rơi
+出発する|しゅっぱつする|xuất phát
+拝見する|はいけんする|xem (khiêm nhường ngữ)
+割れる|われる|bị vỡ
+背中|せなか|lưng
+新聞社|しんぶんしゃ|tòa soạn báo
+いじめる|いじめる|bắt nạt
+回る|まわる|quay; đi vòng quanh
+～君|～くん|cậu … (gọi nam giới trẻ, thân mật)
+おっしゃる|おっしゃる|nói (tôn kính ngữ)
+濡れる|ぬれる|bị ướt
+倒れる|たおれる|ngã, đổ
+スーパー|スーパー|siêu thị
+アクセサリー|アクセサリー|đồ trang sức, phụ kiện
+向かう|むかう|hướng về, đi về phía
+自由|じゆう|tự do
+仕方|しかた|cách làm
+首|くび|cổ
+程|ほど|mức độ, khoảng
+代わり|かわり|thay thế
+失敗|しっぱい|thất bại
+工業|こうぎょう|công nghiệp
+移る|うつる|chuyển (chỗ); lây (bệnh)
+スーツケース|スーツケース|va li
+ひげ|ひげ|râu
+研究室|けんきゅうしつ|phòng nghiên cứu
+紹介|しょうかい|giới thiệu
+けれど|けれど|nhưng
+舟|ふね|thuyền
+動く|うごく|chuyển động; (máy) chạy
+～ ついて|～ ついて|về …
+コンサート|コンサート|buổi hòa nhạc
+虫|むし|côn trùng, sâu bọ
+コンピュータ|コンピュータ|máy tính
+植える|うえる|trồng (cây)
+両方|りょうほう|cả hai
+汚れる|よごれる|bị bẩn
+水泳|すいえい|bơi lội
+勝つ|かつ|thắng
+砂|すな|cát
+警察|けいさつ|cảnh sát
+取り替える|とりかえる|đổi, thay
+急ぐ|いそぐ|vội vàng
+参る|まいる|đi, đến (khiêm nhường ngữ)
+全然|ぜんぜん|hoàn toàn (không)
+特別|とくべつ|đặc biệt
+復習|ふくしゅう|ôn tập
+役に立つ|やくにたつ|có ích
+もうすぐ|もうすぐ|sắp sửa
+真中|まんなか|chính giữa
+戻る|もどる|quay lại
+研究|けんきゅう|nghiên cứu
+ケーキ|ケーキ|bánh ngọt
+草|くさ|cỏ
+込む|こむ|đông đúc
+この頃|このごろ|dạo này
+下げる|さげる|hạ xuống
+花見|はなみ|ngắm hoa (anh đào)
+途中|とちゅう|giữa đường, giữa chừng
+入院する|にゅういんする|nhập viện
+乗り換える|のりかえる|đổi (tàu, xe)
+別れる|わかれる|chia tay
+～町|～ちょう|phố …, khu …
+看護婦|かんごふ|y tá
+見物|けんぶつ|tham quan
+相談する|そうだんする|bàn bạc, tư vấn
+ガソリンスタンド|ガソリンスタンド|cây xăng
+テニス|テニス|quần vợt
+眠る|ねむる|ngủ
+上がる|あがる|đi lên; tăng; vào (nhà)
+翻訳|ほんやく|dịch thuật
+食事する|しょくじする|dùng bữa
+お陰|おかげ|nhờ có
+湯|ゆ|nước nóng
+競争|きょうそう|cạnh tranh
+湖|みずうみ|hồ
+集まる|あつまる|tập trung, tụ họp
+～にくい|～にくい|khó …
+生活する|せいかつする|sinh hoạt, sống
+糸|いと|sợi chỉ
+関係|かんけい|quan hệ
+ピアノ|ピアノ|đàn piano
+番組|ばんぐみ|chương trình (TV)
+急|きゅう|gấp, đột ngột; dốc
+棚|たな|cái kệ, giá
+木綿|もめん|vải bông
+輸出する|ゆしゅつする|xuất khẩu
+タイプ|タイプ|kiểu, loại
+すり|すり|kẻ móc túi
+嬉しい|うれしい|vui mừng
+アルコール|アルコール|rượu, cồn
+ソフト|ソフト|mềm; phần mềm
+神社|じんじゃ|đền thờ Thần đạo
+大分|だいぶ|khá là, đáng kể
+楽しみ|たのしみ|niềm vui; mong chờ
+電報|でんぽう|điện báo
+家内|かない|vợ (mình)
+指|ゆび|ngón tay
+これから|これから|từ bây giờ
+たまに|たまに|thỉnh thoảng

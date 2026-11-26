@@ -11,6 +11,7 @@ export interface WordRecord {
   senses: SenseRecord[];
   is_common: boolean;
   freq_rank: number | null; // nhỏ = hay dùng hơn (từ thẻ nfXX của JMdict)
+  usually_kana: boolean; // có nghĩa gắn thẻ &uk; (thường viết bằng kana, vd 為る → する)
 }
 
 // processEntities:false để không vỡ khi gặp entity DTD của JMdict (vd &v1;).
@@ -18,7 +19,7 @@ const parser = new XMLParser({
   ignoreAttributes: true,
   processEntities: false,
   isArray: (name) =>
-    ["entry", "k_ele", "r_ele", "sense", "gloss", "pos"].includes(name),
+    ["entry", "k_ele", "r_ele", "sense", "gloss", "pos", "misc"].includes(name),
 });
 
 type Pri = string | string[] | undefined;
@@ -26,7 +27,7 @@ type Pri = string | string[] | undefined;
 interface RawEntry {
   k_ele?: { keb?: string; ke_pri?: Pri }[];
   r_ele?: { reb?: string; re_pri?: Pri }[];
-  sense?: { pos?: string[]; gloss?: unknown[] }[];
+  sense?: { pos?: string[]; gloss?: unknown[]; misc?: string[] }[];
 }
 
 /** Gom mọi thẻ priority thành mảng chuỗi. */
@@ -69,6 +70,7 @@ function toWord(e: RawEntry): WordRecord {
     senses,
     is_common: freq_rank != null,
     freq_rank,
+    usually_kana: (e.sense ?? []).some((s) => (s.misc ?? []).includes("&uk;")),
   };
 }
 

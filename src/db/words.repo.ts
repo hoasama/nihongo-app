@@ -15,6 +15,7 @@ function posExists(type: WordType | undefined, params: unknown[]): string {
 /** Bỏ ký tự đặc biệt cú pháp FTS5, giữ chữ/số/kana/kanji. */
 function sanitizeFts(s: string): string {
   return s
+    .normalize("NFC") // seed lưu NFC; một số bộ gõ gửi dấu tách rời (NFD)
     .replace(/["*()^:{}\-]/g, " ")
     .replace(/\s+/g, " ")
     .trim();

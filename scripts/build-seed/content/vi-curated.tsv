@@ -1,0 +1,273 @@
+# Từ vựng viết tay (giữ nguyên nghĩa tiếng Việt, ưu tiên hơn dữ liệu JMdict)
+# level|kanji|kana|nghĩa|loại
+n5|私|わたし|tôi|n
+n5|あなた|あなた|bạn, anh, chị|n
+n5|人|ひと|người|n
+n5|学生|がくせい|học sinh, sinh viên|n
+n5|先生|せんせい|giáo viên, thầy cô|n
+n5|会社員|かいしゃいん|nhân viên công ty|n
+n5|医者|いしゃ|bác sĩ|n
+n5|友達|ともだち|bạn bè|n
+n5|家族|かぞく|gia đình|n
+n5|父|ちち|bố (của mình)|n
+n5|母|はは|mẹ (của mình)|n
+n5|兄|あに|anh trai (của mình)|n
+n5|姉|あね|chị gái (của mình)|n
+n5|弟|おとうと|em trai|n
+n5|妹|いもうと|em gái|n
+n5|子供|こども|trẻ con|n
+n5|男|おとこ|đàn ông, nam|n
+n5|女|おんな|phụ nữ, nữ|n
+n5|名前|なまえ|tên|n
+n5|国|くに|đất nước|n
+n5|日本|にほん|Nhật Bản|n
+n5|日本語|にほんご|tiếng Nhật|n
+n5|学校|がっこう|trường học|n
+n5|大学|だいがく|đại học|n
+n5|教室|きょうしつ|lớp học|n
+n5|会社|かいしゃ|công ty|n
+n5|仕事|しごと|công việc|n
+n5|家|いえ|nhà|n
+n5|部屋|へや|phòng|n
+n5|駅|えき|nhà ga|n
+n5|病院|びょういん|bệnh viện|n
+n5|銀行|ぎんこう|ngân hàng|n
+n5|店|みせ|cửa hàng, quán|n
+n5|図書館|としょかん|thư viện|n
+n5|公園|こうえん|công viên|n
+n5|本|ほん|sách|n
+n5|辞書|じしょ|từ điển|n
+n5|新聞|しんぶん|báo|n
+n5|手紙|てがみ|thư|n
+n5|写真|しゃしん|ảnh|n
+n5|映画|えいが|phim|n
+n5|音楽|おんがく|âm nhạc|n
+n5|電話|でんわ|điện thoại|n
+n5|車|くるま|ô tô|n
+n5|電車|でんしゃ|tàu điện|n
+n5|自転車|じてんしゃ|xe đạp|n
+n5|時計|とけい|đồng hồ|n
+n5|傘|かさ|ô, dù|n
+n5|鞄|かばん|cặp, túi xách|n
+n5|靴|くつ|giày|n
+n5|机|つくえ|cái bàn|n
+n5|窓|まど|cửa sổ|n
+n5|水|みず|nước|n
+n5|お茶|おちゃ|trà|n
+n5|ご飯|ごはん|cơm, bữa ăn|n
+n5|朝ご飯|あさごはん|bữa sáng|n
+n5|肉|にく|thịt|n
+n5|魚|さかな|cá|n
+n5|野菜|やさい|rau|n
+n5|果物|くだもの|hoa quả|n
+n5|卵|たまご|trứng|n
+n5|料理|りょうり|món ăn, nấu ăn|n
+n5|今日|きょう|hôm nay|n
+n5|明日|あした|ngày mai|n
+n5|昨日|きのう|hôm qua|n
+n5|今|いま|bây giờ|n
+n5|朝|あさ|buổi sáng|n
+n5|昼|ひる|buổi trưa|n
+n5|晩|ばん|buổi tối|n
+n5|夜|よる|ban đêm|n
+n5|毎日|まいにち|mỗi ngày|n
+n5|毎朝|まいあさ|mỗi sáng|n
+n5|週末|しゅうまつ|cuối tuần|n
+n5|時間|じかん|thời gian|n
+n5|天気|てんき|thời tiết|n
+n5|雨|あめ|mưa|n
+n5|雪|ゆき|tuyết|n
+n5|山|やま|núi|n
+n5|川|かわ|sông|n
+n5|海|うみ|biển|n
+n5|花|はな|hoa|n
+n5|犬|いぬ|chó|n
+n5|猫|ねこ|mèo|n
+n5|お金|おかね|tiền|n
+n5|目|め|mắt|n
+n5|耳|みみ|tai|n
+n5|口|くち|miệng|n
+n5|手|て|tay|n
+n5|足|あし|chân|n
+n5|一|いち|một (1)|num
+n5|二|に|hai (2)|num
+n5|三|さん|ba (3)|num
+n5|四|よん|bốn (4)|num
+n5|五|ご|năm (5)|num
+n5|六|ろく|sáu (6)|num
+n5|七|なな|bảy (7)|num
+n5|八|はち|tám (8)|num
+n5|九|きゅう|chín (9)|num
+n5|十|じゅう|mười (10)|num
+n5|百|ひゃく|một trăm|num
+n5|千|せん|một nghìn|num
+n5|万|まん|mười nghìn (vạn)|num
+n5|行く|いく|đi|v
+n5|来る|くる|đến|v
+n5|帰る|かえる|về|v
+n5|食べる|たべる|ăn|v
+n5|飲む|のむ|uống|v
+n5|見る|みる|xem, nhìn|v
+n5|聞く|きく|nghe, hỏi|v
+n5|読む|よむ|đọc|v
+n5|書く|かく|viết|v
+n5|話す|はなす|nói chuyện|v
+n5|買う|かう|mua|v
+n5|会う|あう|gặp|v
+n5|起きる|おきる|thức dậy|v
+n5|寝る|ねる|ngủ|v
+n5|働く|はたらく|làm việc|v
+n5|休む|やすむ|nghỉ ngơi|v
+n5|勉強する|べんきょうする|học|v
+n5|する|する|làm|v
+n5|待つ|まつ|chờ, đợi|v
+n5|ある|ある|có (đồ vật)|v
+n5|いる|いる|có, ở (người, động vật)|v
+n5|分かる|わかる|hiểu|v
+n5|教える|おしえる|dạy, chỉ bảo|v
+n5|入る|はいる|vào|v
+n5|出る|でる|ra, rời|v
+n5|立つ|たつ|đứng|v
+n5|座る|すわる|ngồi|v
+n5|開ける|あける|mở|v
+n5|閉める|しめる|đóng|v
+n5|使う|つかう|sử dụng|v
+n5|作る|つくる|làm, chế tạo|v
+n5|大きい|おおきい|to, lớn|ai
+n5|小さい|ちいさい|nhỏ, bé|ai
+n5|新しい|あたらしい|mới|ai
+n5|古い|ふるい|cũ|ai
+n5|高い|たかい|cao, đắt|ai
+n5|安い|やすい|rẻ|ai
+n5|暑い|あつい|nóng (thời tiết)|ai
+n5|寒い|さむい|lạnh (thời tiết)|ai
+n5|美味しい|おいしい|ngon|ai
+n5|楽しい|たのしい|vui|ai
+n5|難しい|むずかしい|khó|ai
+n5|易しい|やさしい|dễ|ai
+n5|忙しい|いそがしい|bận|ai
+n5|白い|しろい|trắng|ai
+n5|黒い|くろい|đen|ai
+n5|赤い|あかい|đỏ|ai
+n5|元気|げんき|khỏe mạnh|ana
+n5|静か|しずか|yên tĩnh|ana
+n5|有名|ゆうめい|nổi tiếng|ana
+n5|綺麗|きれい|đẹp, sạch|ana
+n5|好き|すき|thích|ana
+n5|嫌い|きらい|ghét|ana
+n5|上手|じょうず|giỏi|ana
+n5|下手|へた|kém|ana
+n5|暇|ひま|rảnh rỗi|ana
+n5|便利|べんり|tiện lợi|ana
+n5|とても|とても|rất|adv
+n5|少し|すこし|một chút|adv
+n5|いつも|いつも|luôn luôn|adv
+n5|よく|よく|thường, hay; tốt|adv
+n5|時々|ときどき|thỉnh thoảng|adv
+n5|もう|もう|đã, rồi|adv
+n5|まだ|まだ|vẫn, chưa|adv
+n5|一緒に|いっしょに|cùng nhau|adv
+n5|ありがとう|ありがとう|cảm ơn|ex
+n5|すみません|すみません|xin lỗi; xin phép|ex
+n5|おはようございます|おはようございます|chào buổi sáng|ex
+n5|こんにちは|こんにちは|xin chào (ban ngày)|ex
+n5|こんばんは|こんばんは|chào buổi tối|ex
+n5|さようなら|さようなら|tạm biệt|ex
+n5|いただきます|いただきます|xin mời (trước khi ăn)|ex
+n4|経験|けいけん|kinh nghiệm|n
+n4|趣味|しゅみ|sở thích|n
+n4|予定|よてい|dự định, kế hoạch|n
+n4|準備|じゅんび|chuẩn bị|n
+n4|説明|せつめい|giải thích|n
+n4|連絡|れんらく|liên lạc|n
+n4|約束|やくそく|lời hứa, cuộc hẹn|n
+n4|旅行|りょこう|du lịch|n
+n4|空港|くうこう|sân bay|n
+n4|地図|ちず|bản đồ|n
+n4|会議|かいぎ|cuộc họp|n
+n4|試験|しけん|kỳ thi|n
+n4|宿題|しゅくだい|bài tập về nhà|n
+n4|意見|いけん|ý kiến|n
+n4|理由|りゆう|lý do|n
+n4|世界|せかい|thế giới|n
+n4|社会|しゃかい|xã hội|n
+n4|文化|ぶんか|văn hóa|n
+n4|歴史|れきし|lịch sử|n
+n4|経済|けいざい|kinh tế|n
+n4|病気|びょうき|bệnh|n
+n4|薬|くすり|thuốc|n
+n4|健康|けんこう|sức khỏe|n
+n4|気分|きぶん|tâm trạng, cảm giác|n
+n4|台風|たいふう|bão|n
+n4|地震|じしん|động đất|n
+n4|季節|きせつ|mùa|n
+n4|景色|けしき|phong cảnh|n
+n4|港|みなと|cảng|n
+n4|工場|こうじょう|nhà máy|n
+n4|両親|りょうしん|bố mẹ|n
+n4|息子|むすこ|con trai (của mình)|n
+n4|娘|むすめ|con gái (của mình)|n
+n4|彼|かれ|anh ấy|n
+n4|彼女|かのじょ|cô ấy; bạn gái|n
+n4|お土産|おみやげ|quà lưu niệm|n
+n4|贈り物|おくりもの|quà tặng|n
+n4|運動|うんどう|vận động, thể dục|n
+n4|心配|しんぱい|lo lắng|ana
+n4|安心|あんしん|yên tâm|ana
+n4|始める|はじめる|bắt đầu|v
+n4|終わる|おわる|kết thúc|v
+n4|続ける|つづける|tiếp tục|v
+n4|決める|きめる|quyết định|v
+n4|集める|あつめる|sưu tầm, thu thập|v
+n4|調べる|しらべる|tìm hiểu, tra cứu|v
+n4|考える|かんがえる|suy nghĩ|v
+n4|覚える|おぼえる|nhớ, học thuộc|v
+n4|忘れる|わすれる|quên|v
+n4|届ける|とどける|chuyển đến, giao|v
+n4|送る|おくる|gửi; tiễn|v
+n4|運ぶ|はこぶ|vận chuyển, mang|v
+n4|選ぶ|えらぶ|chọn|v
+n4|比べる|くらべる|so sánh|v
+n4|間に合う|まにあう|kịp giờ|v
+n4|遅れる|おくれる|muộn, trễ|v
+n4|壊れる|こわれる|bị hỏng|v
+n4|直す|なおす|sửa chữa|v
+n4|片付ける|かたづける|dọn dẹp|v
+n4|褒める|ほめる|khen|v
+n4|叱る|しかる|mắng|v
+n4|笑う|わらう|cười|v
+n4|泣く|なく|khóc|v
+n4|怒る|おこる|tức giận|v
+n4|喜ぶ|よろこぶ|vui mừng|v
+n4|驚く|おどろく|ngạc nhiên|v
+n4|迎える|むかえる|đón|v
+n4|訪ねる|たずねる|thăm|v
+n4|手伝う|てつだう|giúp đỡ|v
+n4|引っ越す|ひっこす|chuyển nhà|v
+n4|厳しい|きびしい|nghiêm khắc|ai
+n4|優しい|やさしい|hiền, tốt bụng|ai
+n4|恥ずかしい|はずかしい|xấu hổ|ai
+n4|懐かしい|なつかしい|nhớ, hoài niệm|ai
+n4|珍しい|めずらしい|hiếm, lạ|ai
+n4|正しい|ただしい|đúng|ai
+n4|細かい|こまかい|chi tiết, tỉ mỉ|ai
+n4|眠い|ねむい|buồn ngủ|ai
+n4|大切|たいせつ|quan trọng, quý giá|ana
+n4|必要|ひつよう|cần thiết|ana
+n4|丁寧|ていねい|lịch sự, cẩn thận|ana
+n4|簡単|かんたん|đơn giản|ana
+n4|複雑|ふくざつ|phức tạp|ana
+n4|安全|あんぜん|an toàn|ana
+n4|危険|きけん|nguy hiểm|ana
+n4|残念|ざんねん|đáng tiếc|ana
+n4|親切|しんせつ|tử tế|ana
+n4|きっと|きっと|chắc chắn|adv
+n4|必ず|かならず|nhất định|adv
+n4|たぶん|たぶん|có lẽ|adv
+n4|なかなか|なかなか|mãi mà (không); khá|adv
+n4|ずいぶん|ずいぶん|khá là, rất|adv
+n4|はっきり|はっきり|rõ ràng|adv
+n4|ゆっくり|ゆっくり|chậm rãi, thong thả|adv
+n4|急に|きゅうに|đột nhiên|adv
+n4|特に|とくに|đặc biệt là|adv
+n4|ほとんど|ほとんど|hầu hết|adv
