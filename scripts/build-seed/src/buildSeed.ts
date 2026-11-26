@@ -34,7 +34,7 @@ const paths = {
   // OpenJLPT kanji: nguồn cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt).
   openjlptKanji: SAMPLE
     ? [fx("openjlpt-kanji-sample.json")]
-    : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json")],
+    : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json"), raw("openjlpt-kanji-n3.json")],
   // Nghĩa tiếng Việt (khớp theo kanji + kana). File đứng trước thắng khi trùng: viết tay > dịch tự động.
   vi: ["vi-curated", "vi-auto"].map((f) => join(base, `content/${f}.tsv`)),
 };
@@ -80,14 +80,13 @@ function main() {
     if (!vocabLevel.has(e.word)) vocabLevel.set(e.word, e.level);
   }
 
-  // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt; N5 thắng N4 khi trùng).
+  // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt). File xếp N5 → N3, cấp thấp thắng khi trùng.
   const kanjiLevel = new Map<string, JlptLevel>();
   for (const p of paths.openjlptKanji) {
     const txt = readIf(p);
     if (!txt) continue;
     for (const k of parseOpenJlptKanji(txt)) {
-      if (kanjiLevel.get(k.character) !== "N5")
-        kanjiLevel.set(k.character, k.level);
+      if (!kanjiLevel.has(k.character)) kanjiLevel.set(k.character, k.level);
     }
   }
 

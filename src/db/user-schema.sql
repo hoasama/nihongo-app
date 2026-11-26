@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS decks (
   name        TEXT NOT NULL,
   category    TEXT NOT NULL,          -- 'vocab' | 'kanji'
   kind        TEXT NOT NULL,          -- 'jlpt_vocab'|'jlpt_kanji'|'bookmarks_vocab'|'bookmarks_kanji'
-  level       TEXT,                   -- 'N5' | 'N4' | NULL
+  level       TEXT,                   -- 'N5' | 'N4' | 'N3' | NULL
   created_at  TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE TABLE IF NOT EXISTS cards (

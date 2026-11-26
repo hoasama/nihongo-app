@@ -11,13 +11,27 @@ describe("srs.repo decks", () => {
     t = makeTestDb();
   });
 
-  it("ensurePresetDecks tạo đúng 6 deck (3 vocab + 3 kanji), idempotent", async () => {
+  it("ensurePresetDecks tạo đúng 8 deck (4 vocab + 4 kanji), idempotent", async () => {
     await ensurePresetDecks(t.q);
     await ensurePresetDecks(t.q); // lần 2 không tạo thêm
     const all = t.raw.prepare("SELECT category, COUNT(*) c FROM decks GROUP BY category").all();
     expect(all).toEqual([
-      { category: "kanji", c: 3 },
-      { category: "vocab", c: 3 },
+      { category: "kanji", c: 4 },
+      { category: "vocab", c: 4 },
+    ]);
+  });
+
+  it("ensurePresetDecks bổ sung deck N3 cho người dùng cũ, giữ deck đang có", async () => {
+    t.raw.exec(`INSERT INTO decks (id, name, category, kind, level) VALUES
+      (1,'N5 Từ vựng','vocab','jlpt_vocab','N5'),(2,'N4 Từ vựng','vocab','jlpt_vocab','N4'),
+      (3,'Từ vựng đã lưu','vocab','bookmarks_vocab',NULL)`);
+    await ensurePresetDecks(t.q);
+    const vocab = await listDecks(t.q, "vocab");
+    expect(vocab.map((d) => [d.id <= 3, d.name])).toEqual([
+      [true, "N5 Từ vựng"],
+      [true, "N4 Từ vựng"],
+      [false, "N3 Từ vựng"],
+      [true, "Từ vựng đã lưu"],
     ]);
   });
 
@@ -25,8 +39,8 @@ describe("srs.repo decks", () => {
     await ensurePresetDecks(t.q);
     const vocab = await listDecks(t.q, "vocab");
     const kanji = await listDecks(t.q, "kanji");
-    expect(vocab).toHaveLength(3);
-    expect(kanji).toHaveLength(3);
+    expect(vocab).toHaveLength(4);
+    expect(kanji).toHaveLength(4);
     expect(vocab.every((d) => d.category === "vocab")).toBe(true);
   });
 });

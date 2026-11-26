@@ -1,13 +1,13 @@
 <script setup lang="ts">
-// Tag cấp JLPT dùng chung cho mọi trang: N5 hồng, N4 lilac (theo palette),
-// cấp khác xám ở light / Tiffany ở dark (để khác badge loại từ màu xám bên cạnh).
+// Tag cấp JLPT dùng chung cho mọi trang: N5 hồng, N4 lilac, N3 Tiffany (theo palette);
+// ở dark, cấp không có trong DARK dùng Tiffany (để khác badge loại từ màu xám bên cạnh).
 import { computed } from "vue";
 import { useSettings } from "./settingsStore";
 
 const props = defineProps<{ level: string | null | undefined }>();
 const settings = useSettings();
 
-const COLORS: Record<string, string> = { N5: "magenta", N4: "purple" };
+const COLORS: Record<string, string> = { N5: "magenta", N4: "purple", N3: "cyan" };
 // Dark: preset antd ra nền gần đen, chữ mờ → dùng pastel của palette, chữ đậm cho sáng rõ.
 const DARK: Record<string, { background: string; color: string }> = {
   N5: { background: "#ffc8dd", color: "#4a1f33" },

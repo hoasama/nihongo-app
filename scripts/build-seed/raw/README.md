@@ -22,7 +22,7 @@ Thư mục này chứa các file dữ liệu gốc để sinh `seed.sqlite`. **K
 | `kanjidic2.xml` | KANJIDIC2 — http://www.edrdg.org/kanjidic/kanjidic2.xml.gz (giải nén) | CC BY-SA 4.0 — © EDRDG |
 | `openjlpt-n5.json`, `openjlpt-n4.json` | OpenJLPT **vocab** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n5.json (và `n4.json`). Cấp JLPT + câu ví dụ (Tatoeba) + furigana cho từ vựng. | CC BY-SA 4.0 (ví dụ: Tatoeba CC BY) |
 | `openjlpt-n3.json` | OpenJLPT **vocab** N3 — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n3.json | CC BY-SA 4.0 (ví dụ: Tatoeba CC BY) |
-| `openjlpt-kanji-n5.json`, `openjlpt-kanji-n4.json` | OpenJLPT **kanji** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json (và `n4.json`). Cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt). | CC BY-SA 4.0 |
+| `openjlpt-kanji-n5.json`, `openjlpt-kanji-n4.json`, `openjlpt-kanji-n3.json` | OpenJLPT **kanji** theo cấp — https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json (và `n4.json`, `n3.json`). Cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt). | CC BY-SA 4.0 |
 
 Tải nhanh OpenJLPT:
 ```powershell
@@ -30,6 +30,8 @@ curl -o scripts/build-seed/raw/openjlpt-n5.json https://cdn.jsdelivr.net/gh/evan
 curl -o scripts/build-seed/raw/openjlpt-n4.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n4.json
 curl -o scripts/build-seed/raw/openjlpt-kanji-n5.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n5.json
 curl -o scripts/build-seed/raw/openjlpt-kanji-n4.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n4.json
+curl -o scripts/build-seed/raw/openjlpt-n3.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/vocab/n3.json
+curl -o scripts/build-seed/raw/openjlpt-kanji-n3.json https://cdn.jsdelivr.net/gh/evanclan/OpenJLPT@main/data/json/kanji/n3.json
 ```
 
 ## Giấy phép & ghi công
