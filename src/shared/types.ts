@@ -1,4 +1,4 @@
-export type JlptLevel = "N5" | "N4";
+export type JlptLevel = "N5" | "N4" | "N3";
 export type ItemType = "word" | "kanji" | "grammar";
 
 export interface WordSummary {
