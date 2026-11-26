@@ -84,5 +84,7 @@ CREATE VIRTUAL TABLE words_fts USING fts5(
   reading_romaji,
   gloss_en,
   gloss_vi,
-  word_id UNINDEXED
+  word_id UNINDEXED,
+  -- giữ dấu: mặc định unicode61 bỏ dấu nên "ăn" thành "an" và khớp cả nghĩa tiếng Anh "an"
+  tokenize = 'unicode61 remove_diacritics 0'
 );

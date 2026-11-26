@@ -46,6 +46,16 @@ describe("words.repo", () => {
     expect(d?.sentences[0].translation_en).toBe("I eat rice.");
   });
 
+  it("searchWords tìm tiếng Việt có dấu, không lẫn nghĩa tiếng Anh 'an'", async () => {
+    t.raw.exec(`INSERT INTO words (id, headword, reading_kana, reading_romaji, jlpt_level, is_common) VALUES
+      (3,'安','あん','an',NULL,0)`);
+    t.raw.exec(`INSERT INTO words_fts (headword, reading_kana, reading_romaji, gloss_en, gloss_vi, word_id) VALUES
+      ('安','あん','an','an easy thing',NULL,3)`);
+    const res = await searchWords(t.q, "ăn".normalize("NFD"));
+    expect(res.map((w) => w.headword)).toEqual(["食べる"]);
+    expect(res[0].gloss).toBe("ăn");
+  });
+
   it("getWordDetail trả null khi không tồn tại", async () => {
     expect(await getWordDetail(t.q, 999)).toBeNull();
   });

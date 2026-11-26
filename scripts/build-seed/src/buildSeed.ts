@@ -11,6 +11,7 @@ import {
   type OpenJlptEntry,
 } from "./parseOpenJlpt";
 import { type JlptLevel } from "./jlptLevels";
+import { assignViMeanings, parseViMeanings } from "./parseViMeanings";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const base = join(here, ".."); // scripts/build-seed
@@ -34,6 +35,8 @@ const paths = {
   openjlptKanji: SAMPLE
     ? [fx("openjlpt-kanji-sample.json")]
     : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json")],
+  // Nghĩa tiếng Việt (khớp theo kanji + kana). File đứng trước thắng khi trùng: viết tay > dịch tự động.
+  vi: ["vi-curated", "vi-auto"].map((f) => join(base, `content/${f}.tsv`)),
 };
 
 function readIf(path: string): string | null {
@@ -88,9 +91,17 @@ function main() {
     }
   }
 
+  const viMeaning = new Map<string, string>();
+  for (const p of paths.vi) {
+    const txt = readIf(p);
+    if (!txt) continue;
+    for (const [k, v] of parseViMeanings(txt)) if (!viMeaning.has(k)) viMeaning.set(k, v);
+  }
+
   const stats = {
     words: 0,
     senses: 0,
+    sensesVi: 0,
     kanji: 0,
     sentences: 0,
     sentenceLinks: 0,
@@ -103,7 +114,7 @@ function main() {
     "INSERT INTO words (headword, reading_kana, reading_romaji, jlpt_level, is_common, freq_rank) VALUES (?,?,?,?,?,?)",
   );
   const insSense = db.prepare(
-    "INSERT INTO senses (word_id, part_of_speech, gloss_en, order_idx) VALUES (?,?,?,?)",
+    "INSERT INTO senses (word_id, part_of_speech, gloss_en, gloss_vi, order_idx) VALUES (?,?,?,?,?)",
   );
   const insFts = db.prepare(
     "INSERT INTO words_fts (headword, reading_kana, reading_romaji, gloss_en, gloss_vi, word_id) VALUES (?,?,?,?,?,?)",
@@ -112,8 +123,11 @@ function main() {
   const jmdictXml = readIf(paths.jmdict);
   if (jmdictXml) {
     const words = parseJmdictEntry(jmdictXml);
+    const { byIdx: viByIdx, missed: viMissed } = assignViMeanings(words, viMeaning);
+    if (viMissed.length)
+      console.log(`Nghĩa Việt không khớp từ JMdict nào (${viMissed.length}):`, viMissed.join(", "));
     tx(() => {
-      for (const w of words) {
+      for (const [wi, w] of words.entries()) {
         const romaji = toRomaji(w.reading_kana);
         const level = vocabLevel.get(w.headword) ?? null;
         const id = Number(
@@ -129,17 +143,20 @@ function main() {
         wordIdByHeadword.set(w.headword, id);
         stats.words++;
         const glossEn: string[] = [];
+        // Một nghĩa Việt gộp cho cả từ → gắn vào nghĩa đầu tiên; các nghĩa sau vẫn chỉ có tiếng Anh.
+        const vi = viByIdx.get(wi) ?? null;
         w.senses.forEach((s, i) => {
-          insSense.run(id, s.part_of_speech, s.gloss_en, i);
+          insSense.run(id, s.part_of_speech, s.gloss_en, i === 0 ? vi : null, i);
           glossEn.push(s.gloss_en);
           stats.senses++;
+          if (i === 0 && vi) stats.sensesVi++;
         });
         insFts.run(
           w.headword,
           w.reading_kana,
           romaji,
           glossEn.join("; "),
-          null,
+          vi,
           id,
         );
       }
@@ -250,8 +267,7 @@ function main() {
   db.exec("VACUUM");
   db.close();
 
-  console.log(`seed.sqlite build xong (${SAMPLE ? "SAMPLE" : "FULL"}):`, stats);
-  console.log("→", paths.out);
+  console.log(`seed.sqlite build xong (${SAMPLE ? "SAMPLE" : "FULL"}):`, stats);  console.log("→", paths.out);
 }
 
 main();
