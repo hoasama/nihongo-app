@@ -2,19 +2,22 @@ import type { Queryable } from "./queryable";
 import type { KanjiDetail, KanjiSummary, WordSummary } from "../shared/types";
 
 const SUMMARY_COLS =
-  "id, literal, meaning_en, jlpt_level, stroke_count";
+  "id, literal, meaning_en, meaning_vi, han_viet, jlpt_level, stroke_count";
 
 export async function searchKanji(
   db: Queryable,
   query: string,
 ): Promise<KanjiSummary[]> {
-  const q = query.trim();
+  const q = query.trim().normalize("NFC");
   if (!q) return [];
+  // LIKE chỉ bỏ qua hoa/thường với ASCII: "đạo" không khớp "Đạo" → thử thêm dạng viết hoa chữ đầu.
+  const cap = q[0].toLocaleUpperCase("vi") + q.slice(1);
   return db.select<KanjiSummary>(
     `SELECT ${SUMMARY_COLS} FROM kanji
-     WHERE literal = ? OR meaning_en LIKE ?
-     ORDER BY stroke_count LIMIT 50`,
-    [q, `%${q}%`],
+     WHERE literal = ?1 OR meaning_en LIKE ?2 OR meaning_vi LIKE ?2
+        OR han_viet LIKE ?2 OR han_viet LIKE ?3
+     ORDER BY jlpt_level IS NULL, jlpt_level DESC, stroke_count LIMIT 50`,
+    [q, `%${q}%`, `%${cap}%`],
   );
 }
 
@@ -34,7 +37,7 @@ export async function getKanjiDetail(
   id: number,
 ): Promise<KanjiDetail | null> {
   const rows = await db.select<Omit<KanjiDetail, "words">>(
-    `SELECT id, literal, meaning_en, meaning_vi, jlpt_level, grade,
+    `SELECT id, literal, meaning_en, meaning_vi, han_viet, jlpt_level, grade,
             stroke_count, radical, on_readings, kun_readings
      FROM kanji WHERE id = ?`,
     [id],

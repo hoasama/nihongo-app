@@ -30,7 +30,7 @@ const { data } = useQuery({
       <a-input
         v-model:value="query"
         allow-clear
-        placeholder="Tìm kanji hoặc nghĩa (vd: 日, water)…"
+        placeholder="Tìm kanji, âm Hán-Việt hoặc nghĩa (vd: 日, học, water)…"
         style="width: 320px"
       />
       <a-segmented v-model:value="level" :options="LEVELS" :disabled="searching" />
@@ -50,8 +50,11 @@ const { data } = useQuery({
         class="n-card flex flex-col items-center p-2 hover:border-accent"
       >
         <span class="jp text-3xl font-bold">{{ k.literal }}</span>
-        <span class="mt-1 line-clamp-1 text-center text-xs text-muted">
-          {{ k.meaning_en }}
+        <span v-if="k.han_viet" class="mt-1 line-clamp-1 text-center text-xs font-semibold uppercase">
+          {{ k.han_viet }}
+        </span>
+        <span class="line-clamp-1 text-center text-xs text-muted">
+          {{ k.meaning_vi || k.meaning_en }}
         </span>
       </RouterLink>
     </div>

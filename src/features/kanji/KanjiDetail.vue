@@ -32,6 +32,7 @@ const { data, isLoading } = useQuery({
           <BookmarkButton item-type="kanji" :item-id="data.id" />
           <LevelTag :level="data.jlpt_level" class="ml-auto" />
         </div>
+        <span v-if="data.han_viet" class="text-xl font-semibold uppercase">{{ data.han_viet }}</span>
         <span class="text-lg">{{ data.meaning_vi || data.meaning_en }}</span>
       </div>
     </div>
