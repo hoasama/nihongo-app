@@ -67,11 +67,11 @@ const mixFormIds = computed(() =>
 
     <div class="grid min-h-0 flex-1 grid-cols-[280px_1fr] gap-4">
       <!-- Cột trái: các thể theo cấp -->
-      <nav class="n-card overflow-y-auto p-1.5">
+      <nav class="n-card flex flex-col gap-1 overflow-y-auto p-1.5">
         <button
           type="button"
           :class="[
-            'flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left font-semibold transition-colors',
+            'flex w-full shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-left font-semibold transition-colors',
             formId === 'mix' ? 'bg-accent-soft' : 'hover:bg-accent-soft/60',
           ]"
           @click="go(kind, 'mix')"
@@ -79,7 +79,7 @@ const mixFormIds = computed(() =>
           ✍️ Luyện tổng hợp
         </button>
         <template v-for="g in groups" :key="g.level">
-          <div class="flex items-center gap-2 px-3 pb-1 pt-3">
+          <div class="flex shrink-0 items-center gap-2 px-3 pb-1 pt-3">
             <LevelTag :level="g.level" />
             <span class="text-xs text-muted">{{ g.items.length }} thể</span>
           </div>
@@ -88,7 +88,7 @@ const mixFormIds = computed(() =>
             :key="f.id"
             type="button"
             :class="[
-              'block w-full rounded-lg px-3 py-1.5 text-left transition-colors',
+              'block w-full shrink-0 rounded-lg px-3 py-2 text-left transition-colors',
               formId === f.id ? 'bg-accent-soft' : 'hover:bg-accent-soft/60',
             ]"
             @click="go(kind, f.id)"
