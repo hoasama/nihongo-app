@@ -9,6 +9,7 @@ import NoteEditor from "../../shared/NoteEditor.vue";
 import FuriganaText from "../../shared/FuriganaText.vue";
 import LevelTag from "../../shared/LevelTag.vue";
 import { formatPos } from "../../shared/pos";
+import ConjugationTable from "./ConjugationTable.vue";
 
 const route = useRoute();
 const wordId = Number(route.params.id);
@@ -50,6 +51,8 @@ const { data, isLoading } = useQuery({
         >
       </li>
     </ol>
+
+    <ConjugationTable :word="data" />
 
     <div v-if="data.sentences.length > 0" class="mt-6">
       <h3 class="mb-2 font-semibold">Câu ví dụ</h3>

@@ -308,25 +308,25 @@ function deleteCurrent() {
         Web Easy. Furigana tự động.
       </p>
 
-      <label class="mb-1 block text-sm text-muted">Trình độ</label>
-      <a-select
-        v-model:value="genLevel"
-        :options="GEN_OPTIONS"
-        class="mb-3 w-full"
-      />
-
-      <label class="mb-1 block text-sm text-muted">Chủ đề</label>
-      <a-input
-        v-model:value="topic"
-        class="mb-3"
-        aria-label="Chủ đề"
-        placeholder="VD: đi chợ, lễ hội mùa hè, tái chế rác…"
-        @press-enter="generate"
-      />
-
-      <a-button type="primary" block class="mb-3" :loading="genLoading" @click="generate">
-        {{ genLoading ? 'Đang tạo…' : '✨ Tạo bài' }}
-      </a-button>
+      <!-- Khoảng cách bằng gap: style antd (không có layer) đặt margin 0 cho input/select, đè mb-* của Tailwind -->
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-muted">Trình độ</label>
+          <a-select v-model:value="genLevel" :options="GEN_OPTIONS" class="w-full" />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-muted">Chủ đề</label>
+          <a-input
+            v-model:value="topic"
+            aria-label="Chủ đề"
+            placeholder="VD: đi chợ, lễ hội mùa hè, tái chế rác…"
+            @press-enter="generate"
+          />
+        </div>
+        <a-button type="primary" block :loading="genLoading" @click="generate">
+          {{ genLoading ? 'Đang tạo…' : '✨ Tạo bài' }}
+        </a-button>
+      </div>
       <p v-if="genError" class="mt-2 text-sm text-red-600">
         {{ genError }}
       </p>

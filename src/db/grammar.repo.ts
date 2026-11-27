@@ -16,6 +16,20 @@ export async function listGrammar(
   );
 }
 
+/** Mẫu ngữ pháp theo đúng tiêu đề (giữ thứ tự `titles`, bỏ tiêu đề không có trong DB). */
+export async function listGrammarByTitles(
+  db: Queryable,
+  titles: string[],
+): Promise<GrammarSummary[]> {
+  if (!titles.length) return [];
+  const rows = await db.select<GrammarSummary>(
+    `SELECT id, title, jlpt_level, structure, meaning_vi FROM grammar
+     WHERE title IN (${titles.map(() => "?").join(",")})`,
+    titles,
+  );
+  return titles.flatMap((t) => rows.filter((r) => r.title === t));
+}
+
 export async function getGrammarDetail(
   db: Queryable,
   id: number,

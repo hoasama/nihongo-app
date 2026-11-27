@@ -11,6 +11,7 @@ import AboutPage from "../features/about/AboutPage.vue";
 import SrsDecksPage from "../features/srs/SrsDecksPage.vue";
 import StudySession from "../features/srs/StudySession.vue";
 import ReadingPage from "../features/reading/ReadingPage.vue";
+import ConjugationPage from "../features/conjugation/ConjugationPage.vue";
 
 // hash history vì Electron load qua file:// (history thường không chạy với file://)
 export const router = createRouter({
@@ -25,6 +26,7 @@ export const router = createRouter({
     { path: "/review/session/:deckId", component: StudySession },
     { path: "/review/:category?", component: SrsDecksPage },
     { path: "/read", component: ReadingPage },
+    { path: "/conjugation", component: ConjugationPage },
     { path: "/saved", component: SavedPage },
     { path: "/settings", component: SettingsPage },
     { path: "/about", component: AboutPage },
