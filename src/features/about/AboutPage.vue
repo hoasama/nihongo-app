@@ -22,7 +22,7 @@
         <em>CC BY 2.0 FR</em>.
       </li>
       <li>
-        Phân cấp <strong>JLPT</strong> từ vựng N5–N3 và kanji N5/N4 theo
+        Phân cấp <strong>JLPT</strong> từ vựng và kanji N5–N3 theo
         <strong>OpenJLPT</strong>. JLPT không công bố danh sách chính thức nên có
         thể có sai số nhỏ.
       </li>

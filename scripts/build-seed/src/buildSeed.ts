@@ -11,7 +11,7 @@ import {
   type OpenJlptEntry,
 } from "./parseOpenJlpt";
 import { type JlptLevel } from "./jlptLevels";
-import { assignViMeanings, parseViMeanings } from "./parseViMeanings";
+import { assignViMeanings, parseKanjiVi, parseViMeanings } from "./parseViMeanings";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const base = join(here, ".."); // scripts/build-seed
@@ -34,9 +34,11 @@ const paths = {
   // OpenJLPT kanji: nguồn cấp JLPT cho kanji (thay KANJIDIC2 old-jlpt).
   openjlptKanji: SAMPLE
     ? [fx("openjlpt-kanji-sample.json")]
-    : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json")],
+    : [raw("openjlpt-kanji-n5.json"), raw("openjlpt-kanji-n4.json"), raw("openjlpt-kanji-n3.json")],
   // Nghĩa tiếng Việt (khớp theo kanji + kana). File đứng trước thắng khi trùng: viết tay > dịch tự động.
-  vi: ["vi-curated", "vi-auto"].map((f) => join(base, `content/${f}.tsv`)),
+  vi: ["vi-curated", "vi-auto", "vi-llm"].map((f) => join(base, `content/${f}.tsv`)),
+  // Nghĩa tiếng Việt cho kanji (+ âm Hán-Việt sửa tay khi KANJIDIC2 sai).
+  kanjiVi: join(base, "content/kanji-vi.tsv"),
 };
 
 function readIf(path: string): string | null {
@@ -80,14 +82,13 @@ function main() {
     if (!vocabLevel.has(e.word)) vocabLevel.set(e.word, e.level);
   }
 
-  // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt; N5 thắng N4 khi trùng).
+  // Cấp kanji: từ OpenJLPT kanji (thay KANJIDIC2 old-jlpt). File xếp N5 → N3, cấp thấp thắng khi trùng.
   const kanjiLevel = new Map<string, JlptLevel>();
   for (const p of paths.openjlptKanji) {
     const txt = readIf(p);
     if (!txt) continue;
     for (const k of parseOpenJlptKanji(txt)) {
-      if (kanjiLevel.get(k.character) !== "N5")
-        kanjiLevel.set(k.character, k.level);
+      if (!kanjiLevel.has(k.character)) kanjiLevel.set(k.character, k.level);
     }
   }
 
@@ -165,8 +166,9 @@ function main() {
 
   // --- Kanji ---
   const insKanji = db.prepare(
-    "INSERT OR IGNORE INTO kanji (literal, grade, jlpt_level, stroke_count, radical, on_readings, kun_readings, meaning_en, freq_rank) VALUES (?,?,?,?,?,?,?,?,?)",
+    "INSERT OR IGNORE INTO kanji (literal, grade, jlpt_level, stroke_count, radical, on_readings, kun_readings, meaning_en, meaning_vi, han_viet, freq_rank) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
   );
+  const kanjiVi = parseKanjiVi(readIf(paths.kanjiVi) ?? "");
   const kanjiIdByLiteral = new Map<string, number>();
   const kanjiXml = readIf(paths.kanjidic);
   if (kanjiXml) {
@@ -174,6 +176,7 @@ function main() {
     tx(() => {
       for (const k of kanji) {
         const level = kanjiLevel.get(k.literal) ?? null;
+        const vi = kanjiVi.get(k.literal);
         const info = insKanji.run(
           k.literal,
           k.grade,
@@ -183,6 +186,8 @@ function main() {
           k.on_readings,
           k.kun_readings,
           k.meaning_en,
+          vi?.meaning ?? null,
+          vi?.hanViet !== undefined ? vi.hanViet : k.han_viet || null,
           k.freq_rank,
         );
         if (info.changes > 0) {

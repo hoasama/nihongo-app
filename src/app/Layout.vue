@@ -17,6 +17,7 @@ const items = [
   { key: "/", label: "Tra từ", icon: ico("辞") },
   { key: "/kanji", label: "Kanji", icon: ico("漢") },
   { key: "/grammar", label: "Ngữ pháp", icon: ico("文") },
+  { key: "/conjugation", label: "Chia thể", icon: ico("活") },
   { key: "/read", label: "Luyện đọc", icon: ico("読") },
   { key: "/review", label: "Flashcard", icon: ico("覚") },
   { key: "/saved", label: "Đã lưu", icon: ico("保") },
@@ -31,6 +32,7 @@ const selectedKeys = computed(() => {
   if (p.startsWith("/read")) return ["/read"];
   if (p.startsWith("/kanji")) return ["/kanji"];
   if (p.startsWith("/grammar")) return ["/grammar"];
+  if (p.startsWith("/conjugation")) return ["/conjugation"];
   if (p.startsWith("/saved")) return ["/saved"];
   if (p.startsWith("/settings")) return ["/settings"];
   return [];

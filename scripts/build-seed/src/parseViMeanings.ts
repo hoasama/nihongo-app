@@ -20,6 +20,21 @@ export function parseViMeanings(tsv: string): Map<string, string> {
   return out;
 }
 
+/**
+ * Đọc kanji-vi.tsv (`literal|nghĩa|hán_việt`). Cột 3 tuỳ chọn: bỏ trống = giữ âm KANJIDIC2,
+ * "-" = xoá (kokuji không có âm Hán-Việt), còn lại = thay thế.
+ */
+export function parseKanjiVi(tsv: string): Map<string, { meaning: string; hanViet?: string | null }> {
+  const out = new Map<string, { meaning: string; hanViet?: string | null }>();
+  for (const line of tsv.split(/\r?\n/)) {
+    if (!line.trim() || line.startsWith("#")) continue;
+    const [literal, meaning, hv] = line.split("|").map((s) => s.trim().normalize("NFC"));
+    if (!literal || !meaning) continue;
+    out.set(literal, { meaning, ...(hv ? { hanViet: hv === "-" ? null : hv } : {}) });
+  }
+  return out;
+}
+
 const better = (a: WordRecord, b: WordRecord) =>
   Number(b.is_common) - Number(a.is_common) || (a.freq_rank ?? 1e9) - (b.freq_rank ?? 1e9);
 

@@ -1,4 +1,4 @@
-export type JlptLevel = "N5" | "N4";
+export type JlptLevel = "N5" | "N4" | "N3";
 export type ItemType = "word" | "kanji" | "grammar";
 
 export interface WordSummary {
@@ -34,6 +34,8 @@ export interface KanjiSummary {
   id: number;
   literal: string;
   meaning_en: string | null;
+  meaning_vi: string | null;
+  han_viet: string | null; // âm Hán-Việt, vd "Học"
   jlpt_level: string | null;
   stroke_count: number | null;
 }
@@ -43,7 +45,6 @@ export interface KanjiDetail extends KanjiSummary {
   radical: string | null;
   on_readings: string | null;
   kun_readings: string | null;
-  meaning_vi: string | null;
   words: WordSummary[];
 }
 

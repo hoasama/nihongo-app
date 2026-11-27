@@ -17,6 +17,7 @@ describe("parseKanjidicChar", () => {
     expect(k.grade).toBe(1);
     expect(k.on_readings).toContain("ニチ");
     expect(k.kun_readings).toContain("ひ");
+    expect(k.han_viet).toBe("Nhật, Nhựt");
   });
 
   it("chỉ giữ nghĩa tiếng Anh (bỏ nghĩa ngôn ngữ khác)", () => {

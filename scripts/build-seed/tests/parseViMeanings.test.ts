@@ -1,6 +1,16 @@
 // @vitest-environment node
 import { describe, it, expect } from "vitest";
-import { assignViMeanings, parseViMeanings, viKey } from "../src/parseViMeanings";
+import { assignViMeanings, parseKanjiVi, parseViMeanings, viKey } from "../src/parseViMeanings";
+
+describe("parseKanjiVi", () => {
+  it("cột Hán-Việt: trống = giữ, '-' = xoá, có giá trị = thay", () => {
+    const m = parseKanjiVi("# c\n学|học\n戦|chiến tranh|Chiến\n畑|ruộng|-\nlỗi\n");
+    expect(m.get("学")).toEqual({ meaning: "học" });
+    expect(m.get("戦")).toEqual({ meaning: "chiến tranh", hanViet: "Chiến" });
+    expect(m.get("畑")).toEqual({ meaning: "ruộng", hanViet: null });
+    expect(m.size).toBe(3);
+  });
+});
 import type { WordRecord } from "../src/parseJmdict";
 
 const w = (headword: string, reading_kana: string, is_common = false, freq_rank: number | null = null, usually_kana = false): WordRecord =>

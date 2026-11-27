@@ -5,17 +5,21 @@ import { schedule } from "../features/srs/scheduler";
 const PRESET_DECKS: Omit<Deck, "id">[] = [
   { name: "N5 Từ vựng", category: "vocab", kind: "jlpt_vocab", level: "N5" },
   { name: "N4 Từ vựng", category: "vocab", kind: "jlpt_vocab", level: "N4" },
+  { name: "N3 Từ vựng", category: "vocab", kind: "jlpt_vocab", level: "N3" },
   { name: "Từ vựng đã lưu", category: "vocab", kind: "bookmarks_vocab", level: null },
   { name: "N5 Kanji", category: "kanji", kind: "jlpt_kanji", level: "N5" },
   { name: "N4 Kanji", category: "kanji", kind: "jlpt_kanji", level: "N4" },
+  { name: "N3 Kanji", category: "kanji", kind: "jlpt_kanji", level: "N3" },
   { name: "Kanji đã lưu", category: "kanji", kind: "bookmarks_kanji", level: null },
 ];
 
-/** Tạo 6 deck preset nếu bảng decks còn rỗng (idempotent). */
+/** Tạo deck preset còn thiếu (theo kind + level), nên người dùng cũ cũng nhận deck mới. Idempotent. */
 export async function ensurePresetDecks(db: Queryable): Promise<void> {
-  const rows = await db.select<{ n: number }>("SELECT COUNT(*) AS n FROM decks");
-  if ((rows[0]?.n ?? 0) > 0) return;
+  const have = await db.select<{ kind: string; level: string | null }>(
+    "SELECT kind, level FROM decks",
+  );
   for (const d of PRESET_DECKS) {
+    if (have.some((h) => h.kind === d.kind && h.level === d.level)) continue;
     await db.execute(
       "INSERT INTO decks (name, category, kind, level) VALUES (?,?,?,?)",
       [d.name, d.category, d.kind, d.level],
@@ -28,7 +32,8 @@ export async function listDecks(
   category: DeckCategory,
 ): Promise<Deck[]> {
   return db.select<Deck>(
-    "SELECT id, name, category, kind, level FROM decks WHERE category = ? ORDER BY id",
+    // N5 → N4 → N3 rồi deck đã lưu (level NULL); deck thêm sau vẫn đứng đúng chỗ.
+    "SELECT id, name, category, kind, level FROM decks WHERE category = ? ORDER BY level IS NULL, level DESC, id",
     [category],
   );
 }
@@ -231,9 +236,10 @@ export async function getCardContent(
       kun_readings: string | null;
       meaning_vi: string | null;
       meaning_en: string | null;
+      han_viet: string | null;
       stroke_count: number | null;
     }>(
-      `SELECT literal, on_readings, kun_readings, meaning_vi, meaning_en, stroke_count
+      `SELECT literal, on_readings, kun_readings, meaning_vi, meaning_en, han_viet, stroke_count
        FROM kanji WHERE id = ?`,
       [card.item_id],
     )
@@ -243,7 +249,9 @@ export async function getCardContent(
     ...base,
     japanese: k?.literal ?? "",
     reading,
-    meaning: k?.meaning_vi ?? k?.meaning_en ?? null,
+    // "HỌC — học, nghiên cứu": âm Hán-Việt giúp người Việt nhớ kanji
+    meaning:
+      [k?.han_viet?.toLocaleUpperCase("vi"), k?.meaning_vi ?? k?.meaning_en].filter(Boolean).join(" — ") || null,
     strokeCount: k?.stroke_count ?? null,
   };
 }
